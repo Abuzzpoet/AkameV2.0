@@ -1974,7 +1974,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
             var media = await hisoka.downloadAndSaveMediaMessage(quoted, 'ppbot.jpeg')
             if (args[0] == `panjang`) {
-            var { img } = await generateProfilePicture(media)
+            var { img } = await hisoka.ProfilePicture(media)
             await hisoka.query({
             tag: 'iq',
             attrs: {
@@ -2009,7 +2009,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
             var media = await hisoka.downloadAndSaveMediaMessage(quoted, 'ppgrup.jpeg')
             if (args[0] == `panjang`) {
-            var { img } = await generateProfilePicture(media)
+            var { img } = await hisoka.ProfilePicture(media)
             await hisoka.query({
             tag: 'iq',
             attrs: {
