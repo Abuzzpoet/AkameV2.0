@@ -143,7 +143,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
                 orderMessage: {
                     itemCount: 2022,
                     status: 200,
-                    thumbnail: fs.readFileSync('./lib/hisoka.jpg'),
+                    thumbnail: fs.readFileSync('./image/hisoka.jpg'),
                     surface: 200,
                     message: `Haii Kak ${pushname}\n𝙲𝚖𝚍 ${command}`,
                     orderTitle: 'Please Follow TikTok @GuaAbuzz',
@@ -164,7 +164,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
 	        message: {
 	            documentMessage: {
 	                title: `*${command}*`,
-	                thumbnail: fs.readFileSync('./lib/hisoka.jpg'),
+	                thumbnail: fs.readFileSync('./image/hisoka.jpg'),
 	                }
 	            }
 	        }
@@ -181,7 +181,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
 	            inviteCode: 'https://chat.whatsapp.com/FGmVjFYJBjjGst62qwNKJB',
 	            groupName: 'Akame Bot',
 	            caption: '© GuaAbuzz',
-	            thumbnail: fs.readFileSync('./lib/hisoka.jpg'),
+	            thumbnail: fs.readFileSync('./image/hisoka.jpg'),
 	            }
 	        }
 	    }
@@ -4890,6 +4890,139 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 m.reply(`Apikey Yang Dipake Oleh Bot Akame\n⬣ https://zenzapis.xyz [Sewa]\n⬣ https://betabotz-api.herokuapp.com [Gratis]`)
                 }
                 break
+                case 'ssweb': {
+                if (!q) return reply(`Link Web Nya Mana Kak?`)
+                let sections = [
+                {
+                title: "Ssweb >_<",
+                rows: [
+                {title: "⌲ 「 Ssweb Hp 」", rowId: `${prefix}ssweb-hp ${q}`},
+                {title: "⌲ 「 Ssweb Pc 」", rowId: `${prefix}ssweb-pc ${q}`},
+                {title: "⌲ 「 Ssweb Table 」", rowId: `${prefix}ssweb-table ${q}`}
+                ]
+                }
+                ]
+                hisoka.sendListMsg(m.chat, `*Silahkan Pilih Menu Dibawah Ini*`, hisoka.user.name, `SSWEB MENU`, `Click Here`, sections, fgclink)
+              }
+            break
+            case 'ssweb-hp': {
+                if (!text) throw 'Text?'
+                m.reply(mess.wait)
+                hisoka.sendMessage(m.chat, {
+                    image: {
+                        url: api('botz', '/api/other/ssweb-hp/', {
+                            text: text
+                        }, 'apikey')
+                    },
+                    caption: `Screenshot Web HP`
+                }, {
+                    quoted: fdoc
+                })
+            }
+            break
+            case 'ssweb-pc': {
+                if (!text) throw 'Text?'
+                m.reply(mess.wait)
+                hisoka.sendMessage(m.chat, {
+                    image: {
+                        url: api('botz', '/api/other/ssweb-pc/', {
+                            text: text
+                        }, 'apikey')
+                    },
+                    caption: `Screenshot Web PC`
+                }, {
+                    quoted: fdoc
+                })
+            }
+            break
+            case 'ssweb-table': {
+                if (!text) throw 'Text?'
+                m.reply(mess.wait)
+                hisoka.sendMessage(m.chat, {
+                    image: {
+                        url: api('botz', '/api/other/ssweb-tablet/', {
+                            text: text
+                        }, 'apikey')
+                    },
+                    caption: `Screenshot Web TABLE`
+                }, {
+                    quoted: fdoc
+                })
+            }
+            break
+            case 'nulis': {
+                if (!q) return reply(`Teks Nya Apa Kak?`)
+                let sections = [
+                {
+                title: "Nulis Buku >_<",
+                rows: [
+                {title: "⌲ 「 Nulis Kanan 」", rowId: `${prefix}nuliskanan ${q}`},
+                {title: "⌲ 「 Nulis Kiri 」", rowId: `${prefix}nuliskiri ${q}`}
+                ]
+                },
+                {
+                title: "Nulis Folio >_<",
+                rows: [
+                {title: "⌲ 「 Folio Kanan 」", rowId: `${prefix}foliokanan ${q}`},
+                {title: "⌲ 「 Folio Kiri 」", rowId: `${prefix}foliokiri ${q}`}
+                ]
+                }
+                ]
+                hisoka.sendListMsg(m.chat, `*Silahkan Pilih Menu Dibawah Ini*`, hisoka.user.name, `NULIS MENU`, `Click Here`, sections, fgclink)
+              }
+            break
+            case 'nuliskiri': {
+                if (args.length < 1) return m.reply(`Kirim perintah *${prefix}nuliskiri* teks`)
+                m.reply(mess.wait)
+                var tulisan = body.slice(11)
+                var splitText = tulisan.replace(/(\S+\s*){1,9}/g, '$&\n')
+                var fixHeight = splitText.split('\n').slice(0, 31).join('\n')
+                spawn('convert', ['./image/FOTO/BUKU/sebelumkiri.jpg','-font','./image/FONT/Indie-Flower.ttf','-size','960x1280','-pointsize','22','-interline-spacing','2','-annotate','+140+153',fixHeight,'./image/FOTO/BUKU/setelahkiri.jpg'])
+                .on('error', () => m.reply(mess.error))
+                .on('exit', () => {
+                hisoka.sendMessage(m.chat, { image: fs.readFileSync('./image/FOTO/BUKU/setelahkiri.jpg')}, {quoted: fdoc, caption: `Jangan Malas Kak...`})
+                })
+             }
+            break
+            case 'nuliskanan': {
+                if (args.length < 1) return m.reply(`Kirim perintah *${prefix}nuliskanan* teks`)
+                m.reply(mess.wait)
+                var tulisan = body.slice(12)
+                var splitText = tulisan.replace(/(\S+\s*){1,9}/g, '$&\n')
+                var fixHeight = splitText.split('\n').slice(0, 31).join('\n')
+                spawn('convert', ['./image/FOTO/BUKU/sebelumkanan.jpg','-font','./image/FONT/Indie-Flower.ttf','-size','960x1280','-pointsize','23','-interline-spacing','2','-annotate','+128+129',fixHeight,'./image/FOTO/BUKU/setelahkanan.jpg'])
+                .on('error', () => m.reply(mess.error))
+                .on('exit', () => {
+                hisoka.sendMessage(m.chat, { image: fs.readFileSync('./image/FOTO/BUKU/setelahkanan.jpg')}, {quoted: fdoc, caption: `Jangan Malas Kak...`})
+                })
+              }
+            break
+            case 'foliokiri': {
+                if (args.length < 1) return m.reply(`Kirim perintah *${prefix}foliokiri* teks`)
+                m.reply(mess.wait)
+                var tulisan = body.slice(11)
+                var splitText = tulisan.replace(/(\S+\s*){1,13}/g, '$&\n')
+                var fixHeight = splitText.split('\n').slice(0, 38).join('\n')
+                spawn('convert', ['./image/FOTO/FOLIO/sebelumkiri.jpg','-font','./image/FONT/Indie-Flower.ttf','-size','1720x1280','-pointsize','23','-interline-spacing','4','-annotate','+48+185',fixHeight,'./image/FOTO/FOLIO/setelahkiri.jpg'])
+                .on('error', () => m.reply(mess.error))
+                .on('exit', () => {
+                kirbotz.sendMessage(from, { image: fs.readFileSync('./image/FOTO/FOLIO/setelahkiri.jpg')}, {quoted: fdoc, caption: `Jangan Malas Kak...`})
+                })
+             }
+            break
+            case 'foliokanan': {
+                if (args.length < 1) return m.reply(`Kirim perintah *${prefix}foliokanan* teks`)
+                m.reply(mess.wait)
+                var tulisan = body.slice(12)
+                var splitText = tulisan.replace(/(\S+\s*){1,13}/g, '$&\n')
+                var fixHeight = splitText.split('\n').slice(0, 38).join('\n')
+                spawn('convert', ['./image/FOTO/FOLIO/sebelumkanan.jpg','-font','./image/FONT/Indie-Flower.ttf','-size','960x1280','-pointsize','23','-interline-spacing','3','-annotate','+89+190',fixHeight,'./image/FOTO/FOLIO/setelahkanan.jpg'])
+                .on('error', () => m.reply(mess.error))
+                .on('exit', () => {
+                hisoka.sendMessage(m.chat, { image: fs.readFileSync('./image/FOTO/FOLIO/setelahkanan.jpg')}, {quoted: fdoc, caption: `Jangan Malas Kak...`})
+                })
+             }
+            break
             case 'ping':
             case 'botstatus':
             case 'statusbot':
@@ -6829,6 +6962,8 @@ Request Message: ${text}`
 └┬─────────────┈❖
 ┌┤「 CONVERT 」
 │└─────────────┈❖
+│⭔ ${prefix}nulis
+│⭔ ${prefix}ssweb
 │⭔ ${prefix}removebg [image]
 │⭔ ${prefix}toimage [reply sticker]
 │⭔ ${prefix}tovideo [reply sticker]
@@ -7777,6 +7912,8 @@ Request Message: ${text}`
 └┬─────────────┈❖
 ┌┤「 CONVERT 」
 │└─────────────┈❖
+│⭔ ${prefix}nulis
+│⭔ ${prefix}ssweb
 │⭔ ${prefix}removebg [image]
 │⭔ ${prefix}toimage [reply sticker]
 │⭔ ${prefix}tovideo [reply sticker]

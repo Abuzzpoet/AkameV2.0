@@ -92,7 +92,7 @@ global.limitawal = {
 
 //—————「 Set Image 」—————//
 //terserah mau ubah apa nggak, menurut gua jangan di ubah!
-global.thumb = fs.readFileSync('./lib/hisoka.jpg')
+global.thumb = fs.readFileSync('./image/hisoka.jpg')
 global.visoka = { url: 'https://telegra.ph/file/de381b0caeb315a99c68a.mp4' }
 
 //—————「 Set Random Image Menu 」—————//
