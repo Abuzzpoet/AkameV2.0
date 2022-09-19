@@ -4891,7 +4891,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 }
                 break
                 case 'ssweb': {
-                if (!q) return reply(`Link Web Nya Mana Kak?`)
+                if (!q) return m.reply(`Link Web Nya Mana Kak?`)
                 let sections = [
                 {
                 title: "Ssweb >_<",
@@ -4951,7 +4951,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             }
             break
             case 'nulis': {
-                if (!q) return reply(`Teks Nya Apa Kak?`)
+                if (!q) return m.reply(`Teks Nya Apa Kak?`)
                 let sections = [
                 {
                 title: "Nulis Buku >_<",
@@ -4980,7 +4980,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 spawn('convert', ['./image/FOTO/BUKU/sebelumkiri.jpg','-font','./image/FONT/Indie-Flower.ttf','-size','960x1280','-pointsize','22','-interline-spacing','2','-annotate','+140+153',fixHeight,'./image/FOTO/BUKU/setelahkiri.jpg'])
                 .on('error', () => m.reply(mess.error))
                 .on('exit', () => {
-                hisoka.sendMessage(m.chat, { image: fs.readFileSync('./image/FOTO/BUKU/setelahkiri.jpg')}, {quoted: fdoc, caption: `Jangan Malas Kak...`})
+                hisoka.sendMessage(m.chat, { image: { fs.readFileSync('./image/FOTO/BUKU/setelahkiri.jpg') }, caption: `Jangan Malas Kak...` }, { quoted: fdoc })
                 })
              }
             break
@@ -4993,7 +4993,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 spawn('convert', ['./image/FOTO/BUKU/sebelumkanan.jpg','-font','./image/FONT/Indie-Flower.ttf','-size','960x1280','-pointsize','23','-interline-spacing','2','-annotate','+128+129',fixHeight,'./image/FOTO/BUKU/setelahkanan.jpg'])
                 .on('error', () => m.reply(mess.error))
                 .on('exit', () => {
-                hisoka.sendMessage(m.chat, { image: fs.readFileSync('./image/FOTO/BUKU/setelahkanan.jpg')}, {quoted: fdoc, caption: `Jangan Malas Kak...`})
+                hisoka.sendMessage(m.chat, { image: { fs.readFileSync('./image/FOTO/BUKU/setelahkanan.jpg') }, caption: `Jangan Malas Kak...` }, { quoted: fdoc })
                 })
               }
             break
@@ -5006,7 +5006,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 spawn('convert', ['./image/FOTO/FOLIO/sebelumkiri.jpg','-font','./image/FONT/Indie-Flower.ttf','-size','1720x1280','-pointsize','23','-interline-spacing','4','-annotate','+48+185',fixHeight,'./image/FOTO/FOLIO/setelahkiri.jpg'])
                 .on('error', () => m.reply(mess.error))
                 .on('exit', () => {
-                kirbotz.sendMessage(from, { image: fs.readFileSync('./image/FOTO/FOLIO/setelahkiri.jpg')}, {quoted: fdoc, caption: `Jangan Malas Kak...`})
+                hisoka.sendMessage(m.chat, { image: { fs.readFileSync('./image/FOTO/FOLIO/setelahkiri.jpg') }, caption: `Jangan Malas Kak...` }, { quoted: fdoc })
                 })
              }
             break
@@ -5019,7 +5019,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 spawn('convert', ['./image/FOTO/FOLIO/sebelumkanan.jpg','-font','./image/FONT/Indie-Flower.ttf','-size','960x1280','-pointsize','23','-interline-spacing','3','-annotate','+89+190',fixHeight,'./image/FOTO/FOLIO/setelahkanan.jpg'])
                 .on('error', () => m.reply(mess.error))
                 .on('exit', () => {
-                hisoka.sendMessage(m.chat, { image: fs.readFileSync('./image/FOTO/FOLIO/setelahkanan.jpg')}, {quoted: fdoc, caption: `Jangan Malas Kak...`})
+                hisoka.sendMessage(m.chat, { image: { fs.readFileSync('./image/FOTO/FOLIO/setelahkanan.jpg') }, caption: `Jangan Malas Kak...` }, { quoted: fdoc })
                 })
              }
             break
