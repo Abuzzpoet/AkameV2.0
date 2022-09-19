@@ -1972,11 +1972,31 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 if (!quoted) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
                 if (!/image/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
                 if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
-                let media = await hisoka.downloadAndSaveMediaMessage(quoted)
-                await hisoka.updateProfilePicture(botNumber, {
-                    url: media
-                }).catch((err) => fs.unlinkSync(media))
-                m.reply(mess.success)
+            var media = await hisoka.downloadAndSaveMediaMessage(quoted, 'ppbot.jpeg')
+            if (args[0] == `panjang`) {
+            var { img } = await generateProfilePicture(media)
+            await hisoka.query({
+            tag: 'iq',
+            attrs: {
+            to: botNumber,
+            type:'set',
+            xmlns: 'w:profile:picture'
+            },
+            content: [
+            {
+            tag: 'picture',
+            attrs: { type: 'image' },
+            content: img
+            }
+            ]
+            })
+            fs.unlinkSync(media)
+            m.reply(mess.success)
+            } else {
+            var data = await hisoka.updateProfilePicture(botNumber, { url: media })
+            fs.unlinkSync(media)
+            m.reply(mess.success)
+            }
             }
             break
             case 'setppgroup':
@@ -1987,11 +2007,31 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 if (!quoted) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
                 if (!/image/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
                 if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
-                let media = await hisoka.downloadAndSaveMediaMessage(quoted)
-                await hisoka.updateProfilePicture(m.chat, {
-                    url: media
-                }).catch((err) => fs.unlinkSync(media))
-                m.reply(mess.success)
+            var media = await hisoka.downloadAndSaveMediaMessage(quoted, 'ppgrup.jpeg')
+            if (args[0] == `panjang`) {
+            var { img } = await generateProfilePicture(media)
+            await hisoka.query({
+            tag: 'iq',
+            attrs: {
+            to: m.chat,
+            type:'set',
+            xmlns: 'w:profile:picture'
+            },
+            content: [
+            {
+            tag: 'picture',
+            attrs: { type: 'image' },
+            content: img
+            }
+            ]
+            })
+            fs.unlinkSync(media)
+            m.reply(mess.success)
+            } else {
+            var data = await hisoka.updateProfilePicture(m.chat, { url: media })
+            fs.unlinkSync(media)
+            m.reply(mess.success)
+            }
             }
             break
             case 'tagall': {
@@ -5602,7 +5642,7 @@ Request Message: ${text}`
 │⭔ ${prefix}revoke
 │⭔ ${prefix}tagmenu [option]
 │⭔ ${prefix}ephemeral [option]
-│⭔ ${prefix}setppgc [image]
+│⭔ ${prefix}setppgrup panjang [image]
 │⭔ ${prefix}setname [text]
 │⭔ ${prefix}setdesc [text]
 │⭔ ${prefix}group [option]
@@ -7393,8 +7433,9 @@ Request Message: ${text}`
 │⭔ ${prefix}unblock @user
 │⭔ ${prefix}bcgroup [text]
 │⭔ ${prefix}bcall [text]
-│⭔ ${prefix}setppbot [image]
+│⭔ ${prefix}setppbot panjang [image]
 │⭔ ${prefix}setmenu [option]
+│⭔ ${prefix}anticall [on/off]
 │⭔ ${prefix}setstatus
 │⭔ ${prefix}setnamebot
 └──────────────┈❖`
@@ -7853,7 +7894,7 @@ Request Message: ${text}`
 │⭔ ${prefix}revoke 
 │⭔ ${prefix}tagmenu [option]
 │⭔ ${prefix}ephemeral [option]
-│⭔ ${prefix}setppgc [image]
+│⭔ ${prefix}setppgrup panjang [image]
 │⭔ ${prefix}setname [text]
 │⭔ ${prefix}setdesc [text]
 │⭔ ${prefix}group [option]
@@ -7973,7 +8014,7 @@ Request Message: ${text}`
 │⭔ ${prefix}react [emoji]
 │⭔ ${prefix}shutdown
 │⭔ ${prefix}myip
-│⭔ ${prefix}setexif [packname|author]
+│⭔ ${prefix}setexif
 │⭔ ${prefix}chat [option]
 │⭔ ${prefix}join [link]
 │⭔ ${prefix}leave
@@ -7981,6 +8022,7 @@ Request Message: ${text}`
 │⭔ ${prefix}unblock @user
 │⭔ ${prefix}bcgroup [text]
 │⭔ ${prefix}bcall [text]
+│⭔ ${prefix}setppbot panjang [image]
 │⭔ ${prefix}setmenu [option]
 │⭔ ${prefix}anticall [on/off]
 │⭔ ${prefix}setstatus
