@@ -1161,7 +1161,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
 ⌲ https://github.com/DikaArdnt/Hisoka-Morou
 
 🌱 *Recode By : GuaAbuzz*
-⎙ https://github.com/Abuzzpoet/Akame`
+⎙ https://github.com/Abuzzpoet/AkameV2.0`
                 let btn = [{
                     urlButton: {
                         displayText: 'TikTok Creator',

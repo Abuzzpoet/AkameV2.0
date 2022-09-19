@@ -66,10 +66,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Abuzzpoet/Akame.git"
+    "url": "git+https://github.com/Abuzzpoet/AkameV2.0.git"
   },
   "bugs": {
-    "url": "https://github.com/Abuzzpoet/Akame/issues"
+    "url": "https://github.com/Abuzzpoet/AkameV2.0/issues"
   },
-  "homepage": "https://github.com/Abuzzpoet/Akame#readme"
+  "homepage": "https://github.com/Abuzzpoet/AkameV2.0#readme"
 }

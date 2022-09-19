@@ -32,7 +32,7 @@ This Script is for everyone, not for Sale. Jika dijual neraka menunggumu brother
 ## My Projects
 [![ASUNA](https://img.shields.io/badge/Asuna%20WhatsApp%20Bot-1b1e23?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Abuzzpoet/Asuna)
 
-[![AKAME](https://img.shields.io/badge/Akame%20WhatsApp%20Bot-1b1e23?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Abuzzpoet/Akame)
+[![AKAME](https://img.shields.io/badge/Akame%20WhatsApp%20Bot-1b1e23?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Abuzzpoet/AkameV2.0)
 
 ## Module Dan Base Yg Dipake
 [![MODULE](https://img.shields.io/badge/@adiwajshing%20baileys-1b1e23?style=for-the-badge&logo=github&logoColor=white)](https://github.com/adiwajshing/baileys)
@@ -42,7 +42,7 @@ This Script is for everyone, not for Sale. Jika dijual neraka menunggumu brother
 [![ZENZ](https://img.shields.io/badge/zhwzein-1b1e23?style=for-the-badge&logo=github&logoColor=white)](https://github.com/zhwzein/Killua-Zoldyck)
 
 ## Heroku Buildpack
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Abuzzpoet/Akame)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Abuzzpoet/AkameV2.0)
 
 [![FFMPEG](https://img.shields.io/badge/BuildPack%20FFMPEG-1b1e23?style=for-the-badge&logo=heroku&logoColor=white)](https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest)
 
@@ -67,7 +67,7 @@ Choose your repo
 * Unduh & Instal FFmpeg [`Klik Disini`](https://ffmpeg.org/download.html) (**Jangan Lupa Tambahkan FFmpeg ke variabel lingkungan PATH**)
 
 ```bash
-git clone https://github.com/Abuzzpoet/Akame
+git clone https://github.com/Abuzzpoet/AkameV2.0
 cd Akame
 npm install
 ```
@@ -86,7 +86,7 @@ apt update && apt upgrade
 apt install git -y
 apt install nodejs -y
 apt install ffmpeg -y
-git clone https://github.com/Abuzzpoet/Akame
+git clone https://github.com/Abuzzpoet/AkameV2.0
 cd Akame
 npm install
 ```
@@ -109,7 +109,7 @@ $ node .
 WhatsApp bot is still in the development stage, so there are a few bugs
 WhatsApp Connection (BETA, not working perfectly)
 
-Editing Number Owner & session name in [`config.js`](https://github.com/Abuzzpoet/Akame/blob/master/config.js)
+Editing Number Owner & session name in [`config.js`](https://github.com/Abuzzpoet/AkameV2.0/blob/master/config.js)
 
 ```How To Customise Message Display```
 ```js
