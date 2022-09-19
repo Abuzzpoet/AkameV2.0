@@ -4737,6 +4737,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                         { buttonId: 'start', buttonText: { displayText: '⌲ Start' }, type: 1 }
                     ]
                     await hisoka.sendButtonText(m.chat, buttons, `\`\`\`Kamu Sedang Tidak Berada Di Sesi Anonymous, Tekan Button Untuk Mencari Partner \`\`\``)
+                    throw false
                 }
                 let profile = await hisoka.profilePictureUrl(room.b)
                 let status = await hisoka.fetchStatus(room.b)
