@@ -2167,7 +2167,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 ciko = true
                 m.reply(`AntiCall Aktif 🕊`)
                 } else if (args[0] === "off") {
-                if (!ciko) return m.reply(`Sudah Tidak Aktif Sebelumnya` 🕊)
+                if (!ciko) return m.reply(`Sudah Tidak Aktif Sebelumnya 🕊`)
                 ciko = false
                 m.reply(`AntiCall Tidak Aktif 🕊`)
                 } else {
@@ -2175,7 +2175,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                         { buttonId: 'anticall on', buttonText: { displayText: 'On' }, type: 1 },
                         { buttonId: 'anticall off', buttonText: { displayText: 'Off' }, type: 1 }
                     ]
-                    await hisoka.sendButtonText(m.chat, buttons, `Mode ${command} 🕊️`, `Silahkan Klik Button Dibawah, Jika Button Tidak Muncul Ketik ${command} on/off`, hisoka.user.name, m)
+                    await hisoka.sendButtonText(m.chat, buttons, `Mode ${command} 🕊️`, `Silahkan Klik Button Dibawah, Jika Button Tidak Muncul Ketik ${command} on/off`, hisoka.user.name, fgclink)
                 }
              }
              break
