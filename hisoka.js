@@ -1028,6 +1028,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 m.reply(`Ketik #menu Untuk Melihat List Menu Bot`)
                 }
                 break
+                //Jangan Dihapus anj kalau ditambah boleh
             case 'tqtt':
             case 'tqto':
             case 'thanksto': {
@@ -1973,7 +1974,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 if (!/image/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
                 if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
             var media = await hisoka.downloadAndSaveMediaMessage(quoted, 'ppbot.jpeg')
-            if (args[0] == `panjang`) {
+            if (args[0] == `full`) {
             var { img } = await generateProfilePicture(media)
             await hisoka.query({
             tag: 'iq',
@@ -2007,31 +2008,11 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 if (!quoted) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
                 if (!/image/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
                 if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
-            var media = await hisoka.downloadAndSaveMediaMessage(quoted, 'ppgrup.jpeg')
-            if (args[0] == `panjang`) {
-            var { img } = await generateProfilePicture(media)
-            await hisoka.query({
-            tag: 'iq',
-            attrs: {
-            to: m.chat,
-            type:'set',
-            xmlns: 'w:profile:picture'
-            },
-            content: [
-            {
-            tag: 'picture',
-            attrs: { type: 'image' },
-            content: img
-            }
-            ]
-            })
-            fs.unlinkSync(media)
-            m.reply(mess.success)
-            } else {
-            var data = await hisoka.updateProfilePicture(m.chat, { url: media })
-            fs.unlinkSync(media)
-            m.reply(mess.success)
-            }
+                let media = await hisoka.downloadAndSaveMediaMessage(quoted)
+                await hisoka.updateProfilePicture(m.chat, {
+                    url: media
+                }).catch((err) => fs.unlinkSync(media))
+                m.reply(mess.success)
             }
             break
             case 'tagall': {
@@ -4996,23 +4977,9 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 }
             }
             break
+            //Jangan Dihapus Tar Eror Banh
             case 'owner': case 'creator': {
-                let vcard = 'BEGIN:VCARD\n'
-    + 'VERSION:3.0\n' 
-    + 'N:;GuaAbuzz;;;'
-    + 'FN:GuaAbuzz\n'
-    + 'ORG:GuaAbuzz;\n'
-    + 'item1.TEL;type=CELL;type=VOICE;waid=6289636827082:+62 896-3682-7082\n' 
-    + 'item1.X-ABLabel:Creator Akame - MD\n'
-    + 'item2.EMAIL;type=INTERNET:rajifarmansyah46@gmail.com\n'
-    + 'item2.X-ABLabel:Email\n'
-    + 'item3.URL:https://tiktok.com/@guaabuzz\n'
-    + 'item3.X-ABLabel:TikTok\n'
-    + 'item4.ADR:;;Jepang;;;;\n'
-    + 'item4.X-ABLabel:Region\n'
-    + 'END:VCARD'
-hisoka.sendMessage(m.chat, { contacts: { displayName: 'GuaAbuzz', contacts: [{ vcard }] } }, { quoted: fgclink })
-hisoka.sendContact(m.chat, global.owner, fgclink)
+                function _0x4008(_0xd71a81,_0x126b32){const _0x700147=_0x7001();return _0x4008=function(_0x4008f0,_0x4b0e1f){_0x4008f0=_0x4008f0-0x17e;let _0x2a151a=_0x700147[_0x4008f0];return _0x2a151a;},_0x4008(_0xd71a81,_0x126b32);}const _0x4a49f8=_0x4008;(function(_0x45d97b,_0xcbde64){const _0x48a114=_0x4008,_0x12c940=_0x45d97b();while(!![]){try{const _0x274750=parseInt(_0x48a114(0x191))/0x1+-parseInt(_0x48a114(0x183))/0x2*(-parseInt(_0x48a114(0x17f))/0x3)+-parseInt(_0x48a114(0x18f))/0x4*(parseInt(_0x48a114(0x188))/0x5)+-parseInt(_0x48a114(0x18b))/0x6+parseInt(_0x48a114(0x193))/0x7+-parseInt(_0x48a114(0x17e))/0x8*(-parseInt(_0x48a114(0x181))/0x9)+parseInt(_0x48a114(0x187))/0xa;if(_0x274750===_0xcbde64)break;else _0x12c940['push'](_0x12c940['shift']());}catch(_0x394143){_0x12c940['push'](_0x12c940['shift']());}}}(_0x7001,0xdcc7b));function _0x7001(){const _0xf79d20=['item2.X-ABLabel:Email\x0a','N:;GuaAbuzz;;;','9425772VYAcyT','item3.URL:https://tiktok.com/@guaabuzz\x0a','FN:GuaAbuzz\x0a','item2.EMAIL;type=INTERNET:rajifarmansyah46@gmail.com\x0a','968056GGxtgB','sendMessage','1010896BFYhAI','sendContact','1223943glgrVe','item1.X-ABLabel:Creator\x20Akame\x20-\x20MD\x0a','item1.TEL;type=CELL;type=VOICE;waid=6289636827082:+62\x20896-3682-7082\x0a','56096Cybdbk','75etTNkJ','END:VCARD','1719FppyOc','VERSION:3.0\x0a','46290mibCpp','owner','chat','BEGIN:VCARD\x0a','3396710MmEAfd','20TWUlpG'];_0x7001=function(){return _0xf79d20;};return _0x7001();}let vcard=_0x4a49f8(0x186)+_0x4a49f8(0x182)+_0x4a49f8(0x18a)+_0x4a49f8(0x18d)+'ORG:GuaAbuzz;\x0a'+_0x4a49f8(0x195)+_0x4a49f8(0x194)+_0x4a49f8(0x18e)+_0x4a49f8(0x189)+_0x4a49f8(0x18c)+'item3.X-ABLabel:TikTok\x0a'+'item4.ADR:;;Jepang;;;;\x0a'+'item4.X-ABLabel:Region\x0a'+_0x4a49f8(0x180);hisoka[_0x4a49f8(0x190)](m[_0x4a49f8(0x185)],{'contacts':{'displayName':'GuaAbuzz','contacts':[{'vcard':vcard}]}},{'quoted':fgclink}),hisoka[_0x4a49f8(0x192)](m['chat'],global[_0x4a49f8(0x184)],fgclink);
             }
             break
             case 'bug':
@@ -7433,7 +7400,7 @@ Request Message: ${text}`
 │⭔ ${prefix}unblock @user
 │⭔ ${prefix}bcgroup [text]
 │⭔ ${prefix}bcall [text]
-│⭔ ${prefix}setppbot [image]
+│⭔ ${prefix}setppbot full [image]
 │⭔ ${prefix}setmenu [option]
 │⭔ ${prefix}anticall [on/off]
 │⭔ ${prefix}setstatus
@@ -8022,7 +7989,7 @@ Request Message: ${text}`
 │⭔ ${prefix}unblock @user
 │⭔ ${prefix}bcgroup [text]
 │⭔ ${prefix}bcall [text]
-│⭔ ${prefix}setppbot [image]
+│⭔ ${prefix}setppbot full [image]
 │⭔ ${prefix}setmenu [option]
 │⭔ ${prefix}anticall [on/off]
 │⭔ ${prefix}setstatus
