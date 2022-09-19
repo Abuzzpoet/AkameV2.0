@@ -1366,7 +1366,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 m.reply(tex.replace(/[aiueo]/g, ter).replace(/[AIUEO]/g, ter.toUpperCase()))
                 }
                 break
-            case 'tebakmenu': {
+            case 'tebak': {
                  let menuss = [
                 {
                 title: "Tebak-tebakan Menu",
@@ -6809,7 +6809,7 @@ Request Message: ${text}`
 │⭔ ${prefix}delttt
 │⭔ ${prefix}tictactoe
 │⭔ ${prefix}family100
-│⭔ ${prefix}tebakmenu [option]
+│⭔ ${prefix}tebak [option]
 │⭔ ${prefix}math [mode]
 │⭔ ${prefix}suitpvp [@tag]
 └──────────────┈❖`
@@ -8025,7 +8025,7 @@ Request Message: ${text}`
 │⭔ ${prefix}delttt
 │⭔ ${prefix}tictactoe
 │⭔ ${prefix}family100
-│⭔ ${prefix}tebakmenu [option]
+│⭔ ${prefix}tebak [option]
 │⭔ ${prefix}math [mode]
 │⭔ ${prefix}suitpvp [@tag]
 └┬─────────────┈❖
