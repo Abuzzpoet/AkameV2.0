@@ -25,7 +25,7 @@ const speed = require('performance-now')
 const { performance } = require('perf_hooks')
 const { Primbon } = require('scrape-primbon')
 const primbon = new Primbon()
-const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom, getGroupAdmins } = require('./lib/myfunc')
+const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom, getGroupAdmins, generateProfilePicture } = require('./lib/myfunc')
 
 // read database
 global.db.data = JSON.parse(fs.readFileSync('./src/database.json'))
@@ -1974,7 +1974,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
             var media = await hisoka.downloadAndSaveMediaMessage(quoted, 'ppbot.jpeg')
             if (args[0] == `panjang`) {
-            var { img } = await hisoka.ProfilePicture(media)
+            var { img } = await generateProfilePicture(media)
             await hisoka.query({
             tag: 'iq',
             attrs: {
@@ -2009,7 +2009,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
             var media = await hisoka.downloadAndSaveMediaMessage(quoted, 'ppgrup.jpeg')
             if (args[0] == `panjang`) {
-            var { img } = await hisoka.ProfilePicture(media)
+            var { img } = await generateProfilePicture(media)
             await hisoka.query({
             tag: 'iq',
             attrs: {
@@ -5642,7 +5642,7 @@ Request Message: ${text}`
 │⭔ ${prefix}revoke
 │⭔ ${prefix}tagmenu [option]
 │⭔ ${prefix}ephemeral [option]
-│⭔ ${prefix}setppgrup panjang [image]
+│⭔ ${prefix}setppgrup [image]
 │⭔ ${prefix}setname [text]
 │⭔ ${prefix}setdesc [text]
 │⭔ ${prefix}group [option]
@@ -7433,7 +7433,7 @@ Request Message: ${text}`
 │⭔ ${prefix}unblock @user
 │⭔ ${prefix}bcgroup [text]
 │⭔ ${prefix}bcall [text]
-│⭔ ${prefix}setppbot panjang [image]
+│⭔ ${prefix}setppbot [image]
 │⭔ ${prefix}setmenu [option]
 │⭔ ${prefix}anticall [on/off]
 │⭔ ${prefix}setstatus
@@ -7894,7 +7894,7 @@ Request Message: ${text}`
 │⭔ ${prefix}revoke 
 │⭔ ${prefix}tagmenu [option]
 │⭔ ${prefix}ephemeral [option]
-│⭔ ${prefix}setppgrup panjang [image]
+│⭔ ${prefix}setppgrup [image]
 │⭔ ${prefix}setname [text]
 │⭔ ${prefix}setdesc [text]
 │⭔ ${prefix}group [option]
@@ -8022,7 +8022,7 @@ Request Message: ${text}`
 │⭔ ${prefix}unblock @user
 │⭔ ${prefix}bcgroup [text]
 │⭔ ${prefix}bcall [text]
-│⭔ ${prefix}setppbot panjang [image]
+│⭔ ${prefix}setppbot [image]
 │⭔ ${prefix}setmenu [option]
 │⭔ ${prefix}anticall [on/off]
 │⭔ ${prefix}setstatus
