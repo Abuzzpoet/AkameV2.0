@@ -32,7 +32,7 @@ This Script is for everyone, not for Sale. Jika dijual neraka menunggumu brother
 ## My Projects
 [![ASUNA](https://img.shields.io/badge/Asuna%20WhatsApp%20Bot-1b1e23?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Abuzzpoet/Asuna)
 
-[![AKAME](https://img.shields.io/badge/Akame%20WhatsApp%20Bot-1b1e23?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Abuzzpoet/AkameV2.0)
+[![AKAMEV2.0](https://img.shields.io/badge/AkameV2.0%20WhatsApp%20Bot-1b1e23?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Abuzzpoet/AkameV2.0)
 
 ## Module Dan Base Yg Dipake
 [![MODULE](https://img.shields.io/badge/@adiwajshing%20baileys-1b1e23?style=for-the-badge&logo=github&logoColor=white)](https://github.com/adiwajshing/baileys)
@@ -68,7 +68,7 @@ Choose your repo
 
 ```bash
 git clone https://github.com/Abuzzpoet/AkameV2.0
-cd Akame
+cd AkameV2.0
 npm install
 ```
 
@@ -87,7 +87,7 @@ apt install git -y
 apt install nodejs -y
 apt install ffmpeg -y
 git clone https://github.com/Abuzzpoet/AkameV2.0
-cd Akame
+cd AkameV2.0
 npm install
 ```
 
