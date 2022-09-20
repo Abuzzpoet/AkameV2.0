@@ -4229,6 +4229,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 			case 'confess': {
 				if (m.isGroup) throw mess.private
 				if (!text) return m.reply(`*Cara Penggunaan*\n\nKirim perintah ${prefix}${command} nomer|pengirim|pesan\n\nContoh ${prefix}${command} 62831xxxxxxx|ini nama samaran ya|I have a crush on you\n\nContoh 2 : ${prefix}${command} 62831xxxxxxx|crush mu|I have s crush on you\n\nTenang aja privasi aman kok><`)
+				if (budy.length > 3500) return m.reply('pirtek kontol')
 				let nomor = q.split('|')[0] ? q.split('|')[0] : q
 				let saking = q.split('|')[1] ? q.split('|')[1] : q
 				let pesan = q.split('|')[2] ? q.split('|')[2] : ''
@@ -4284,12 +4285,12 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'tiktoknowatermark': {
                 if (!text) throw 'Link TikTok Ya Mana?'
                 m.reply(mess.wait)
-                let anu = await alya.snaptik(text)
+                let anu = await alya.tiktok(text)
                 let buttonMessage = {
                     video: {
-                        url: anu.video.no_watermark
+                        url: anu.nowm
                     },
-                    caption: `*TikTok No Watermark*\n\n👤 *Author:* ${anu.author}\n📌 *Desc:* ${anu.description}`,
+                    caption: `*TikTok No Watermark*`,
                     footer: hisoka.user.name,
                     headerType: 5
                 }
@@ -4302,12 +4303,12 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'tiktokwatermark': {
                 if (!text) throw 'Link TikTok Ya, Mana?'
                 m.reply(mess.wait)
-                let anu = await alya.snaptik(text)
+                let anu = await alya.tiktok(text)
                 let buttonMessage = {
                     video: {
-                        url: anu.video.with_watermark
+                        url: anu.wm
                     },
-                    caption: `*TikTok Watermark*\n\n👤 *Author:* ${anu.author}\n📌 *Desc:* ${anu.description}`,
+                    caption: `*TikTok Watermark*`,
                     footer: hisoka.user.name,
                     headerType: 5
                 }
@@ -4320,10 +4321,10 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'tiktokaudio': {
                 if (!text) throw 'Link TikTok Ya Mana?'
                 m.reply(mess.wait)
-                let anu = await alya.snaptik(text)
-                let cap = `*Tiktok Audio*\n\n👤 *Author:* ${anu.author}\n📌 *Desc:* ${anu.description}`
-				hisoka.sendMessage(m.chat, { caption: cap, image: { url: anu.video.no_watermark_raw }})
-				hisoka.sendMessage(m.chat, { audio: { url: anu.musicvideo }, mimetype: 'audio/mpeg'}, { quoted: fdoc })
+                let anu = await alya.tiktok(text)
+                let cap = `*Tiktok Audio*`
+				hisoka.sendMessage(m.chat, { caption: cap, image: { url: anu.nowm }})
+				hisoka.sendMessage(m.chat, { audio: { url: anu.audio }, mimetype: 'audio/mpeg'}, { quoted: fdoc })
 				}
 				break
             case 'ig': case 'igdl': case 'instagram': {
