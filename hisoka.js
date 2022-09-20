@@ -4229,7 +4229,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 			case 'confess': {
 				if (m.isGroup) throw mess.private
 				if (!text) return m.reply(`*Cara Penggunaan*\n\nKirim perintah ${prefix}${command} nomer|pengirim|pesan\n\nContoh ${prefix}${command} 62831xxxxxxx|ini nama samaran ya|I have a crush on you\n\nContoh 2 : ${prefix}${command} 62831xxxxxxx|crush mu|I have s crush on you\n\nTenang aja privasi aman kok><`)
-				if (budy.length > 3500) return m.reply('pirtek kontol')
+				if(args[0].length > 3500) return m.reply("pirtek kontol")
 				let nomor = q.split('|')[0] ? q.split('|')[0] : q
 				let saking = q.split('|')[1] ? q.split('|')[1] : q
 				let pesan = q.split('|')[2] ? q.split('|')[2] : ''
