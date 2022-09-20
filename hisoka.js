@@ -4229,7 +4229,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 			case 'confess': {
 				if (m.isGroup) throw mess.private
 				if (!text) return m.reply(`*Cara Penggunaan*\n\nKirim perintah ${prefix}${command} nomer|pengirim|pesan\n\nContoh ${prefix}${command} 62831xxxxxxx|ini nama samaran ya|I have a crush on you\n\nContoh 2 : ${prefix}${command} 62831xxxxxxx|crush mu|I have s crush on you\n\nTenang aja privasi aman kok><`)
-				if (budy.length > 3500) return m.reply(`pirtek kontol`)
+				if (args.length > 3500) return m.reply(`pirtek kontol`)
 				let nomor = q.split('|')[0] ? q.split('|')[0] : q
 				let saking = q.split('|')[1] ? q.split('|')[1] : q
 				let pesan = q.split('|')[2] ? q.split('|')[2] : ''
@@ -4285,12 +4285,12 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'tiktoknowatermark': {
                 if (!text) throw 'Link TikTok Ya Mana?'
                 m.reply(mess.wait)
-                let anu = await alya.tiktok(text)
+                let anu = await fetchJson(api('zenz', '/downloader/musically', { url: text }, 'apikey'))
                 let buttonMessage = {
                     video: {
-                        url: anu.nowm
+                        url: anu.result.nowm
                     },
-                    caption: `*TikTok No Watermark*`,
+                    caption: `Download From ${text}`,
                     footer: hisoka.user.name,
                     headerType: 5
                 }
@@ -4303,12 +4303,12 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'tiktokwatermark': {
                 if (!text) throw 'Link TikTok Ya, Mana?'
                 m.reply(mess.wait)
-                let anu = await alya.tiktok(text)
+                let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
                 let buttonMessage = {
                     video: {
-                        url: anu.wm
+                        url: anu.result.watermark
                     },
-                    caption: `*TikTok Watermark*`,
+                    caption: `Download From ${text}`,
                     footer: hisoka.user.name,
                     headerType: 5
                 }
@@ -4321,12 +4321,17 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'tiktokaudio': {
                 if (!text) throw 'Link TikTok Ya Mana?'
                 m.reply(mess.wait)
-                let anu = await alya.tiktok(text)
-                let cap = `*Tiktok Audio*`
-				hisoka.sendMessage(m.chat, { caption: cap, image: { url: anu.nowm }})
-				hisoka.sendMessage(m.chat, { audio: { url: anu.audio }, mimetype: 'audio/mpeg'}, { quoted: fdoc })
-				}
-				break
+                let anu = fetchJson(api('zenz', '/downloader/musically', { url: text }, 'apikey'))
+                let buttonMessage = {
+                    video: { url: anu.result.prefiew },
+                    text: `Download From ${text}`,
+                    footer: hisoka.user.name,
+                    headerType: 2
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: fgclink })
+                hisoka.sendFileUrl(m.chat, fetch.result.audio, "", fdoc)
+            }
+            break
             case 'ig': case 'igdl': case 'instagram': {
                 if (!text) throw 'Masukkan Query Link!'
                 if (!isUrl(args[0]) && !args[0].includes('instagram.com')) throw 'Link yang kamu berikan tidak.valid'
