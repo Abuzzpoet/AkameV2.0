@@ -227,20 +227,20 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
                 if (!('anticall' in setting)) setting.anticall = true
                 if (!isNumber(setting.status)) setting.status = 0
                 if (!('autobio' in setting)) setting.autobio = false
-                if (!('templateImage' in setting)) setting.templateImage = false
+                if (!('templateImage' in setting)) setting.templateImage = true
                 if (!('templateVideo' in setting)) setting.templateVideo = false
                 if (!('templateGif' in setting)) setting.templateGif = false
                 if (!('templateMsg' in setting)) setting.templateMsg = false
-                if (!('templateLocation' in setting)) setting.templateLocation = true
+                if (!('templateLocation' in setting)) setting.templateLocation = false
             } else global.db.data.settings[botNumber] = {
                 anticall: true,
                 status: 0,
                 autobio: false,
-                templateImage: false,
+                templateImage: true,
                 templateVideo: false,
                 templateGif: false,
                 templateMsg: false,
-                templateLocation: true,
+                templateLocation: false,
             }
 
         } catch (err) {
@@ -3877,7 +3877,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'triggered': {
                 if (!/image/.test(mime)) return m.reply(`Kirim/Reply Foto`)
                 m.reply(mess.wait)
-                let dwnld = await quoted.download()
+                let dwnld = await hisoka.downloadMediaMessage(qmsg)
                 let {
                     floNime
                 } = require('./lib/uploader')
@@ -3908,6 +3908,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'patrickgif':
             case 'paimon':
             case 'random': {
+            m.reply(mess.wait)
             await hisoka.sendMedia(m.chat, `https://betabotz-api.herokuapp.com/api/sticker/${command}?apikey=BetaBotz`, 'hisoka', 'morou', m, {asSticker: true})
              }
             break
