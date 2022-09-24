@@ -17,6 +17,7 @@ const axios = require('axios')
 const path = require('path')
 const os = require('os')
 const hx = require('hxz-api')
+const fdl = require("caliph-api");
 const bochil = require('@bochilteam/scraper')
 const alya = require('./lib/null.js')
 const moment = require('moment-timezone')
@@ -3354,142 +3355,125 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             }
             break
             //Tambahan Anime
-            case 'kaneki':
-            case 'megumin':
-            case 'yotsuba':
-            case 'shinomiya':
-            case 'yuneko':
-            case 'tejina':
-            case 'toukachan':
             case 'akira':
-            case 'itori':
-            case 'kurumi':
-            case 'sagiri':
-            case 'eba':
-            case 'deidara':
-            case 'itachi':
-            case 'madara':
+            case 'akiyama':
+            case 'ana':
             case 'asuna':
             case 'ayuzawa':
-            case 'chitoge':
-            case 'emilia':
-            case 'hestia':
-            case 'inori':
-            case 'ana':
-            case 'miku':
-            case 'kaori':
-            case 'shizuka':
-            case 'doraemon':
-            case 'pokemon':
-            case 'kaga':
-            case 'kutori':
-            case 'mikasa':
-            case 'akiyama':
-            case 'gremory':
-            case 'isuzu':
-            case 'shina':
-            case 'kagura':
-            case 'shinka':
-            case 'tsunade':
-            case 'sasuke':
-            case 'sakura':
-            case 'rize':
-            case 'onepiece':
-            case 'nezuko':
             case 'boruto':
-            case 'naruto':
-            case 'erza':
-            case 'kakasih':
-            case 'minato':
+            case 'chitoge':
+            case 'deidara':
+            case 'doraemon':
             case 'elaina':
-            case 'shouta': {
+            case 'emilia':
+            case 'erza':
+            case 'gremory':
+            case 'hestia':
+            case 'hinata':
+            case 'inori':
+            case 'isuzu':
+            case 'itachi':
+            case 'itori':
+            case 'kaga':
+            case 'kagura':
+            case 'kakasih':
+            case 'kaori':
+            case 'keneki':
+            case 'kotori':
+            case 'kurumi':
+            case 'loli':
+            case 'madara':
+            case 'mikasa':
+            case 'miku':
+            case 'minato':
+            case 'naruto':
+            case 'nezuko':
+            case 'onepiece':
+            case 'pokemon':
+            case 'rize':
+            case 'sagiri':
+            case 'sakura':
+            case 'sasuke':
+            case 'shina':
+            case 'shinka':
+            case 'shizuka':
+            case 'shota':
+            case 'toukachan':
+            case 'tsunade':
+            case 'yuki': {
                 m.reply(mess.wait)
                 if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                 db.data.users[m.sender].limit -= 1 // -1 limit
-                let buttons = [{
-                    buttonId: `${command}`,
-                    buttonText: {
-                        displayText: '⌲ Next Image'
-                    },
-                    type: 1
-                }]
+                let anu = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Database/main/Random%20Anime/${command}.json`)
+                result = anu[Math.floor(Math.random() * anu.length)]               
+                let buttons = [                   
+                    {buttonId: `${command}`, buttonText: {displayText: '⌲ Next Image'}, type: 1}
+                ]
                 let buttonMessage = {
-                    image: { url: api('botz', '/api/wallpaper/' + command, {}, 'apikey') },
+                    image: { url: result },
+                    caption: `Random Anime ${command}`,
+                    footer: hisoka.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: fdoc })
+            }
+            break
+            //Random
+            case 'aesthetic':
+            case 'anjing':
+            case 'blankpink':
+            case 'boneka':
+            case 'darkjokes':
+            case 'hekel':
+            case 'justina:
+            case 'kpop':
+            case 'kucing':
+            case 'mobil':
+            case 'motor':
+            case 'pubg':
+            case 'rose':
+            case 'ryujin':
+            case 'wallhp': {
+            m.reply(mess.wait)
+                if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+                db.data.users[m.sender].limit -= 1 // -1 limit
+                let anu = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Database/main/Random%20Image/${command}.json`)
+                result = anu[Math.floor(Math.random() * anu.length)]               
+                let buttons = [                   
+                    {buttonId: `${command}`, buttonText: {displayText: '⌲ Next Image'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: result },
                     caption: `Random Image ${command}`,
                     footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
-                hisoka.sendMessage(m.chat, buttonMessage, {
-                    quoted: fdoc
-                })
-            }
-            break
-            //Asupan
-            case 'justina':
-            case 'cecan':
-            case 'cogan': {
-            m.reply(mess.wait)
-                if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
-                db.data.users[m.sender].limit -= 1 // -1 limit
-                let buttons = [{
-                    buttonId: `${command}`,
-                    buttonText: {
-                        displayText: '⌲ Next Image'
-                    },
-                    type: 1
-                }]
-                let buttonMessage = {
-                    image: { url: api('botz', '/api/wallpaper/' + command, {}, 'apikey') },
-                    caption: `Random Asupan ${command}`,
-                    footer: hisoka.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                hisoka.sendMessage(m.chat, buttonMessage, {
-                    quoted: fdoc
-                })
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: fdoc })
             }
             break
             //Wallpaper
             case 'cyberspace':
             case 'mountain':
-            case 'programing':
-            case 'gaming':
-            case 'teknologi':
-            case 'tatasurya':
-            case 'aesthetic':
-            case 'islami':
-            case 'katakata':
-            case 'pubg':
-            case 'hekel':
-            case 'wallhp':
-            case 'mobil':
-            case 'montor':
-            case 'anjing':
-            case 'kucing':
-            case 'pentol':
-            case 'kartun': {
+            case 'programming':
+            case 'technology': {
             m.reply(mess.wait)
                 if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                 db.data.users[m.sender].limit -= 1 // -1 limit
-                let buttons = [{
-                    buttonId: `${command}`,
-                    buttonText: {
-                        displayText: '⌲ Next Image'
-                    },
-                    type: 1
-                }]
+                let anu = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Database/main/Wallpaper/${command}.json`)
+                result = anu[Math.floor(Math.random() * anu.length)]               
+                let buttons = [                   
+                    {buttonId: `${command}`, buttonText: {displayText: '⌲ Next Image'}, type: 1}
+                ]
                 let buttonMessage = {
-                    image: { url: api('botz', '/api/wallpaper/' + command, {}, 'apikey') },
-                    caption: `Random Wallpapers ${command}`,
+                    image: { url: result },
+                    caption: `Random Wallpaper ${command}`,
                     footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
-                hisoka.sendMessage(m.chat, buttonMessage, {
-                    quoted: fdoc
-                })
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: fdoc })
             }
             break
             //NSFW
@@ -3499,42 +3483,35 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'blowjob':
             case 'cuckold':
             case 'cum':
-            case 'ero':
             case 'fendom':
             case 'foot':
             case 'gangbang':
             case 'glasses':
             case 'hentai':
-            case 'jahy':
             case 'masturbation':
             case 'orgy':
             case 'panties':
             case 'pussy':
             case 'tentacles':
             case 'thighs':
-            case 'yuri':
             case 'zettai': {
                 if (m.isGroup) throw mess.private
                 m.reply(mess.wait)
                 if (!isPremium && global.db.data.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
                 db.data.users[m.sender].limit -= 2 // -2 limit
-                let buttons = [{
-                    buttonId: `${command}`,
-                    buttonText: {
-                        displayText: '⌲ Next Image'
-                    },
-                    type: 1
-                }]
+		        let anu = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Database/main/nsfw/${command}.json`)
+                result = anu[Math.floor(Math.random() * anu.length)]               
+                let buttons = [                   
+                    {buttonId: `${command}`, buttonText: {displayText: '⌲ Next Image'}, type: 1}
+                ]
                 let buttonMessage = {
-                    image: { url: api('botz', '/api/nsfw/' + command, {}, 'apikey') },
-                    caption: `Astaghfirullah Tobat Kak`,
+                    image: { url: result },
+                    caption: `*Astaghfirullah Tobat Kak*`,
                     footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
-                hisoka.sendMessage(m.chat, buttonMessage, {
-                    quoted: fdoc
-                })
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: fdoc })
             }
             break
             //Meme
@@ -3565,38 +3542,31 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             }
             break
             //Asupan
+            case 'cecan':
             case 'china':
-            case 'thailand':
-            case 'vietnam':
+            case 'cogan':
             case 'indonesia':
-            case 'korea':
             case 'japan':
+            case 'korea':
             case 'malaysia':
-            case 'justinaxie':
-            case 'jeni':
-            case 'jiso':
-            case 'ryujin':
-            case 'hijaber': {
+            case 'thailand':
+            case 'vietnam': {
                 m.reply(mess.wait)
                 if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                 db.data.users[m.sender].limit -= 1 // -1 limit
-                let buttons = [{
-                    buttonId: `${command}`,
-                    buttonText: {
-                        displayText: '⌲ Next Image'
-                    },
-                    type: 1
-                }]
+                let anu = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Database/main/Cecan/${command}.json`)
+                result = anu[Math.floor(Math.random() * anu.length)]               
+                let buttons = [                   
+                    {buttonId: `${command}`, buttonText: {displayText: '⌲ Next Image'}, type: 1}
+                ]
                 let buttonMessage = {
-                    image: { url: api('botz', '/api/cecan/' + command, {}, 'apikey') },
+                    image: { url: result },
                     caption: `Random Asupan ${command}`,
                     footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
                 }
-                hisoka.sendMessage(m.chat, buttonMessage, {
-                    quoted: fdoc
-                })
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: fdoc })
             }
             break
                 case 'couple': {
@@ -3889,28 +3859,6 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 })
                 await fs.unlinkSync(FaTiH)
             }
-            break
-            case 'among':
-            case 'gojosatoru':
-            case 'anime':
-            case 'animegif':
-            case 'bucin':
-            case 'rabbit':
-            case 'manusialidi':
-            case 'dadu':
-            case 'dinokuning':
-            case 'doge':
-            case 'gura':
-            case 'mukalu':
-            case 'spongebob':
-            case 'kawanspongebob':
-            case 'patrick':
-            case 'patrickgif':
-            case 'paimon':
-            case 'random': {
-            m.reply(mess.wait)
-            await hisoka.sendMedia(m.chat, `https://betabotz-api.herokuapp.com/api/sticker/${command}?apikey=BetaBotz`, 'hisoka', 'morou', m, {asSticker: true})
-             }
             break
             case 'logo2':
             case 'logo3':
@@ -4285,12 +4233,12 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'tiktoknowatermark': {
                 if (!text) throw 'Link TikTok Ya Mana?'
                 m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/downloader/musically', { url: text }, 'apikey'))
+                let anu = await fdl.downloader.tiktok(text)
                 let buttonMessage = {
                     video: {
-                        url: anu.result.nowm
+                        url: anu.nowm
                     },
-                    caption: `Download From ${text}`,
+                    caption: `👤 *Author:* ${anu.author}\n📌 *Title:* ${anu.title}\n🔗 Download From ${text}`,
                     footer: hisoka.user.name,
                     headerType: 5
                 }
@@ -4303,12 +4251,12 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'tiktokwatermark': {
                 if (!text) throw 'Link TikTok Ya, Mana?'
                 m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
+                let anu = await fdl.downloader.tiktok(text)
                 let buttonMessage = {
                     video: {
-                        url: anu.result.watermark
+                        url: anu.watermark
                     },
-                    caption: `Download From ${text}`,
+                    caption: `👤 *Author:* ${anu.author}\n📌 *Title:* ${anu.title}\n🔗 Download From ${text}`,
                     footer: hisoka.user.name,
                     headerType: 5
                 }
@@ -4321,15 +4269,15 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'tiktokaudio': {
                 if (!text) throw 'Link TikTok Ya Mana?'
                 m.reply(mess.wait)
-                let anu = fetchJson(api('zenz', '/downloader/musically', { url: text }, 'apikey'))
+                let anu = await fdl.downloader.tiktok(text)
                 let buttonMessage = {
-                    video: { url: anu.result.prefiew },
-                    text: `Download From ${text}`,
+                    image: { url: anu.thumbnail },
+                    text: `👤 *Author:* ${anu.author}\n📌 *Title:* ${anu.title}\n🔗 Download From ${text}`,
                     footer: hisoka.user.name,
                     headerType: 2
                 }
                 hisoka.sendMessage(m.chat, buttonMessage, { quoted: fgclink })
-                hisoka.sendFileUrl(m.chat, fetch.result.audio, "", fdoc)
+                hisoka.sendFileUrl(m.chat, anu.audio, "", fdoc)
             }
             break
             case 'ig': case 'igdl': case 'instagram': {
@@ -4876,69 +4824,9 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             }
             break
             case 'apikey': {
-                m.reply(`Apikey Yang Dipake Oleh Bot Akame\n⬣ https://zenzapis.xyz [Sewa]\n⬣ https://betabotz-api.herokuapp.com [Gratis]`)
+                m.reply(`Apikey Yang Dipake Oleh Bot Akame\n⬣ https://zenzapis.xyz [Sewa]`)
                 }
                 break
-                case 'ssweb': {
-                if (!q) return m.reply(`Link Web Nya Mana Kak?`)
-                let sections = [
-                {
-                title: "Ssweb >_<",
-                rows: [
-                {title: "⌲ 「 Ssweb Hp 」", rowId: `${prefix}ssweb-hp ${q}`},
-                {title: "⌲ 「 Ssweb Pc 」", rowId: `${prefix}ssweb-pc ${q}`},
-                {title: "⌲ 「 Ssweb Table 」", rowId: `${prefix}ssweb-table ${q}`}
-                ]
-                }
-                ]
-                hisoka.sendListMsg(m.chat, `*Silahkan Pilih Menu Dibawah Ini*`, hisoka.user.name, `SSWEB MENU`, `Click Here`, sections, fgclink)
-              }
-            break
-            case 'ssweb-hp': {
-                if (!text) throw 'Text?'
-                m.reply(mess.wait)
-                hisoka.sendMessage(m.chat, {
-                    image: {
-                        url: api('botz', '/api/other/ssweb-hp/', {
-                            text: text
-                        }, 'apikey')
-                    },
-                    caption: `Screenshot Web HP`
-                }, {
-                    quoted: fdoc
-                })
-            }
-            break
-            case 'ssweb-pc': {
-                if (!text) throw 'Text?'
-                m.reply(mess.wait)
-                hisoka.sendMessage(m.chat, {
-                    image: {
-                        url: api('botz', '/api/other/ssweb-pc/', {
-                            text: text
-                        }, 'apikey')
-                    },
-                    caption: `Screenshot Web PC`
-                }, {
-                    quoted: fdoc
-                })
-            }
-            break
-            case 'ssweb-table': {
-                if (!text) throw 'Text?'
-                m.reply(mess.wait)
-                hisoka.sendMessage(m.chat, {
-                    image: {
-                        url: api('botz', '/api/other/ssweb-tablet/', {
-                            text: text
-                        }, 'apikey')
-                    },
-                    caption: `Screenshot Web TABLE`
-                }, {
-                    quoted: fdoc
-                })
-            }
-            break
             case 'nulis': {
                 if (!q) return m.reply(`Teks Nya Apa Kak?`)
                 let sections = [
@@ -5394,8 +5282,8 @@ Request Message: ${text}`
             case 'kisahnabi': {
                 if (text) {
                     title = text.toLowerCase()
-                    let anu = await fetchJson(api('botz', `/api/muslim/kisahnabi/`, { nabi: text }, 'apikey'))
-                    let teks = `⭔ Nama : ${anu.result.name}\n⭔ Lahir : ${anu.result.kelahiran}\n⭔ Umur : ${anu.result.wafat_usia}\n⭔ Lokasi : ${anu.result.singgah}\n⭔ Kisah :\n${anu.result.kisah}`
+                    let fetch = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Database/main/Islami/${title}.json`)
+                    let teks = `⭔ Nama : ${fetch.name}\n⭔ Lahir : ${fetch.thn_kelahiran}\n⭔ Umur : ${fetch.usia}\n⭔ Lokasi : ${fetch.tmp}\n⭔ Kisah :\n${fetch.description}`
                     hisoka.sendFileUrl(m.chat, 'https://i.pinimg.com/originals/a6/81/c5/a681c55ca1bee611c39d3b4a58712dc3.jpg', "", m, { caption: teks })
                 } else if (!text) {
                     const sections = [{
@@ -5434,7 +5322,35 @@ Request Message: ${text}`
                         buttonText: 'OPEN LIST',
                         sections
                     }
-                    const sendMsg = await hisoka.sendMessage(m.chat, listMessage, { quoted: fdoc })
+                    const sendMsg = await hisoka.sendMessage(m.chat, listMessage, { quoted: m })
+                }
+            }
+            break
+            case 'niatsalat':
+            case 'niatsholat': {
+                if (text) {
+                    title = text.toLowerCase()
+                    let fetch = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Database/main/Niatsolat/${title}.json`)
+                    let teks = `⭔ Nama : ${fetch.name}\n⭔ Arab : ${fetch.arabic}\n⭔ Latin : ${fetch.latin}\n⭔ Terjemahan : ${fetch.terjemahan}`
+                    hisoka.sendFileUrl(m.chat, 'https://i.pinimg.com/originals/a6/81/c5/a681c55ca1bee611c39d3b4a58712dc3.jpg', "", m, { caption: teks })
+                } else if (!text) {
+                    const sections = [{
+                        title: "Niat Sholat",
+                        rows: [
+                            {title: "Niat Sholat Subuh", rowId: ".niatsholat subuh"},
+                            {title: "Niat Sholat Zhuhur", rowId: ".niatsholat dzuhur"},
+                            {title: "Niat Sholat Ashar", rowId: ".niatsholat ashar"},
+                            {title: "Niat Sholat Maghrib", rowId: ".niatsholat maghrib"},
+                            {title: "Niat Sholat Isya", rowId: ".niatsholat isya"}
+                        ]
+                    }]
+                    const listMessage = {
+                        text: 'List Niat Sholat',
+                        footer: hisoka.user.name,
+                        buttonText: 'OPEN LIST',
+                        sections
+                    }
+                    const sendMsg = await hisoka.sendMessage(m.chat, listMessage, { quoted: m })
                 }
             }
             break
@@ -5962,24 +5878,6 @@ Request Message: ${text}`
 │⭔ ${prefix}stickerwm
 │⭔ ${prefix}attp [teks]
 │⭔ ${prefix}ttp [teks]
-│⭔ ${prefix}among
-│⭔ ${prefix}gojosatoru
-│⭔ ${prefix}anime
-│⭔ ${prefix}animegif
-│⭔ ${prefix}bucin
-│⭔ ${prefix}rabbit
-│⭔ ${prefix}manusialidi
-│⭔ ${prefix}dadu
-│⭔ ${prefix}dinokuning
-│⭔ ${prefix}doge
-│⭔ ${prefix}gura
-│⭔ ${prefix}mukalu
-│⭔ ${prefix}spongebob
-│⭔ ${prefix}kawanspongebob
-│⭔ ${prefix}patrick
-│⭔ ${prefix}patrickgif
-│⭔ ${prefix}paimon
-│⭔ ${prefix}random
 │⭔ ${prefix}emojimix 😎+🤠
 │⭔ ${prefix}emojimix2 😎
 └──────────────┈❖`
@@ -6042,7 +5940,6 @@ Request Message: ${text}`
 └┬─────────────┈❖
 ┌┤「 ANIME 」
 │└─────────────┈❖
-│⭔ ${prefix}animememe
 │⭔ ${prefix}hololive
 │⭔ ${prefix}couples
 │⭔ ${prefix}couple
@@ -6055,55 +5952,50 @@ Request Message: ${text}`
 │⭔ ${prefix}oppai
 │⭔ ${prefix}selfies
 │⭔ ${prefix}shinobu
-│⭔ ${prefix}kaneki
-│⭔ ${prefix}megumin
-│⭔ ${prefix}yutsuba
-│⭔ ${prefix}shinomiya
-│⭔ ${prefix}yuneko
-│⭔ ${prefix}tejina
-│⭔ ${prefix}toukachan
 │⭔ ${prefix}akira
-│⭔ ${prefix}itori
-│⭔ ${prefix}kurumi
-│⭔ ${prefix}sagiri
-│⭔ ${prefix}eba
-│⭔ ${prefix}deidara
-│⭔ ${prefix}itachi
-│⭔ ${prefix}madara
+│⭔ ${prefix}akiyama
+│⭔ ${prefix}ana
 │⭔ ${prefix}asuna
 │⭔ ${prefix}ayuzawa
-│⭔ ${prefix}chitoge
-│⭔ ${prefix}emilia
-│⭔ ${prefix}hestia
-│⭔ ${prefix}inori
-│⭔ ${prefix}ana
-│⭔ ${prefix}miku
-│⭔ ${prefix}kaori
-│⭔ ${prefix}shizuka
-│⭔ ${prefix}doraemon
-│⭔ ${prefix}pokemon
-│⭔ ${prefix}kaga
-│⭔ ${prefix}kutori
-│⭔ ${prefix}mikasa
-│⭔ ${prefix}akiyama
-│⭔ ${prefix}gremory
-│⭔ ${prefix}isuzu
-│⭔ ${prefix}shina
-│⭔ ${prefix}kagura
-│⭔ ${prefix}shinka
-│⭔ ${prefix}tsunade
-│⭔ ${prefix}sasuke
-│⭔ ${prefix}sakura
-│⭔ ${prefix}rize
-│⭔ ${prefix}onepiece
-│⭔ ${prefix}nezuko
 │⭔ ${prefix}boruto
-│⭔ ${prefix}naruto
+│⭔ ${prefix}chitoge
+│⭔ ${prefix}deidara
+│⭔ ${prefix}doraemon
+│⭔ ${prefix}elaina
+│⭔ ${prefix}emilia
 │⭔ ${prefix}erza
+│⭔ ${prefix}gremory
+│⭔ ${prefix}hestia
+│⭔ ${prefix}hinata
+│⭔ ${prefix}inori
+│⭔ ${prefix}isuzu
+│⭔ ${prefix}itachi
+│⭔ ${prefix}itori
+│⭔ ${prefix}kaga
+│⭔ ${prefix}kagura
 │⭔ ${prefix}kakasih
+│⭔ ${prefix}kaori
+│⭔ ${prefix}keneki
+│⭔ ${prefix}kotori
+│⭔ ${prefix}kurumi
+│⭔ ${prefix}loli
+│⭔ ${prefix}madara
+│⭔ ${prefix}mikasa
+│⭔ ${prefix}miku
 │⭔ ${prefix}minato
-│⭔ ${prefix}eleina
+│⭔ ${prefix}naruto
+│⭔ ${prefix}nezuko
+│⭔ ${prefix}onepiece
+│⭔ ${prefix}pokemon
+│⭔ ${prefix}rize
+│⭔ ${prefix}sagiri
+│⭔ ${prefix}sakura
+│⭔ ${prefix}shinka
+│⭔ ${prefix}shizuka
 │⭔ ${prefix}shouta
+│⭔ ${prefix}toukachan
+│⭔ ${prefix}tsunade
+│⭔ ${prefix}yuki
 │⭔ ${prefix}raiden
 │⭔ ${prefix}calliope
 │⭔ ${prefix}kitagawa
@@ -6173,20 +6065,17 @@ Request Message: ${text}`
 │⭔ ${prefix}blowjob
 │⭔ ${prefix}cuckold
 │⭔ ${prefix}cum
-│⭔ ${prefix}ero
 │⭔ ${prefix}fendom
 │⭔ ${prefix}foot
 │⭔ ${prefix}gangbang
 │⭔ ${prefix}glasses
 │⭔ ${prefix}hentai
-│⭔ ${prefix}jahy
 │⭔ ${prefix}masturbation
 │⭔ ${prefix}orgy
 │⭔ ${prefix}panties
 │⭔ ${prefix}pussy
 │⭔ ${prefix}tentacles
 │⭔ ${prefix}thighs
-│⭔ ${prefix}yuri
 │⭔ ${prefix}zettai
 │⭔ Noted : Stay Halal Brother >_<
 └──────────────┈❖`
@@ -6249,21 +6138,20 @@ Request Message: ${text}`
 └┬─────────────┈❖
 ┌┤「 ASUPAN 」
 │└─────────────┈❖
+│⭔ ${prefix}cecan
+│⭔ ${prefix}cogan
 │⭔ ${prefix}china
+│⭔ ${prefix}japan
+│⭔ ${prefix}korea
+│⭔ ${prefix}indonesia
+│⭔ ${prefix}malaysia
 │⭔ ${prefix}thailand
 │⭔ ${prefix}vietnam
-│⭔ ${prefix}indonesia
-│⭔ ${prefix}korea
-│⭔ ${prefix}japan
-│⭔ ${prefix}malaysia
-│⭔ ${prefix}justinaxie
-│⭔ ${prefix}jeni
-│⭔ ${prefix}jiso
-│⭔ ${prefix}ryujin
-│⭔ ${prefix}hijaber
+│⭔ ${prefix}blankpink
 │⭔ ${prefix}justina
-│⭔ ${prefix}cogan
-│⭔ ${prefix}cecan
+│⭔ ${prefix}kpop
+│⭔ ${prefix}rose
+│⭔ ${prefix}ryujin
 └──────────────┈❖`
                 let btn = [{
                     urlButton: {
@@ -6401,9 +6289,12 @@ Request Message: ${text}`
 └┬─────────────┈❖
 ┌┤「 MEME 」
 │└─────────────┈❖
+│⭔ ${prefix}animememe
+│⭔ ${prefix}anjing
 │⭔ ${prefix}meme
 │⭔ ${prefix}memeindo
 │⭔ ${prefix}darkjoke
+│⭔ ${prefix}darkjokes
 │⭔ ${prefix}onecak
 └──────────────┈❖`
                 let btn = [{
@@ -6952,7 +6843,6 @@ Request Message: ${text}`
 ┌┤「 CONVERT 」
 │└─────────────┈❖
 │⭔ ${prefix}nulis
-│⭔ ${prefix}ssweb
 │⭔ ${prefix}removebg [image]
 │⭔ ${prefix}toimage [reply sticker]
 │⭔ ${prefix}tovideo [reply sticker]
@@ -7235,6 +7125,7 @@ Request Message: ${text}`
 │⭔ ${prefix}kisahnabi
 │⭔ ${prefix}tafsirsurah
 │⭔ ${prefix}jadwalsholat
+│⭔ ${prefix}niatsholat
 │⭔ ${prefix}kisahmuslim
 │⭔ ${prefix}asmaulhusna
 └──────────────┈❖`
@@ -7659,22 +7550,16 @@ Request Message: ${text}`
 │└─────────────┈❖
 │⭔ ${prefix}cyberspace
 │⭔ ${prefix}mountain
-│⭔ ${prefix}programing
-│⭔ ${prefix}gaming
-│⭔ ${prefix}teknologi
-│⭔ ${prefix}tatasurya
+│⭔ ${prefix}programming
+│⭔ ${prefix}technology
 │⭔ ${prefix}aesthetic
-│⭔ ${prefix}islami
-│⭔ ${prefix}katakata
-│⭔ ${prefix}pubg
+│⭔ ${prefix}boneka
 │⭔ ${prefix}hekel
-│⭔ ${prefix}wallhp
-│⭔ ${prefix}mobil
-│⭔ ${prefix}montor
-│⭔ ${prefix}anjing
 │⭔ ${prefix}kucing
-│⭔ ${prefix}pentol
-│⭔ ${prefix}kartun
+│⭔ ${prefix}mobil
+│⭔ ${prefix}motor
+│⭔ ${prefix}pubg
+│⭔ ${prefix}wallhp
 └──────────────┈❖`
                 let btn = [{
                     urlButton: {
@@ -7813,7 +7698,6 @@ Request Message: ${text}`
 └┬─────────────┈❖
 ┌┤「 ANIME 」
 │└─────────────┈❖
-│⭔ ${prefix}animememe
 │⭔ ${prefix}hololive
 │⭔ ${prefix}couples
 │⭔ ${prefix}couple
@@ -7826,81 +7710,74 @@ Request Message: ${text}`
 │⭔ ${prefix}oppai
 │⭔ ${prefix}selfies
 │⭔ ${prefix}shinobu
-│⭔ ${prefix}kaneki
-│⭔ ${prefix}megumin
-│⭔ ${prefix}yutsuba
-│⭔ ${prefix}shinomiya
-│⭔ ${prefix}yuneko
-│⭔ ${prefix}tejina
-│⭔ ${prefix}toukachan
 │⭔ ${prefix}akira
-│⭔ ${prefix}itori
-│⭔ ${prefix}kurumi
-│⭔ ${prefix}sagiri
-│⭔ ${prefix}eba
-│⭔ ${prefix}deidara
-│⭔ ${prefix}itachi
-│⭔ ${prefix}madara
+│⭔ ${prefix}akiyama
+│⭔ ${prefix}ana
 │⭔ ${prefix}asuna
 │⭔ ${prefix}ayuzawa
-│⭔ ${prefix}chitoge
-│⭔ ${prefix}emilia
-│⭔ ${prefix}hestia
-│⭔ ${prefix}inori
-│⭔ ${prefix}ana
-│⭔ ${prefix}miku
-│⭔ ${prefix}kaori
-│⭔ ${prefix}shizuka
-│⭔ ${prefix}doraemon
-│⭔ ${prefix}pokemon
-│⭔ ${prefix}kaga
-│⭔ ${prefix}kutori
-│⭔ ${prefix}mikasa
-│⭔ ${prefix}akiyama
-│⭔ ${prefix}gremory
-│⭔ ${prefix}isuzu
-│⭔ ${prefix}shina
-│⭔ ${prefix}kagura
-│⭔ ${prefix}shinka
-│⭔ ${prefix}tsunade
-│⭔ ${prefix}sasuke
-│⭔ ${prefix}sakura
-│⭔ ${prefix}rize
-│⭔ ${prefix}onepiece
-│⭔ ${prefix}nezuko
 │⭔ ${prefix}boruto
-│⭔ ${prefix}naruto
+│⭔ ${prefix}chitoge
+│⭔ ${prefix}deidara
+│⭔ ${prefix}doraemon
+│⭔ ${prefix}elaina
+│⭔ ${prefix}emilia
 │⭔ ${prefix}erza
+│⭔ ${prefix}gremory
+│⭔ ${prefix}hestia
+│⭔ ${prefix}hinata
+│⭔ ${prefix}inori
+│⭔ ${prefix}isuzu
+│⭔ ${prefix}itachi
+│⭔ ${prefix}itori
+│⭔ ${prefix}kaga
+│⭔ ${prefix}kagura
 │⭔ ${prefix}kakasih
+│⭔ ${prefix}kaori
+│⭔ ${prefix}keneki
+│⭔ ${prefix}kotori
+│⭔ ${prefix}kurumi
+│⭔ ${prefix}loli
+│⭔ ${prefix}madara
+│⭔ ${prefix}mikasa
+│⭔ ${prefix}miku
 │⭔ ${prefix}minato
-│⭔ ${prefix}eleina
+│⭔ ${prefix}naruto
+│⭔ ${prefix}nezuko
+│⭔ ${prefix}onepiece
+│⭔ ${prefix}pokemon
+│⭔ ${prefix}rize
+│⭔ ${prefix}sagiri
+│⭔ ${prefix}sakura
+│⭔ ${prefix}shinka
+│⭔ ${prefix}shizuka
 │⭔ ${prefix}shouta
+│⭔ ${prefix}toukachan
+│⭔ ${prefix}tsunade
+│⭔ ${prefix}yuki
 │⭔ ${prefix}raiden
 │⭔ ${prefix}calliope
 │⭔ ${prefix}kitagawa
 └┬─────────────┈❖
 ┌┤「 ASUPAN 」
 │└─────────────┈❖
+│⭔ ${prefix}cecan
+│⭔ ${prefix}cogan
 │⭔ ${prefix}china
+│⭔ ${prefix}japan
+│⭔ ${prefix}korea
+│⭔ ${prefix}indonesia
+│⭔ ${prefix}malaysia
 │⭔ ${prefix}thailand
 │⭔ ${prefix}vietnam
-│⭔ ${prefix}indonesia
-│⭔ ${prefix}korea
-│⭔ ${prefix}japan
-│⭔ ${prefix}malaysia
-│⭔ ${prefix}justinaxie
-│⭔ ${prefix}jeni
-│⭔ ${prefix}jiso
-│⭔ ${prefix}ryujin
-│⭔ ${prefix}hijaber
+│⭔ ${prefix}blankpink
 │⭔ ${prefix}justina
-│⭔ ${prefix}cogan
-│⭔ ${prefix}cecan
+│⭔ ${prefix}kpop
+│⭔ ${prefix}rose
+│⭔ ${prefix}ryujin
 └┬─────────────┈❖
 ┌┤「 CONVERT 」
 │└─────────────┈❖
 │⭔ ${prefix}nulis
-│⭔ ${prefix}ssweb
 │⭔ ${prefix}removebg [image]
 │⭔ ${prefix}toimage [reply sticker]
 │⭔ ${prefix}tovideo [reply sticker]
@@ -8025,6 +7902,7 @@ Request Message: ${text}`
 │⭔ ${prefix}kisahnabi
 │⭔ ${prefix}tafsirsurah
 │⭔ ${prefix}jadwalsholat
+│⭔ ${prefix}niatsholat
 │⭔ ${prefix}kisahmuslim
 │⭔ ${prefix}asmaulhusna
 └┬─────────────┈❖
@@ -8052,9 +7930,12 @@ Request Message: ${text}`
 └┬─────────────┈❖
 ┌┤「 MEME 」
 │└─────────────┈❖
+│⭔ ${prefix}animememe
+│⭔ ${prefix}anjing
 │⭔ ${prefix}meme
 │⭔ ${prefix}memeindo
 │⭔ ${prefix}darkjoke
+│⭔ ${prefix}darkjokes
 │⭔ ${prefix}onecak
 └┬─────────────┈❖
 ┌┤「 MAIN 」
@@ -8081,20 +7962,17 @@ Request Message: ${text}`
 │⭔ ${prefix}blowjob
 │⭔ ${prefix}cuckold
 │⭔ ${prefix}cum
-│⭔ ${prefix}ero
 │⭔ ${prefix}fendom
 │⭔ ${prefix}foot
 │⭔ ${prefix}gangbang
 │⭔ ${prefix}glasses
 │⭔ ${prefix}hentai
-│⭔ ${prefix}jahy
 │⭔ ${prefix}masturbation
 │⭔ ${prefix}orgy
 │⭔ ${prefix}panties
 │⭔ ${prefix}pussy
 │⭔ ${prefix}tentacles
 │⭔ ${prefix}thighs
-│⭔ ${prefix}yuri
 │⭔ ${prefix}zettai
 │⭔ Noted : Stay Halal Brother >_<
 └┬─────────────┈❖
@@ -8208,24 +8086,6 @@ Request Message: ${text}`
 │⭔ ${prefix}stickerwm
 │⭔ ${prefix}attp [teks]
 │⭔ ${prefix}ttp [teks]
-│⭔ ${prefix}among
-│⭔ ${prefix}gojosatoru
-│⭔ ${prefix}anime
-│⭔ ${prefix}animegif
-│⭔ ${prefix}bucin
-│⭔ ${prefix}rabbit
-│⭔ ${prefix}manusialidi
-│⭔ ${prefix}dadu
-│⭔ ${prefix}dinokuning
-│⭔ ${prefix}doge
-│⭔ ${prefix}gura
-│⭔ ${prefix}mukalu
-│⭔ ${prefix}spongebob
-│⭔ ${prefix}kawanspongebob
-│⭔ ${prefix}patrick
-│⭔ ${prefix}patrickgif
-│⭔ ${prefix}paimon
-│⭔ ${prefix}random
 │⭔ ${prefix}emojimix 😎+🤠
 │⭔ ${prefix}emojimix2 😎
 └┬─────────────┈❖
@@ -8311,22 +8171,16 @@ Request Message: ${text}`
 │└─────────────┈❖
 │⭔ ${prefix}cyberspace
 │⭔ ${prefix}mountain
-│⭔ ${prefix}programing
-│⭔ ${prefix}gaming
-│⭔ ${prefix}teknologi
-│⭔ ${prefix}tatasurya
+│⭔ ${prefix}programming
+│⭔ ${prefix}technology
 │⭔ ${prefix}aesthetic
-│⭔ ${prefix}islami
-│⭔ ${prefix}katakata
-│⭔ ${prefix}pubg
+│⭔ ${prefix}boneka
 │⭔ ${prefix}hekel
-│⭔ ${prefix}wallhp
-│⭔ ${prefix}mobil
-│⭔ ${prefix}montor
-│⭔ ${prefix}anjing
 │⭔ ${prefix}kucing
-│⭔ ${prefix}pentol
-│⭔ ${prefix}kartun
+│⭔ ${prefix}mobil
+│⭔ ${prefix}motor
+│⭔ ${prefix}pubg
+│⭔ ${prefix}wallhp
 └──────────────┈❖`
                 let btn = [{
                     urlButton: {

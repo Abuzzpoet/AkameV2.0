@@ -14,14 +14,12 @@ const chalk = require('chalk')
 global.APIs = {
     //gausah di apa² in!
     zenz: 'https://zenzapis.xyz',
-    botz: 'https://betabotz-api.herokuapp.com',
 }
 
 //—————「 Website Apikey 」—————//
 global.APIKeys = {
     //gausah di apa² in, Udah Free kok :)
     'https://zenzapis.xyz': 'akame-chan>_<',
-    'https://betabotz-api.herokuapp.com': 'BetaBotz',
 }
 
 //—————「 Set Nama Bot & Own 」—————//
