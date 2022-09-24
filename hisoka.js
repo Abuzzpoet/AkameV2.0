@@ -3426,7 +3426,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'boneka':
             case 'darkjokes':
             case 'hekel':
-            case 'justina:
+            case 'justina':
             case 'kpop':
             case 'kucing':
             case 'mobil':
