@@ -4270,16 +4270,11 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 if (!text) throw 'Link TikTok Ya Mana?'
                 m.reply(mess.wait)
                 let anu = await fdl.downloader.tiktok(text)
-                let buttonMessage = {
-                    image: { url: anu.thumbnail },
-                    text: `👤 *Author:* ${anu.author}\n📌 *Title:* ${anu.title}\n🔗 Download From ${text}`,
-                    footer: hisoka.user.name,
-                    headerType: 2
-                }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: fgclink })
-                hisoka.sendFileUrl(m.chat, anu.audio, "", fdoc)
-            }
-            break
+                let text = `👤 *Author:* ${anu.author}\n📌 *Title:* ${anu.title}\n🔗 Download From ${text}`
+                hisoka.sendMessage(m.chat, { caption: text, image: { url: anu.thumbnail }})
+				hisoka.sendMessage(m.chat, { audio: { url: anu.audio }, mimetype: 'audio/mpeg'}, { quoted: fdoc })
+				}
+				break
             case 'ig': case 'igdl': case 'instagram': {
                 if (!text) throw 'Masukkan Query Link!'
                 if (!isUrl(args[0]) && !args[0].includes('instagram.com')) throw 'Link yang kamu berikan tidak.valid'
