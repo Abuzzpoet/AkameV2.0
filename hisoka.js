@@ -5327,7 +5327,7 @@ Request Message: ${text}`
                     title = text.toLowerCase()
                     let fetch = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Database/main/Niatsolat/${title}.json`)
                     let teks = `⭔ Nama : ${fetch.name}\n⭔ Arab : ${fetch.arabic}\n⭔ Latin : ${fetch.latin}\n⭔ Terjemahan : ${fetch.terjemahan}`
-                    hisoka.sendFileUrl(m.chat, 'https://i.pinimg.com/originals/a6/81/c5/a681c55ca1bee611c39d3b4a58712dc3.jpg', "", m, { caption: teks })
+                    hisoka.sendFileUrl(m.chat, 'https://aswajamuda.com/wp-content/uploads/2017/10/niat-sholat-fardhu.jpg', "", m, { caption: teks })
                 } else if (!text) {
                     const sections = [{
                         title: "Niat Sholat",
