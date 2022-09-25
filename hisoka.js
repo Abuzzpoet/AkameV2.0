@@ -1969,72 +1969,17 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 await hisoka.groupUpdateDescription(m.chat, text).then((res) => m.reply(mess.success)).catch((err) => m.reply(jsonformat(err)))
             }
             break
+            //Masih Langka Bang:)
             case 'setpp':
             case 'setppbot': {
-                if (!isCreator) throw mess.owner
-                if (!quoted) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
-                if (!/image/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
-                if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
-            var media = await hisoka.downloadAndSaveMediaMessage(quoted, 'ppbot.jpeg')
-            if (args[0] == `full`) {
-            var { img } = await generateProfilePicture(media)
-            await hisoka.query({
-            tag: 'iq',
-            attrs: {
-            to: botNumber,
-            type:'set',
-            xmlns: 'w:profile:picture'
-            },
-            content: [
-            {
-            tag: 'picture',
-            attrs: { type: 'image' },
-            content: img
-            }
-            ]
-            })
-            fs.unlinkSync(media)
-            m.reply(mess.success)
-            } else {
-            var data = await hisoka.updateProfilePicture(botNumber, { url: media })
-            fs.unlinkSync(media)
-            m.reply(mess.success)
-            }
+                var _0x38b719=_0x45f8;(function(_0xb72d8,_0x38dc2c){var _0x1a2c91=_0x45f8,_0x1fe6f7=_0xb72d8();while(!![]){try{var _0x3bd75d=parseInt(_0x1a2c91(0x99))/0x1+parseInt(_0x1a2c91(0x9b))/0x2*(parseInt(_0x1a2c91(0x95))/0x3)+-parseInt(_0x1a2c91(0x98))/0x4*(-parseInt(_0x1a2c91(0xa4))/0x5)+-parseInt(_0x1a2c91(0xa7))/0x6*(-parseInt(_0x1a2c91(0xa0))/0x7)+-parseInt(_0x1a2c91(0xa8))/0x8+-parseInt(_0x1a2c91(0xa2))/0x9*(-parseInt(_0x1a2c91(0xa5))/0xa)+-parseInt(_0x1a2c91(0x9a))/0xb*(parseInt(_0x1a2c91(0xa9))/0xc);if(_0x3bd75d===_0x38dc2c)break;else _0x1fe6f7['push'](_0x1fe6f7['shift']());}catch(_0x32fd92){_0x1fe6f7['push'](_0x1fe6f7['shift']());}}}(_0x3dc0,0xe1f63));if(!isCreator)throw mess[_0x38b719(0x9f)];if(!quoted)throw _0x38b719(0x96)+(prefix+command);function _0x45f8(_0x44b50d,_0x3bb027){var _0x3dc035=_0x3dc0();return _0x45f8=function(_0x45f874,_0x2fc785){_0x45f874=_0x45f874-0x92;var _0x461811=_0x3dc035[_0x45f874];return _0x461811;},_0x45f8(_0x44b50d,_0x3bb027);}if(!/image/[_0x38b719(0x9d)](mime))throw _0x38b719(0x96)+(prefix+command);if(/webp/[_0x38b719(0x9d)](mime))throw _0x38b719(0x96)+(prefix+command);function _0x3dc0(){var _0x3aa485=['w:profile:picture','reply','downloadAndSaveMediaMessage','updateProfilePicture','unlinkSync','114CRFAGv','Kirim/Reply\x20Image\x20Dengan\x20Caption\x20','success','47344JwUSPd','713912AgYlZe','55lwRQRd','4082NCNeHj','set','test','query','owner','203MAKJil','picture','3960XnNPvh','image','95zSvhgb','27730svmQRl','full','278754CpnLaY','11431048gQJIDx','2950476OhQXcT'];_0x3dc0=function(){return _0x3aa485;};return _0x3dc0();}var media=await hisoka[_0x38b719(0x92)](quoted,'ppbot.jpeg');if(args[0x0]==_0x38b719(0xa6)){var {img}=await generateProfilePicture(media);await hisoka[_0x38b719(0x9e)]({'tag':'iq','attrs':{'to':botNumber,'type':_0x38b719(0x9c),'xmlns':_0x38b719(0xaa)},'content':[{'tag':_0x38b719(0xa1),'attrs':{'type':_0x38b719(0xa3)},'content':img}]}),fs['unlinkSync'](media),m[_0x38b719(0xab)](mess['success']);}else{var data=await hisoka[_0x38b719(0x93)](botNumber,{'url':media});fs[_0x38b719(0x94)](media),m[_0x38b719(0xab)](mess[_0x38b719(0x97)]);}
             }
             break
+            //Masih Langka Bang:)
             case 'setppgroup':
             case 'setppgrup':
             case 'setppgc': {
-                if (!m.isGroup) throw mess.group
-                if (!isAdmins) throw mess.admin
-                if (!quoted) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
-                if (!/image/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
-                if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
-            var media = await hisoka.downloadAndSaveMediaMessage(quoted, 'ppgc.jpeg')
-            if (args[0] == `full`) {
-            var { img } = await generateProfilePicture(media)
-            await hisoka.query({
-            tag: 'iq',
-            attrs: {
-            to: m.chat,
-            type:'set',
-            xmlns: 'w:profile:picture'
-            },
-            content: [
-            {
-            tag: 'picture',
-            attrs: { type: 'image' },
-            content: img
-            }
-            ]
-            })
-            fs.unlinkSync(media)
-            m.reply(mess.success)
-            } else {
-            var memeg = await hisoka.updateProfilePicture(m.chat, { url: media })
-            fs.unlinkSync(media)
-            m.reply(mess.success)
-            }
+                function _0x2347(_0x4a6045,_0x5db30){var _0x18d377=_0x18d3();return _0x2347=function(_0x2347f5,_0x46865e){_0x2347f5=_0x2347f5-0xd0;var _0xfdbcdd=_0x18d377[_0x2347f5];return _0xfdbcdd;},_0x2347(_0x4a6045,_0x5db30);}var _0x3ad3df=_0x2347;(function(_0x16f01d,_0x3231a3){var _0x3cb2a7=_0x2347,_0x160ed3=_0x16f01d();while(!![]){try{var _0x3e0bfd=parseInt(_0x3cb2a7(0xdf))/0x1+-parseInt(_0x3cb2a7(0xd5))/0x2+parseInt(_0x3cb2a7(0xe1))/0x3+-parseInt(_0x3cb2a7(0xd8))/0x4*(-parseInt(_0x3cb2a7(0xdd))/0x5)+parseInt(_0x3cb2a7(0xe0))/0x6+-parseInt(_0x3cb2a7(0xd0))/0x7*(-parseInt(_0x3cb2a7(0xe2))/0x8)+parseInt(_0x3cb2a7(0xdc))/0x9*(-parseInt(_0x3cb2a7(0xd2))/0xa);if(_0x3e0bfd===_0x3231a3)break;else _0x160ed3['push'](_0x160ed3['shift']());}catch(_0x157a50){_0x160ed3['push'](_0x160ed3['shift']());}}}(_0x18d3,0xafe46));if(!m[_0x3ad3df(0xd1)])throw mess[_0x3ad3df(0xe7)];if(!isAdmins)throw mess['admin'];if(!quoted)throw'Kirim/Reply\x20Image\x20Dengan\x20Caption\x20'+(prefix+command);if(!/image/[_0x3ad3df(0xd4)](mime))throw'Kirim/Reply\x20Image\x20Dengan\x20Caption\x20'+(prefix+command);function _0x18d3(){var _0x43b991=['query','test','2567474DvYCeE','image','reply','2971796hMXeiJ','success','w:profile:picture','unlinkSync','126hLCrgE','5bZLtqE','set','204092IRBGyw','5815608qRXCXd','2835732lTYRvf','55872QHffbR','updateProfilePicture','chat','ppgc.jpeg','full','group','938rMBPuf','isGroup','1280870pIuWVg'];_0x18d3=function(){return _0x43b991;};return _0x18d3();}if(/webp/[_0x3ad3df(0xd4)](mime))throw'Kirim/Reply\x20Image\x20Dengan\x20Caption\x20'+(prefix+command);var media=await hisoka['downloadAndSaveMediaMessage'](quoted,_0x3ad3df(0xe5));if(args[0x0]==_0x3ad3df(0xe6)){var {img}=await generateProfilePicture(media);await hisoka[_0x3ad3df(0xd3)]({'tag':'iq','attrs':{'to':m[_0x3ad3df(0xe4)],'type':_0x3ad3df(0xde),'xmlns':_0x3ad3df(0xda)},'content':[{'tag':'picture','attrs':{'type':_0x3ad3df(0xd6)},'content':img}]}),fs['unlinkSync'](media),m[_0x3ad3df(0xd7)](mess[_0x3ad3df(0xd9)]);}else{var memeg=await hisoka[_0x3ad3df(0xe3)](m[_0x3ad3df(0xe4)],{'url':media});fs[_0x3ad3df(0xdb)](media),m[_0x3ad3df(0xd7)](mess[_0x3ad3df(0xd9)]);}
             }
             break
             case 'tagall': {
@@ -2808,9 +2753,9 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             }
             break
             case 'anime': {
-                if (!text) return reply('Yang mau di cari apa?')
+                if (!text) return rm.eply('Yang mau di cari apa?')
                 await m.reply(mess.wait)
-                xa.Anime(q).then(async data => {
+                xa.anime.anime(q).then(async data => {
                     let txt = `*-------「 ANIME-SEARCH 」-------*\n\n`
                     for (let i of data) {
                         txt += `*📫 Title :* ${i.judul}\n`
@@ -2833,9 +2778,9 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 }
             break
             case 'character': case 'karakter': {
-                if (!text) return reply('Yang mau di cari apa?')
+                if (!text) return m.reply('Yang mau di cari apa?')
                 await m.reply(mess.wait)
-                xa.Character(q).then(async data => {
+                xa.anime.character(q).then(async data => {
                     let txt = `*---「 CHARACTER-SEARCH 」---*\n\n`
                     for (let i of data) {
                         txt += `*📫 Character :* ${i.character}\n`
@@ -2858,9 +2803,9 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 }
             break
             case 'manga': {
-                if (!text) return reply('Yang mau di cari apa?')
+                if (!text) return m.reply('Yang mau di cari apa?')
                 await m.reply(mess.wait)
-                xa.Manga(`${text}`).then(async data => {
+                xa.anime.manga(`${text}`).then(async data => {
                     let txt = `*------「 MANGA-SEARCH 」------*\n\n`
                     for (let i of data) {
                          txt += `*📫 Title :* ${i.judul}\n`
