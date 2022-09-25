@@ -58,8 +58,7 @@
     "scrape-primbon": "^1.1.0",
     "util": "^0.12.4",
     "yargs": "^17.2.1",
-    "yt-search": "^2.10.3",
-    "xfarr-api": "^2.0.0"
+    "yt-search": "^2.10.3"
   },
   "directories": {
     "lib": "lib",

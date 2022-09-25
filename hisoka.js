@@ -19,7 +19,6 @@ const os = require('os')
 const hx = require('hxz-api')
 const fdl = require("caliph-api")
 const bochil = require('@bochilteam/scraper')
-const xa = require('xfarr-api')
 const alya = require('./lib/null.js')
 const moment = require('moment-timezone')
 const { JSDOM } = require('jsdom')
@@ -2751,81 +2750,6 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             encmedia = await hisoka.sendImageAsSticker(m.chat, wifegerakx, m, { packname: global.packname, author: global.author, })
             await fs.unlinkSync(encmedia)
             }
-            break
-            case 'anime': {
-                if (!text) return m.reply('Yang mau di cari apa?')
-                await m.reply(mess.wait)
-                xa.anime.anime(q).then(async result => {
-                    let txt = `*-------「 ANIME-SEARCH 」-------*\n\n`
-                    for (let i of result) {
-                        txt += `*📫 Title :* ${i.judul}\n`
-                        txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
-                    }
-                    let gam = await getBuffer(result[0].thumbnail.replace('https://www.anime-planet.com',''))
-                    var but = [
-				{
-					urlButton: {
-                        displayText: 'TikTok Creator',
-                        url: global.myweb
-                       }
-					}
-				]
-				await hisoka.send5ButLoc(m.chat, txt, `© ${ownername}`, gam, but, { userJid: m.chat, quoted: fgclink })
-                })
-                .catch((err) => {
-                    m.reply(mess.error)
-                })
-                }
-            break
-            case 'character': case 'karakter': {
-                if (!text) return m.reply('Yang mau di cari apa?')
-                await m.reply(mess.wait)
-                xa.anime.character(q).then(async result => {
-                    let txt = `*---「 CHARACTER-SEARCH 」---*\n\n`
-                    for (let i of result) {
-                        txt += `*📫 Character :* ${i.character}\n`
-                        txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
-                    }
-                    let gam = await getBuffer(result[0].thumbnail.replace('https://www.anime-planet.com',''))
-                    var but = [
-				{
-					urlButton: {
-                        displayText: 'TikTok Creator',
-                        url: global.myweb
-                       }
-					}
-				]
-				await hisoka.send5ButLoc(m.chat, txt, `© ${ownername}`, gam, but, { userJid: m.chat, quoted: fgclink })
-                })
-                .catch((err) => {
-                    m.reply(mess.error)
-                })
-                }
-            break
-            case 'manga': {
-                if (!text) return m.reply('Yang mau di cari apa?')
-                await m.reply(mess.wait)
-                xa.anime.manga(q).then(async result => {
-                    let txt = `*------「 MANGA-SEARCH 」------*\n\n`
-                    for (let i of result) {
-                         txt += `*📫 Title :* ${i.judul}\n`
-                         txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
-                    }
-                    let gam = await getBuffer(result[0].thumbnail.replace('https://www.anime-planet.com',''))
-                    var but = [
-				{
-					urlButton: {
-                        displayText: 'TikTok Creator',
-                        url: global.myweb
-                       }
-					}
-				]
-				await hisoka.send5ButLoc(m.chat, txt, `© ${ownername}`, gam, but, { userJid: m.chat, quoted: fgclink })
-                })
-                .catch((err) => {
-                    m.reply(mess.error)
-                })
-                }
             break
             case 'ebinary': {
                 let {
@@ -5719,7 +5643,7 @@ Request Message: ${text}`
 │⭔ ${prefix}revoke
 │⭔ ${prefix}tagmenu [option]
 │⭔ ${prefix}ephemeral [option]
-│⭔ ${prefix}setppgrup [image]
+│⭔ ${prefix}setppgrup full [image]
 │⭔ ${prefix}setname [text]
 │⭔ ${prefix}setdesc [text]
 │⭔ ${prefix}group [option]
@@ -6016,9 +5940,6 @@ Request Message: ${text}`
 └┬─────────────┈❖
 ┌┤「 ANIME 」
 │└─────────────┈❖
-│⭔ ${prefix}anime
-│⭔ ${prefix}manga
-│⭔ ${prefix}character
 │⭔ ${prefix}hololive
 │⭔ ${prefix}couples
 │⭔ ${prefix}couple
@@ -7777,9 +7698,6 @@ Request Message: ${text}`
 └┬─────────────┈❖
 ┌┤「 ANIME 」
 │└─────────────┈❖
-│⭔ ${prefix}anime
-│⭔ ${prefix}manga
-│⭔ ${prefix}character
 │⭔ ${prefix}hololive
 │⭔ ${prefix}couples
 │⭔ ${prefix}couple
@@ -7944,7 +7862,7 @@ Request Message: ${text}`
 │⭔ ${prefix}revoke 
 │⭔ ${prefix}tagmenu [option]
 │⭔ ${prefix}ephemeral [option]
-│⭔ ${prefix}setppgrup [image]
+│⭔ ${prefix}setppgrup full [image]
 │⭔ ${prefix}setname [text]
 │⭔ ${prefix}setdesc [text]
 │⭔ ${prefix}group [option]
