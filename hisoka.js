@@ -2010,11 +2010,31 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 if (!quoted) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
                 if (!/image/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
                 if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
-                let media = await hisoka.downloadAndSaveMediaMessage(quoted)
-                await hisoka.updateProfilePicture(m.chat, {
-                    url: media
-                }).catch((err) => fs.unlinkSync(media))
-                m.reply(mess.success)
+            var media = await hisoka.downloadAndSaveMediaMessage(quoted, 'ppgc.jpeg')
+            if (args[0] == `full`) {
+            var { img } = await generateProfilePicture(media)
+            await hisoka.query({
+            tag: 'iq',
+            attrs: {
+            to: m.chat,
+            type:'set',
+            xmlns: 'w:profile:picture'
+            },
+            content: [
+            {
+            tag: 'picture',
+            attrs: { type: 'image' },
+            content: img
+            }
+            ]
+            })
+            fs.unlinkSync(media)
+            m.reply(mess.success)
+            } else {
+            var memeg = await hisoka.updateProfilePicture(m.chat, { url: media })
+            fs.unlinkSync(media)
+            m.reply(mess.success)
+            }
             }
             break
             case 'tagall': {
