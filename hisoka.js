@@ -19,6 +19,7 @@ const os = require('os')
 const hx = require('hxz-api')
 const fdl = require("caliph-api");
 const bochil = require('@bochilteam/scraper')
+const xa = require('xfarr-api')
 const alya = require('./lib/null.js')
 const moment = require('moment-timezone')
 const { JSDOM } = require('jsdom')
@@ -2749,6 +2750,117 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     throw `Kirim Gambar/Video Dengan Caption ${prefix + command}\nDurasi Video 1-9 Detik`
                 }
             }
+            break
+            case 'gura':
+            case 'gurastick': {
+            var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/gura')
+            var wifegerak = ano.split('\n')
+            var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
+            encmedia = await hisoka.sendImageAsSticker(m.chat, wifegerakx, m, { packname: global.packname, author: global.author, })
+            await fs.unlinkSync(encmedia)
+            }
+            break
+            case 'doge':
+            case 'dogestick': {
+            var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/anjing')
+            var wifegerak = ano.split('\n')
+            var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
+            encmedia = await hisoka.sendImageAsSticker(m.chat, wifegerakx, m, { packname: global.packname, author: global.author, })
+            await fs.unlinkSync(encmedia)
+            }
+            break
+            case 'bucinstick':
+            case 'bucinp' : {
+            var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/bucin')
+            var wifegerak = ano.split('\n')
+            var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
+            encmedia = await hisoka.sendImageAsSticker(m.chat, wifegerakx, m, { packname: global.packname, author: global.author, })
+            await fs.unlinkSync(encmedia)
+            }
+            break
+            case 'patrik':
+            case 'patrick': {
+            var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/patrik')
+            var wifegerak = ano.split('\n')
+            var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
+            encmedia = await hisoka.sendImageAsSticker(m.chat, wifegerakx, m, { packname: global.packname, author: global.author, })
+            await fs.unlinkSync(encmedia)
+            }
+            break
+            case 'anime': {
+                if (!text) return reply('Yang mau di cari apa?')
+                await m.reply(mess.wait)
+                xa.Anime(q).then(async data => {
+                    let txt = `*-------「 ANIME-SEARCH 」-------*\n\n`
+                    for (let i of data) {
+                        txt += `*📫 Title :* ${i.judul}\n`
+                        txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
+                    }
+                    let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
+                    var but = [
+				{
+					"urlButton": {
+						"displayText": `My Webs`,
+						"url": `${myweb}`
+						}
+					}
+				]
+				await hisoka.send5ButLoc(m.chat, txt, `© ${ownername}`, gam, but, { userJid: m.chat, quoted: fgclink })
+                })
+                .catch((err) => {
+                    reply(mess.error)
+                })
+                }
+            break
+            case 'character': case 'karakter': {
+                if (!text) return reply('Yang mau di cari apa?')
+                await m.reply(mess.wait)
+                xa.Character(q).then(async data => {
+                    let txt = `*---「 CHARACTER-SEARCH 」---*\n\n`
+                    for (let i of data) {
+                        txt += `*📫 Character :* ${i.character}\n`
+                        txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
+                    }
+                    let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
+                    var but = [
+				{
+					"urlButton": {
+						"displayText": `My Webs,
+						"url": `${myweb}`
+						}
+					}
+				]
+				await hisoka.send5ButLoc(m.chat, txt, `© ${ownername}`, gam, but, { userJid: m.chat, quoted: fgclink })
+                })
+                .catch((err) => {
+                    reply(mess.error)
+                })
+                }
+            break
+            case 'manga': {
+                if (!text) return reply('Yang mau di cari apa?')
+                await m.reply(mess.wait)
+                xa.Manga(`${text}`).then(async data => {
+                    let txt = `*------「 MANGA-SEARCH 」------*\n\n`
+                    for (let i of data) {
+                         txt += `*📫 Title :* ${i.judul}\n`
+                         txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
+                    }
+                    let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
+                    var but = [
+				{
+					"urlButton": {
+						"displayText": `My Webs`,
+						"url": `${myweb}`
+						}
+					}
+				]
+				await hisoka.send5ButLoc(m.chat, txt, `© ${ownername}`, gam, but, { userJid: m.chat, quoted: fgclink })
+                })
+                .catch((err) => {
+                    reply(mess.error)
+                })
+                }
             break
             case 'ebinary': {
                 let {
@@ -5873,6 +5985,10 @@ Request Message: ${text}`
 │⭔ ${prefix}stickerwm
 │⭔ ${prefix}attp [teks]
 │⭔ ${prefix}ttp [teks]
+│⭔ ${prefix}gura
+│⭔ ${prefix}doge
+│⭔ ${prefix}bucinstick
+│⭔ ${prefix}patrick
 │⭔ ${prefix}emojimix 😎+🤠
 │⭔ ${prefix}emojimix2 😎
 └──────────────┈❖`
@@ -5935,6 +6051,9 @@ Request Message: ${text}`
 └┬─────────────┈❖
 ┌┤「 ANIME 」
 │└─────────────┈❖
+│⭔ ${prefix}anime
+│⭔ ${prefix}manga
+│⭔ ${prefix}character
 │⭔ ${prefix}hololive
 │⭔ ${prefix}couples
 │⭔ ${prefix}couple
@@ -7693,6 +7812,9 @@ Request Message: ${text}`
 └┬─────────────┈❖
 ┌┤「 ANIME 」
 │└─────────────┈❖
+│⭔ ${prefix}anime
+│⭔ ${prefix}manga
+│⭔ ${prefix}character
 │⭔ ${prefix}hololive
 │⭔ ${prefix}couples
 │⭔ ${prefix}couple
@@ -8081,6 +8203,10 @@ Request Message: ${text}`
 │⭔ ${prefix}stickerwm
 │⭔ ${prefix}attp [teks]
 │⭔ ${prefix}ttp [teks]
+│⭔ ${prefix}gura
+│⭔ ${prefix}doge
+│⭔ ${prefix}bucinstick
+│⭔ ${prefix}patrick
 │⭔ ${prefix}emojimix 😎+🤠
 │⭔ ${prefix}emojimix2 😎
 └┬─────────────┈❖
