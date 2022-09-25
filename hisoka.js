@@ -2753,15 +2753,15 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             }
             break
             case 'anime': {
-                if (!text) return rm.eply('Yang mau di cari apa?')
+                if (!text) return m.reply('Yang mau di cari apa?')
                 await m.reply(mess.wait)
-                xa.anime.anime(q).then(async data => {
+                xa.anime.anime(q).then(async result => {
                     let txt = `*-------「 ANIME-SEARCH 」-------*\n\n`
-                    for (let i of data) {
+                    for (let i of result) {
                         txt += `*📫 Title :* ${i.judul}\n`
                         txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
                     }
-                    let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
+                    let gam = await getBuffer(result[0].thumbnail.replace('https://www.anime-planet.com',''))
                     var but = [
 				{
 					urlButton: {
@@ -2773,20 +2773,20 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 				await hisoka.send5ButLoc(m.chat, txt, `© ${ownername}`, gam, but, { userJid: m.chat, quoted: fgclink })
                 })
                 .catch((err) => {
-                    reply(mess.error)
+                    m.reply(mess.error)
                 })
                 }
             break
             case 'character': case 'karakter': {
                 if (!text) return m.reply('Yang mau di cari apa?')
                 await m.reply(mess.wait)
-                xa.anime.character(q).then(async data => {
+                xa.anime.character(q).then(async result => {
                     let txt = `*---「 CHARACTER-SEARCH 」---*\n\n`
-                    for (let i of data) {
+                    for (let i of result) {
                         txt += `*📫 Character :* ${i.character}\n`
                         txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
                     }
-                    let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
+                    let gam = await getBuffer(result[0].thumbnail.replace('https://www.anime-planet.com',''))
                     var but = [
 				{
 					urlButton: {
@@ -2798,20 +2798,20 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 				await hisoka.send5ButLoc(m.chat, txt, `© ${ownername}`, gam, but, { userJid: m.chat, quoted: fgclink })
                 })
                 .catch((err) => {
-                    reply(mess.error)
+                    m.reply(mess.error)
                 })
                 }
             break
             case 'manga': {
                 if (!text) return m.reply('Yang mau di cari apa?')
                 await m.reply(mess.wait)
-                xa.anime.manga(`${text}`).then(async data => {
+                xa.anime.manga(q).then(async result => {
                     let txt = `*------「 MANGA-SEARCH 」------*\n\n`
-                    for (let i of data) {
+                    for (let i of result) {
                          txt += `*📫 Title :* ${i.judul}\n`
                          txt += `*📚 Url :* ${i.link}\n-----------------------------------------------------\n`
                     }
-                    let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
+                    let gam = await getBuffer(result[0].thumbnail.replace('https://www.anime-planet.com',''))
                     var but = [
 				{
 					urlButton: {
@@ -2823,7 +2823,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 				await hisoka.send5ButLoc(m.chat, txt, `© ${ownername}`, gam, but, { userJid: m.chat, quoted: fgclink })
                 })
                 .catch((err) => {
-                    reply(mess.error)
+                    m.reply(mess.error)
                 })
                 }
             break
