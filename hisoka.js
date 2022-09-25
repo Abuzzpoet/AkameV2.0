@@ -2799,10 +2799,10 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
                     var but = [
 				{
-					"urlButton": {
-						"displayText": `My Webs`,
-						"url": `${myweb}`
-						}
+					urlButton: {
+                        displayText: 'TikTok Creator',
+                        url: global.myweb
+                       }
 					}
 				]
 				await hisoka.send5ButLoc(m.chat, txt, `© ${ownername}`, gam, but, { userJid: m.chat, quoted: fgclink })
@@ -2824,10 +2824,10 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
                     var but = [
 				{
-					"urlButton": {
-						"displayText": `My Webs,
-						"url": `${myweb}`
-						}
+					urlButton: {
+                        displayText: 'TikTok Creator',
+                        url: global.myweb
+                       }
 					}
 				]
 				await hisoka.send5ButLoc(m.chat, txt, `© ${ownername}`, gam, but, { userJid: m.chat, quoted: fgclink })
@@ -2849,10 +2849,10 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     let gam = await getBuffer(data[0].thumbnail.replace('https://www.anime-planet.com',''))
                     var but = [
 				{
-					"urlButton": {
-						"displayText": `My Webs`,
-						"url": `${myweb}`
-						}
+					urlButton: {
+                        displayText: 'TikTok Creator',
+                        url: global.myweb
+                       }
 					}
 				]
 				await hisoka.send5ButLoc(m.chat, txt, `© ${ownername}`, gam, but, { userJid: m.chat, quoted: fgclink })
