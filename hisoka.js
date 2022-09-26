@@ -189,7 +189,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
         //END
 
         //member
-        let picaks = [flaming, fluming, flarun, flasmurf]
+        let picaks = [flaming, fluming, flarun, flasmurf, mehk, awog, mohai, mhehe]
         let picak = picaks[Math.floor(Math.random() * picaks.length)]
 
         try {
@@ -2812,7 +2812,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 	        let dwnld = await hisoka.downloadMediaMessage(qmsg)
 	        let { floNime } = require('./lib/uploader')
 	        let fatGans = await floNime(dwnld)
-	        let smeme = `https://api.memegen.link/images/custom/${encodeURIComponent(atas)}/${encodeURIComponent(bawah)}.png?background=${fatGans.result.url}`
+	        let smeme = `https://api.memegen.link/images/custom/${encodeURIComponent(atas)}/${encodeURIComponent(bawah)}.png?background=${fatGans.result}`
 	        let FaTiH = await hisoka.sendImageAsSticker(m.chat, smeme, m, { packname: global.packname, author: global.auhor })
 	        await fs.unlinkSync(FaTiH)
             }
@@ -3853,7 +3853,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     floNime
                 } = require('./lib/uploader')
                 let fatGans = await floNime(dwnld)
-                let smeme = api('zenz', '/photoeditor/' + command, { url: fatGans.result.url }, 'apikey')
+                let smeme = api('zenz', '/photoeditor/' + command, { url: fatGans.result }, 'apikey')
                 let FaTiH = await hisoka.sendImageAsSticker(m.chat, smeme, m, {
                     packname: global.packname,
                     author: global.author
