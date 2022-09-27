@@ -2810,7 +2810,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 	        m.reply(mess.wait)
             atas = text.split('|')[0] ? text.split('|')[0] : '-'
             bawah = text.split('|')[1] ? text.split('|')[1] : '-'
-	        let dwnld = await hisoka.downloadMediaMessage(qmsg)
+	        let dwnld = await hisoka.downloadAndSaveMediaMessage(qmsg)
 	        let { TelegraPh } = require('./lib/uploader')
 	        let fatGans = await TelegraPh(dwnld)
 	        let smeme = `https://api.memegen.link/images/custom/${encodeURIComponent(atas)}/${encodeURIComponent(bawah)}.png?background=${fatGans}`
@@ -3849,7 +3849,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'triggered': {
                 if (!/image/.test(mime)) return m.reply(`Kirim/Reply Foto`)
                 m.reply(mess.wait)
-                let dwnld = await hisoka.downloadMediaMessage(qmsg)
+                let dwnld = await hisoka.downloadAndSaveMediaMessage(qmsg)
                 let { TelegraPh } = require('./lib/uploader')
                 let fatGans = await TelegraPh(dwnld)
                 let smeme = api('zenz', '/photoeditor/' + command, { url: fatGans }, 'apikey')
