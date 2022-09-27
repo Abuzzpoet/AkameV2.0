@@ -1030,7 +1030,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 m.reply(`Ketik #menu Untuk Melihat List Menu Bot`)
                 }
                 break
-                //Jangan Dihapus anj kalau ditambah boleh
+                //Jangan Dihapus atau diubah anj awas aja update berikutnya gua enc kontol
             case 'tqtt':
             case 'tqto':
             case 'thanksto': {
@@ -1038,8 +1038,9 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
 ⭔ Allah SWT.
 ⭔ Ortu Saya.
 ⭔ DikaArdnt (Author).
-⭔ Sanzy YT.
 ⭔ GuaAbuzz (Recode).
+⭔ SkyzooDev.
+⭔ Sanzy YT.
 ⭔ Fatih A.
 ⭔ Nurutomo.
 ⭔ Mhankbarbar.
