@@ -227,7 +227,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
             if (setting) {
                 if (!('anticall' in setting)) setting.anticall = true
                 if (!isNumber(setting.status)) setting.status = 0
-                if (!('autobio' in setting)) setting.autobio = false
+                if (!('autobio' in setting)) setting.autobio = true
                 if (!('templateImage' in setting)) setting.templateImage = true
                 if (!('templateVideo' in setting)) setting.templateVideo = false
                 if (!('templateGif' in setting)) setting.templateGif = false
@@ -236,7 +236,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
             } else global.db.data.settings[botNumber] = {
                 anticall: true,
                 status: 0,
-                autobio: false,
+                autobio: true,
                 templateImage: true,
                 templateVideo: false,
                 templateGif: false,
@@ -274,12 +274,13 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
 	if (db.data.settings[botNumber].autobio) {
 	    let setting = global.db.data.settings[botNumber]
 	    if (new Date() * 1 - setting.status > 1000) {
-		let uptime = await runtime(process.uptime())
-		await hisoka.updateProfileStatus(`${hisoka.user.name} | Runtime : ${runtime(uptime)}`)
+		let _uptime = process.uptime() * 1000
+		let uptime = clockString(_uptime)
+		await hisoka.updateProfileStatus(`Aktif selama ${uptime} | Mode : ${hisoka.public ? 'Public' : 'Self'} | User : ${Object.keys(global.db.data.users).length} | ${hisoka.user.name}`).catch(_ => _)
 		setting.status = new Date() * 1
 	    }
 	}
-	    
+	
         // Respon Cmd with media
         if (isMedia && m.msg.fileSha256 && (m.msg.fileSha256.toString('base64') in global.db.data.sticker)) {
         let hash = global.db.data.sticker[m.msg.fileSha256.toString('base64')]
@@ -2810,9 +2811,9 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             atas = text.split('|')[0] ? text.split('|')[0] : '-'
             bawah = text.split('|')[1] ? text.split('|')[1] : '-'
 	        let dwnld = await hisoka.downloadMediaMessage(qmsg)
-	        let { floNime } = require('./lib/uploader')
-	        let fatGans = await floNime(dwnld)
-	        let smeme = `https://api.memegen.link/images/custom/${encodeURIComponent(atas)}/${encodeURIComponent(bawah)}.png?background=${fatGans.result.url}`
+	        let { TelegraPh } = require('./Lib/uploader')
+	        let fatGans = await TelegraPh(dwnld)
+	        let smeme = `https://api.memegen.link/images/custom/${encodeURIComponent(atas)}/${encodeURIComponent(bawah)}.png?background=${fatGans}`
 	        let FaTiH = await hisoka.sendImageAsSticker(m.chat, smeme, m, { packname: global.packname, author: global.auhor })
 	        await fs.unlinkSync(FaTiH)
             }
@@ -3849,11 +3850,9 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 if (!/image/.test(mime)) return m.reply(`Kirim/Reply Foto`)
                 m.reply(mess.wait)
                 let dwnld = await hisoka.downloadMediaMessage(qmsg)
-                let {
-                    floNime
-                } = require('./lib/uploader')
-                let fatGans = await floNime(dwnld)
-                let smeme = api('zenz', '/photoeditor/' + command, { url: fatGans.result.url }, 'apikey')
+                let { TelegraPh } = require('./Lib/uploader')
+                let fatGans = await TelegraPh(dwnld)
+                let smeme = api('zenz', '/photoeditor/' + command, { url: fatGans }, 'apikey')
                 let FaTiH = await hisoka.sendImageAsSticker(m.chat, smeme, m, {
                     packname: global.packname,
                     author: global.author
