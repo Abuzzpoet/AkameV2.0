@@ -93,7 +93,8 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
     	const isAdmins = m.isGroup ? groupAdmins.includes(m.sender) : false
     	const isPremium = isCreator || global.premium.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender) || false
 
-
+        // Days
+        const hariini = moment.tz('Asia/Jakarta').format('dddd, DD MMMM YYYY')
         const wib = moment.tz('Asia/Jakarta').format('HH : mm : ss')
         const wit = moment.tz('Asia/Jayapura').format('HH : mm : ss')
         const wita = moment.tz('Asia/Makassar').format('HH : mm : ss')
@@ -5632,6 +5633,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -5717,6 +5720,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -5794,6 +5799,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -5863,6 +5870,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -5933,6 +5942,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -6052,6 +6063,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -6131,6 +6144,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -6205,6 +6220,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -6282,6 +6299,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -6349,6 +6368,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -6415,6 +6436,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -6506,6 +6529,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -6584,6 +6609,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -6679,6 +6706,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -6745,6 +6774,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -6835,6 +6866,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -6905,6 +6938,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -6978,6 +7013,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -7046,6 +7083,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -7111,6 +7150,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -7181,6 +7222,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -7260,6 +7303,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -7331,6 +7376,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -7394,6 +7441,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -7472,6 +7521,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -7541,6 +7592,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
@@ -7683,6 +7736,8 @@ Request Message: ${text}`
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${hisoka.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
 │ Lib : Baileys-md
 │ Menuju HBD GuaAbuzz :
