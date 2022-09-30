@@ -4184,6 +4184,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 				let saking = q.split('|')[1] ? q.split('|')[1] : q
 				let pesan = q.split('|')[2] ? q.split('|')[2] : ''
 				if (pesan.length < 1) return m.reply(`Harus di isi semua! ex : menfess 62831xxxxxxxx|orang|hallo kamu`)
+				if (pesan.length > 3500) return m.reply(`pirtex kontol`)
 				let buttons = [
                     { buttonId: `Owner`, buttonText: { displayText: '⌲ Chat Owner' }, type: 1 },
                     { buttonId: `menfesconfirm ${m.sender}`, buttonText: { displayText: '⌲ Terima Menfess' }, type: 1 },
