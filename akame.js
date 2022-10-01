@@ -1270,7 +1270,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 {
                 title: "Open Donasi >_<",
                 rows: [
-                {title: "⌲ 「 Sewa Bot 」", rowId: `${prefix}donasi`, description: `Bantu Support Creator Guys`}
+                {title: "⌲ 「 Open Donasi 」", rowId: `${prefix}donasi`, description: `Bantu Support Creator Guys`}
                 ]
                 },
                 {
