@@ -134,59 +134,173 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
 
 
         //━━━━━━━━━━━━━━━[ FAKE ]━━━━━━━━━━━━━━━━━//
+const ftroli = {
+    key: {
+        fromMe: false,
+        "participant": "0@s.whatsapp.net",
+        "remoteJid": "status@broadcast"
+    },
+    "message": {
+        orderMessage: {
+            itemCount: 2022,
+            status: 200,
+            thumbnail: thumb,
+            surface: 200,
+            message: 'Haii Kak ${pushname}\n𝙲𝚖𝚍 ${command}`,
+            orderTitle: 'Please Follow TikTok @GuaAbuzz',
+            sellerJid: '0@s.whatsapp.net'
+        }
+    },
+    contextInfo: {
+        "forwardingScore": 999,
+        "isForwarded": true
+    },
+    sendEphemeral: true
+}
 
-        const ftroli = {
-            key: {
-                fromMe: false,
-                "participant": "0@s.whatsapp.net",
-                "remoteJid": "6289636827082-1635036556@g.us"
-            },
-            "message": {
-                orderMessage: {
-                    itemCount: 2022,
-                    status: 200,
-                    thumbnail: fs.readFileSync('./image/hisoka.jpg'),
-                    surface: 200,
-                    message: `Haii Kak ${pushname}\n𝙲𝚖𝚍 ${command}`,
-                    orderTitle: 'Please Follow TikTok @GuaAbuzz',
-                    sellerJid: '0@s.whatsapp.net'
-                }
-            },
-            contextInfo: {
-                "forwardingScore": 999,
-                "isForwarded": true
-            },
+const fdoc = {
+    key: {
+        participant: '0@s.whatsapp.net',
+        ...(m.chat ? {
+            remoteJid: `status@broadcast`
+        } : {})
+    },
+    message: {
+        documentMessage: {
+            title: '©GuaAbuzz',
+            jpegThumbnail: thumb
+        }
+    }
+}
+const fvn = {
+    key: {
+        participant: `0@s.whatsapp.net`,
+        ...(m.chat ? {
+            remoteJid: "status@broadcast"
+        } : {})
+    },
+    message: {
+        "audioMessage": {
+            "mimetype": "audio/ogg; codecs=opus",
+            "seconds": 359996400,
+            "ptt": "true"
+        }
+    }
+}
+
+const fgif = {
+    key: {
+        participant: `0@s.whatsapp.net`,
+        ...(m.chat ? {
+            remoteJid: "status@broadcast"
+        } : {})
+    },
+    message: {
+        "videoMessage": {
+            "title": '©GuaAbuzz',
+            "h": `Hmm`,
+            'seconds': '359996400',
+            'gifPlayback': 'true',
+            'caption': '©GuaAbuzz',
+            'jpegThumbnail': thumb
+        }
+    }
+}
+
+const fgclink = {
+    key: {
+        participant: "0@s.whatsapp.net",
+        "remoteJid": "0@s.whatsapp.net"
+    },
+    "message": {
+        "groupInviteMessage": {
+            "groupJid": "6289636827082-1635036556@g.us',
+            "inviteCode": "https://chat.whatsapp.com/FGmVjFYJBjjGst62qwNKJB",
+            "groupName": "Akame Bot",
+            "caption": '©GuaAbuzz',
+            'jpegThumbnail': thumb
+        }
+    }
+}
+
+const fvideo = {
+    key: {
+        fromMe: false,
+        participant: `0@s.whatsapp.net`,
+        ...(m.chat ? {
+            remoteJid: "status@broadcast"
+        } : {})
+    },
+    message: {
+        "videoMessage": {
+            "title": `${pushname}`,
+            "h": `Hmm`,
+            'seconds': '359996400',
+            'caption': `${pushname}`,
+            'jpegThumbnail': thumb
+        }
+    }
+}
+
+const floc = {
+    key: {
+        participant: '0@s.whatsapp.net',
+        ...(m.chat ? {
+            remoteJid: `status@broadcast`
+        } : {})
+    },
+    message: {
+        locationMessage: {
+            name: 'GuaAbuzz Creator',
+            jpegThumbnail: thumb
+        }
+    }
+}
+
+const fkontak = {
+    key: {
+        participant: `0@s.whatsapp.net`,
+        ...(m.chat ? {
+            remoteJid: `status@broadcast`
+        } : {})
+    },
+    message: {
+        'contactMessage': {
+            'displayName': 'GuaAbuzz Creator',
+            'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;GuaAbuzz Creator,;;;\nFN:GuaAbuzz Creator\nitem1.TEL;waid=6289636827082:6289636827082\nitem1.X-ABLabel:Ponsel\nEND:VCARD`,
+            'jpegThumbnail': thumb,
+            thumbnail: thumb,
             sendEphemeral: true
         }
-        
-	const fdoc = {
-	    key: {
-	        fromMe: false,
-	        participant : '0@s.whatsapp.net'},
-	        message: {
-	            documentMessage: {
-	                title: `*${command}*`,
-	                thumbnail: fs.readFileSync('./image/hisoka.jpg'),
-	                }
-	            }
-	        }
-	
-	const fgclink = {
-	    key: {
-	        fromMe: false,
-	        "participant": "0@s.whatsapp.net",
-	        "remoteJid": "0@s.whatsapp.net",
-	    },
-	    "message": {
-	        groupInviteMessage: {
-	            groupJid: '6289636827082-1635036556@g.us',
-	            inviteCode: 'https://chat.whatsapp.com/FGmVjFYJBjjGst62qwNKJB',
-	            groupName: 'Akame Bot',
-	            caption: '© GuaAbuzz',
-	            thumbnail: fs.readFileSync('./image/hisoka.jpg'),
-	            }
-	        }
-	    }
+    }
+}
+
+const fakestatus = {
+    key: {
+        fromMe: false,
+        participant: `0@s.whatsapp.net`,
+        ...(m.chat ? {
+            remoteJid: "status@broadcast"
+        } : {})
+    },
+    message: {
+        "imageMessage": {
+            "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc",
+            "mimetype": "image/jpeg",
+            "caption": '©GuaAbuzz',
+            "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=",
+            "fileLength": "28777",
+            "height": 1080,
+            "width": 1079,
+            "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=",
+            "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=",
+            "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69",
+            "mediaKeyTimestamp": "1610993486",
+            "jpegThumbnail": fs.readFileSync('./image/hisoka.jpg'),
+            "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="
+        }
+    }
+}
         //END
 
         //member
@@ -343,7 +457,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
                         displayText: '⌲ Tebak Asah Otak'
                     },
                     type: 1
-                }], `🎮 Asah Otak 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, fgclink)
+                }], `🎮 Asah Otak 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, floc)
                 delete tebakasahotak[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -361,7 +475,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
                         displayText: '⌲ Tebak Siapkah Aku'
                     },
                     type: 1
-                }], `🎮 Siapakah Aku 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, fgclink)
+                }], `🎮 Siapakah Aku 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, floc)
                 delete tebaksiapakahaku[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -379,7 +493,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
                         displayText: '⌲ Tebak Susun Kata'
                     },
                     type: 1
-                }], `🎮 Susun Kata 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, fgclink)
+                }], `🎮 Susun Kata 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, floc)
                 delete tebaksusunkata[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -397,7 +511,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
                         displayText: '⌲ Tebak Bendera'
                     },
                     type: 1
-                }], `🎮 Tebak Bendera 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, fgclink)
+                }], `🎮 Tebak Bendera 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, floc)
                 delete tebakbendera[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -415,7 +529,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
                         displayText: '⌲ Tebak Bendera 2'
                     },
                     type: 1
-                }], `🎮 Tebak Bendera 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, fgclink)
+                }], `🎮 Tebak Bendera 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, floc)
                 delete tebakbendera2[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -433,7 +547,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
                         displayText: '⌲ Tebak Kabupaten'
                     },
                     type: 1
-                }], `🎮 Tebak Kabupaten 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, fgclink)
+                }], `🎮 Tebak Kabupaten 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, floc)
                 delete tebakkabupaten[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -451,7 +565,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
                         displayText: '⌲ Tebak Susun Kata'
                     },
                     type: 1
-                }], `🎮 Susun Kata 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, fgclink)
+                }], `🎮 Susun Kata 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, floc)
                 delete tebaksusunkata[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -469,7 +583,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
                         displayText: '⌲ Tebak Kimia'
                     },
                     type: 1
-                }], `🎮 Tebak Kimia 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, fgclink)
+                }], `🎮 Tebak Kimia 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, floc)
                 delete tebakkimia[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -487,7 +601,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
                         displayText: '⌲ Tebak Teka Teki'
                     },
                     type: 1
-                }], `🎮 Teka Teki 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, fgclink)
+                }], `🎮 Teka Teki 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, floc)
                 delete tebaktekateki[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -505,7 +619,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
                         displayText: '⌲ Tebak Lagu'
                     },
                     type: 1
-                }], `🎮 Tebak Lagu 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, fgclink)
+                }], `🎮 Tebak Lagu 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, floc)
                 delete tebaklagu[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -535,7 +649,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
                         displayText: '⌲ Tebak Gambar'
                     },
                     type: 1
-                }], `🎮 Tebak Gambar 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, fgclink)
+                }], `🎮 Tebak Gambar 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, floc)
                 delete tebakgambar[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -553,7 +667,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
                         displayText: '⌲ Tebak Kata'
                     },
                     type: 1
-                }], `🎮 Tebak Kata 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, fgclink)
+                }], `🎮 Tebak Kata 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, floc)
                 delete tebakkata[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -572,7 +686,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
                         displayText: '⌲ Tebak Lontong'
                     },
                     type: 1
-                }], `🎮 Cak Lontong 🎮\n\nJawaban Benar 🎉\n*${deskripsi}*\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, fgclink)
+                }], `🎮 Cak Lontong 🎮\n\nJawaban Benar 🎉\n*${deskripsi}*\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, floc)
                 delete caklontong[m.sender.split('@')[0]]
                 delete caklontong_desk[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
@@ -591,7 +705,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
                         displayText: '⌲ Tebak Kalimat'
                     },
                     type: 1
-                }], `🎮 Tebak Kalimat 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, fgclink)
+                }], `🎮 Tebak Kalimat 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, floc)
                 delete tebakkalimat[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -609,7 +723,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
                         displayText: '⌲ Tebak Lirik'
                     },
                     type: 1
-                }], `🎮 Tebak Lirik 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, fgclink)
+                }], `🎮 Tebak Lirik 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, floc)
                 delete tebaklirik[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -627,7 +741,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
                         displayText: '⌲ Tebak Tebakan'
                     },
                     type: 1
-                }], `🎮 Tebak Tebakan 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, fgclink)
+                }], `🎮 Tebak Tebakan 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hisoka.user.name, floc)
                 delete tebaktebakan[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -1098,6 +1212,41 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                      }
             break
             case 'command': {
+                let simple = `┌────────┈❖
+                │「 Hi, ${pushname}👋 」
+                │「 ${ucapanWaktu} 」
+                └┬─────────────┈❖
+                ┌┤「 INFO USER 」
+                │└─────────────┈❖
+                │ Name : ${pushname}
+                │ Number : ${m.sender.split('@')[0]}
+                │ Status : ${isCreator ? 'Owner' : 'User'}
+                │ User : ${Object.keys(global.db.data.users).length}
+                └┬─────────────┈❖
+                ┌┤「 INFO BOT 」
+                │└─────────────┈❖
+                │ Prefix : ( ${prefix} )
+                │ Name : ${global.namabot}
+                │ Owner : ${global.namaowner}
+                │ Mode : ${hisoka.public ? 'Public' : 'Self'}
+                │ Premium : ${isPremium ? '✅' : `❌`}
+                │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
+                │ Platform : ${os.platform()}
+                │ Runtime :
+                │  ${runtime(process.uptime())}
+                │ Language : Javascript
+                │ Lib : Baileys-md
+                └┬─────────────┈❖
+                ┌┤「 INFO TIME 」
+                │└─────────────┈❖
+                │ Tanggal Server : ${moment.tz('Asia/Jakarta').format('DD/MM/YY')}
+                │ Waktu Server : ${moment.tz('Asia/Jakarta').format('HH:mm:ss')}
+                │ Menuju HBD GuaAbuzz :
+                │  ${menuju}
+                │ WIB : ${wib}
+                │ WITA : ${wita}
+                │ WIT : ${wit}
+                └──────────────┈❖`
                 let sections = [
                 {
                 title: "All Fitur Bot >_<",
@@ -1155,7 +1304,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 ]
                 }
                 ]
-                hisoka.sendListMsg(m.chat, `┌────────┈❖\n│「 Hi, ${pushname}👋 」\n│「 ${ucapanWaktu} 」\n└┬─────────────┈❖\n┌┤「 INFO USER 」\n│└─────────────┈❖\n│ Name : ${pushname}\n│ Number : ${m.sender.split('@')[0]}\n│ Status : ${isCreator ? 'Owner' : 'User'}\n│ User : ${Object.keys(global.db.data.users).length}\n└┬─────────────┈❖\n┌┤「 INFO BOT 」\n│└─────────────┈❖\n│ Prefix : ( ${prefix} )\n│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}\n│ Mode : ${hisoka.public ? 'Public' : 'Self'}\n│ Platform : ${os.platform()}\n│ Runtime :\n│  ${runtime(process.uptime())}\n│ Language : Javascript\n│ Lib : Baileys-md\n└┬─────────────┈❖\n┌┤「 INFO TIME 」\n│└─────────────┈❖\n│ Tanggal Server : ${moment.tz('Asia/Jakarta').format('DD/MM/YY')}\n│ Waktu Server : ${moment.tz('Asia/Jakarta').format('HH:mm:ss')}\n│ Menuju HBD GuaAbuzz :\n│  ${menuju}\n│ WIB : ${wib}\n│ WITA : ${wita}\n│ WIT : ${wit}\n└──────────────┈❖`, hisoka.user.name, `Hello Everyone !`, `Click Here`, sections, fgclink)
+                hisoka.sendListMsg(m.chat, simple, hisoka.user.name, `Hello Everyone !`, `Click Here`, sections, floc)
             }
             break
             case 'sc':
@@ -1244,7 +1393,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 let hasil = `*Jawablah Pertanyaan Berikut :*\n${random.soal}\n\nTerdapat *${random.jawaban.length}* Jawaban ${random.jawaban.find(v => v.includes(' ')) ? `(beberapa Jawaban Terdapat Spasi)` : ''}`.trim()
                 _family100['family100' + m.chat] = {
                     id: 'family100' + m.chat,
-                    pesan: await hisoka.sendText(m.chat, hasil, fgclink),
+                    pesan: await hisoka.sendText(m.chat, hasil, floc),
                     ...random,
                     terjawab: Array.from(random.jawaban, () => false),
                     hadiah: 6,
@@ -1258,7 +1407,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 hisoka.sendMessage(m.chat, {
                     text: `Pertanyaan : Apakah ${q}\nJawaban : ${kah}`
                 }, {
-                    quoted: fdoc
+                    quoted: fakestatus
                 })
                 }
                 break
@@ -1269,7 +1418,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 hisoka.sendMessage(m.chat, {
                     text: `Pertanyaan : ${q}\nJawaban : ${ga}`
                 }, {
-                    quoted: fdoc
+                    quoted: fakestatus
                 })
                 }
                 break
@@ -1280,7 +1429,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 hisoka.sendMessage(m.chat, {
                     text: `Pertanyaan : ${q}\nJawaban : ${ya}`
                 }, {
-                    quoted: fdoc
+                    quoted: fakestatus
                 })
                 }
                 break
@@ -1291,7 +1440,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 hisoka.sendMessage(m.chat, {
                     text: `Rate : ${q}\nJawaban : *${te}%*`
                 }, {
-                    quoted: fdoc
+                    quoted: fakestatus
                 })
                 }
                 break
@@ -1303,7 +1452,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 hisoka.sendMessage(m.chat, {
                     text: `Nama : ${q}\nJawaban : *${teng}%*`
                 }, {
-                    quoted: fdoc
+                    quoted: fakestatus
                 })
                 }
                 break
@@ -1315,7 +1464,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 hisoka.sendMessage(m.chat, {
                     text: `Nama : ${q}\nJawaban : *${tik}%*`
                 }, {
-                    quoted: fdoc
+                    quoted: fakestatus
                 })
                 }
                 break
@@ -1331,7 +1480,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 hisoka.sendMessage(m.chat, {
                     text: `Nama : ${q}\nJawaban : *${sange}%*`
                 }, {
-                    quoted: fdoc
+                    quoted: fakestatus
                 })
                 }
                 break
@@ -1342,7 +1491,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 hisoka.sendMessage(m.chat, {
                     text: `Pertanyaan : ${q}\nJawaban : *${kapankah}*`
                 }, {
-                    quoted: fdoc
+                    quoted: fakestatus
                 })
                 }
                 break
@@ -1403,7 +1552,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                         },
                         mimetype: 'audio/mpeg'
                     }, {
-                        quoted: fdoc
+                        quoted: fvn
                     })
                     hisoka.sendText(m.chat, `Lagu Tersebut Adalah Lagu dari?\n\nArtist : ${result.artist}\nWaktu : 60s`, msg).then(() => {
                         tebaklagu[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
@@ -1417,14 +1566,14 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                                 displayText: '⌲ Tebak Lagu'
                             },
                             type: 1
-                        }], `Waktu Habis\nJawaban:  ${tebaklagu[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, fgclink)
+                        }], `Waktu Habis\nJawaban:  ${tebaklagu[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, floc)
                         delete tebaklagu[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'gambar') {
                     if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
                     let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakgambar.json')
                     let result = anu[Math.floor(Math.random() * anu.length)]
-                    hisoka.sendImage(m.chat, result.img, `Silahkan Jawab Soal Di Atas Ini\n\nDeskripsi : ${result.deskripsi}\nWaktu : 60s`, fgclink).then(() => {
+                    hisoka.sendImage(m.chat, result.img, `Silahkan Jawab Soal Di Atas Ini\n\nDeskripsi : ${result.deskripsi}\nWaktu : 60s`, floc).then(() => {
                         tebakgambar[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
                     })
                     await sleep(60000)
@@ -1436,14 +1585,14 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                                 displayText: '⌲ Tebak Gambar'
                             },
                             type: 1
-                        }], `Waktu Habis\nJawaban:  ${tebakgambar[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, fgclink)
+                        }], `Waktu Habis\nJawaban:  ${tebakgambar[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, floc)
                         delete tebakgambar[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'kata') {
                     if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
                     let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakkata.json')
                     let result = anu[Math.floor(Math.random() * anu.length)]
-                    hisoka.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : 60s`, fgclink).then(() => {
+                    hisoka.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : 60s`, floc).then(() => {
                         tebakkata[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
                     })
                     await sleep(60000)
@@ -1455,14 +1604,14 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                                 displayText: '⌲ Tebak Kata'
                             },
                             type: 1
-                        }], `Waktu Habis\nJawaban:  ${tebakkata[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, fgclink)
+                        }], `Waktu Habis\nJawaban:  ${tebakkata[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, floc)
                         delete tebakkata[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'kalimat') {
                     if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
                     let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakkalimat.json')
                     let result = anu[Math.floor(Math.random() * anu.length)]
-                    hisoka.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : 60s`, fgclink).then(() => {
+                    hisoka.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\n${result.soal}\nWaktu : 60s`, floc).then(() => {
                         tebakkalimat[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
                     })
                     await sleep(60000)
@@ -1474,14 +1623,14 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                                 displayText: '⌲ Tebak Kalimat'
                             },
                             type: 1
-                        }], `Waktu Habis\nJawaban:  ${tebakkalimat[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, fgclink)
+                        }], `Waktu Habis\nJawaban:  ${tebakkalimat[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, floc)
                         delete tebakkalimat[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'lirik') {
                     if (tebaklirik.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
                     let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebaklirik.json')
                     let result = anu[Math.floor(Math.random() * anu.length)]
-                    hisoka.sendText(m.chat, `Ini Adalah Lirik Dari Lagu? : *${result.soal}*?\nWaktu : 60s`, fgclink).then(() => {
+                    hisoka.sendText(m.chat, `Ini Adalah Lirik Dari Lagu? : *${result.soal}*?\nWaktu : 60s`, floc).then(() => {
                         tebaklirik[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
                     })
                     await sleep(60000)
@@ -1493,14 +1642,14 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                                 displayText: '⌲ Tebak Lirik'
                             },
                             type: 1
-                        }], `Waktu Habis\nJawaban:  ${tebaklirik[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, fgclink)
+                        }], `Waktu Habis\nJawaban:  ${tebaklirik[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, floc)
                         delete tebaklirik[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'tebakan') {
                     if (tebaktebakan.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
                     let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebaktebakan.json')
                     let result = anu[Math.floor(Math.random() * anu.length)]
-                    hisoka.sendText(m.chat, `Jawablah Pertanyaan Berikut : *${result.soal}*?\nWaktu : 60s`, fgclink).then(() => {
+                    hisoka.sendText(m.chat, `Jawablah Pertanyaan Berikut : *${result.soal}*?\nWaktu : 60s`, floc).then(() => {
                         tebaktebakan[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
                     })
                     await sleep(60000)
@@ -1512,14 +1661,14 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                                 displayText: '⌲ Tebak Tebakan'
                             },
                             type: 1
-                        }], `Waktu Habis\nJawaban:  ${tebaktebakan[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, fgclink)
+                        }], `Waktu Habis\nJawaban:  ${tebaktebakan[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, floc)
                         delete tebaktebakan[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'lontong') {
                     if (caklontong.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
                     let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/caklontong.json')
                     let result = anu[Math.floor(Math.random() * anu.length)]
-                    hisoka.sendText(m.chat, `*Jawablah Pertanyaan Berikut :*\n${result.soal}*\nWaktu : 60s`, fgclink).then(() => {
+                    hisoka.sendText(m.chat, `*Jawablah Pertanyaan Berikut :*\n${result.soal}*\nWaktu : 60s`, floc).then(() => {
                         caklontong[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
                         caklontong_desk[m.sender.split('@')[0]] = result.deskripsi
                     })
@@ -1532,7 +1681,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                                 displayText: '⌲ Tebak Lontong'
                             },
                             type: 1
-                        }], `Waktu Habis\nJawaban:  ${caklontong[m.sender.split('@')[0]]}\nDeskripsi : ${caklontong_desk[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, fgclink)
+                        }], `Waktu Habis\nJawaban:  ${caklontong[m.sender.split('@')[0]]}\nDeskripsi : ${caklontong_desk[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, floc)
                         delete caklontong[m.sender.split('@')[0]]
                         delete caklontong_desk[m.sender.split('@')[0]]
                     }
@@ -1540,7 +1689,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                     if (tebakbendera.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
                     let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakbendera.json')
                     let result = anu[Math.floor(Math.random() * anu.length)]
-                    hisoka.sendImage(m.chat, result.img, `Silahkan Jawab Gambar Berikut\n\nClue : ${result.flag}\nWaktu : 60s`, fgclink).then(() => {
+                    hisoka.sendImage(m.chat, result.img, `Silahkan Jawab Gambar Berikut\n\nClue : ${result.flag}\nWaktu : 60s`, floc).then(() => {
                         tebakbendera[m.sender.split('@')[0]] = result.name.toLowerCase()
                     })
                     await sleep(60000)
@@ -1552,14 +1701,14 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                                 displayText: '⌲ Tebak Bendera'
                             },
                             type: 1
-                        }], `Waktu Habis\nJawaban:  ${tebakbendera[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, fgclink)
+                        }], `Waktu Habis\nJawaban:  ${tebakbendera[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, floc)
                         delete tebakbendera[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'bendera2') {
                     if (tebakbendera2.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
                     let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakbendera2.json')
                     let result = anu[Math.floor(Math.random() * anu.length)]
-                    hisoka.sendImage(m.chat, result.img, `Silahkan Jawab Gambar Berikut\n\nWaktu : 60s`, fgclink).then(() => {
+                    hisoka.sendImage(m.chat, result.img, `Silahkan Jawab Gambar Berikut\n\nWaktu : 60s`, floc).then(() => {
                         tebakbendera2[m.sender.split('@')[0]] = result.name.toLowerCase()
                     })
                     await sleep(60000)
@@ -1571,14 +1720,14 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                                 displayText: '⌲ Tebak Bendera'
                             },
                             type: 1
-                        }], `Waktu Habis\nJawaban:  ${tebakbendera2[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, fgclink)
+                        }], `Waktu Habis\nJawaban:  ${tebakbendera2[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, floc)
                         delete tebakbendera2[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'kabupaten') {
                     if (tebakkabupaten.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
                     let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakkabupaten.json')
                     let result = anu[Math.floor(Math.random() * anu.length)]
-                    hisoka.sendImage(m.chat, result.url, `Silahkan Jawab Gambar Berikut\n\nWaktu : 60s`, fgclink).then(() => {
+                    hisoka.sendImage(m.chat, result.url, `Silahkan Jawab Gambar Berikut\n\nWaktu : 60s`, floc).then(() => {
                         tebakkabupaten[m.sender.split('@')[0]] = result.title.toLowerCase()
                     })
                     await sleep(60000)
@@ -1590,14 +1739,14 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                                 displayText: '⌲ Tebak Kabupaten'
                             },
                             type: 1
-                        }], `Waktu Habis\nJawaban:  ${tebakkabupaten[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, fgclink)
+                        }], `Waktu Habis\nJawaban:  ${tebakkabupaten[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, floc)
                         delete tebakkabupaten[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'kimia') {
                     if (tebakkimia.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
                     let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakkimia.json')
                     let result = anu[Math.floor(Math.random() * anu.length)]
-                    hisoka.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\nUnsur : ${result.unsur}\nWaktu : 60s`, fgclink).then(() => {
+                    hisoka.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\nUnsur : ${result.unsur}\nWaktu : 60s`, floc).then(() => {
                         tebakkimia[m.sender.split('@')[0]] = result.lambang.toLowerCase()
                     })
                     await sleep(60000)
@@ -1609,14 +1758,14 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                                 displayText: '⌲ Tebak Kimia'
                             },
                             type: 1
-                        }], `Waktu Habis\nJawaban:  ${tebakkimia[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, fgclink)
+                        }], `Waktu Habis\nJawaban:  ${tebakkimia[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, floc)
                         delete tebakkimia[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'asahotak') {
                 if (tebakasahotak.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
                 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/asahotak.json')
                 let result = anu[Math.floor(Math.random() * anu.length)]
-                hisoka.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\nSoal : ${result.soal}\nWaktu : 60s`, fgclink).then(() => {
+                hisoka.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\nSoal : ${result.soal}\nWaktu : 60s`, floc).then(() => {
                     tebakasahotak[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
                     })
                     await sleep(60000)
@@ -1628,14 +1777,14 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                                 displayText: '⌲ Tebak Asah Otak'
                             },
                             type: 1
-                        }], `Waktu Habis\nJawaban:  ${tebakasahotak[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, fgclink)
+                        }], `Waktu Habis\nJawaban:  ${tebakasahotak[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, floc)
                         delete tebakasahotak[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'siapakahaku') {
                 if (tebaksiapakahaku.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
                 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/siapakahaku.json')
                 let result = anu[Math.floor(Math.random() * anu.length)]
-                hisoka.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\nSoal : ${result.soal}\nWaktu : 60s`, fgclink).then(() => {
+                hisoka.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\nSoal : ${result.soal}\nWaktu : 60s`, floc).then(() => {
                     tebaksiapakahaku[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
                     })
                     await sleep(60000)
@@ -1647,14 +1796,14 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                                 displayText: '⌲ Tebak Siapakah Aku'
                             },
                             type: 1
-                        }], `Waktu Habis\nJawaban:  ${tebaksiapakahaku[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, fgclink)
+                        }], `Waktu Habis\nJawaban:  ${tebaksiapakahaku[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, floc)
                         delete tebaksiapakahaku[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'susunkata') {
                 if (tebaksusunkata.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
                 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/susunkata.json')
                 let result = anu[Math.floor(Math.random() * anu.length)]
-                hisoka.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\nSoal : ${result.soal}\nTipe : ${result.tipe}\nWaktu : 60s`, fgclink).then(() => {
+                hisoka.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\nSoal : ${result.soal}\nTipe : ${result.tipe}\nWaktu : 60s`, floc).then(() => {
                     tebaksusunkata[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
                     })
                     await sleep(60000)
@@ -1666,14 +1815,14 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                                 displayText: '⌲ Tebak Susun Kata'
                             },
                             type: 1
-                        }], `Waktu Habis\nJawaban:  ${tebaksusunkata[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, fgclink)
+                        }], `Waktu Habis\nJawaban:  ${tebaksusunkata[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, floc)
                         delete tebaksusunkata[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'tekateki') {
                 if (tebaktekateki.hasOwnProperty(m.sender.split('@')[0])) throw "Masih Ada Sesi Yang Belum Diselesaikan!"
                 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tekateki.json')
                 let result = anu[Math.floor(Math.random() * anu.length)]
-                hisoka.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\nSoal : ${result.soal}\nWaktu : 60s`, fgclink).then(() => {
+                hisoka.sendText(m.chat, `Silahkan Jawab Pertanyaan Berikut\n\nSoal : ${result.soal}\nWaktu : 60s`, floc).then(() => {
                     tebaktekateki[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
                     })
                     await sleep(60000)
@@ -1685,11 +1834,11 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                                 displayText: '⌲ Tebak Teka Teki'
                             },
                             type: 1
-                        }], `Waktu Habis\nJawaban:  ${tebaktekateki[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, fgclink)
+                        }], `Waktu Habis\nJawaban:  ${tebaktekateki[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hisoka.user.name, floc)
                         delete tebaktekateki[m.sender.split('@')[0]]
                     }
                 }
-              hisoka.sendListMsg(m.chat, `*Silahkan Pilih Menu Dibawah Ini*`, hisoka.user.name, `TEBAK MENU`, `Click Here`, menuss, fgclink)
+              hisoka.sendListMsg(m.chat, `*Silahkan Pilih Menu Dibawah Ini*`, hisoka.user.name, `TEBAK MENU`, `Click Here`, menuss, floc)
 			}
             break
             case 'kuismath':
@@ -1701,7 +1850,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 } = require('./src/math')
                 if (!text) throw `Mode: ${Object.keys(modes).join(' | ')}\nContoh penggunaan: ${prefix}math medium`
                 let result = await genMath(text.toLowerCase())
-                hisoka.sendText(m.chat, `*Berapa hasil dari: ${result.soal.toLowerCase()}*?\n\nWaktu: ${(result.waktu / 1000).toFixed(2)} detik`, fgclink).then(() => {
+                hisoka.sendText(m.chat, `*Berapa hasil dari: ${result.soal.toLowerCase()}*?\n\nWaktu: ${(result.waktu / 1000).toFixed(2)} detik`, floc).then(() => {
                     kuismath[m.sender.split('@')[0]] = result.jawaban
                 })
                 await sleep(result.waktu)
@@ -1773,7 +1922,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
 				]
 				},
 				]
-				 hisoka.sendListMsg(m.chat, `*Menu tag seseorang yg si paling...*`, hisoka.user.name, `TAG MENU`, `Click Here`, tagg, fgclink)
+				 hisoka.sendListMsg(m.chat, `*Menu tag seseorang yg si paling...*`, hisoka.user.name, `TAG MENU`, `Click Here`, tagg, floc)
 				 }
 				break
             case 'bebangrup': {
@@ -2963,7 +3112,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             let media = await hisoka.downloadMediaMessage(qmsg)
             let { toAudio } = require('./lib/converter')
             let audio = await toAudio(media, 'mp4')
-            hisoka.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : fdoc })
+            hisoka.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : fvn })
             }
             break
             case 'tomp3': {
@@ -2972,7 +3121,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             let media = await hisoka.downloadMediaMessage(qmsg)
             let { toAudio } = require('./lib/converter')
             let audio = await toAudio(media, 'mp4')
-            hisoka.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Convert By ${hisoka.user.name}.mp3`}, { quoted : fdoc })
+            hisoka.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Convert By ${hisoka.user.name}.mp3`}, { quoted : fvn })
             }
             break
             case 'tovn': case 'toptt': {
@@ -2981,7 +3130,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             let media = await hisoka.downloadMediaMessage(qmsg)
             let { toPTT } = require('./lib/converter')
             let audio = await toPTT(media, 'mp4')
-            hisoka.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
+            hisoka.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:fvn})
             }
             break
             case 'togif': {
@@ -2990,7 +3139,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 		        let { webp2mp4File } = require('./lib/uploader')
                 let media = await hisoka.downloadAndSaveMediaMessage(qmsg)
                 let webpToMp4 = await webp2mp4File(media)
-                await hisoka.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' }, gifPlayback: true }, { quoted: ftroli })
+                await hisoka.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' }, gifPlayback: true }, { quoted: fgif })
                 await fs.unlinkSync(media)
             }
             break
@@ -3026,7 +3175,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 	      scale: "100%",
 	      outputFile 
 	    }).then(async result => {
-	    hisoka.sendMessage(m.chat, {image: fs.readFileSync(outputFile), caption: mess.success}, { quoted: fgclink })
+	    hisoka.sendMessage(m.chat, {image: fs.readFileSync(outputFile), caption: mess.success}, { quoted: floc })
 	    await fs.unlinkSync(localFile)
 	    await fs.unlinkSync(outputFile)
 	    })
@@ -3042,7 +3191,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 for (let i of search.all) {
                     teks += `⭔ No : ${no++}\n⭔ Type : ${i.type}\n⭔ Video ID : ${i.videoId}\n⭔ Title : ${i.title}\n⭔ Views : ${i.views}\n⭔ Duration : ${i.timestamp}\n⭔ Upload At : ${i.ago}\n⭔ Author : ${i.author.name}\n⭔ Url : ${i.url}\n\n─────────────────\n\n`
                 }
-                hisoka.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: ftroli })
+                hisoka.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: fvideo })
             }
             break
             case 'google': {
@@ -3083,7 +3232,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                         headerType: 4
                     }
                     hisoka.sendMessage(m.chat, buttonMessage, {
-                        quoted: ftroli
+                        quoted: fkontak
                     })
                 })
             }
@@ -3132,7 +3281,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     headerType: 4
                 }
                 hisoka.sendMessage(m.chat, buttonMessage, {
-                    quoted: fgclink
+                    quoted: fvideo
                 })
             }
             break
@@ -3148,7 +3297,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let quality = args[1] ? args[1] : '128kbps'
                 let media = await yta(text, quality)
                 if (media.filesize >= 100000) return m.reply('File Melebihi Batas Silahkan Download Sendiri : ' + media.dl_link)
-                hisoka.sendImage(m.chat, media.thumb, `📄 Judul : ${media.title}\n🎚️ Ukuran File : ${media.filesizeF}\n🔗 Url : ${isUrl(text)}\n📥 Format : MP3\n📮 Resolusi : ${args[1] || '128kbps'}`, fgclink)
+                hisoka.sendImage(m.chat, media.thumb, `📄 Judul : ${media.title}\n🎚️ Ukuran File : ${media.filesizeF}\n🔗 Url : ${isUrl(text)}\n📥 Format : MP3\n📮 Resolusi : ${args[1] || '128kbps'}`, fvn)
                 hisoka.sendMessage(m.chat, {
                     audio: {
                         url: media.dl_link
@@ -3156,7 +3305,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     mimetype: 'audio/mpeg',
                     fileName: `${media.title}.mp3`
                 }, {
-                    quoted: fdoc
+                    quoted: fvn
                 })
             }
             break
@@ -3180,7 +3329,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     fileName: `${media.title}.mp4`,
                     caption: `📄 Judul : ${media.title}\n🎚️ Ukuran File : ${media.filesizeF}\n🔗 Url : ${isUrl(text)}\n📥 Format : MP4\n📮 Resolusi : ${args[1] || '360p'}`
                 }, {
-                    quoted: fgclink
+                    quoted: fvideo
                 })
             }
             break
@@ -3197,7 +3346,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let quality = args[1] ? args[1] : '128kbps'
                 let media = await yta(urls[text - 1], quality)
                 if (media.filesize >= 100000) return m.reply('File Melebihi Batas ' + util.format(media))
-                hisoka.sendImage(m.chat, media.thumb, `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${media.dl_link}\n⭔ Ext : MP3\n⭔ Resolusi : ${args[1] || '128kbps'}`, fgclink)
+                hisoka.sendImage(m.chat, media.thumb, `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${media.dl_link}\n⭔ Ext : MP3\n⭔ Resolusi : ${args[1] || '128kbps'}`, fvn)
                 hisoka.sendMessage(m.chat, {
                     audio: {
                         url: media.dl_link
@@ -3205,7 +3354,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     mimetype: 'audio/mpeg',
                     fileName: `${media.title}.mp3`
                 }, {
-                    quoted: fdoc
+                    quoted: fvn
                 })
             }
             break
@@ -3230,7 +3379,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     fileName: `${media.title}.mp4`,
                     caption: `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${media.dl_link}\n⭔ Ext : MP3\n⭔ Resolusi : ${args[1] || '360p'}`
                 }, {
-                    quoted: fgclink
+                    quoted: fvideo
                 })
             }
             break
@@ -3285,7 +3434,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     headerType: 4
                 }
                 hisoka.sendMessage(m.chat, buttonMessage, {
-                    quoted: fdoc
+                    quoted: fkontak
                 })
             }
             break
@@ -3308,7 +3457,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     headerType: 4
                 }
                 hisoka.sendMessage(m.chat, buttonMessage, {
-                    quoted: fdoc
+                    quoted: fkontak
                 })
             }
             break
@@ -3331,7 +3480,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     headerType: 4
                 }
                 hisoka.sendMessage(m.chat, buttonMessage, {
-                    quoted: fdoc
+                    quoted: fkontak
                 })
             }
             break
@@ -3354,7 +3503,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     headerType: 4
                 }
                 hisoka.sendMessage(m.chat, buttonMessage, {
-                    quoted: fdoc
+                    quoted: fkontak
                 })
             }
             break
@@ -3420,7 +3569,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     buttons: buttons,
                     headerType: 4
                 }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: fdoc })
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: fkontak })
             }
             break
             //Random
@@ -3454,7 +3603,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     buttons: buttons,
                     headerType: 4
                 }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: fdoc })
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: fkontak })
             }
             break
             //Wallpaper
@@ -3477,7 +3626,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     buttons: buttons,
                     headerType: 4
                 }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: fdoc })
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: fkontak })
             }
             break
             //NSFW
@@ -3515,7 +3664,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     buttons: buttons,
                     headerType: 4
                 }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: fdoc })
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: fkontak })
             }
             break
             //Meme
@@ -3541,7 +3690,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     headerType: 4
                 }
                 hisoka.sendMessage(m.chat, buttonMessage, {
-                    quoted: fdoc
+                    quoted: fkontak
                 })
             }
             break
@@ -3570,7 +3719,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     buttons: buttons,
                     headerType: 4
                 }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: fdoc })
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: fkontak })
             }
             break
                 case 'couple': {
@@ -3585,7 +3734,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     },
                     caption: `Couple Male`
                 }, {
-                    quoted: fgclink
+                    quoted: fgif
                 })
                 hisoka.sendMessage(m.chat, {
                     image: {
@@ -3593,7 +3742,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     },
                     caption: `Couple Female`
                 }, {
-                    quoted: fgclink
+                    quoted: fgif
                 })
             }
             break
@@ -3619,7 +3768,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     headerType: 4
                 }
                 hisoka.sendMessage(m.chat, buttonMessage, {
-                    quoted: fdoc
+                    quoted: fkontak
                 })
             }
             break
@@ -3647,7 +3796,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     headerType: 4
                 }
                 hisoka.sendMessage(m.chat, buttonMessage, {
-                    quoted: fdoc
+                    quoted: fkontak
                 })
             }
             break
@@ -3675,7 +3824,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     headerType: 4
                 }
                 hisoka.sendMessage(m.chat, buttonMessage, {
-                    quoted: fdoc
+                    quoted: fkontak
                 })
             }
             break
@@ -3702,7 +3851,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     headerType: 2
                 }
                 hisoka.sendMessage(m.chat, buttonMessage, {
-                    quoted: ftroli
+                    quoted: fakestatus
                 })
             }
             break
@@ -3725,7 +3874,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     headerType: 2
                 }
                 hisoka.sendMessage(m.chat, buttonMessage, {
-                    quoted: fgclink
+                    quoted: fkontak
                 })
             }
             break
@@ -3760,7 +3909,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     headerType: 2
                 }
                 hisoka.sendMessage(m.chat, buttonMessage, {
-                    quoted: fgclink
+                    quoted: fkontak
                 })
             }
             break
@@ -3782,7 +3931,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     headerType: 2
                 }
                 hisoka.sendMessage(m.chat, buttonMessage, {
-                    quoted: fdoc
+                    quoted: fkontak
                 })
             }
             break
@@ -3827,7 +3976,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     },
                     caption: `Text Pro ${command}`
                 }, {
-                    quoted: fdoc
+                    quoted: fkontak
                 })
             }
             break
@@ -3907,7 +4056,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     },
                     caption: `Ephoto ${command}`
                 }, {
-                    quoted: fdoc
+                    quoted: fkontak
                 })
             }
             break
@@ -3915,14 +4064,14 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 if (!Number(text)) throw `Contoh : ${prefix + command} 6288292024190`
                 let anu = await primbon.nomer_hoki(Number(text))
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Nomor HP :* ${anu.message.nomer_hp}\n⭔ *Angka Shuzi :* ${anu.message.angka_shuzi}\n⭔ *Energi Positif :*\n- Kekayaan : ${anu.message.energi_positif.kekayaan}\n- Kesehatan : ${anu.message.energi_positif.kesehatan}\n- Cinta : ${anu.message.energi_positif.cinta}\n- Kestabilan : ${anu.message.energi_positif.kestabilan}\n- Persentase : ${anu.message.energi_positif.persentase}\n⭔ *Energi Negatif :*\n- Perselisihan : ${anu.message.energi_negatif.perselisihan}\n- Kehilangan : ${anu.message.energi_negatif.kehilangan}\n- Malapetaka : ${anu.message.energi_negatif.malapetaka}\n- Kehancuran : ${anu.message.energi_negatif.kehancuran}\n- Persentase : ${anu.message.energi_negatif.persentase}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Nomor HP :* ${anu.message.nomer_hp}\n⭔ *Angka Shuzi :* ${anu.message.angka_shuzi}\n⭔ *Energi Positif :*\n- Kekayaan : ${anu.message.energi_positif.kekayaan}\n- Kesehatan : ${anu.message.energi_positif.kesehatan}\n- Cinta : ${anu.message.energi_positif.cinta}\n- Kestabilan : ${anu.message.energi_positif.kestabilan}\n- Persentase : ${anu.message.energi_positif.persentase}\n⭔ *Energi Negatif :*\n- Perselisihan : ${anu.message.energi_negatif.perselisihan}\n- Kehilangan : ${anu.message.energi_negatif.kehilangan}\n- Malapetaka : ${anu.message.energi_negatif.malapetaka}\n- Kehancuran : ${anu.message.energi_negatif.kehancuran}\n- Persentase : ${anu.message.energi_negatif.persentase}`, fakestatus)
             }
             break
             case 'artimimpi': case 'tafsirmimpi': {
                 if (!text) throw `Contoh : ${prefix + command} belanja`
                 let anu = await primbon.tafsir_mimpi(text)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Mimpi :* ${anu.message.mimpi}\n⭔ *Arti :* ${anu.message.arti}\n⭔ *Solusi :* ${anu.message.solusi}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Mimpi :* ${anu.message.mimpi}\n⭔ *Arti :* ${anu.message.arti}\n⭔ *Solusi :* ${anu.message.solusi}`, fakestatus)
             }
             break
             case 'ramalanjodoh': case 'ramaljodoh': {
@@ -3930,7 +4079,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_jodoh(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Nama Anda :* ${anu.message.nama_anda.nama}\n⭔ *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n⭔ *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n⭔ *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Nama Anda :* ${anu.message.nama_anda.nama}\n⭔ *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n⭔ *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n⭔ *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'ramalanjodohbali': case 'ramaljodohbali': {
@@ -3938,7 +4087,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_jodoh_bali(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Nama Anda :* ${anu.message.nama_anda.nama}\n⭔ *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n⭔ *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n⭔ *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Nama Anda :* ${anu.message.nama_anda.nama}\n⭔ *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n⭔ *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n⭔ *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'suamiistri': {
@@ -3946,7 +4095,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.suami_istri(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Nama Suami :* ${anu.message.suami.nama}\n⭔ *Lahir Suami :* ${anu.message.suami.tgl_lahir}\n⭔ *Nama Istri :* ${anu.message.istri.nama}\n⭔ *Lahir Istri :* ${anu.message.istri.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Nama Suami :* ${anu.message.suami.nama}\n⭔ *Lahir Suami :* ${anu.message.suami.tgl_lahir}\n⭔ *Nama Istri :* ${anu.message.istri.nama}\n⭔ *Lahir Istri :* ${anu.message.istri.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'ramalancinta': case 'ramalcinta': {
@@ -3954,14 +4103,14 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_cinta(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Nama Anda :* ${anu.message.nama_anda.nama}\n⭔ *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n⭔ *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n⭔ *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n⭔ *Sisi Positif :* ${anu.message.sisi_positif}\n⭔ *Sisi Negatif :* ${anu.message.sisi_negatif}\n⭔ *Catatan :* ${anu.message.catatan}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Nama Anda :* ${anu.message.nama_anda.nama}\n⭔ *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n⭔ *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n⭔ *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n⭔ *Sisi Positif :* ${anu.message.sisi_positif}\n⭔ *Sisi Negatif :* ${anu.message.sisi_negatif}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'artinama': {
                 if (!text) throw `Contoh : ${prefix + command} Dika Ardianta`
                 let anu = await primbon.arti_nama(text)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Arti :* ${anu.message.arti}\n⭔ *Catatan :* ${anu.message.catatan}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Arti :* ${anu.message.arti}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'kecocokannama': case 'cocoknama': {
@@ -3969,7 +4118,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.kecocokan_nama(nama, tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Life Path :* ${anu.message.life_path}\n⭔ *Destiny :* ${anu.message.destiny}\n⭔ *Destiny Desire :* ${anu.message.destiny_desire}\n⭔ *Personality :* ${anu.message.personality}\n⭔ *Persentase :* ${anu.message.persentase_kecocokan}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Life Path :* ${anu.message.life_path}\n⭔ *Destiny :* ${anu.message.destiny}\n⭔ *Destiny Desire :* ${anu.message.destiny_desire}\n⭔ *Personality :* ${anu.message.personality}\n⭔ *Persentase :* ${anu.message.persentase_kecocokan}`, fakestatus)
             }
             break
             case 'kecocokanpasangan': case 'cocokpasangan': case 'pasangan': {
@@ -3977,7 +4126,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [nama1, nama2] = text.split`|`
                 let anu = await primbon.kecocokan_nama_pasangan(nama1, nama2)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendImage(m.chat,  anu.message.gambar, `⭔ *Nama Anda :* ${anu.message.nama_anda}\n⭔ *Nama Pasangan :* ${anu.message.nama_pasangan}\n⭔ *Sisi Positif :* ${anu.message.sisi_positif}\n⭔ *Sisi Negatif :* ${anu.message.sisi_negatif}`, fgclink)
+                hisoka.sendImage(m.chat,  anu.message.gambar, `⭔ *Nama Anda :* ${anu.message.nama_anda}\n⭔ *Nama Pasangan :* ${anu.message.nama_pasangan}\n⭔ *Sisi Positif :* ${anu.message.sisi_positif}\n⭔ *Sisi Negatif :* ${anu.message.sisi_negatif}`, fakestatus)
             }
             break
             case 'jadianpernikahan': case 'jadiannikah': {
@@ -3985,7 +4134,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.tanggal_jadian_pernikahan(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Tanggal Pernikahan :* ${anu.message.tanggal}\n⭔ *karakteristik :* ${anu.message.karakteristik}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Tanggal Pernikahan :* ${anu.message.tanggal}\n⭔ *karakteristik :* ${anu.message.karakteristik}`, fakestatus)
             }
             break
             case 'sifatusaha': {
@@ -3993,7 +4142,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.sifat_usaha_bisnis(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Lahir :* ${anu.message.hari_lahir}\n⭔ *Usaha :* ${anu.message.usaha}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Lahir :* ${anu.message.hari_lahir}\n⭔ *Usaha :* ${anu.message.usaha}`, fakestatus)
             }
             break
             case 'rejeki': case 'rezeki': {
@@ -4001,7 +4150,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.rejeki_hoki_weton(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Lahir :* ${anu.message.hari_lahir}\n⭔ *Rezeki :* ${anu.message.rejeki}\n⭔ *Catatan :* ${anu.message.catatan}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Lahir :* ${anu.message.hari_lahir}\n⭔ *Rezeki :* ${anu.message.rejeki}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'pekerjaan': case 'kerja': {
@@ -4009,7 +4158,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.pekerjaan_weton_lahir(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Lahir :* ${anu.message.hari_lahir}\n⭔ *Pekerjaan :* ${anu.message.pekerjaan}\n⭔ *Catatan :* ${anu.message.catatan}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Lahir :* ${anu.message.hari_lahir}\n⭔ *Pekerjaan :* ${anu.message.pekerjaan}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'ramalannasib': case 'ramalnasib': case 'nasib': {
@@ -4017,7 +4166,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.ramalan_nasib(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Analisa :* ${anu.message.analisa}\n⭔ *Angka Akar :* ${anu.message.angka_akar}\n⭔ *Sifat :* ${anu.message.sifat}\n⭔ *Elemen :* ${anu.message.elemen}\n⭔ *Angka Keberuntungan :* ${anu.message.angka_keberuntungan}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Analisa :* ${anu.message.analisa}\n⭔ *Angka Akar :* ${anu.message.angka_akar}\n⭔ *Sifat :* ${anu.message.sifat}\n⭔ *Elemen :* ${anu.message.elemen}\n⭔ *Angka Keberuntungan :* ${anu.message.angka_keberuntungan}`, fakestatus)
             }
             break
             case 'potensipenyakit': case 'penyakit': {
@@ -4025,7 +4174,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.cek_potensi_penyakit(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Analisa :* ${anu.message.analisa}\n⭔ *Sektor :* ${anu.message.sektor}\n⭔ *Elemen :* ${anu.message.elemen}\n⭔ *Catatan :* ${anu.message.catatan}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Analisa :* ${anu.message.analisa}\n⭔ *Sektor :* ${anu.message.sektor}\n⭔ *Elemen :* ${anu.message.elemen}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'artitarot': case 'tarot': {
@@ -4033,7 +4182,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.arti_kartu_tarot(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendImage(m.chat, anu.message.image, `⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Simbol Tarot :* ${anu.message.simbol_tarot}\n⭔ *Arti :* ${anu.message.arti}\n⭔ *Catatan :* ${anu.message.catatan}`, fgclink)
+                hisoka.sendImage(m.chat, anu.message.image, `⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Simbol Tarot :* ${anu.message.simbol_tarot}\n⭔ *Arti :* ${anu.message.arti}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'fengshui': {
@@ -4041,7 +4190,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [nama, gender, tahun] = text.split`,`
                 let anu = await primbon.perhitungan_feng_shui(nama, gender, tahun)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tahun_lahir}\n⭔ *Gender :* ${anu.message.jenis_kelamin}\n⭔ *Angka Kua :* ${anu.message.angka_kua}\n⭔ *Kelompok :* ${anu.message.kelompok}\n⭔ *Karakter :* ${anu.message.karakter}\n⭔ *Sektor Baik :* ${anu.message.sektor_baik}\n⭔ *Sektor Buruk :* ${anu.message.sektor_buruk}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tahun_lahir}\n⭔ *Gender :* ${anu.message.jenis_kelamin}\n⭔ *Angka Kua :* ${anu.message.angka_kua}\n⭔ *Kelompok :* ${anu.message.kelompok}\n⭔ *Karakter :* ${anu.message.karakter}\n⭔ *Sektor Baik :* ${anu.message.sektor_baik}\n⭔ *Sektor Buruk :* ${anu.message.sektor_buruk}`, fakestatus)
             }
             break
             case 'haribaik': {
@@ -4049,7 +4198,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.petung_hari_baik(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Kala Tinantang :* ${anu.message.kala_tinantang}\n⭔ *Info :* ${anu.message.info}\n⭔ *Catatan :* ${anu.message.catatan}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Kala Tinantang :* ${anu.message.kala_tinantang}\n⭔ *Info :* ${anu.message.info}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'harisangar': case 'taliwangke': {
@@ -4057,7 +4206,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.hari_sangar_taliwangke(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Info :* ${anu.message.info}\n⭔ *Catatan :* ${anu.message.catatan}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Info :* ${anu.message.info}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'harinaas': case 'harisial': {
@@ -4065,7 +4214,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_hari_naas(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Hari Lahir :* ${anu.message.hari_lahir}\n⭔ *Tanggal Lahir :* ${anu.message.tgl_lahir}\n⭔ *Hari Naas :* ${anu.message.hari_naas}\n⭔ *Info :* ${anu.message.catatan}\n⭔ *Catatan :* ${anu.message.info}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Hari Lahir :* ${anu.message.hari_lahir}\n⭔ *Tanggal Lahir :* ${anu.message.tgl_lahir}\n⭔ *Hari Naas :* ${anu.message.hari_naas}\n⭔ *Info :* ${anu.message.catatan}\n⭔ *Catatan :* ${anu.message.info}`, fakestatus)
             }
             break
             case 'nagahari': case 'harinaga': {
@@ -4073,7 +4222,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.rahasia_naga_hari(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Hari Lahir :* ${anu.message.hari_lahir}\n⭔ *Tanggal Lahir :* ${anu.message.tgl_lahir}\n⭔ *Arah Naga Hari :* ${anu.message.arah_naga_hari}\n⭔ *Catatan :* ${anu.message.catatan}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Hari Lahir :* ${anu.message.hari_lahir}\n⭔ *Tanggal Lahir :* ${anu.message.tgl_lahir}\n⭔ *Arah Naga Hari :* ${anu.message.arah_naga_hari}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'arahrejeki': case 'arahrezeki': {
@@ -4081,7 +4230,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_arah_rejeki(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Hari Lahir :* ${anu.message.hari_lahir}\n⭔ *tanggal Lahir :* ${anu.message.tgl_lahir}\n⭔ *Arah Rezeki :* ${anu.message.arah_rejeki}\n⭔ *Catatan :* ${anu.message.catatan}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Hari Lahir :* ${anu.message.hari_lahir}\n⭔ *tanggal Lahir :* ${anu.message.tgl_lahir}\n⭔ *Arah Rezeki :* ${anu.message.arah_rejeki}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'peruntungan': {
@@ -4089,7 +4238,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [nama, tgl, bln, thn, untuk] = text.split`,`
                 let anu = await primbon.ramalan_peruntungan(nama, tgl, bln, thn, untuk)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Peruntungan Tahun :* ${anu.message.peruntungan_tahun}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Peruntungan Tahun :* ${anu.message.peruntungan_tahun}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'weton': case 'wetonjawa': {
@@ -4097,7 +4246,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.weton_jawa(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Tanggal :* ${anu.message.tanggal}\n⭔ *Jumlah Neptu :* ${anu.message.jumlah_neptu}\n⭔ *Watak Hari :* ${anu.message.watak_hari}\n⭔ *Naga Hari :* ${anu.message.naga_hari}\n⭔ *Jam Baik :* ${anu.message.jam_baik}\n⭔ *Watak Kelahiran :* ${anu.message.watak_kelahiran}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Tanggal :* ${anu.message.tanggal}\n⭔ *Jumlah Neptu :* ${anu.message.jumlah_neptu}\n⭔ *Watak Hari :* ${anu.message.watak_hari}\n⭔ *Naga Hari :* ${anu.message.naga_hari}\n⭔ *Jam Baik :* ${anu.message.jam_baik}\n⭔ *Watak Kelahiran :* ${anu.message.watak_kelahiran}`, fakestatus)
             }
             break
             case 'sifat': case 'karakter': {
@@ -4105,7 +4254,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.sifat_karakter_tanggal_lahir(nama, tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Garis Hidup :* ${anu.message.garis_hidup}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Garis Hidup :* ${anu.message.garis_hidup}`, fakestatus)
             }
             break
             case 'keberuntungan': {
@@ -4113,7 +4262,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.potensi_keberuntungan(nama, tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}`, fakestatus)
             }
             break
             case 'memancing': {
@@ -4121,7 +4270,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_memancing_ikan(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Tanggal :* ${anu.message.tgl_memancing}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Tanggal :* ${anu.message.tgl_memancing}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'masasubur': {
@@ -4129,7 +4278,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let [tgl, bln, thn, siklus] = text.split`,`
                 let anu = await primbon.masa_subur(tgl, bln, thn, siklus)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'zodiak': case 'zodiac': {
@@ -4164,14 +4313,14 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 
                 let anu = await primbon.zodiak(zodiac)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Zodiak :* ${anu.message.zodiak}\n⭔ *Nomor :* ${anu.message.nomor_keberuntungan}\n⭔ *Aroma :* ${anu.message.aroma_keberuntungan}\n⭔ *Planet :* ${anu.message.planet_yang_mengitari}\n⭔ *Bunga :* ${anu.message.bunga_keberuntungan}\n⭔ *Warna :* ${anu.message.warna_keberuntungan}\n⭔ *Batu :* ${anu.message.batu_keberuntungan}\n⭔ *Elemen :* ${anu.message.elemen_keberuntungan}\n⭔ *Pasangan Zodiak :* ${anu.message.pasangan_zodiak}\n⭔ *Catatan :* ${anu.message.catatan}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Zodiak :* ${anu.message.zodiak}\n⭔ *Nomor :* ${anu.message.nomor_keberuntungan}\n⭔ *Aroma :* ${anu.message.aroma_keberuntungan}\n⭔ *Planet :* ${anu.message.planet_yang_mengitari}\n⭔ *Bunga :* ${anu.message.bunga_keberuntungan}\n⭔ *Warna :* ${anu.message.warna_keberuntungan}\n⭔ *Batu :* ${anu.message.batu_keberuntungan}\n⭔ *Elemen :* ${anu.message.elemen_keberuntungan}\n⭔ *Pasangan Zodiak :* ${anu.message.pasangan_zodiak}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'shio': {
                 if (!text) throw `Contoh : ${prefix + command} tikus\n\nNote : For Detail https://primbon.com/shio.htm`
                 let anu = await primbon.shio(text)
                 if (anu.status == false) return m.reply(anu.message)
-                hisoka.sendText(m.chat, `⭔ *Hasil :* ${anu.message}`, fgclink)
+                hisoka.sendText(m.chat, `⭔ *Hasil :* ${anu.message}`, fakestatus)
             }
             break
             case 'menfess':
@@ -4228,7 +4377,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     buttons: buttons,
                     headerType: 5
                 }
-                    hisoka.sendMessage(m.chat, buttonMessage, { quoted: fgclink })
+                    hisoka.sendMessage(m.chat, buttonMessage, { quoted: floc })
             }
             break
             case 'tiktoknowm':
@@ -4245,7 +4394,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     headerType: 5
                 }
                 hisoka.sendMessage(m.chat, buttonMessage, {
-                    quoted: fgclink
+                    quoted: fvideo
                 })
             }
             break
@@ -4263,7 +4412,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     headerType: 5
                 }
                 hisoka.sendMessage(m.chat, buttonMessage, {
-                    quoted: fgclink
+                    quoted: fvideo
                 })
             }
             break
@@ -4274,7 +4423,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let anu = await fdl.downloader.tiktok(text)
 				let cap = `👤 *Author:* ${anu.author}\n📌 *Title:* ${anu.title}\n🔗 Download From ${text}`
 				hisoka.sendMessage(m.chat, { caption: cap, image: { url: anu.thumbnail }})
-				hisoka.sendMessage(m.chat, { audio: { url: anu.audio }, mimetype: 'audio/mpeg'}, { quoted: fdoc })
+				hisoka.sendMessage(m.chat, { audio: { url: anu.audio }, mimetype: 'audio/mpeg'}, { quoted: fvn })
 				}
 				break
             case 'ig': case 'igdl': case 'instagram': {
@@ -4287,7 +4436,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 		        for(let i of result){
 			    if(i.url.includes('mp4')){
 				let link = await getBuffer(i.url)
-                hisoka.sendMessage(m.chat, { video: link, }, { quoted: fgclink })
+                hisoka.sendMessage(m.chat, { video: link, }, { quoted: fvideo })
                 } else {
                     let link = await getBuffer(i.url)
                   hisoka.sendMessage(m.chat, { image: link, }, { quoted: fgclink })                  
@@ -4304,7 +4453,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 		        for(let i of result.medias){
 			    if(i.url.includes('mp4')){
 				let link = await getBuffer(i.url)
-                hisoka.sendMessage(m.chat, { video: link, }, { quoted: fgclink })
+                hisoka.sendMessage(m.chat, { video: link, }, { quoted: fvideo })
                 } else {
                     let link = await getBuffer(i.url)
                   hisoka.sendMessage(m.chat, { image: link, }, { quoted: fgclink})                  
@@ -4318,7 +4467,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/joox', { query: text }, 'apikey'))
                 let msg = await hisoka.sendImage(m.chat, anu.result.img, `⭔ Title : ${anu.result.lagu}\n⭔ Album : ${anu.result.album}\n⭔ Singer : ${anu.result.penyanyi}\n⭔ Publish : ${anu.result.publish}\n⭔ Lirik :\n${anu.result.lirik.result}`, fgclink)
-                hisoka.sendMessage(m.chat, { audio: { url: anu.result.mp4aLink }, mimetype: 'audio/mpeg', fileName: anu.result.lagu+'.m4a' }, { quoted: fdoc })
+                hisoka.sendMessage(m.chat, { audio: { url: anu.result.mp4aLink }, mimetype: 'audio/mpeg', fileName: anu.result.lagu+'.m4a' }, { quoted: fvn })
             }
             break
             case 'soundcloud': case 'scdl': {
@@ -4326,7 +4475,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/soundcloud', { url: isUrl(text)[0] }, 'apikey'))
                 let msg = await hisoka.sendImage(m.chat, anu.result.thumb, `⭔ Title : ${anu.result.title}\n⭔ Url : ${isUrl(text)[0]}`)
-                hisoka.sendMessage(m.chat, { audio: { url: anu.result.url }, mimetype: 'audio/mpeg', fileName: anu.result.title+'.m4a' }, { quoted: fdoc })
+                hisoka.sendMessage(m.chat, { audio: { url: anu.result.url }, mimetype: 'audio/mpeg', fileName: anu.result.title+'.m4a' }, { quoted: fvn })
             }
             break
 	        case 'twitdl': case 'twitter': {
@@ -4354,14 +4503,14 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     {buttonId: `twitter ${text}`, buttonText: {displayText: '⌲ Video'}, type: 1}
                 ]
                 let buttonMessage = {
-		    image: { url: anu.result.thumb },
+		            image: { url: anu.result.thumb },
                     caption: util.format(anu.result),
                     footer: 'Press The Button Below',
                     buttons: buttons,
                     headerType: 4
                 }
                 let msg = await hisoka.sendMessage(m.chat, buttonMessage, { quoted: fgclink })
-                hisoka.sendMessage(m.chat, { audio: { url: anu.result.audio } }, { quoted: fdoc })
+                hisoka.sendMessage(m.chat, { audio: { url: anu.result.audio } }, { quoted: fvn })
             }
             break
             case 'fbdl': case 'fb': case 'facebook': {
@@ -4371,13 +4520,13 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 try {
                 var data= await bochil.savefrom(`${text}`)
                 for(let i of data.url){    
-                hisoka.sendMessage(m.chat, { video: { url: i.url }, caption: `Done`}, { quoted: fgclink })
+                hisoka.sendMessage(m.chat, { video: { url: i.url }, caption: `Done`}, { quoted: fvideo })
                 }
                 } catch {
                 try {
                 var daa = await bochil.facebookdl(`${text}`)
                 for(let i of daa.result){    
-                hisoka.sendMessage(m.chat, { video: { url: i.url }, caption: `Done`}, { quoted: fgclink })
+                hisoka.sendMessage(m.chat, { video: { url: i.url }, caption: `Done`}, { quoted: fvideo })
                 }
                 } catch {
                     m.reply(`*Gagal Saat mendownload media dan mengirm video*`)
@@ -4421,7 +4570,7 @@ Untuk Download Media Silahkan Klik salah satu Button dibawah ini atau masukkan c
         let { ringtone } = require('./lib/scraper')
 		let anu = await ringtone(text)
 		let result = anu[Math.floor(Math.random() * anu.length)]
-		hisoka.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: ftroli })
+		hisoka.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: fvn })
 	    }
 	    break
             case 'iqra': {
@@ -4547,7 +4696,7 @@ ${id}`)
                     },
                     mimetype: 'audio/mpeg'
                 }, {
-                    quoted: fdoc
+                    quoted: fvn
                 })
             }
             break
@@ -4601,7 +4750,7 @@ ${id}`)
                 fs.unlinkSync(media)
                 if (err) return m.reply(err)
                 let buff = fs.readFileSync(ran)
-                hisoka.sendMessage(m.chat, { audio: buff, mimetype: 'audio/mpeg' }, { quoted : fdoc })
+                hisoka.sendMessage(m.chat, { audio: buff, mimetype: 'audio/mpeg' }, { quoted : fvn })
                 fs.unlinkSync(ran)
                 })
                 } else m.reply(`Balas audio yang ingin diubah dengan caption *${prefix + command}*`)
@@ -4842,7 +4991,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 ]
                 }
                 ]
-                hisoka.sendListMsg(m.chat, `*Silahkan Pilih Menu Dibawah Ini*`, hisoka.user.name, `NULIS MENU`, `Click Here`, sections, fgclink)
+                hisoka.sendListMsg(m.chat, `*Silahkan Pilih Menu Dibawah Ini*`, hisoka.user.name, `NULIS MENU`, `Click Here`, sections, floc)
               }
             break
             case 'nuliskiri': {
@@ -4854,7 +5003,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 spawn('convert', ['./image/FOTO/BUKU/sebelumkiri.jpg','-font','./image/FONT/Indie-Flower.ttf','-size','960x1280','-pointsize','22','-interline-spacing','2','-annotate','+140+153',fixHeight,'./image/FOTO/BUKU/setelahkiri.jpg'])
                 .on('error', () => m.reply(mess.error))
                 .on('exit', () => {
-                hisoka.sendMessage(m.chat, { image: fs.readFileSync('./image/FOTO/BUKU/setelahkiri.jpg')}, { quoted: fdoc, caption: `Jangan Malas Kak...`})
+                hisoka.sendMessage(m.chat, { image: fs.readFileSync('./image/FOTO/BUKU/setelahkiri.jpg')}, { quoted: fakestatus, caption: `Jangan Malas Kak...`})
                 })
              }
             break
@@ -4867,7 +5016,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 spawn('convert', ['./image/FOTO/BUKU/sebelumkanan.jpg','-font','./image/FONT/Indie-Flower.ttf','-size','960x1280','-pointsize','23','-interline-spacing','2','-annotate','+128+129',fixHeight,'./image/FOTO/BUKU/setelahkanan.jpg'])
                 .on('error', () => m.reply(mess.error))
                 .on('exit', () => {
-                hisoka.sendMessage(m.chat, { image: fs.readFileSync('./image/FOTO/BUKU/setelahkanan.jpg')}, {quoted: fdoc, caption: `Jangan Malas Kak...`})
+                hisoka.sendMessage(m.chat, { image: fs.readFileSync('./image/FOTO/BUKU/setelahkanan.jpg')}, {quoted: fakestatus, caption: `Jangan Malas Kak...`})
                 })
               }
             break
@@ -4880,7 +5029,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 spawn('convert', ['./image/FOTO/FOLIO/sebelumkiri.jpg','-font','./image/FONT/Indie-Flower.ttf','-size','1720x1280','-pointsize','23','-interline-spacing','4','-annotate','+48+185',fixHeight,'./image/FOTO/FOLIO/setelahkiri.jpg'])
                 .on('error', () => m.reply(mess.error))
                 .on('exit', () => {
-                hisoka.sendMessage(m.chat, { image: fs.readFileSync('./image/FOTO/FOLIO/setelahkiri.jpg')}, { quoted: fdoc, caption: `Jangan Malas Kak...`})
+                hisoka.sendMessage(m.chat, { image: fs.readFileSync('./image/FOTO/FOLIO/setelahkiri.jpg')}, { quoted: fakestatus, caption: `Jangan Malas Kak...`})
                 })
              }
             break
@@ -4893,7 +5042,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 spawn('convert', ['./image/FOTO/FOLIO/sebelumkanan.jpg','-font','./image/FONT/Indie-Flower.ttf','-size','960x1280','-pointsize','23','-interline-spacing','3','-annotate','+89+190',fixHeight,'./image/FOTO/FOLIO/setelahkanan.jpg'])
                 .on('error', () => m.reply(mess.error))
                 .on('exit', () => {
-                hisoka.sendMessage(m.chat, { image: fs.readFileSync('./image/FOTO/FOLIO/setelahkanan.jpg')}, {quoted: fdoc, caption: `Jangan Malas Kak...`})
+                hisoka.sendMessage(m.chat, { image: fs.readFileSync('./image/FOTO/FOLIO/setelahkanan.jpg')}, {quoted: fakestatus, caption: `Jangan Malas Kak...`})
                 })
              }
             break
@@ -5045,7 +5194,7 @@ Request Message: ${text}`
 ⭔ Battery: ${batrai}
 ⭔ Battery Brand: ${merek_batre}
 ⭔ Detail: ${detail}`
-                hisoka.sendImage(m.chat, thumb, capt, fdoc)
+                hisoka.sendImage(m.chat, thumb, capt, floc)
             }
             break
             case 'jadwalbioskop': {
@@ -5059,7 +5208,7 @@ Request Message: ${text}`
                     capt += `⭔ Thumbnail: ${i.thumb}\n`
                     capt += `⭔ Url: ${i.url}\n\n──────────────────────\n`
                 }
-                hisoka.sendImage(m.chat, res.result[0].thumb, capt, fdoc)
+                hisoka.sendImage(m.chat, res.result[0].thumb, capt, floc)
             }
             break
             case 'nowplayingbioskop': {
@@ -5070,7 +5219,7 @@ Request Message: ${text}`
                     capt += `⭔ Url: ${i.url}\n`
                     capt += `⭔ Img Url: ${i.img}\n\n──────────────────────\n`
                 }
-                hisoka.sendImage(m.chat, res.result[0].img, capt, fdoc)
+                hisoka.sendImage(m.chat, res.result[0].img, capt, floc)
             }
             break
             case 'aminio': {
@@ -5086,7 +5235,7 @@ Request Message: ${text}`
                     capt += `⭔ Description: ${i.community_desc}\n`
                     capt += `⭔ Member Count: ${i.member_count}\n\n──────────────────────\n`
                 }
-                hisoka.sendImage(m.chat, 'https://' + res.result[0].community_thumb, capt, fdoc)
+                hisoka.sendImage(m.chat, 'https://' + res.result[0].community_thumb, capt, fgclink)
             }
             break
             case 'wattpad': {
@@ -5111,7 +5260,7 @@ Request Message: ${text}`
                 capt += `⭔ Bab: ${bab}\n`
                 capt += `⭔ Url: ${url}\n`
                 capt += `⭔ Deskripsi: ${description}`
-                hisoka.sendImage(m.chat, thumb, capt, fdoc)
+                hisoka.sendImage(m.chat, thumb, capt, fgclink)
             }
             break
             case 'webtoons': {
@@ -5143,7 +5292,7 @@ Request Message: ${text}`
                     capt += `⭔ Url: ${i.url}\n`
                     capt += `⭔ Thumbnail Url: ${i.thumbnail}\n\n──────────────────────\n`
                 }
-                hisoka.sendImage(m.chat, res.result[0].thumbnail, capt, fdoc)
+                hisoka.sendImage(m.chat, res.result[0].thumbnail, capt, fgclink)
             }
             break
             case 'jadwaltv': {
@@ -5218,7 +5367,7 @@ Request Message: ${text}`
                 if (!text) throw `Example : ${prefix + command} https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file`               
                 let me = await alya.mediafire(text)  
                 m.reply(util.format(me))              
-                hisoka.sendMessage(m.chat, { document: { url: me[0].link }, mimetype: `${me[0].mime}`, fileName: `${me[0].nama}` }, { quoted: fgclink })
+                hisoka.sendMessage(m.chat, { document: { url: me[0].link }, mimetype: `${me[0].mime}`, fileName: `${me[0].nama}` }, { quoted: fdoc })
             }
             break
             case 'zippyshare': {
@@ -5413,7 +5562,7 @@ Request Message: ${text}`
                 ]
                 },
                 ]
-                hisoka.sendListMsg(m.chat, `Please select the menu you want to change!`, hisoka.user.name, `Hello Owner !`, `Click Here`, sections, fgclink)
+                hisoka.sendListMsg(m.chat, `Please select the menu you want to change!`, hisoka.user.name, `Hello Owner !`, `Click Here`, sections, floc)
                 }
             }
             break
