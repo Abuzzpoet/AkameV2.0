@@ -1172,7 +1172,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
 • Wita : ${wita}
 • Wit : ${wit}`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'command': {
@@ -1305,7 +1305,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
 🌱 *Recode By : GuaAbuzz*
 ⎙ https://github.com/Abuzzpoet/AkameV2.0`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'tes':
@@ -2641,7 +2641,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     await sleep(1500)
                       let txt = `「 Broadcast Bot 」\n\n${text}`
                       let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(i, buttons, txt, global.github, fkontak)
+            await akame.sendButtonText(i, buttons, txt, akame.user.name, fkontak)
                 }
                 m.reply(`Sukses Mengirim Broadcast Ke ${anu.length} Group`)
             }
@@ -2655,7 +2655,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 		    await sleep(1500)
 		              let txt = `「 Broadcast Bot 」\n\n${text}`
                       let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(yoi, buttons, txt, global.github, fkontak)
+            await akame.sendButtonText(yoi, buttons, txt, akame.user.name, fkontak)
                 }
 		m.reply('Sukses Broadcast')
             }
@@ -4972,7 +4972,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 txtping += `*🎗️ WhatsApp :* wa.me/${global.owner}\n`
                     .trim()
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, txtping, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, txtping, akame.user.name, fkontak)
             }
             break
             case 'speed':
@@ -5471,7 +5471,7 @@ Request Message: ${text}`
 │Sanksi: BLOCK PERMANENT
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'sewa':
@@ -5512,7 +5512,7 @@ Request Message: ${text}`
 │⭔ Kirim » Bukti Pembayaran » Bot Join
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'donasi':
@@ -5544,7 +5544,7 @@ Request Message: ${text}`
 │ *Terima Kasih*
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'groupmenu':
@@ -5595,7 +5595,7 @@ Request Message: ${text}`
 │⭔ ${prefix}hapusvote
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'downloadmenu':
@@ -5638,7 +5638,7 @@ Request Message: ${text}`
 │⭔ ${prefix}soundcloud [url]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'searchmenu':
@@ -5673,7 +5673,7 @@ Request Message: ${text}`
 │⭔ ${prefix}ringtone [query]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'stickermenu':
@@ -5709,7 +5709,7 @@ Request Message: ${text}`
 │⭔ ${prefix}emojimix2 😎
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'animemenu':
@@ -5794,7 +5794,7 @@ Request Message: ${text}`
 │⭔ ${prefix}kitagawa
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'nsfwmenu':
@@ -5839,7 +5839,7 @@ Request Message: ${text}`
 │⭔ Noted : Stay Halal Brother >_<
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'asupanmenu':
@@ -5879,7 +5879,7 @@ Request Message: ${text}`
 │⭔ ${prefix}ryujin
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'quotesmenu':
@@ -5922,7 +5922,7 @@ Request Message: ${text}`
 │⭔ ${prefix}cerpen
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'mememenu':
@@ -5955,7 +5955,7 @@ Request Message: ${text}`
 │⭔ ${prefix}onecak
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'randommenu':
@@ -5987,7 +5987,7 @@ Request Message: ${text}`
 │⭔ ${prefix}styletext [teks]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'textpromenu':
@@ -6044,7 +6044,7 @@ Request Message: ${text}`
 │⭔ ${prefix}gluetext
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'photoeditormenu':
@@ -6088,7 +6088,7 @@ Request Message: ${text}`
 │⭔ ${prefix}triggered
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'ephotomenu':
@@ -6149,7 +6149,7 @@ Request Message: ${text}`
 │⭔ ${prefix}ytcertificate
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'gamemenu':
@@ -6181,7 +6181,7 @@ Request Message: ${text}`
 │⭔ ${prefix}suitpvp [@tag]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'primbonmenu':
@@ -6237,7 +6237,7 @@ Request Message: ${text}`
 │⭔ ${prefix}shio
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'convertmenu':
@@ -6273,7 +6273,7 @@ Request Message: ${text}`
 │
 └───────⭓`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'mainmenu':
@@ -6312,7 +6312,7 @@ Request Message: ${text}`
 │⭔ ${prefix}report [bug]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'databasemenu':
@@ -6346,7 +6346,7 @@ Request Message: ${text}`
 │⭔ ${prefix}delmsg
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'anonymousmenu':
@@ -6377,7 +6377,7 @@ Request Message: ${text}`
 │⭔ ${prefix}keluar
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'islamicmenu':
@@ -6413,7 +6413,7 @@ Request Message: ${text}`
 │⭔ ${prefix}asmaulhusna
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'kerangmenu':
@@ -6458,7 +6458,7 @@ Request Message: ${text}`
 │⭔ ${prefix}jodohku [teks]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'voicemenu':
@@ -6495,7 +6495,7 @@ Request Message: ${text}`
 │⭔ ${prefix}tupai
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'stalkmenu':
@@ -6524,7 +6524,7 @@ Request Message: ${text}`
 │⭔ ${prefix}stalk [option] [query]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'ownermenu':
@@ -6568,7 +6568,7 @@ Request Message: ${text}`
 │⭔ ${prefix}setnamebot
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'webzonemenu':
@@ -6603,7 +6603,7 @@ Request Message: ${text}`
 │⭔ ${prefix}drakor
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'wallpapermenu':
@@ -6641,7 +6641,7 @@ Request Message: ${text}`
 │⭔ ${prefix}wallhp
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'list':
@@ -6675,7 +6675,7 @@ Request Message: ${text}`
 │• Wit : ${wit}
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             case 'allmenu':
@@ -7196,7 +7196,7 @@ Request Message: ${text}`
 │⭔ ${prefix}wallhp
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
             default:
