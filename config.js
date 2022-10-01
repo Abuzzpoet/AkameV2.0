@@ -47,7 +47,6 @@ global.saweria = ['https://saweria.co/GuaAbuzz']
 //—————「 Set Kebutuhan Button 」—————//
 //ubah aja kalau ada yang gapunya gsh di hps anggap aja credits :)
 global.github = 'https://github.com/Abuzzpoet'
-global.myweb = 'https://tiktok.com/@guaabuzz'
 
 //—————「 Set Wm 」—————//
 //terserah mau ubah atau nggak
