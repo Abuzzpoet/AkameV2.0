@@ -133,7 +133,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
         const menuju = `${jhari}Hari ${jjam}Jam ${mmmenit}Menit ${ddetik}Detik`
 
 
-        //━━━━━━━━━━━━━━━[ FAKE ]━━━━━━━━━━━━━━━━━//
+//━━━━━━━━━━━━━━━[ FAKE ]━━━━━━━━━━━━━━━━━//
 const ftroli = {
     key: {
         fromMe: false,
@@ -146,7 +146,7 @@ const ftroli = {
             status: 200,
             thumbnail: thumb,
             surface: 200,
-            message: 'Haii Kak ${pushname}\n𝙲𝚖𝚍 ${command}`,
+            message: `Haii Kak ${pushname}\n𝙲𝚖𝚍 ${command}`,
             orderTitle: 'Please Follow TikTok @GuaAbuzz',
             sellerJid: '0@s.whatsapp.net'
         }
@@ -214,7 +214,7 @@ const fgclink = {
     },
     "message": {
         "groupInviteMessage": {
-            "groupJid": "6289636827082-1635036556@g.us',
+            "groupJid": "6289636827082-1635036556@g.us",
             "inviteCode": "https://chat.whatsapp.com/FGmVjFYJBjjGst62qwNKJB",
             "groupName": "Akame Bot",
             "caption": '©GuaAbuzz',
@@ -267,7 +267,7 @@ const fkontak = {
     message: {
         'contactMessage': {
             'displayName': 'GuaAbuzz Creator',
-            'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;GuaAbuzz Creator,;;;\nFN:GuaAbuzz Creator\nitem1.TEL;waid=6289636827082:6289636827082\nitem1.X-ABLabel:Ponsel\nEND:VCARD`,
+            'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;GuaAbuzz Creator;;;\nFN:GuaAbuzz Creator\nitem1.TEL;waid=6289636827082:6289636827082\nitem1.X-ABLabel:Ponsel\nEND:VCARD`,
             'jpegThumbnail': thumb,
             thumbnail: thumb,
             sendEphemeral: true
