@@ -4972,7 +4972,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 txtping += `*🎗️ WhatsApp :* wa.me/${global.owner}\n`
                     .trim()
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, txtping global.github, fkontak)
+            await akame.sendButtonText(m.chat, buttons, txtping, global.github, fkontak)
             }
             break
             case 'speed':
