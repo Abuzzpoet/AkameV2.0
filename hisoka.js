@@ -1212,41 +1212,41 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                      }
             break
             case 'command': {
-                let simple = `┌────────┈❖
-                │「 Hi, ${pushname}👋 」
-                │「 ${ucapanWaktu} 」
-                └┬─────────────┈❖
-                ┌┤「 INFO USER 」
-                │└─────────────┈❖
-                │ Name : ${pushname}
-                │ Number : ${m.sender.split('@')[0]}
-                │ Status : ${isCreator ? 'Owner' : 'User'}
-                │ User : ${Object.keys(global.db.data.users).length}
-                └┬─────────────┈❖
-                ┌┤「 INFO BOT 」
-                │└─────────────┈❖
-                │ Prefix : ( ${prefix} )
-                │ Name : ${global.namabot}
-                │ Owner : ${global.namaowner}
-                │ Mode : ${hisoka.public ? 'Public' : 'Self'}
-                │ Premium : ${isPremium ? '✅' : `❌`}
-                │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-                │ Platform : ${os.platform()}
-                │ Runtime :
-                │  ${runtime(process.uptime())}
-                │ Language : Javascript
-                │ Lib : Baileys-md
-                └┬─────────────┈❖
-                ┌┤「 INFO TIME 」
-                │└─────────────┈❖
-                │ Tanggal Server : ${moment.tz('Asia/Jakarta').format('DD/MM/YY')}
-                │ Waktu Server : ${moment.tz('Asia/Jakarta').format('HH:mm:ss')}
-                │ Menuju HBD GuaAbuzz :
-                │  ${menuju}
-                │ WIB : ${wib}
-                │ WITA : ${wita}
-                │ WIT : ${wit}
-                └──────────────┈❖`
+               let simple = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│ Name : ${pushname}
+│ Number : ${m.sender.split('@')[0]}
+│ Status : ${isCreator ? 'Owner' : 'User'}
+│ User : ${Object.keys(global.db.data.users).length}
+└┬─────────────┈❖
+┌┤「 INFO BOT 」
+│└─────────────┈❖
+│ Prefix : ( ${prefix} )
+│ Name : ${global.namabot}
+│ Owner : ${global.namaowner}
+│ Mode : ${hisoka.public ? 'Public' : 'Self'}
+│ Premium : ${isPremium ? '✅' : `❌`}
+│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
+│ Platform : ${os.platform()}
+│ Runtime :
+│  ${runtime(process.uptime())}
+│ Language : Javascript
+│ Lib : Baileys-md
+└┬─────────────┈❖
+┌┤「 INFO TIME 」
+│└─────────────┈❖
+│ Tanggal Server : ${moment.tz('Asia/Jakarta').format('DD/MM/YY')}
+│ Waktu Server : ${moment.tz('Asia/Jakarta').format('HH:mm:ss')}
+│ Menuju HBD GuaAbuzz :
+│  ${menuju}
+│ WIB : ${wib}
+│ WITA : ${wita}
+│ WIT : ${wit}
+└──────────────┈❖`
                 let sections = [
                 {
                 title: "All Fitur Bot >_<",
