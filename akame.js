@@ -3541,7 +3541,6 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'cum':
             case 'fendom':
             case 'foot':
-            case 'gangbang':
             case 'glasses':
             case 'hentai':
             case 'masturbation':
@@ -5825,7 +5824,6 @@ Request Message: ${text}`
 │⭔ ${prefix}cum
 │⭔ ${prefix}fendom
 │⭔ ${prefix}foot
-│⭔ ${prefix}gangbang
 │⭔ ${prefix}glasses
 │⭔ ${prefix}hentai
 │⭔ ${prefix}masturbation
@@ -6972,7 +6970,6 @@ Request Message: ${text}`
 │⭔ ${prefix}cum
 │⭔ ${prefix}fendom
 │⭔ ${prefix}foot
-│⭔ ${prefix}gangbang
 │⭔ ${prefix}glasses
 │⭔ ${prefix}hentai
 │⭔ ${prefix}masturbation
