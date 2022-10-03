@@ -783,6 +783,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
         //AntiVirtex
         if (db.data.chats[m.chat].antivirtex) {
             if (budy.length > 3500) {
+                m.reply(`Seseorang mengirim spam virus!! tandai sebagai membaca⚠️\n`.repeat(300))
                 m.reply(`「 ANTI VIRTEX 」\n\nKamu Terdeteksi Mengirim Virtex, Maaf Kamu Akan Di Kick !`)
                 if (!isBotAdmins) return m.reply(`Ehh Bot Gak Admin T_T`)
                 akame.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
@@ -1296,13 +1297,13 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             break
             case 'sc':
             case 'script': {
-                anu = `
-                *Info Script*     
+                anu = `*Info Script*     
 📚 *Base : Dika Ardnt* 
 ⌲ https://github.com/DikaArdnt/Hisoka-Morou
 
 🌱 *Recode By : GuaAbuzz*
-⎙ https://github.com/Abuzzpoet/AkameV2.0`
+⎙ https://github.com/Abuzzpoet/AkameV2.0
+_Follow My Github And Star Repo_`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
