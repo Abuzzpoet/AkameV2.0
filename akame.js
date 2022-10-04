@@ -2772,8 +2772,46 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 }
             }
             break
+            case 'mukalu': {
+            m.reply(mess.wait)
+            var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/mukelu')
+            var wifegerak = ano.split('\n')
+            var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
+            encmedia = await akame.sendImageAsSticker(m.chat, wifegerakx, fdoc, { packname: global.packname, author: global.author, })
+            await fs.unlinkSync(encmedia)
+            }
+            break
+            case 'paimon': {
+            m.reply(mess.wait)
+            var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/Paimon')
+            var wifegerak = ano.split('\n')
+            var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
+            encmedia = await akame.sendImageAsSticker(m.chat, wifegerakx, fdoc, { packname: global.packname, author: global.author, })
+            await fs.unlinkSync(encmedia)
+            }
+            break
+            case 'dadu': {
+            m.reply(mess.wait)
+            var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/Dadu')
+            var wifegerak = ano.split('\n')
+            var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
+            encmedia = await akame.sendVideoAsSticker(m.chat, wifegerakx, fdoc, { packname: global.packname, author: global.author, })
+            await fs.unlinkSync(encmedia)
+            }
+            break
+            case 'among':
+            case 'amongus': {
+            m.reply(mess.wait)
+            var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/Among')
+            var wifegerak = ano.split('\n')
+            var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
+            encmedia = await akame.sendVideoAsSticker(m.chat, wifegerakx, fdoc, { packname: global.packname, author: global.author, })
+            await fs.unlinkSync(encmedia)
+            }
+            break
             case 'gura':
             case 'gurastick': {
+            m.reply(mess.wait)
             var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/gura')
             var wifegerak = ano.split('\n')
             var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
@@ -2783,6 +2821,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             break
             case 'doge':
             case 'dogestick': {
+            m.reply(mess.wait)
             var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/anjing')
             var wifegerak = ano.split('\n')
             var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
@@ -2792,6 +2831,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             break
             case 'bucinstick':
             case 'bucinp' : {
+            m.reply(mess.wait)
             var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/bucin')
             var wifegerak = ano.split('\n')
             var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
@@ -2801,6 +2841,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             break
             case 'patrik':
             case 'patrick': {
+            m.reply(mess.wait)
             var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/patrik')
             var wifegerak = ano.split('\n')
             var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
@@ -2855,6 +2896,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             }
             break
             case 'attp': case 'ttp': {
+            m.reply(mess.wait)
            if (!text) throw `Contoh : ${prefix + command} text`
            await akame.sendMedia(m.chat, `https://xteam.xyz/${command}?file&text=${text}`, 'akame', 'morou', fdoc, {asSticker: true})
          }
@@ -3088,6 +3130,8 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'yts':
             case 'ytsearch': {
                 if (!text) throw `Contoh : ${prefix + command} story wa anime`
+                if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+                db.data.users[m.sender].limit -= 1 // -1 limit
                 let yts = require("yt-search")
                 let search = await yts(text)
                 let teks = 'YouTube Search\n\n Result From '+text+'\n\n'
@@ -3100,6 +3144,8 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             break
             case 'google': {
                 if (!text) throw `Contoh : ${prefix + command} fatih arridho`
+                if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+                db.data.users[m.sender].limit -= 1 // -1 limit
                 let google = require('google-it')
                 google({'query': text}).then(res => {
                 let teks = `Google Search From : ${text}\n\n`
@@ -3115,6 +3161,8 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'gimage': {
                 if (!text) throw `Contoh : ${prefix + command} Akame`
                 m.reply(mess.wait)
+                if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+                db.data.users[m.sender].limit -= 1 // -1 limit
                 let gis = require('g-i-s')
                 gis(text, async (error, result) => {
                     n = result
@@ -3247,6 +3295,8 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let urls = quoted.text.match(new RegExp(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch|v|embed|shorts)(?:\.php)?(?:\?.*v=|\/))([a-zA-Z0-9\_-]+)/, 'gi'))
                 if (!urls) throw `Mungkin Pesan Yang Anda Reply Tidak Mengandung Result Ytsearch`
                 m.reply(mess.wait)
+                if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+                db.data.users[m.sender].limit -= 1 // -1 limit
                 let quality = args[1] ? args[1] : '128kbps'
                 let media = await yta(urls[text - 1], quality)
                 if (media.filesize >= 100000) return m.reply('File Melebihi Batas ' + util.format(media))
@@ -3272,6 +3322,8 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let urls = quoted.text.match(new RegExp(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch|v|embed|shorts)(?:\.php)?(?:\?.*v=|\/))([a-zA-Z0-9\_-]+)/, 'gi'))
                 if (!urls) throw `Mungkin Pesan Yang Anda Reply Tidak Mengandung Result Ytsearch`
                 m.reply(mess.wait)
+                if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+                db.data.users[m.sender].limit -= 1 // -1 limit
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(urls[text - 1], quality)
                 if (media.filesize >= 100000) return m.reply('File Melebihi Batas ' + util.format(media))
@@ -3290,6 +3342,8 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'pinterest': {
                 if (!text) throw `Example : ${prefix + command}`
                 m.reply(mess.wait)
+                if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+                db.data.users[m.sender].limit -= 1 // -1 limit
 		        let { pinterest } = require('./lib/scraper')
                 anu = await pinterest(text)
                 result = anu[Math.floor(Math.random() * anu.length)]               
@@ -3626,8 +3680,8 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             }
             break
                 case 'couple': {
-                m.reply(mess.wait)
                 let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
+                m.reply(mess.wait)
                 if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                 db.data.users[m.sender].limit -= 1 // -1 limit
                 let random = anu[Math.floor(Math.random() * anu.length)]
@@ -3677,6 +3731,9 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             break
             case 'wallpaper': {
                 if (!text) throw 'Mau Cari Wallpaper Apa?'
+                m.reply(mess.wait)
+                if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+                db.data.users[m.sender].limit -= 1 // -1 limit
                 let {
                     wallpaper
                 } = require('./lib/scraper')
@@ -3705,6 +3762,9 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             break
             case 'wikimedia': {
                 if (!text) throw 'Mau Cari Wikimedia Apa?'
+                m.reply(mess.wait)
+                if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+                db.data.users[m.sender].limit -= 1 // -1 limit
                 let {
                     wikimedia
                 } = require('./lib/scraper')
@@ -3736,6 +3796,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let {
                     quotesAnime
                 } = require('./lib/scraper')
+                m.reply(mess.wait)
                 if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                 db.data.users[m.sender].limit -= 1 // -1 limit
                 let anu = await quotesAnime()
@@ -3760,6 +3821,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             break
             case 'animequotes':
             case 'animequote': {
+                m.reply(mess.wait)
                 if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                 db.data.users[m.sender].limit -= 1 // -1 limit
                 let anu = await fetchJson(api('zenz', '/randomtext/animequotes2', {}, 'apikey'))
@@ -3795,6 +3857,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'faktaunik':
             case 'puisi':
             case 'pantun': {
+                m.reply(mess.wait)
                 if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                 db.data.users[m.sender].limit -= 1 // -1 limit
                 let anu = await fetchJson(api('zenz', '/randomtext/' + command, {}, 'apikey'))
@@ -3817,6 +3880,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             }
             break
             case 'cerpen': {
+                m.reply(mess.wait)
                 if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                 db.data.users[m.sender].limit -= 1 // -1 limit
                 let anu = await fetchJson(api('zenz', '/randomtext/' + command, {}, 'apikey'))
@@ -4876,6 +4940,8 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 break
             case 'nulis': {
                 if (!q) return m.reply(`Teks Nya Apa Kak?`)
+                if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+                db.data.users[m.sender].limit -= 1 // -1 limit
                 let sections = [
                 {
                 title: "Nulis Buku >_<",
@@ -5227,7 +5293,10 @@ Request Message: ${text}`
                     akame.sendImage(m.chat, i.profile_image, "", fdoc, { caption })
             }
             break
-            case 'mediafire': {                
+            case 'mediafire': {
+                m.reply(mess.wait)
+                if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+                db.data.users[m.sender].limit -= 1 // -1 limit
                 if (!text) throw `Example : ${prefix + command} https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file`               
                 let me = await alya.mediafire(text)  
                 m.reply(util.format(me))              
@@ -5700,6 +5769,10 @@ Request Message: ${text}`
 │⭔ ${prefix}stickerwm
 │⭔ ${prefix}attp [teks]
 │⭔ ${prefix}ttp [teks]
+│⭔ ${prefix}mukalu
+│⭔ ${prefix}paimon
+│⭔ ${prefix}amongus
+│⭔ ${prefix}dadu
 │⭔ ${prefix}gura
 │⭔ ${prefix}doge
 │⭔ ${prefix}bucinstick
@@ -7092,6 +7165,10 @@ Request Message: ${text}`
 │⭔ ${prefix}stickerwm
 │⭔ ${prefix}attp [teks]
 │⭔ ${prefix}ttp [teks]
+│⭔ ${prefix}mukalu
+│⭔ ${prefix}paimon
+│⭔ ${prefix}amongus
+│⭔ ${prefix}dadu
 │⭔ ${prefix}gura
 │⭔ ${prefix}doge
 │⭔ ${prefix}bucinstick
