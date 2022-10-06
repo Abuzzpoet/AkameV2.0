@@ -83,21 +83,14 @@ async function startakame() {
 
     store.bind(akame.ev)
     
-    // Anti Call
-    akame.ev.on('call', async (fatihh) => {
-    let botNumber = await akame.decodeJid(akame.user.id)
-    let ciko = db.data.settings[botNumber].anticall
-    if (!ciko) return
-    console.log(fatihh)
-    for (let tihh of fatihh) {
-    if (tihh.isGroup == false) {
-    if (tihh.status == "offer") {
-    let pa7rick = await akame.sendTextWithMentions(tihh.from, `*${akame.user.name}* tidak bisa menerima panggilan ${tihh.isVideo ? `video` : `suara`}. Maaf @${tihh.from.split('@')[0]} kamu akan diblockir. Jika tidak sengaja silahkan hubungi Owner untuk dibuka !`)
-    akame.sendContact(tihh.from, global.owner, pa7rick)
+   // anticall auto block
+    naze.ws.on('CB:call', async (json) => {
+    const callerId = json.content[0].attrs['call-creator']
+    if (json.content[0].tag == 'offer') {
+    let pa7rick = await naze.sendContact(callerId, global.owner)
+    naze.sendMessage(callerId, { text: `*Sistem otomatis block!*\n*Jangan menelpon bot*!\n*Silahkan Hubungi Owner Untuk Dibuka !*`}, { quoted : pa7rick })
     await sleep(8000)
-    await akame.updateBlockStatus(tihh.from, "block")
-    }
-    }
+    await naze.updateBlockStatus(callerId, "block")
     }
     })
 

@@ -340,7 +340,6 @@ const fakestatus = {
             let setting = global.db.data.settings[botNumber]
             if (typeof setting !== 'object') global.db.data.settings[botNumber] = {}
             if (setting) {
-                if (!('anticall' in setting)) setting.anticall = true
                 if (!isNumber(setting.status)) setting.status = 0
                 if (!('autobio' in setting)) setting.autobio = true
                 if (!('templateImage' in setting)) setting.templateImage = true
@@ -349,7 +348,6 @@ const fakestatus = {
                 if (!('templateMsg' in setting)) setting.templateMsg = false
                 if (!('templateLocation' in setting)) setting.templateLocation = false
             } else global.db.data.settings[botNumber] = {
-                anticall: true,
                 status: 0,
                 autobio: true,
                 templateImage: true,
@@ -2253,26 +2251,6 @@ _Follow My Github And Star Repo_`
                 }
             }
             break
-            case 'anticall': {
-            if (!isCreator) throw mess.owner
-                let ciko = db.data.settings[botNumber].anticall
-                if (args[0] === "on") {
-                if (ciko) return m.reply(`Sudah Aktif Sebelumnya 🕊`)
-                ciko = true
-                m.reply(`AntiCall Aktif 🕊`)
-                } else if (args[0] === "off") {
-                if (!ciko) return m.reply(`Sudah Tidak Aktif Sebelumnya 🕊`)
-                ciko = false
-                m.reply(`AntiCall Tidak Aktif 🕊`)
-                } else {
-                 let buttons = [
-                        { buttonId: 'anticall on', buttonText: { displayText: 'On' }, type: 1 },
-                        { buttonId: 'anticall off', buttonText: { displayText: 'Off' }, type: 1 }
-                    ]
-                    await akame.sendButtonText(m.chat, buttons, `Mode ${command} 🕊️`, `Silahkan Klik Button Dibawah, Jika Button Tidak Muncul Ketik ${command} on/off`, akame.user.name, fgclink)
-                }
-             }
-             break
             case 'ephemeral': {
                 if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
@@ -6634,7 +6612,6 @@ Request Message: ${text}`
 │⭔ ${prefix}bcall [text]
 │⭔ ${prefix}setppbot full [image]
 │⭔ ${prefix}setmenu [option]
-│⭔ ${prefix}anticall [on/off]
 │⭔ ${prefix}setstatus
 │⭔ ${prefix}setnamebot
 └──────────────┈❖`
@@ -7072,7 +7049,6 @@ Request Message: ${text}`
 │⭔ ${prefix}bcall [text]
 │⭔ ${prefix}setppbot full [image]
 │⭔ ${prefix}setmenu [option]
-│⭔ ${prefix}anticall [on/off]
 │⭔ ${prefix}setstatus
 │⭔ ${prefix}setnamebot
 └┬─────────────┈❖
