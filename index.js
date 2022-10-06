@@ -84,13 +84,13 @@ async function startakame() {
     store.bind(akame.ev)
     
    // anticall auto block
-    naze.ws.on('CB:call', async (json) => {
+    akame.ws.on('CB:call', async (json) => {
     const callerId = json.content[0].attrs['call-creator']
     if (json.content[0].tag == 'offer') {
-    let pa7rick = await naze.sendContact(callerId, global.owner)
-    naze.sendMessage(callerId, { text: `*Sistem otomatis block!*\n*Jangan menelpon bot*!\n*Silahkan Hubungi Owner Untuk Dibuka !*`}, { quoted : pa7rick })
+    let pa7rick = await akame.sendContact(callerId, global.owner)
+    akame.sendMessage(callerId, { text: `*Sistem otomatis block!*\n*Jangan menelpon bot*!\n*Silahkan Hubungi Owner Untuk Dibuka !*`}, { quoted : pa7rick })
     await sleep(8000)
-    await naze.updateBlockStatus(callerId, "block")
+    await akame.updateBlockStatus(callerId, "block")
     }
     })
 
