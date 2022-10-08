@@ -5317,13 +5317,9 @@ Request Message: ${text}`
             }
             break
             case 'zippyshare': {
-                iif (!text) throw `Example : ${prefix + command} https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file`               
-                m.reply(mess.wait)
-                if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
-                db.data.users[m.sender].limit -= 1 // -1 limit
-                let me = await alya.mediafire(text)  
-                m.reply(util.format(me))              
-                akame.sendMessage(m.chat, { document: { url: me[0].link }, mimetype: `${me[0].mime}`, fileName: `${me[0].nama}` }, { quoted: fdoc })
+                if (!text) throw `Link ZippyShare Ya Mana?`
+                let anu = await fetchJson(api('zenz', '/downloader/zippyshare', { url: isUrl(text)[0] }, 'apikey'))
+                akame.sendFileUrl(m.chat, anu.result.link, "", fdoc)
             }
             break
             case 'gempa': {
