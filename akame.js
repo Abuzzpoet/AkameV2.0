@@ -2256,12 +2256,12 @@ _Follow My Github And Star Repo_`
             case 'nsfw': {
                 if (!isCreator) throw mess.owner
                 if (args[0] === "on") {
-                    if (db.chats[m.chat].nsfw) return m.reply(`Sudah Aktif Sebelumnya 🕊`)
-                    db.chats[m.chat].nsfw = true
+                    if (db.data.chats[m.chat].nsfw) return m.reply(`Sudah Aktif Sebelumnya 🕊`)
+                    db.data.chats[m.chat].nsfw = true
                     m.reply(`Anti Nsfw Aktif 🕊️`)
                 } else if (args[0] === "off") {
-                    if (!db.chats[m.chat].nsfw) return m.reply(`Sudah Tidak Aktif Sebelumnya 🕊`)
-                    db.chats[m.chat].nsfw = false
+                    if (!db.data.chats[m.chat].nsfw) return m.reply(`Sudah Tidak Aktif Sebelumnya 🕊`)
+                    db.data.chats[m.chat].nsfw = false
                     m.reply(`Anti Nsfw Nonaktif 🕊️`)
                 } else {
                     let buttons = [{
