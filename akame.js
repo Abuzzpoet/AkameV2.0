@@ -5909,6 +5909,7 @@ Request Message: ${text}`
 │⭔ ${prefix}cum
 │⭔ ${prefix}fendom
 │⭔ ${prefix}foot
+│⭔ ${prefix}gangbang
 │⭔ ${prefix}glasses
 │⭔ ${prefix}hentai
 │⭔ ${prefix}masturbation
@@ -7054,6 +7055,7 @@ Request Message: ${text}`
 │⭔ ${prefix}cum
 │⭔ ${prefix}fendom
 │⭔ ${prefix}foot
+│⭔ ${prefix}gangbang
 │⭔ ${prefix}glasses
 │⭔ ${prefix}hentai
 │⭔ ${prefix}masturbation
