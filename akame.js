@@ -329,12 +329,14 @@ const fakestatus = {
                 if (!('antilinkyt' in chats)) chats.antilinkyt = false
                 if (!('antilinktt' in chats)) chats.antilinktt = false
                 if (!('antivirtex' in chats)) chats.antivirtex = true
+                if (!('nsfw' in chats)) chats.nsfw = false
             } else global.db.data.chats[m.chat] = {
                 mute: false,
                 antilink: false,
                 antilinkyt: false,
                 antilinktt: false,
                 antivirtex: true,
+                nsfw: false,
             }
 
             let setting = global.db.data.settings[botNumber]
@@ -2251,6 +2253,38 @@ _Follow My Github And Star Repo_`
                 }
             }
             break
+            case 'nsfw': {
+                if (!m.isGroup) throw mess.group
+                if (!isBotAdmins) throw mess.botAdmin
+                if (!isAdmins) throw mess.admin
+                if (args[0] === "on") {
+                    if (db.chats[m.chat].nsfw) return m.reply(`Sudah Aktif Sebelumnya 🕊`)
+                    db.chats[m.chat].nsfw = true
+                    m.reply(`Anti Nsfw Aktif 🕊️`)
+                } else if (args[0] === "off") {
+                    if (!db.chats[m.chat].nsfw) return m.reply(`Sudah Tidak Aktif Sebelumnya 🕊`)
+                    db.chats[m.chat].nsfw = false
+                    m.reply(`Anti Nsfw Nonaktif 🕊️`)
+                } else {
+                    let buttons = [{
+                            buttonId: 'nsfw on',
+                            buttonText: {
+                                displayText: 'On'
+                            },
+                            type: 1
+                        },
+                        {
+                            buttonId: 'nsfw off',
+                            buttonText: {
+                                displayText: 'Off'
+                            },
+                            type: 1
+                        }
+                    ]
+                    await akame.sendButtonText(m.chat, buttons, `Mode ${command} 🕊️`, `Silahkan Klik Button Dibawah, Jika Button Tidak Muncul Ketik ${command} on/off`, akame.user.name, fgclink)
+                }
+            }
+            break
             case 'ephemeral': {
                 if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
@@ -3584,7 +3618,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'tentacles':
             case 'thighs':
             case 'zettai': {
-                if (m.isGroup) throw mess.private
+                if (!db.data.chats[m.chat].nsfw) return m.reply(mess.off)
                 m.reply(mess.wait)
                 if (!isPremium && global.db.data.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
                 db.data.users[m.sender].limit -= 2 // -2 limit
