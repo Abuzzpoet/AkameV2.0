@@ -3493,7 +3493,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 m.reply(mess.wait)
                 if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                 db.data.users[m.sender].limit -= 1 // -1 limit
-                let anu = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Database/main/Random%20Anime/${command}.json`)
+                let anu = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Databasee/main/Random%20Anime/${command}.json`)
                 result = anu[Math.floor(Math.random() * anu.length)]               
                 let buttons = [                   
                     {buttonId: `${command}`, buttonText: {displayText: '⌲ Next Image'}, type: 1}
@@ -3527,7 +3527,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             m.reply(mess.wait)
                 if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                 db.data.users[m.sender].limit -= 1 // -1 limit
-                let anu = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Database/main/Random%20Image/${command}.json`)
+                let anu = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Databasee/main/Random%20Image/${command}.json`)
                 result = anu[Math.floor(Math.random() * anu.length)]               
                 let buttons = [                   
                     {buttonId: `${command}`, buttonText: {displayText: '⌲ Next Image'}, type: 1}
@@ -3550,7 +3550,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             m.reply(mess.wait)
                 if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                 db.data.users[m.sender].limit -= 1 // -1 limit
-                let anu = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Database/main/Wallpaper/${command}.json`)
+                let anu = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Databasee/main/Wallpaper/${command}.json`)
                 result = anu[Math.floor(Math.random() * anu.length)]               
                 let buttons = [                   
                     {buttonId: `${command}`, buttonText: {displayText: '⌲ Next Image'}, type: 1}
@@ -3588,7 +3588,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 m.reply(mess.wait)
                 if (!isPremium && global.db.data.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
                 db.data.users[m.sender].limit -= 2 // -2 limit
-		        let anu = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Database/main/nsfw/${command}.json`)
+		        let anu = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Databasee/main/nsfw/${command}.json`)
                 result = anu[Math.floor(Math.random() * anu.length)]               
                 let buttons = [                   
                     {buttonId: `${command}`, buttonText: {displayText: '⌲ Next Image'}, type: 1}
@@ -3643,7 +3643,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 m.reply(mess.wait)
                 if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                 db.data.users[m.sender].limit -= 1 // -1 limit
-                let anu = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Database/main/Cecan/${command}.json`)
+                let anu = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Databasee/main/Cecan/${command}.json`)
                 result = anu[Math.floor(Math.random() * anu.length)]               
                 let buttons = [                   
                     {buttonId: `${command}`, buttonText: {displayText: '⌲ Next Image'}, type: 1}
@@ -5340,7 +5340,7 @@ Request Message: ${text}`
             case 'kisahnabi': {
                 if (text) {
                     title = text.toLowerCase()
-                    let fetch = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Database/main/Islami/${title}.json`)
+                    let fetch = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Databasee/main/Islami/${title}.json`)
                     let teks = `⭔ Nama : ${fetch.name}\n⭔ Lahir : ${fetch.thn_kelahiran}\n⭔ Umur : ${fetch.usia}\n⭔ Lokasi : ${fetch.tmp}\n⭔ Kisah :\n${fetch.description}`
                     akame.sendFileUrl(m.chat, 'https://i.pinimg.com/originals/a6/81/c5/a681c55ca1bee611c39d3b4a58712dc3.jpg', "", floc, { caption: teks })
                 } else if (!text) {
@@ -5388,7 +5388,7 @@ Request Message: ${text}`
             case 'niatsholat': {
                 if (text) {
                     title = text.toLowerCase()
-                    let fetch = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Database/main/Niatsolat/${title}.json`)
+                    let fetch = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Databasee/main/Niatsolat/${title}.json`)
                     let teks = `⭔ Nama : ${fetch.name}\n⭔ Arab : ${fetch.arabic}\n⭔ Latin : ${fetch.latin}\n⭔ Terjemahan : ${fetch.terjemahan}`
                     akame.sendFileUrl(m.chat, 'https://aswajamuda.com/wp-content/uploads/2017/10/niat-sholat-fardhu.jpg', "", floc, { caption: teks })
                 } else if (!text) {
