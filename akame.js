@@ -91,6 +91,9 @@ module.exports = akame = async (akame, m, chatUpdate, store) => {
         const groupAdmins = m.isGroup ? await getGroupAdmins(participants) : ''
     	const isBotAdmins = m.isGroup ? groupAdmins.includes(botNumber) : false
     	const isAdmins = m.isGroup ? groupAdmins.includes(m.sender) : false
+    	const isGroupAdmins = m.isGroup ? groupAdmins.includes(m.sender) : false
+        const groupOwner = m.isGroup ? groupMetadata.owner : ''
+        const isGroupOwner = m.isGroup ? (groupOwner ? groupOwner : groupAdmins).includes(m.sender) : false
     	const isPremium = isCreator || global.premium.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender) || false
 
         // Days
@@ -2127,8 +2130,8 @@ _Follow My Github And Star Repo_`
                break
             case 'antilink': {
                 if (!m.isGroup) throw mess.group
+                if (!isGroupAdmins && !isGroupOwner && !isCreator) throw mess.admin
                 if (!isBotAdmins) throw mess.botAdmin
-                if (!isAdmins) throw mess.admin
                 if (args[0] === "on") {
                     if (db.data.chats[m.chat].antilink) return m.reply(`Sudah Aktif Sebelumnya 🕊️`)
                     db.data.chats[m.chat].antilink = true
@@ -2159,8 +2162,8 @@ _Follow My Github And Star Repo_`
             break
             case 'antilinkyt': {
                 if (!m.isGroup) throw mess.group
+                if (!isGroupAdmins && !isGroupOwner && !isCreator) throw mess.admin
                 if (!isBotAdmins) throw mess.botAdmin
-                if (!isAdmins) throw mess.admin
                 if (args[0] === "on") {
                     if (db.data.chats[m.chat].antilinkyt) return m.reply(`Sudah Aktif Sebelumnya 🕊`)
                     db.data.chats[m.chat].antilinkyt = true
@@ -2191,8 +2194,8 @@ _Follow My Github And Star Repo_`
             break
             case 'antilinktt': {
                 if (!m.isGroup) throw mess.group
+                if (!isGroupAdmins && !isGroupOwner && !isCreator) throw mess.admin
                 if (!isBotAdmins) throw mess.botAdmin
-                if (!isAdmins) throw mess.admin
                 if (args[0] === "on") {
                     if (db.data.chats[m.chat].antilinktt) return m.reply(`Sudah Aktif Sebelumnya 🕊`)
                     db.data.chats[m.chat].antilinktt = true
@@ -2223,8 +2226,8 @@ _Follow My Github And Star Repo_`
             break
             case 'mute': {
                 if (!m.isGroup) throw mess.group
+                if (!isGroupAdmins && !isGroupOwner && !isCreator) throw mess.admin
                 if (!isBotAdmins) throw mess.botAdmin
-                if (!isAdmins) throw mess.admin
                 if (args[0] === "on") {
                     if (db.data.chats[m.chat].mute) return m.reply(`Sudah Aktif Sebelumnya 🕊`)
                     db.data.chats[m.chat].mute = true
@@ -2254,7 +2257,7 @@ _Follow My Github And Star Repo_`
             }
             break
             case 'nsfw': {
-                if (!isCreator) throw mess.owner
+                if (!isGroupAdmins && !isGroupOwner && !m.key.fromMe && !isCreator) throw mess.owner
                 if (args[0] === "on") {
                     if (db.data.chats[m.chat].nsfw) return m.reply(`Sudah Aktif Sebelumnya 🕊`)
                     db.data.chats[m.chat].nsfw = true
@@ -2559,8 +2562,8 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'group':
             case 'grup': {
                 if (!m.isGroup) throw mess.group
+                if (!isGroupAdmins && !isGroupOwner && !isCreator) throw mess.admin
                 if (!isBotAdmins) throw mess.botAdmin
-                if (!isAdmins) throw mess.admin
                 if (args[0] === 'close') {
                     await akame.groupSettingUpdate(m.chat, 'announcement').then((res) => m.reply(`Sukses Menutup Group 🕊️`)).catch((err) => m.reply(jsonformat(err)))
                 } else if (args[0] === 'open') {
@@ -2588,8 +2591,8 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             break
             case 'editinfo': {
                 if (!m.isGroup) throw mess.group
+                if (!isGroupAdmins && !isGroupOwner && !isCreator) throw mess.admin
                 if (!isBotAdmins) throw mess.botAdmin
-                if (!isAdmins) throw mess.admin
                 if (args[0] === 'open') {
                     await akame.groupSettingUpdate(m.chat, 'unlocked').then((res) => m.reply(`Sukses Membuka Edit Info Group 🕊️`)).catch((err) => m.reply(jsonformat(err)))
                 } else if (args[0] === 'close') {
