@@ -78,7 +78,6 @@ global.mess = {
     wait: '⏳ Sedang Di Proses !',
     endLimit: 'Limit Harian Anda Telah Habis, Limit Akan Direset Setiap Jam 12 !',
     error: 'Fitur Sedang Error !',
-    off: 'Fitur Sedang Dinonaktifkan !',
 }
 
 //—————「 Set Limit 」—————//
