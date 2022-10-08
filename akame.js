@@ -2254,9 +2254,7 @@ _Follow My Github And Star Repo_`
             }
             break
             case 'nsfw': {
-                if (!m.isGroup) throw mess.group
-                if (!isBotAdmins) throw mess.botAdmin
-                if (!isAdmins) throw mess.admin
+                if (!isCreator) throw mess.owner
                 if (args[0] === "on") {
                     if (db.chats[m.chat].nsfw) return m.reply(`Sudah Aktif Sebelumnya 🕊`)
                     db.chats[m.chat].nsfw = true
