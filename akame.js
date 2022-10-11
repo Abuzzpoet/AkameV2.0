@@ -786,6 +786,8 @@ ${Array.from(room.jawaban, (jawaban, index) => {
                 m.reply(`Seseorang mengirim spam virus!! tandai sebagai membaca⚠️\n`.repeat(300))
                 m.reply(`「 ANTI VIRTEX 」\n\nKamu Terdeteksi Mengirim Virtex, Maaf Kamu Akan Di Kick !`)
                 if (!isBotAdmins) return m.reply(`Ehh Bot Gak Admin T_T`)
+                if (isAdmins) return m.reply(`Ehh Maaf Ternyata Kamu Admin 😁`)
+                if (isCreator) return m.reply(`Ehh Maaf Kamu Ownerku Ternyata 😅`)
                 akame.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
             }
         }
@@ -2107,7 +2109,8 @@ _Follow My Github And Star Repo_`
             break
             case 'hidetag': {
                 if (!m.isGroup) throw mess.group
-                if (!isAdmins) throw mess.admin
+                if (!isAdmins && !isGroupOwner && !isCreator) throw mess.admin
+                if (!isBotAdmins) throw mess.botAdmin
                 akame.sendMessage(m.chat, {
                     text: q ? q : '',
                     mentions: participants.map(a => a.id)
@@ -2588,6 +2591,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'linkgrup':
             case 'linkgc': {
                 if (!m.isGroup) throw mess.group
+                if (!isAdmins && !isGroupOwner && !isCreator) throw mess.admin
                 if (!isBotAdmins) throw mess.botAdmin
                 let response = await akame.groupInviteCode(m.chat)
                 akame.sendText(m.chat, `👥 *INFO LINK GROUP*\n📛 *Nama :* ${groupMetadata.subject}\n👤 *Owner Grup :* ${groupMetadata.owner !== undefined ? '@' + groupMetadata.owner.split`@`[0] : 'Tidak diketahui'}\n🌱 *ID :* ${groupMetadata.id}\n🔗 *Link Chat :* https://chat.whatsapp.com/${response}\n👥 *Member :* ${groupMetadata.participants.length}\n`, fgclink,  {
