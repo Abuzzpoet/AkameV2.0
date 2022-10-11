@@ -4297,12 +4297,12 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'tiktoknowatermark': {
                 if (!text) throw 'Link TikTok Ya Mana?'
                 m.reply(mess.wait)
-                let anu = await fdl.downloader.tiktok(text)
+                let anu = await fdl.downloader.tiktok2(text)
                 let buttonMessage = {
                     video: {
                         url: anu.nowm
                     },
-                    caption: `👤 *Author:* ${anu.author}\n📌 *Title:* ${anu.title}\n🔗 Download From ${text}`,
+                    caption: `📌 *Title:* ${anu.video_title}\n🔗 *Download From* ${text}`,
                     footer: akame.user.name,
                     headerType: 5
                 }
@@ -4315,12 +4315,12 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'tiktokwatermark': {
                 if (!text) throw 'Link TikTok Ya, Mana?'
                 m.reply(mess.wait)
-                let anu = await fdl.downloader.tiktok(text)
+                let anu = await fdl.downloader.tiktok2(text)
                 let buttonMessage = {
                     video: {
-                        url: anu.watermark
+                        url: anu.video
                     },
-                    caption: `👤 *Author:* ${anu.author}\n📌 *Title:* ${anu.title}\n🔗 Download From ${text}`,
+                    caption: `📌 *Title:* ${anu.video_title}\n🔗 *Download From* ${text}`,
                     footer: akame.user.name,
                     headerType: 5
                 }
@@ -4333,9 +4333,9 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'tiktokaudio': {
                 if (!text) throw 'Link TikTok Ya Mana?'
                 m.reply(mess.wait)
-                let anu = await fdl.downloader.tiktok(text)
-				let cap = `👤 *Author:* ${anu.author}\n📌 *Title:* ${anu.title}\n🔗 Download From ${text}`
-				akame.sendMessage(m.chat, { caption: cap, image: { url: anu.thumbnail }})
+                let anu = await fdl.downloader.tiktok2(text)
+				let cap = `📌 *Title:* ${anu.audio_title}\n🔗 *Download From* ${text}`
+				akame.sendMessage(m.chat, { caption: cap, image: { url: anu.preview }})
 				akame.sendMessage(m.chat, { audio: { url: anu.audio }, mimetype: 'audio/mpeg'}, { quoted: fvn })
 				}
 				break
