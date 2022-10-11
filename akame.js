@@ -7226,7 +7226,8 @@ Request Message: ${text}`
 
 
     } catch (err) {
-        m.reply(util.format(err))
+        console.log("error di bagian akame.js "+util.format(err))
+    //  m.reply(util.format(err))
     }
 }
 

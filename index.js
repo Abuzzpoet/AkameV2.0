@@ -180,7 +180,7 @@ async function startakame() {
               }
             }
         } catch (err) {
-            console.log(err)
+            console.log("BOT Grup Info"+err)
         }
     })
 	
