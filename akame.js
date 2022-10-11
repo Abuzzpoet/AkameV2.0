@@ -1232,7 +1232,6 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 {title: "⌲ 「 Kerang Menu 」", rowId: `${prefix}kerangmenu`, description: `Menampilkan Kerang Menu`},
                 {title: "⌲ 「 Meme Menu 」", rowId: `${prefix}mememenu`, description: `Menampilkan Meme Menu`},
                 {title: "⌲ 「 Main Menu 」", rowId: `${prefix}mainmenu`, description: `Menampilkan Main Menu`},
-                {title: "⌲ 「 Nsfw Menu 」", rowId: `${prefix}nsfwmenu`, description: `Menampilkan Nsfw Menu`},
                 {title: "⌲ 「 Owner Menu 」", rowId: `${prefix}ownermenu`, description: `Menampilkan Owner Menu`},
                 {title: "⌲ 「 Primbon Menu 」", rowId: `${prefix}primbonmenu`, description: `Menampilkan Primbon Menu`},
                 {title: "⌲ 「 Photo Editor Menu 」", rowId: `${prefix}photoeditormenu`, description: `Menampilkan Photo Editor Menu`},
@@ -2876,7 +2875,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             case 'attp': case 'ttp': {
             m.reply(mess.wait)
            if (!text) throw `Contoh : ${prefix + command} text`
-           await akame.sendMedia(m.chat, `https://xteam.xyz/${command}?file&text=${text}`, 'akame', 'morou', fdoc, {asSticker: true})
+           await akame.sendMedia(m.chat, `https://xteam.xyz/${command}?file&text=${text}`, 'akame', 'kurume', fdoc, {asSticker: true})
          }
          break
             case 'smeme': case 'stickmeme': case 'stikmeme': case 'stickermeme': case 'stikermeme': {
@@ -3558,44 +3557,6 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 let buttonMessage = {
                     image: { url: result },
                     caption: `Random Wallpaper ${command}`,
-                    footer: akame.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                akame.sendMessage(m.chat, buttonMessage, { quoted: fdoc })
-            }
-            break
-            //NSFW
-            case 'ahegao':
-            case 'ass':
-            case 'bdsm':
-            case 'blowjob':
-            case 'cuckold':
-            case 'cum':
-            case 'fendom':
-            case 'foot':
-            case 'gangbang':
-            case 'glasses':
-            case 'hentai':
-            case 'masturbation':
-            case 'orgy':
-            case 'panties':
-            case 'pussy':
-            case 'tentacles':
-            case 'thighs':
-            case 'zettai': {
-                if (m.isGroup) throw mess.private
-                m.reply(mess.wait)
-                if (!isPremium && global.db.data.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
-                db.data.users[m.sender].limit -= 2 // -2 limit
-		        let anu = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Databasee/main/nsfw/${command}.json`)
-                result = anu[Math.floor(Math.random() * anu.length)]               
-                let buttons = [                   
-                    {buttonId: `${command}`, buttonText: {displayText: '⌲ Next Image'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: result },
-                    caption: `*Astaghfirullah Tobat Kak*`,
                     footer: akame.user.name,
                     buttons: buttons,
                     headerType: 4
@@ -5848,51 +5809,6 @@ Request Message: ${text}`
             await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
             }
             break
-            case 'nsfwmenu':
-            case 'menunsfw': {
-                anu = `┌────────┈❖
-│「 Hi, ${pushname}👋 」
-│「 ${ucapanWaktu} 」
-└┬─────────────┈❖
-┌┤「 INFO BOT 」
-│└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
-└┬─────────────┈❖
-┌┤「 NSFW 」
-│└─────────────┈❖
-│⭔ ${prefix}ahegao
-│⭔ ${prefix}ass
-│⭔ ${prefix}bdsm
-│⭔ ${prefix}blowjob
-│⭔ ${prefix}cuckold
-│⭔ ${prefix}cum
-│⭔ ${prefix}fendom
-│⭔ ${prefix}foot
-│⭔ ${prefix}gangbang
-│⭔ ${prefix}glasses
-│⭔ ${prefix}hentai
-│⭔ ${prefix}masturbation
-│⭔ ${prefix}orgy
-│⭔ ${prefix}panties
-│⭔ ${prefix}pussy
-│⭔ ${prefix}tentacles
-│⭔ ${prefix}thighs
-│⭔ ${prefix}zettai
-│⭔ Noted : Stay Halal Brother >_<
-└──────────────┈❖`
-                let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
-            }
-            break
             case 'asupanmenu':
             case 'menuasupan': {
                 anu = `┌────────┈❖
@@ -7012,28 +6928,6 @@ Request Message: ${text}`
 │⭔ ${prefix}speedtest
 │⭔ ${prefix}request [req]
 │⭔ ${prefix}report [bug]
-└┬─────────────┈❖
-┌┤「 NSFW 」
-│└─────────────┈❖
-│⭔ ${prefix}ahegao
-│⭔ ${prefix}ass
-│⭔ ${prefix}bdsm
-│⭔ ${prefix}blowjob
-│⭔ ${prefix}cuckold
-│⭔ ${prefix}cum
-│⭔ ${prefix}fendom
-│⭔ ${prefix}foot
-│⭔ ${prefix}gangbang
-│⭔ ${prefix}glasses
-│⭔ ${prefix}hentai
-│⭔ ${prefix}masturbation
-│⭔ ${prefix}orgy
-│⭔ ${prefix}panties
-│⭔ ${prefix}pussy
-│⭔ ${prefix}tentacles
-│⭔ ${prefix}thighs
-│⭔ ${prefix}zettai
-│⭔ Noted : Stay Halal Brother >_<
 └┬─────────────┈❖
 ┌┤「 OWNER 」
 │└─────────────┈❖
