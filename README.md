@@ -17,13 +17,11 @@ Best Regards. GuaAbuzz
 
 # Media Sosial Me
 <p align="center">
-  <a href="https://instagram.com/guaabuzz"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/> 
   <a href="https://wa.me/6282171978174?text=Menu"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   <a href="https://chat.whatsapp.com/FGmVjFYJBjjGst62qwNKJB"><img src="https://img.shields.io/badge/WhatsApp%20Grup-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
-  <a href="tiktok.com/@guaabuzz"><img src="https://img.shields.io/badge/Tiktok-GuaAbuzz-87CEFA?style=for-the-badge&logo=tiktok&logoColor=white&link=tiktok.com/@guaabuzz /><br>
-  <a name=GuaAbuzz&label=VIEWS&style=flat-square&color=orange" />
-  <a href="https://komarev.com/ghpvc/?username=Abuzzpoet&color=blue&style=flat-square&label=Profile+Views"><img title="Watching" src="https://komarev.com/ghpvc/?username=Abuzzpoet&color=green&style=flat-square&label=Profile+View"></a>
+  <a href="tiktok.com/@guaabuzz"><img src="https://img.shields.io/badge/Tiktok-GuaAbuzz-87CEFA?style=for-the-badge&logo=tiktok&logoColor=white&link=tiktok.com/@guaabuzz"/></a>
 </p>
+
 ## Donate Me
 * [`Saweria`](https://saweria.co/GuaAbuzz)
 * [`Gopay`](https://i.ibb.co/dGwfqRT/Gopay.jpg)
@@ -36,8 +34,8 @@ This Script is for everyone, not for Sale. Jika dijual neraka menunggumu brother
 
 ## My Projects
 <p align="center">
-  <a href="https://github.com/Abuzzpoet/AkameV2.0"><img src="https://img.shields.io/badge/Github-808080?style=for-the-badge&logo=Github&logoColor=white"/> 
-  <a href="https://github.com/Abuzzpoet/databasee"><img src="https://img.shields.io/badge/Github-808080?style=for-the-badge&logo=Github&logoColor=white"></a>
+  <a href="https://github.com/Abuzzpoet/AkameV2.0"><img src="https://img.shields.io/badge/Github%20AkameV2.0-808080?style=for-the-badge&logo=Github&logoColor=white"/> 
+  <a href="https://github.com/Abuzzpoet/databasee"><img src="https://img.shields.io/badge/Github%20Database-808080?style=for-the-badge&logo=Github&logoColor=white"></a>
 </p>
 
 ## Heroku Buildpack
