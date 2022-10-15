@@ -1,3 +1,10 @@
+# CATATAN ( NOTE )
+Mulai saat ini, script ini tidak akan dilanjutkan lagi, sudah susah-susah bikin code tapi malah dijual Ama yang cuma modal nyomot doang & dibuat konten yt, yutuber untung yang buat kaga, tapi terserah kalian juga kalo mau pull ya tetep saya ACC
+
+Kalo mau jualan normal aja, jangan sampe nipu atau memberi harapan kosong, contohnya "dijual fitur langkah ada storenya 😱", gabaik itu, mau untung boleh tapi jangan sampe merugikan orang lain 
+
+Best Regards. GuaAbuzz
+
 <p align="center">
 <img src="https://i.ibb.co/bvCb4Pr/Akame.jpg" alt="Akame" width="500"/>
 </p>
@@ -9,16 +16,14 @@
 ---------
 
 # Media Sosial Me
-[![TIKTOK](https://img.shields.io/badge/TikTok%20Owner-1b1e23?style=for-the-badge&logo=tiktok&logoColor=white)](https://tiktok.com/@guaabuzz) 
-
-[![INSTAGRAM](https://img.shields.io/badge/Instagram%20Owner-1b1e23?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/guaabuzz/)
-
-[![OWNER](https://img.shields.io/badge/WhatsApp%20Owner-1b1e23?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/6289636827082?text=Assalamualaikum+Bang) 
-
-[![WHATSAPP BOT](https://img.shields.io/badge/WhatsApp%20BOT-1b1e23?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/6282171978174?text=Menu) 
-
-[![GROUP OFFICIAL](https://img.shields.io/badge/WhatsApp%20Group-1b1e23?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/FGmVjFYJBjjGst62qwNKJB) 
-
+<p align="center">
+  <a href="https://instagram.com/guaabuzz"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/> 
+  <a href="https://wa.me/6282171978174?text=Menu"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+  <a href="https://chat.whatsapp.com/FGmVjFYJBjjGst62qwNKJB"><img src="https://img.shields.io/badge/WhatsApp%20Grup-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+  <a href="tiktok.com/@guaabuzz"><img src="https://img.shields.io/badge/Tiktok-GuaAbuzz-87CEFA?style=for-the-badge&logo=tiktok&logoColor=white&link=tiktok.com/@guaabuzz /><br>
+  <a name=GuaAbuzz&label=VIEWS&style=flat-square&color=orange" />
+  <a href="https://komarev.com/ghpvc/?username=Abuzzpoet&color=blue&style=flat-square&label=Profile+Views"><img title="Watching" src="https://komarev.com/ghpvc/?username=Abuzzpoet&color=green&style=flat-square&label=Profile+View"></a>
+</p>
 ## Donate Me
 * [`Saweria`](https://saweria.co/GuaAbuzz)
 * [`Gopay`](https://i.ibb.co/dGwfqRT/Gopay.jpg)
@@ -30,26 +35,17 @@
 This Script is for everyone, not for Sale. Jika dijual neraka menunggumu brother !
 
 ## My Projects
-[![ASUNA](https://img.shields.io/badge/Asuna%20WhatsApp%20Bot-1b1e23?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Abuzzpoet/Asuna)
-
-[![AKAMEV2.0](https://img.shields.io/badge/AkameV2.0%20WhatsApp%20Bot-1b1e23?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Abuzzpoet/AkameV2.0)
-
-## Module Dan Base Yg Dipake
-[![MODULE](https://img.shields.io/badge/@adiwajshing%20baileys-1b1e23?style=for-the-badge&logo=github&logoColor=white)](https://github.com/adiwajshing/baileys)
-
-[![HISOKA](https://img.shields.io/badge/DikaArdnt-1b1e23?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DikaArdnt/Hisoka-Morou)
-
-[![ZENZ](https://img.shields.io/badge/zhwzein-1b1e23?style=for-the-badge&logo=github&logoColor=white)](https://github.com/zhwzein/Killua-Zoldyck)
+<p align="center">
+  <a href="https://github.com/Abuzzpoet/AkameV2.0"><img src="https://img.shields.io/badge/Github-808080?style=for-the-badge&logo=Github&logoColor=white"/> 
+  <a href="https://github.com/Abuzzpoet/databasee"><img src="https://img.shields.io/badge/Github-808080?style=for-the-badge&logo=Github&logoColor=white"></a>
+</p>
 
 ## Heroku Buildpack
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Abuzzpoet/AkameV2.0)
-
 [![FFMPEG](https://img.shields.io/badge/BuildPack%20FFMPEG-1b1e23?style=for-the-badge&logo=heroku&logoColor=white)](https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest)
-
 [![IMAGEMAGICK](https://img.shields.io/badge/BuildPack%20IMAGEMAGICK-1b1e23?style=for-the-badge&logo=heroku&logoColor=white)](https://github.com/clhuang/heroku-buildpack-webp-binaries.git)
 
 ## Okteto
-
 [![Deploy](https://okteto.com/develop-okteto.svg)](https://cloud.okteto.com)
 
 ```bash
@@ -183,7 +179,6 @@ global.limitawal = {
 * [`Nurutomo`](https://github.com/Nurutomo)
 * [`Mhankbarbar`](https://github.com/MhankBarBar)
 * [`DikaArdnt`](https://github.com/DikaArdnt)
-* [`Abuzzpoet`](https://github.com/Abuzzpoet)
 * [`Fatih Arridho`](https://github.com/FatihArridho)
 * [`zhwzein`](https://github.com/zhwzein)
 * [`CAF-ID`](https://github.com/CAF-ID)
