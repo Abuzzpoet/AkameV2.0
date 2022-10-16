@@ -15,11 +15,10 @@ Best Regards. GuaAbuzz
 
 ---------
 
-# Media Sosial Me
+# Media Sosial Bot
 <p align="center">
-  <a href="https://wa.me/6282171978174?text=Menu"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
-  <a href="https://chat.whatsapp.com/FGmVjFYJBjjGst62qwNKJB"><img src="https://img.shields.io/badge/WhatsApp%20Grup-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
-  <a href="tiktok.com/@guaabuzz"><img src="https://img.shields.io/badge/Tiktok-GuaAbuzz-87CEFA?style=for-the-badge&logo=tiktok&logoColor=white&link=tiktok.com/@guaabuzz"/></a>
+  <a href="https://wa.me/6282171978174?text=Menu"><img src="https://img.shields.io/badge/WhatsApp%20Bot-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/>
+  <a href="https://chat.whatsapp.com/FGmVjFYJBjjGst62qwNKJB"><img src="https://img.shields.io/badge/WhatsApp%20Grup-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"></a>
 </p>
 
 ## Donate Me
@@ -34,17 +33,21 @@ This Script is for everyone, not for Sale. Jika dijual neraka menunggumu brother
 
 ## My Projects
 <p align="center">
-  <a href="https://github.com/Abuzzpoet/AkameV2.0"><img src="https://img.shields.io/badge/Github%20AkameV2.0-808080?style=for-the-badge&logo=Github&logoColor=white"/> 
-  <a href="https://github.com/Abuzzpoet/databasee"><img src="https://img.shields.io/badge/Github%20Database-808080?style=for-the-badge&logo=Github&logoColor=white"></a>
+  <a href="https://github.com/Abuzzpoet/AkameV2.0"><img src="https://img.shields.io/badge/Github%20AkameV2.0-252525?style=for-the-badge&logo=Github&logoColor=white"/> 
+  <a href="https://github.com/Abuzzpoet/databasee"><img src="https://img.shields.io/badge/Github%20Database%20Bot-252525?style=for-the-badge&logo=Github&logoColor=white"></a>
 </p>
 
 ## Heroku Buildpack
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Abuzzpoet/AkameV2.0)
-[![FFMPEG](https://img.shields.io/badge/BuildPack%20FFMPEG-1b1e23?style=for-the-badge&logo=heroku&logoColor=white)](https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest)
-[![IMAGEMAGICK](https://img.shields.io/badge/BuildPack%20IMAGEMAGICK-1b1e23?style=for-the-badge&logo=heroku&logoColor=white)](https://github.com/clhuang/heroku-buildpack-webp-binaries.git)
+<p align="center">
+  <a href="https://heroku.com/deploy?template=https://github.com/Abuzzpoet/AkameV2.0"><img src="https://www.herokucdn.com/deploy/button.svg"/> 
+  <a href="https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"><img src="https://img.shields.io/badge/BuildPack%20FFMPEG-9370DB?style=for-the-badge&logo=heroku&logoColor=white">
+  <a href="https://github.com/clhuang/heroku-buildpack-webp-binaries.git"><img src="https://img.shields.io/badge/BuildPack%20IMAGEMAGICK-9370DB?style=for-the-badge&logo=heroku&logoColor=white"></a>
+</p>
 
 ## Okteto
-[![Deploy](https://okteto.com/develop-okteto.svg)](https://cloud.okteto.com)
+<p align="center">
+  <a href="https://cloud.okteto.com"><img src="https://okteto.com/develop-okteto.svg"></a>
+</p>
 
 ```bash
 Login with your github
@@ -138,7 +141,6 @@ global.saweria = ['https://saweria.co/GuaAbuzz']
 //—————「 Set Kebutuhan Button 」—————//
 //ubah aja kalau ada yang gapunya gsh di hps anggap aja credits :)
 global.github = 'https://github.com/Abuzzpoet'
-global.myweb = 'https://tiktok.com/@guaabuzz'
 
 //—————「 Set Sticker Wm 」—————//
 //terserah mau ubah atau nggak
