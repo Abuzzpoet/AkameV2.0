@@ -2858,8 +2858,8 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             atas = text.split('|')[0] ? text.split('|')[0] : '-'
             bawah = text.split('|')[1] ? text.split('|')[1] : '-'
 	        let dwnld = await akame.downloadAndSaveMediaMessage(qmsg)
-	        let { TelegraPh } = require('./lib/uploader')
-	        let fatGans = await TelegraPh(dwnld)
+	        let { floNime } = require('./lib/uploader')
+	        let fatGans = await floNime(dwnld)
 	        let smeme = `https://api.memegen.link/images/custom/${encodeURIComponent(atas)}/${encodeURIComponent(bawah)}.png?background=${fatGans}`
 	        let FaTiH = await akame.sendImageAsSticker(m.chat, smeme, fdoc, { packname: global.packname, author: global.auhor })
 	        await fs.unlinkSync(FaTiH)
