@@ -1098,7 +1098,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             case 'assalamualaikum':
             case 'Assalamualaikum Wr. Wb': {
                goblok = fs.readFileSync('./sound/salam.mp3')
-               aka.sendMessage(m.chat, {audio: goblok, mimetype:'audio/mpeg', ptt:true }, {quoted:fvn})}
+               akame.sendMessage(m.chat, {audio: goblok, mimetype:'audio/mpeg', ptt:true }, {quoted:fvn})}
             break
             case 'bot': {
                list = ['./sound/oy.mp3','./sound/kenapa.mp3','./sound/iya.mp3']
