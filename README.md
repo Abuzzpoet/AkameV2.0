@@ -2,12 +2,13 @@
 Mulai saat ini, script ini tidak akan dilanjutkan lagi, jika ingin menambah sesuatu lebih baik dibuat pribadi aja, malah keren itu lhu punya tapi yang lain kaga jadi lhu bisa jual tu fitur kalo di publik di script ini mungkin kalian akan rugi sendiri, sudah susah-susah bikin code tapi malah dijual Ama yang cuma modal nyomot doang & dibuat konten yt, yutuber untung yang buat kaga, tapi terserah kalian juga kalo mau pull ya tetep saya ACC
 
 Kalo mau jualan normal aja, jangan sampe nipu atau memberi harapan kosong, contohnya "dijual fitur langkah ada storenya 😱", gabaik itu, mau untung boleh tapi jangan sampe merugikan orang lain 
+
 Best Regards. GuaAbuzz
 
 <p align="center">
 <img src="https://i.ibb.co/bvCb4Pr/Akame.jpg" alt="Akame" width="500"/>
 </p>
-<h1 align="center">Akame - MD</h1>
+<h1 align="center">AkameV2.0</h1>
 <p align="center">
   <a href="https://github.com/Abuzzpoet"><img src="http://readme-typing-svg.herokuapp.com?color=FFFFFF&center=true&vCenter=true&multiline=false&lines=Akame+BOT+Multi+Device;Base+ori+by+DikaArdnt;Recode+By+GuaAbuzz;Give+star+and+forks+this+Repo+:D;Follow+My+Github" alt="UwU">
 </p>
@@ -19,11 +20,6 @@ Best Regards. GuaAbuzz
   <a href="https://wa.me/6282171978174?text=Menu"><img src="https://img.shields.io/badge/WhatsApp%20Bot-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/>
   <a href="https://chat.whatsapp.com/FGmVjFYJBjjGst62qwNKJB"><img src="https://img.shields.io/badge/WhatsApp%20Grup-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"></a>
 </p>
-
-## Donate Me
-* [`Saweria`](https://saweria.co/GuaAbuzz)
-* [`Gopay`](https://i.ibb.co/dGwfqRT/Gopay.jpg)
-* [`Dana`](https://i.ibb.co/MN3mmMB/Dana.jpg)
 
 ---------
 
@@ -72,9 +68,9 @@ npm install
 
 * Create account and database in mongodb atlas [`watch here`](https://youtu.be/rPqRyYJmx2g)
 * when you already have a database, you just need to take mongourl
-* Put mongourl in Procfile `web: node . --db 'mongourl'`
-* Example `web: node . -- db 'Your Mongo URI'`
-
+* Put mongourl in Procfile `worker: node . --db 'mongourl'`
+* Example `worker: node . -- db 'Your Mongo URI'`
+* Example `worker: node . -- db 'mongodb+srv://Akame:AkameChan@guaabuzz.s0w7qrh.mongodb.net/?retryWrites=true&w=majority'`
 ## For Termux/ubuntu/ssh User
 
 ```bash
@@ -177,10 +173,23 @@ global.limitawal = {
 * [`@adiwajshing/baileys`](https://github.com/adiwajshing/baileys)
 * [`Nurutomo`](https://github.com/Nurutomo)
 * [`Mhankbarbar`](https://github.com/MhankBarBar)
-* [`DikaArdnt`](https://github.com/DikaArdnt)
-* [`Fatih Arridho`](https://github.com/FatihArridho)
+* [`Faiz`](https://github.com/FaizBastomi)
+* [`Gimenz`](https://github.com/Gimenz)
+* [`rayy`](https://github.com/rayyreall)
+* [`GuaAbuzz`](https://github.com/Abuzzpoet)
+* [`FatihArridho`](https://github.com/FatihArridho)
+* [`Pa7rick`](https://github.com/pa7rickr)
+* [`RidhoUhuy`](https://github.com/Atak676) 
 * [`zhwzein`](https://github.com/zhwzein)
 * [`CAF-ID`](https://github.com/CAF-ID)
-* [`Hisoka775`](https://github.com/Hisoka775)
+* [`bintang`](https://github.com/Bintangp02)
+
+```Thanks to all who have participated in the development of this script```
+
 
 License: [MIT](https://en.wikipedia.org/wiki/MIT_License)
+
+Support Me
+* [`Saweria`](https://saweria.co/GuaAbuzz)
+* [`Gopay`](https://i.ibb.co/dGwfqRT/Gopay.jpg)
+* [`Dana`](https://i.ibb.co/MN3mmMB/Dana.jpg)
