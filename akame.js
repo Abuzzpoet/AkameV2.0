@@ -102,27 +102,27 @@ module.exports = akame = async (akame, m, chatUpdate, store) => {
         const wita = moment.tz('Asia/Makassar').format('HH : mm : ss')
 
         const time2 = moment().tz('Asia/Jakarta').format('HH:mm:ss')
-        if (time2 < "23:59:00") {
-            var ucapanWaktu = '𝑺𝒆𝒍𝒂𝒎𝒂𝒕 𝑴𝒂𝒍𝒂𝒎 🏙️'
-        }
-        if (time2 < "19:00:00") {
-            var ucapanWaktu = '𝑺𝒆𝒍𝒂𝒎𝒂𝒕 𝑷𝒆𝒕𝒂𝒏𝒈 🌆'
-        }
-        if (time2 < "18:00:00") {
-            var ucapanWaktu = '𝑺𝒆𝒍𝒂𝒎𝒂𝒕 𝑺𝒐𝒓𝒆 🌇'
-        }
-        if (time2 < "15:00:00") {
-            var ucapanWaktu = '𝑺𝒆𝒍𝒂𝒎𝒂𝒕 𝑺𝒊𝒂𝒏𝒈 🌤️'
-        }
-        if (time2 < "10:00:00") {
-            var ucapanWaktu = '𝑺𝒆𝒍𝒂𝒎𝒂𝒕 𝑷𝒂𝒈𝒊 🌄'
-        }
-        if (time2 < "05:00:00") {
-            var ucapanWaktu = '𝑺𝒆𝒍𝒂𝒎𝒂𝒕 𝑺𝒖𝒃𝒖𝒉 🌆'
-        }
-        if (time2 < "03:00:00") {
-            var ucapanWaktu = '𝑺𝒆𝒍𝒂𝒎𝒂𝒕 𝑻𝒆𝒏𝒈𝒂𝒉 𝑴𝒂𝒍𝒂𝒎 🌃'
-        }
+        if(time2 < "23:59:00"){
+        var ucapanWaktu = 'Selamat Malam 🏙️'
+}
+        if(time2 < "19:00:00"){
+        var ucapanWaktu = 'Selamat Petang 🌆'
+}
+        if(time2 < "18:00:00"){
+        var ucapanWaktu = 'Selamat Sore 🌇'
+}
+        if(time2 < "15:00:00"){
+        var ucapanWaktu = 'Selamat Siang 🌤️'
+}
+        if(time2 < "10:00:00"){
+        var ucapanWaktu = 'Selamat Pagi 🌄'
+}
+        if(time2 < "05:00:00"){
+        var ucapanWaktu = 'Selamat Subuh 🌆'
+}
+        if(time2 < "03:00:00"){
+        var ucapanWaktu = 'Selamat Tengah Malam 🌃'
+}
 
         //Time Menuju Ulang Tahun Untuk GuaAbuzz :)
         const HBD = new Date('July 17, 2023 06:00:00').getTime();
@@ -1097,36 +1097,16 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             case 'Assalamualaikum':
             case 'assalamualaikum':
             case 'Assalamualaikum Wr. Wb': {
-                m.reply(`Waalaikumsalam Kak ${pushname} 🙏`)
-                }
-                break
-            case 'Shalom':
-            case 'Salam Sejahtera':
-            case 'shalom':
-            case 'salam sejahtera':
-            case 'Salam sejahtera': {
-                m.reply(`Salam Sejahtera Juga Untukmu Kak ${pushname} 🙏`)
-                }
-                break
-            case 'Om Swastyastu':
-            case 'om swastyastu':
-            case 'Om swastyastu': {
-                m.reply(`Om Santi, Santi, Santi, Om Kak ${pushname} 🙏`)
-                }
-                break
-            case 'Namo Buddhaya':
-            case 'Namo buddhaya':
-            case 'namo buddhaya': {
-                m.reply(`Nammo Buddhaya Juga Kak ${pushname} 🙏`)
-                }
-                break
-            case 'Wie De Dong Tian':
-            case 'Wie de dong tian':
-            case 'wie de dong tian': {
-                m.reply(`Xian You Yi De Kak ${pushname} 🙏`)
-                }
-                break
-                //Thx
+               goblok = fs.readFileSync('./sound/salam.mp3')
+               aka.sendMessage(m.chat, {audio: goblok, mimetype:'audio/mpeg', ptt:true }, {quoted:fvn})}
+            break
+            case 'bot': {
+               list = ['./sound/oy.mp3','./sound/kenapa.mp3','./sound/iya.mp3']
+               random = list[Math.floor(Math.random() * list.length)]
+               goblok = fs.readFileSync(random)
+               akame.sendMessage(m.chat, {audio: goblok, mimetype:'audio/mpeg', ptt:true }, {quoted:fvn})}
+            break
+            //Thx
             case 'thanks':
             case 'makasih':
             case 'thx':
@@ -1148,7 +1128,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 m.reply(`Ketik #menu Untuk Melihat List Menu Bot`)
                 }
                 break
-                //Jangan Dihapus atau diubah anj awas aja update berikutnya gua enc kontol
+                // Kalau Mau Nambahin Gpp Tapi Jangan Diubah Ya Anj
             case 'tqtt':
             case 'tqto':
             case 'thanksto': {
@@ -1257,12 +1237,6 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 ]
                 },
                 {
-                title: "Script Bot Akame >_<",
-                rows: [
-                {title: "⌲ 「 Script Bot 」", rowId: `${prefix}script`, description: `Klik Untuk Melihat Script Bot`}
-                ]
-                },
-                {
                 title: "Open Jasa Sewabot >_<",
                 rows: [
                 {title: "⌲ 「 Sewa Bot 」", rowId: `${prefix}sewabot`, description: `Klik Untuk Melihat Harga Sewabot`}
@@ -1298,16 +1272,8 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             break
             case 'sc':
             case 'script': {
-                anu = `*Info Script*     
-📚 *Base : Dika Ardnt* 
-⌲ https://github.com/DikaArdnt/Hisoka-Morou
-
-🌱 *Recode By : GuaAbuzz*
-⎙ https://github.com/Abuzzpoet/AkameV2.0
-_Follow My Github And Star Repo_`
-                let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
-            }
+               goblok = fs.readFileSync('./sound/sc.mp3')
+               akame.sendMessage(m.chat, {audio: goblok, mimetype:'audio/mpeg', ptt:true }, {quoted:fvn})}
             break
             case 'tes':
             case 'test':
@@ -2245,6 +2211,36 @@ _Follow My Github And Star Repo_`
                         },
                         {
                             buttonId: 'mute off',
+                            buttonText: {
+                                displayText: 'Off'
+                            },
+                            type: 1
+                        }
+                    ]
+                    await akame.sendButtonText(m.chat, buttons, `Mode ${command} 🕊️`, `Silahkan Klik Button Dibawah, Jika Button Tidak Muncul Ketik ${command} on/off`, akame.user.name, fgclink)
+                }
+            }
+            break
+            case 'autosw': {
+               if (!isCreator) throw mess.owner
+               if (args[0] === "on") {
+                    if (akame.autosw) return m.reply(`Sudah Aktif Sebelumnya 🕊`)
+                    akame.autosw = true
+                    m.reply(`Auto Sw Aktif 🕊️`)
+                } else if (args[0] === "off") {
+                    if (!akame.autosw) return m.reply(`Sudah Tidak Aktif Sebelumnya 🕊`)
+                    akame.autosw = false
+                    m.reply(`Auto Sw Nonaktif 🕊️`)
+                } else {
+                    let buttons = [{
+                            buttonId: 'autosw on',
+                            buttonText: {
+                                displayText: 'On'
+                            },
+                            type: 1
+                        },
+                        {
+                            buttonId: 'autosw off',
                             buttonText: {
                                 displayText: 'Off'
                             },
@@ -5446,6 +5442,9 @@ Request Message: ${text}`
             }
             break
             case 'rules': {
+                goblok = fs.readFileSync('./sound/menu.mp3')
+                akame.sendMessage(m.chat, {audio: goblok, mimetype:'audio/mpeg', ptt:true }, {quoted:fvn})}
+{
                 anu = `┌────────┈❖
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
@@ -5455,7 +5454,7 @@ Request Message: ${text}`
 │1. Tolong Gunakan Delay 5 Detik
 │   Untuk Menggukan BOT.
 │2. Cuilk Bot Tanpa Izin? Group
-│   Ya Gua Raid 😎.
+│   Ya Gua Kudeta 😎.
 │2. Gunakan Dengan Bijak.
 │3. Don't Call Bots.
 │4. Don't Spam Bot.
@@ -6524,6 +6523,7 @@ Request Message: ${text}`
 │⭔ ${prefix}setnamabot
 │⭔ ${prefix}setbiobot
 │⭔ ${prefix}react [emoji]
+│⭔ ${prefix}autosw
 │⭔ ${prefix}shutdown
 │⭔ ${prefix}myip
 │⭔ ${prefix}setexif
@@ -6620,6 +6620,9 @@ Request Message: ${text}`
             case 'menu':
             case 'help':
             case '?': {
+                goblok = fs.readFileSync('./sound/menu.mp3')
+                akame.sendMessage(m.chat, {audio: goblok, mimetype:'audio/mpeg', ptt:true }, {quoted:fvn})}
+{
                 anu = `┌────────┈❖
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
@@ -6941,6 +6944,7 @@ Request Message: ${text}`
 │⭔ ${prefix}setbiobot
 │⭔ ${prefix}react [emoji]
 │⭔ ${prefix}shutdown
+│⭔ ${prefix}autosw
 │⭔ ${prefix}myip
 │⭔ ${prefix}setexif
 │⭔ ${prefix}chat [option]

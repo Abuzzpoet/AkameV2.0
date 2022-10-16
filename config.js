@@ -30,7 +30,7 @@ global.namaowner = 'GuaAbuzz'
 //—————「 Setting Owner 」—————//
 //terserah mau ubah atau nggak
 global.owner = ['6289636827082']
-global.premium = ['6289636827082']
+global.premium = ['6289636827082','6282171978174']
 
 //—————「 Setting Nomor Donasi 」—————//
 //ubah aja kalau ada yg gapunya kasih tanda -

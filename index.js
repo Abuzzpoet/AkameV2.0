@@ -230,6 +230,8 @@ async function startakame() {
     }
     
     akame.public = true
+    akame.autosw = true
+	akame.sendsw = `${global.owner}@s.whatsapp.net`
 
     akame.serializeM = (m) => smsg(akame, m, store)
 
@@ -695,9 +697,39 @@ async function startakame() {
         }
 
     }
-
+    
+akame.ev.on('messages.upsert', async chatUpdate => {
+        //console.log(JSON.stringify(chatUpdate, undefined, 2))
+        try {
+        mek = chatUpdate.messages[0]
+        if (!mek.message) return
+			if (mek.key.remoteJid === 'status@broadcast') {
+				let bot = akame.decodeJid(akame.user.id)
+				if (!akame.autosw) return
+				setTimeout(() => {
+					akame.readMessages([mek.key])
+					let mt = getContentType(mek.message)
+					console.log((/protocolMessage/i.test(mt)) ? `${mek.key.participant.split('@')[0]} Telah menghapus Story nya` : 'Melihat story user : '+mek.key.participant.split('@')[0]);
+					if (/protocolMessage/i.test(mt)) akame.sendMessage(akame.sendsw, {text:'Status dari @'+mek.key.participant.split('@')[0]+' Telah dihapus', mentions: [mek.key.participant]})
+					if (/(imageMessage|videoMessage|extendedTextMessage)/i.test(mt)) {
+						let keke = (mt == 'extendedTextMessage') ? `\nStory Teks Berisi : ${mek.message.extendedTextMessage.text}` : (mt == 'imageMessage') ? `\nStory Gambar dengan Caption : ${mek.message.imageMessage.caption}` : (mt == 'videoMessage') ? `\nStory Video dengan Caption : ${mek.message.videoMessage.caption}` : '\nTidak diketahui cek saja langsung!!!'
+						akame.sendMessage(akame.sendsw, {text: 'Melihat story dari @'+mek.key.participant.split('@')[0] + keke, mentions: [mek.key.participant]});
+					}
+				}, 2000);
+			}
+			if (!mek.message) return
+        mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
+        if (!akame.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
+        if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
+        m = smsg(akame, mek, store)
+        require("./akame")(akame, m, chatUpdate, store)
+        } catch (err) {
+            console.log(err)
+        }
+    })
     return akame
 }
+
 
 startakame()
 
