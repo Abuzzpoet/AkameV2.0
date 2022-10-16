@@ -1098,13 +1098,13 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             case 'assalamualaikum':
             case 'Assalamualaikum Wr. Wb': {
                goblok = fs.readFileSync('./sound/salam.mp3')
-               aka.sendMessage(m.chat, {audio: goblok, mimetype:'audio/mpeg'}, {quoted:fvn})}
+               aka.sendMessage(m.chat, {audio: goblok, mimetype:'audio/mpeg', ptt:true }, {quoted:fvn})}
             break
             case 'bot': {
                list = ['./sound/oy.mp3','./sound/kenapa.mp3','./sound/iya.mp3']
                random = list[Math.floor(Math.random() * list.length)]
                goblok = fs.readFileSync(random)
-               akame.sendMessage(m.chat, {audio: goblok, mimetype:'audio/mpeg'}, {quoted:fvn})}
+               akame.sendMessage(m.chat, {audio: goblok, mimetype:'audio/mpeg', ptt:true }, {quoted:fvn})}
             break
             //Thx
             case 'thanks':
@@ -1273,7 +1273,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             case 'sc':
             case 'script': {
                goblok = fs.readFileSync('./sound/sc.mp3')
-               akame.sendMessage(m.chat, {audio: goblok, mimetype:'audio/mpeg' }, {quoted:fvn})}
+               akame.sendMessage(m.chat, {audio: goblok, mimetype:'audio/mpeg', ptt:true }, {quoted:fvn})}
             break
             case 'tes':
             case 'test':
@@ -2211,36 +2211,6 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                         },
                         {
                             buttonId: 'mute off',
-                            buttonText: {
-                                displayText: 'Off'
-                            },
-                            type: 1
-                        }
-                    ]
-                    await akame.sendButtonText(m.chat, buttons, `Mode ${command} 🕊️`, `Silahkan Klik Button Dibawah, Jika Button Tidak Muncul Ketik ${command} on/off`, akame.user.name, fgclink)
-                }
-            }
-            break
-            case 'autosw': {
-               if (!isCreator) throw mess.owner
-               if (args[0] === "on") {
-                    if (!akame.autosw) return m.reply(`Sudah Aktif Sebelumnya 🕊`)
-                    akame.autosw = true
-                    m.reply(`Auto Sw Aktif 🕊️`)
-                } else if (args[0] === "off") {
-                    if (akame.autosw) return m.reply(`Sudah Tidak Aktif Sebelumnya 🕊`)
-                    akame.autosw = false
-                    m.reply(`Auto Sw Nonaktif 🕊️`)
-                } else {
-                    let buttons = [{
-                            buttonId: 'autosw on',
-                            buttonText: {
-                                displayText: 'On'
-                            },
-                            type: 1
-                        },
-                        {
-                            buttonId: 'autosw off',
                             buttonText: {
                                 displayText: 'Off'
                             },
@@ -5443,7 +5413,7 @@ Request Message: ${text}`
             break
             case 'rules': {
                 goblok = fs.readFileSync('./sound/menu.mp3')
-                akame.sendMessage(m.chat, {audio: goblok, mimetype:'audio/mpeg'}, {quoted:fvn})}
+                akame.sendMessage(m.chat, {audio: goblok, mimetype:'audio/mpeg', ptt:true }, {quoted:fvn})}
 {
                 anu = `┌────────┈❖
 │「 Hi, ${pushname}👋 」
@@ -6621,7 +6591,7 @@ Request Message: ${text}`
             case 'help':
             case '?': {
                 goblok = fs.readFileSync('./sound/menu.mp3')
-                akame.sendMessage(m.chat, {audio: goblok, mimetype:'audio/mpeg'}, {quoted:fvn})}
+                akame.sendMessage(m.chat, {audio: goblok, mimetype:'audio/mpeg', ptt:true }, {quoted:fvn})}
 {
                 anu = `┌────────┈❖
 │「 Hi, ${pushname}👋 」
