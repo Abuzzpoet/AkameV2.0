@@ -2858,8 +2858,8 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
             atas = text.split('|')[0] ? text.split('|')[0] : '-'
             bawah = text.split('|')[1] ? text.split('|')[1] : '-'
 	        let dwnld = await akame.downloadAndSaveMediaMessage(qmsg)
-	        let { UploadFileUgu } = require('./lib/uploader')
-	        let fatGans = await UploadFileUgu(dwnld)
+	        let { TelegraPh } = require('./lib/uploader')
+	        let fatGans = await TelegraPh(dwnld)
 	        let smeme = `https://api.memegen.link/images/custom/${encodeURIComponent(atas)}/${encodeURIComponent(bawah)}.png?background=${fatGans}`
 	        let FaTiH = await akame.sendImageAsSticker(m.chat, smeme, fdoc, { packname: global.packname, author: global.auhor })
 	        await fs.unlinkSync(FaTiH)
@@ -3880,8 +3880,8 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 if (!/image/.test(mime)) return m.reply(`Kirim/Reply Foto`)
                 m.reply(mess.wait)
                 let dwnld = await akame.downloadAndSaveMediaMessage(qmsg)
-                let { UploadFileUgu } = require('./lib/uploader')
-                let fatGans = await UploadFileUgu(dwnld)
+                let { TelegraPh } = require('./lib/uploader')
+                let fatGans = await TelegraPh(dwnld)
                 let smeme = api('zenz', '/photoeditor/' + command, { url: fatGans }, 'apikey')
                 let FaTiH = await akame.sendImageAsSticker(m.chat, smeme, fdoc, {
                     packname: global.packname,
