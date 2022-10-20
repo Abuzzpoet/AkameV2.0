@@ -393,6 +393,7 @@ const fakestatus = {
            dataa = await fetchJson(`https://api.countapi.xyz/hit/AkameV2.0${moment.tz('Asia/Jakarta').format('DDMMYYYY')}/visits`)
            jumlahharian = `${dataa.value}`
     }
+    
 	// auto set bio
 	if (db.data.settings[botNumber].autobio) {
 	    let setting = global.db.data.settings[botNumber]
@@ -5716,6 +5717,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -5767,6 +5770,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -5810,6 +5815,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -5845,6 +5852,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -5885,6 +5894,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -5970,6 +5981,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -6010,6 +6023,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -6053,6 +6068,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -6086,6 +6103,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -6118,6 +6137,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -6175,6 +6196,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -6219,6 +6242,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -6280,6 +6305,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -6312,6 +6339,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -6368,6 +6397,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -6404,6 +6435,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -6443,6 +6476,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -6477,6 +6512,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -6508,6 +6545,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -6544,6 +6583,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -6589,6 +6630,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -6626,6 +6669,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -6655,6 +6700,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -6699,6 +6746,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -6734,6 +6783,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
@@ -6811,6 +6862,8 @@ case 'sound161':
 │ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
 │ Mode : ${akame.public ? 'Public' : 'Self'}
 │ User : ${Object.keys(global.db.data.users).length}
+│ Total Hit : ${jumlahcmd}
+│ Total Hit Today : ${jumlahharian}
 │ Premium : ${isPremium ? '✅' : `❌`}
 │ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
 │ Runtime : ${runtime(process.uptime())}
