@@ -6847,7 +6847,7 @@ case 'sound161':
   fileLength: jumhal,
   pageCount: jumlha,
   caption: anu,
-  footer: hisoka.user.name,
+  footer: akame.user.name,
   buttons: buttons,
   mentions: fkontak,
   headerType: 4,
