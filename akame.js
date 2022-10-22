@@ -166,7 +166,8 @@ module.exports = akame = async (akame, m, chatUpdate, store) => {
         let picaks = [flaming, fluming, flarun, flasmurf, mehk, awog, mohai, mhehe]
         let picak = picaks[Math.floor(Math.random() * picaks.length)]
         
-        const kloadq = klqor[Math.floor(Math.random() * klqor.length)]
+        const klqor = ['😁','🥰','😇','🥲','🙃','🙂','🤑','😑','♻️','🔞','✅','🙏','❤','🔴','❗','〽️','🎶','🤗','👤','🔎','🔋','📚','🎬','🐵','🐒','🐦','🍌','🍎','🥝','🥒','🫓','🍒','🍐','🥦','🌍','🌎','🎃','🎄','🥎','🎖','🏆','🏅','🥇','🥈','🥉','🎗','🎟','🎫','🎁','🎀','👑','💎','⚠️']
+	    const kloadq = klqor[Math.floor(Math.random() * klqor.length)]
     	const filsj = ['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet','application/vnd.openxmlformats-officedocument.presentationml.presentation','application/vnd.openxmlformats-officedocument.wordprocessingml.document','application/pdf']
 	    const filsk = filsj[Math.floor(Math.random() * filsj.length)]
 
