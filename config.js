@@ -94,8 +94,8 @@ global.limitawal = {
 //terserah mau ubah apa nggak, menurut gua jangan di ubah!
 global.thumb = fs.readFileSync('./media/image/akame.jpg')
 global.kurome = { url: 'https://telegra.ph/file/de381b0caeb315a99c68a.mp4' }
-global.mytt = 'https://youtube.com/c/Nazedev'
-global.myttv = 'https://youtu.be/ey7qLuRBm5Y'
+global.mytt = 'https://tiktok.com/@guaabuzz'
+global.myttv = 'https://vt.tiktok.com/ZSRGeWXTM/'
 global.botname = 'GuaAbuzz Creator'
 global.akulaku = 'Bot By GuaAbuzz'
 global.ttname = 'TikTok GuaAbuzz'
