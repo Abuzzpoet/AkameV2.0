@@ -6846,7 +6846,7 @@ case 'sound161':
   mimetype: `${filsk}`,
   fileLength: jumhal,
   pageCount: jumlha,
-  caption: jawab,
+  caption: anu,
   footer: hisoka.user.name,
   buttons: buttons,
   mentions: fkontak,
@@ -7442,7 +7442,7 @@ case 'sound161':
 
 
     } catch (err) {
-        console.log("error di bagian akame.js"+util.format(err))
+        console.log("error di bagian akame.js "+util.format(err))
     //  m.reply(util.format(err))
     }
 }
