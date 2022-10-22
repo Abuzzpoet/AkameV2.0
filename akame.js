@@ -2466,7 +2466,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     await sleep(1500)
                       let txt = `「 Broadcast Bot 」\n\n${text}`
                       let buttons = [{ buttonId: 'command', buttonText: { displayText: '📖Simple Menu' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            akame.sendMessage(i { caption: txt, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
+            akame.sendMessage(i, { caption: txt, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
                 }
                 m.reply(`Sukses Mengirim Broadcast Ke ${anu.length} Group`)
             }
