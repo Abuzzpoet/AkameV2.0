@@ -89,7 +89,7 @@ global.limitawal = {
 
 //—————「 Set Image 」—————//
 //terserah mau ubah apa nggak, menurut gua jangan di ubah!
-global.thumb = fs.readFileSync('./image/akame.jpg')
+global.thumb = fs.readFileSync('./media/image/akame.jpg')
 global.kurome = { url: 'https://telegra.ph/file/de381b0caeb315a99c68a.mp4' }
 
 //—————「 Set Random Image Menu 」—————//

@@ -18,6 +18,8 @@ const path = require('path')
 const os = require('os')
 const hx = require('hxz-api')
 const fdl = require("caliph-api")
+const xfar = require('xfarr-api')
+const textpro = require('./lib/textpro')
 const bochil = require('@bochilteam/scraper')
 const alya = require('./lib/null.js')
 const moment = require('moment-timezone')
@@ -135,179 +137,38 @@ module.exports = akame = async (akame, m, chatUpdate, store) => {
         const menuju = `${jhari}Hari ${jjam}Jam ${mmmenit}Menit ${ddetik}Detik`
 
 
+        //Resize
+         const reSize = async(buffer, ukur1, ukur2) => {
+             return new Promise(async(resolve, reject) => {
+             let jimp = require('jimp')
+             var baper = await jimp.read(buffer);
+             var ab = await baper.resize(ukur1, ukur2).getBufferAsync(jimp.MIME_JPEG)
+             resolve(ab)
+             })
+             }
+             
 //━━━━━━━━━━━━━━━[ FAKE ]━━━━━━━━━━━━━━━━━//
-const ftroli = {
-    key: {
-        fromMe: false,
-        "participant": "0@s.whatsapp.net",
-        "remoteJid": "status@broadcast"
-    },
-    "message": {
-        orderMessage: {
-            itemCount: 2022,
-            status: 200,
-            thumbnail: thumb,
-            surface: 200,
-            message: `Haii Kak ${pushname}\n𝙲𝚖𝚍 ${command}`,
-            orderTitle: 'Please Follow TikTok @GuaAbuzz',
-            sellerJid: '0@s.whatsapp.net'
-        }
-    },
-    contextInfo: {
-        "forwardingScore": 999,
-        "isForwarded": true
-    },
-    sendEphemeral: true
-}
-
-const fdoc = {
-    key: {
-        participant: '0@s.whatsapp.net',
-        ...(m.chat ? {
-            remoteJid: `status@broadcast`
-        } : {})
-    },
-    message: {
-        documentMessage: {
-            title: '©GuaAbuzz',
-            jpegThumbnail: thumb
-        }
-    }
-}
-const fvn = {
-    key: {
-        participant: `0@s.whatsapp.net`,
-        ...(m.chat ? {
-            remoteJid: "status@broadcast"
-        } : {})
-    },
-    message: {
-        "audioMessage": {
-            "mimetype": "audio/ogg; codecs=opus",
-            "seconds": 359996400,
-            "ptt": "true"
-        }
-    }
-}
-
-const fgif = {
-    key: {
-        participant: `0@s.whatsapp.net`,
-        ...(m.chat ? {
-            remoteJid: "status@broadcast"
-        } : {})
-    },
-    message: {
-        "videoMessage": {
-            "title": '©GuaAbuzz',
-            "h": `Hmm`,
-            'seconds': '359996400',
-            'gifPlayback': 'true',
-            'caption': '©GuaAbuzz',
-            'jpegThumbnail': thumb
-        }
-    }
-}
-
-const fgclink = {
-    key: {
-        participant: "0@s.whatsapp.net",
-        "remoteJid": "0@s.whatsapp.net"
-    },
-    "message": {
-        "groupInviteMessage": {
-            "groupJid": "6289636827082-1635036556@g.us",
-            "inviteCode": "https://chat.whatsapp.com/FGmVjFYJBjjGst62qwNKJB",
-            "groupName": "Akame Bot",
-            "caption": '©GuaAbuzz',
-            'jpegThumbnail': thumb
-        }
-    }
-}
-
-const fvideo = {
-    key: {
-        fromMe: false,
-        participant: `0@s.whatsapp.net`,
-        ...(m.chat ? {
-            remoteJid: "status@broadcast"
-        } : {})
-    },
-    message: {
-        "videoMessage": {
-            "title": `${pushname}`,
-            "h": `Hmm`,
-            'seconds': '359996400',
-            'caption': `${pushname}`,
-            'jpegThumbnail': thumb
-        }
-    }
-}
-
-const floc = {
-    key: {
-        participant: '0@s.whatsapp.net',
-        ...(m.chat ? {
-            remoteJid: `status@broadcast`
-        } : {})
-    },
-    message: {
-        locationMessage: {
-            name: 'GuaAbuzz Creator',
-            jpegThumbnail: thumb
-        }
-    }
-}
-
-const fkontak = {
-    key: {
-        participant: `0@s.whatsapp.net`,
-        ...(m.chat ? {
-            remoteJid: `status@broadcast`
-        } : {})
-    },
-    message: {
-        'contactMessage': {
-            'displayName': 'GuaAbuzz Creator',
-            'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;GuaAbuzz Creator;;;\nFN:GuaAbuzz Creator\nitem1.TEL;waid=6289636827082:6289636827082\nitem1.X-ABLabel:Ponsel\nEND:VCARD`,
-            'jpegThumbnail': thumb,
-            thumbnail: thumb,
-            sendEphemeral: true
-        }
-    }
-}
-
-const fakestatus = {
-    key: {
-        fromMe: false,
-        participant: `0@s.whatsapp.net`,
-        ...(m.chat ? {
-            remoteJid: "status@broadcast"
-        } : {})
-    },
-    message: {
-        "imageMessage": {
-            "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc",
-            "mimetype": "image/jpeg",
-            "caption": '©GuaAbuzz',
-            "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=",
-            "fileLength": "28777",
-            "height": 1080,
-            "width": 1079,
-            "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=",
-            "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=",
-            "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69",
-            "mediaKeyTimestamp": "1610993486",
-            "jpegThumbnail": fs.readFileSync('./image/akame.jpg'),
-            "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="
-        }
-    }
-}
+	    const ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "status@broadcast"}, "message": {orderMessage: {itemCount: 2022,status: 200, thumbnail: await reSize(thumb, 100, 100), surface: 200, message: `GuaAbuzz`, orderTitle: 'AkameV2.0', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
+		const fdoc = {key : {participant : '0@s.whatsapp.net', ...(m.chat ? { remoteJid: `status@broadcast` } : {}) },message: {documentMessage: {title: `GuaAbuzz`,jpegThumbnail: await reSize(thumb, 100, 100)}}}
+		const fvn = {key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {})},message: { "audioMessage": {"mimetype":"audio/ogg; codecs=opus","seconds":359996400,"ptt": "true"}} } 
+		const ftextt = {key: {fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {})}, message: { "extendedTextMessage": {"text":`GuaAbuzz`, "title": `AkameV2.0`, 'jpegThumbnail': await reSize(thumb, 100, 100)}}}
+        const ftoko = {key: {fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? {remoteJid: "status@broadcast" } : {})}, message: { "productMessage": { "product": { "productImage":{ "mimetype": "image/jpeg", "jpegThumbnail": await reSize(thumb, 100, 100)},"title": `GuaAbuzz`, "description": `AkameV2.0`, "currencyCode": "IDR", "priceAmount1000": "1000000000000000000", "retailerId": `GuaAbuzz`, "productImageCount": 1}, "businessOwnerJid": `0@s.whatsapp.net`}}} 
+		const fgif = {key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {})},message: {"videoMessage": { "title":`GuaAbuzz`, "h": `Hmm`,'seconds': '359996400', 'gifPlayback': 'true', 'caption': `GuaAbuzz`, 'jpegThumbnail': await reSize(thumb, 100, 100)}}}
+		const fgclink = {key: {participant: "0@s.whatsapp.net","remoteJid": "0@s.whatsapp.net"},"message": {"groupInviteMessage": {"groupJid": "6289636827082-1635036556@g.us","inviteCode": "https://chat.whatsapp.com/FGmVjFYJBjjGst62qwNKJB","groupName": `Akame-Group`, "caption": `GuaAbuzz`, 'jpegThumbnail': await reSize(thumb, 100, 100)}}}
+		const fvideo = {key: { fromMe: false,participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {}) },message: { "videoMessage": { "title":`GuaAbuzz`, "h": `Hmm`,'seconds': '359996400', 'caption': `GuaAbuzz`, 'jpegThumbnail': await reSize(thumb, 100, 100)}}}
+		const floc = {key : {participant : '0@s.whatsapp.net', ...(m.chat ? { remoteJid: `status@broadcast` } : {}) },message: {locationMessage: {name: `GuaAbuzz`,jpegThumbnail: await reSize(thumb, 100, 100)}}}
+		const floc2 = {key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {}) }, message: { "liveLocationMessage": { "title": `GuaAbuzz`,"h": `Hmm`, 'jpegThumbnail': await reSize(thumb, 100, 100)}}}
+		const fkontak = { key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `status@broadcast` } : {}) }, message: { 'contactMessage': { 'displayName': `GuaAbuzz`, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;GuaAbuzz,;;;\nFN:GuaAbuzz\nitem1.TEL;waid=6289636827082:6289636827082\nitem1.X-ABLabel:Ponsel\nEND:VCARD`, 'jpegThumbnail': await reSize(thumb, 100, 100), thumbnail: await reSize(thumb, 100, 100),sendEphemeral: true}}}
+	    const fakestatus = {key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {})},message: { "imageMessage": {"url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc","mimetype": "image/jpeg","caption": `GuaAbuzz`,"fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=","fileLength": "28777","height": 1080,"width": 1079,"mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=","fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=","directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69","mediaKeyTimestamp": "1610993486","jpegThumbnail": await reSize(thumb, 100, 100),"scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="}}}
         //END
 
         //member
         let picaks = [flaming, fluming, flarun, flasmurf, mehk, awog, mohai, mhehe]
         let picak = picaks[Math.floor(Math.random() * picaks.length)]
+        
+        const kloadq = klqor[Math.floor(Math.random() * klqor.length)]
+    	const filsj = ['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet','application/vnd.openxmlformats-officedocument.presentationml.presentation','application/vnd.openxmlformats-officedocument.wordprocessingml.document','application/pdf']
+	    const filsk = filsj[Math.floor(Math.random() * filsj.length)]
 
         try {
             let isNumber = x => typeof x === 'number' && !isNaN(x)
@@ -1106,11 +967,11 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             case 'Assalamualaikum':
             case 'assalamualaikum':
             case 'Assalamualaikum Wr. Wb': {
-               goblok = fs.readFileSync('./sound/salam.mp3')
+               goblok = fs.readFileSync('./media/sound/salam.mp3')
                akame.sendMessage(m.chat, {audio: goblok, mimetype:'audio/mpeg', ptt:true }, {quoted:fvn})}
             break
             case 'bot': {
-               list = ['./sound/oy.mp3','./sound/kenapa.mp3','./sound/iya.mp3']
+               list = ['./media/sound/oy.mp3','./media/sound/kenapa.mp3','./media/sound/iya.mp3']
                random = list[Math.floor(Math.random() * list.length)]
                goblok = fs.readFileSync(random)
                akame.sendMessage(m.chat, {audio: goblok, mimetype:'audio/mpeg', ptt:true }, {quoted:fvn})}
@@ -1163,7 +1024,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
 • Wita : ${wita}
 • Wit : ${wit}`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'command': {
@@ -1278,12 +1139,12 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 ]
                 }
                 ]
-                akame.sendListMsg(m.chat, simple, akame.user.name, `Hello Everyone !`, `Click Here`, sections, floc)
+                akame.sendListMsg(m.chat, simple, akame.user.name, `Hello Everyone !`, `Touch Me (⁠≧⁠▽⁠≦⁠)`, sections, floc)
             }
             break
             case 'sc':
             case 'script': {
-               goblok = fs.readFileSync('./sound/sc.mp3')
+               goblok = fs.readFileSync('./media/sound/sc.mp3')
                akame.sendMessage(m.chat, {audio: goblok, mimetype:'audio/mpeg', ptt:true }, {quoted:fvn})}
             break
             case 'tes':
@@ -1472,7 +1333,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 ]
                 },
 				]
-				akame.sendListMsg(m.chat, `*Silahkan Pilih Menu Dibawah Ini*`, akame.user.name, `TEBAK MENU`, `Click Here`, menuss, floc)
+				akame.sendListMsg(m.chat, `*Silahkan Pilih Menu Dibawah Ini*`, akame.user.name, `TEBAK MENU`, `Touch Me (⁠≧⁠▽⁠≦⁠)`, menuss, floc)
 			}
             break
             case 'tebak': {
@@ -1855,7 +1716,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
 				]
 				},
 				]
-				 akame.sendListMsg(m.chat, `*Menu tag seseorang yg si paling...*`, akame.user.name, `TAG MENU`, `Click Here`, tagg, floc)
+				 akame.sendListMsg(m.chat, `*Menu tag seseorang yg si paling...*`, akame.user.name, `TAG MENU`, `Touch Me (⁠≧⁠▽⁠≦⁠)`, tagg, floc)
 				 }
 				break
             case 'bebangrup': {
@@ -2256,7 +2117,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 ]
                 },
                 ]
-                akame.sendListMsg(m.chat, `Please select the following Ephemeral Options List !`, akame.user.name, `Hello Admin ${groupMetadata.subject}`, `Click Here`, sections, floc)
+                akame.sendListMsg(m.chat, `Please select the following Ephemeral Options List !`, akame.user.name, `Hello Admin ${groupMetadata.subject}`, `Touch Me (⁠≧⁠▽⁠≦⁠)`, sections, floc)
                 }
             }
             break
@@ -2732,83 +2593,62 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 }
             }
             break
-            case 'mukalu': {
-            m.reply(mess.wait)
-            var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/mukelu')
-            var wifegerak = ano.split('\n')
-            var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-            encmedia = await akame.sendImageAsSticker(m.chat, wifegerakx, fdoc, { packname: global.packname, author: global.author, })
-            await fs.unlinkSync(encmedia)
-            }
-            break
-            case 'paimon': {
-            m.reply(mess.wait)
-            var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/Paimon')
-            var wifegerak = ano.split('\n')
-            var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-            encmedia = await akame.sendImageAsSticker(m.chat, wifegerakx, fdoc, { packname: global.packname, author: global.author, })
-            await fs.unlinkSync(encmedia)
-            }
-            break
-            case 'dadu': {
-            m.reply(mess.wait)
-            var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/Dadu')
-            var wifegerak = ano.split('\n')
-            var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-            encmedia = await akame.sendVideoAsSticker(m.chat, wifegerakx, fdoc, { packname: global.packname, author: global.author, })
-            await fs.unlinkSync(encmedia)
-            }
-            break
-            case 'among':
-            case 'amongus': {
-            m.reply(mess.wait)
-            var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/Among')
-            var wifegerak = ano.split('\n')
-            var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-            encmedia = await akame.sendVideoAsSticker(m.chat, wifegerakx, fdoc, { packname: global.packname, author: global.author, })
-            await fs.unlinkSync(encmedia)
-            }
-            break
-            case 'gura':
-            case 'gurastick': {
-            m.reply(mess.wait)
-            var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/gura')
-            var wifegerak = ano.split('\n')
-            var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-            encmedia = await akame.sendImageAsSticker(m.chat, wifegerakx, fdoc, { packname: global.packname, author: global.author, })
-            await fs.unlinkSync(encmedia)
-            }
-            break
-            case 'doge':
-            case 'dogestick': {
-            m.reply(mess.wait)
-            var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/anjing')
-            var wifegerak = ano.split('\n')
-            var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-            encmedia = await akame.sendImageAsSticker(m.chat, wifegerakx, fdoc, { packname: global.packname, author: global.author, })
-            await fs.unlinkSync(encmedia)
-            }
-            break
-            case 'bucinstick':
-            case 'bucinp' : {
-            m.reply(mess.wait)
-            var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/bucin')
-            var wifegerak = ano.split('\n')
-            var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-            encmedia = await akame.sendImageAsSticker(m.chat, wifegerakx, fdoc, { packname: global.packname, author: global.author, })
-            await fs.unlinkSync(encmedia)
-            }
-            break
-            case 'patrik':
-            case 'patrick': {
-            m.reply(mess.wait)
-            var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/patrik')
-            var wifegerak = ano.split('\n')
-            var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-            encmedia = await akame.sendImageAsSticker(m.chat, wifegerakx, fdoc, { packname: global.packname, author: global.author, })
-            await fs.unlinkSync(encmedia)
-            }
-            break
+            case 'patrick': case 'patricksticker': case 'petrik': {
+var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/patrik')
+var wifegerak = ano.split('\n')
+var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
+encmedia = await akame.sendImageAsSticker(m.chat, wifegerakx, m, { packname: global.packname, author: global.author, })
+await fs.unlinkSync(encmedia)
+}
+break
+case 'dogesticker': case 'dogestick': case 'doge': case 'domge': {
+var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/anjing')
+var wifegerak = ano.split('\n')
+var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
+encmedia = await akame.sendImageAsSticker(m.chat, wifegerakx, m, { packname: global.packname, author: global.author, })
+await fs.unlinkSync(encmedia)
+}
+break
+case 'lovesticker': case 'lovestick' : case 'slove': {
+var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/bucin')
+var wifegerak = ano.split('\n')
+var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
+encmedia = await akame.sendImageAsSticker(m.chat, wifegerakx, m, { packname: global.packname, author: global.author, })
+await fs.unlinkSync(encmedia)
+}
+break
+case 'gura': case 'gurastick': {
+var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/gura')
+var wifegerak = ano.split('\n')
+var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
+encmedia = await akame.sendImageAsSticker(m.chat, wifegerakx, m, { packname: global.packname, author: global.author, })
+await fs.unlinkSync(encmedia)
+}
+break
+case 'paimon': {
+var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/Paimon')
+var wifegerak = ano.split('\n')
+var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
+encmedia = await akame.sendImageAsSticker(m.chat, wifegerakx, m, { packname: global.packname, author: global.author, })
+await fs.unlinkSync(encmedia)
+}
+break
+case 'sanime': case 'animestick': {
+var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/animestick')
+var wifegerak = ano.split('\n')
+var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
+encmedia = await akame.sendImageAsSticker(m.chat, wifegerakx, m, { packname: global.packname, author: global.author, })
+await fs.unlinkSync(encmedia)
+}
+break
+case 'mukelu': case 'lu': {
+var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/mukelu')
+var wifegerak = ano.split('\n')
+var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
+encmedia = await akame.sendImageAsSticker(m.chat, wifegerakx, m, { packname: global.packname, author: global.author, })
+await fs.unlinkSync(encmedia)
+}
+break
             case 'ebinary': {
                 let {
                     eBinary
@@ -2860,6 +2700,12 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
            if (!text) throw `Contoh : ${prefix + command} text`
            await akame.sendMedia(m.chat, `https://xteam.xyz/${command}?file&text=${text}`, 'akame', 'kurume', fdoc, {asSticker: true})
          }
+         break
+         case 'tts': {
+         	if (!text) throw `Example : ${prefix + command} text`
+             let tts = await fetchJson(`https://api.akuari.my.id/texttovoice/texttosound_id?query=${text}`)
+             akame.sendMessage(m.chat, { audio: { url: tts.result }, mimetype: 'audio/mpeg', fileName: `${text}.mp3` }, { quoted: fvn })
+         	}
          break
             case 'smeme': case 'stickmeme': case 'stikmeme': case 'stickermeme': case 'stikermeme': {
 	        let respond = `Kirim/reply image/sticker dengan caption ${prefix + command} text1|text2`
@@ -3866,10 +3712,112 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     },
                     caption: `Text Pro ${command}`
                 }, {
-                    quoted: fdoc
+                    quoted: fkontak
                 })
             }
             break
+            case 'candy': case 'christmas': case '3dchristmas': case 'sparklechristmas': case 'holographic':
+case 'deepsea': case 'scifi': case 'rainbow': case 'waterpipe': case 'spooky': case 'karbon': case 'colorneon': 
+case 'pencil': case 'circuit': case 'discovery': case 'metalic': case 'fiction': case 'demon': case '3dbox': 
+case 'transformer': case 'berry': case 'thunder': case 'magma': case '3dstone': case 'greenneon': 
+case 'neonlight': case 'glitch': case 'harrypotter': case 'brokenglass': case 'papercut': case 'lion2': 
+case 'watercolor': case 'multicolor': case 'neondevil': case 'underwater': case 'graffitibike': case '3davengers': 
+ case 'snow': case 'cloud': case 'honey': case 'ice': case 'fruitjuice': case 'biscuit': case 'wood': case 'whitebear': 
+case 'chocolate': case 'strawberry': case 'matrix': case 'blood': case 'dropwater': case 'toxic': 
+case 'lava': case 'rock': case 'bloodglas': case 'hallowen': case 'darkgold': case 'joker': case 'wicker':
+ case 'firework': case 'skeleton': case 'blackpink': case 'sand': case 'glue': case '1917': case 'leaves': {
+             if (!q) return reply(`Example : ${prefix + command} GuaAbuzz) 
+             m.reply(mess.wait)
+             let link
+             if (/candy/.test(command)) link = 'https://textpro.me/create-christmas-candy-cane-text-effect-1056.html'
+             if (/colorneon/.test(command)) link = 'https://textpro.me/neon-light-text-effect-with-galaxy-style-981.html'
+             if (/christmas/.test(command)) link = 'https://textpro.me/christmas-tree-text-effect-online-free-1057.html'
+             if (/3dchristmas/.test(command)) link = 'https://textpro.me/3d-christmas-text-effect-by-name-1055.html'
+             if (/sparklechristmas/.test(command)) link = 'https://textpro.me/sparkles-merry-christmas-text-effect-1054.html'
+             if (/deepsea/.test(command)) link = 'https://textpro.me/create-3d-deep-sea-metal-text-effect-online-1053.html'
+             if (/scifi/.test(command)) link = 'https://textpro.me/create-3d-sci-fi-text-effect-online-1050.html'
+             if (/whitebear/.test(command)) link = 'https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html'
+             if (/holographic/.test(command)) link = 'https://textpro.me/holographic-3d-text-effect-975.html'
+             if (/3davengers/.test(command)) link = 'https://textpro.me/create-3d-avengers-logo-online-974.html'
+             if (/rainbow/.test(command)) link = 'https://textpro.me/3d-rainbow-color-calligraphy-text-effect-1049.html'
+             if (/waterpipe/.test(command)) link = 'https://textpro.me/create-3d-water-pipe-text-effects-online-1048.html'
+             if (/spooky/.test(command)) link = 'https://textpro.me/create-halloween-skeleton-text-effect-online-1047.html'
+             if (/greenneon/.test(command)) link = 'https://textpro.me/green-neon-text-effect-874.html'
+             if (/lion2/.test(command)) link = 'https://textpro.me/create-lion-logo-mascot-online-938.html'
+             if (/3dbox/.test(command)) link = 'https://textpro.me/3d-box-text-effect-online-880.html'
+             if (/pencil/.test(command)) link = 'https://textpro.me/create-a-sketch-text-effect-online-1044.html'
+             if (/circuit/.test(command)) link = 'https://textpro.me/create-blue-circuit-style-text-effect-online-1043.html'
+             if (/discovery/.test(command)) link = 'https://textpro.me/create-space-text-effects-online-free-1042.html'
+             if (/metalic/.test(command)) link = 'https://textpro.me/creat-glossy-metalic-text-effect-free-online-1040.html'
+             if (/fiction/.test(command)) link = 'https://textpro.me/create-science-fiction-text-effect-online-free-1038.html'
+             if (/demon/.test(command)) link = 'https://textpro.me/create-green-horror-style-text-effect-online-1036.html'
+             if (/transformer/.test(command)) link = 'https://textpro.me/create-a-transformer-text-effect-online-1035.html'
+             if (/berry/.test(command)) link = 'https://textpro.me/create-berry-text-effect-online-free-1033.html'
+             if (/thunder/.test(command)) link = 'https://textpro.me/online-thunder-text-effect-generator-1031.html'
+             if (/magma/.test(command)) link = 'https://textpro.me/create-a-magma-hot-text-effect-online-1030.html'
+             if (/3dstone/.test(command)) link = 'https://textpro.me/3d-stone-cracked-cool-text-effect-1029.html'
+             if (/neonlight/.test(command)) link = 'https://textpro.me/create-3d-neon-light-text-effect-online-1028.html'
+             if (/glitch/.test(command)) link = 'https://textpro.me/create-impressive-glitch-text-effects-online-1027.html'
+             if (/harrypotter/.test(command)) link = 'https://textpro.me/create-harry-potter-text-effect-online-1025.html'
+             if (/brokenglass/.test(command)) link = 'https://textpro.me/broken-glass-text-effect-free-online-1023.html'
+             if (/papercut/.test(command)) link = 'https://textpro.me/create-art-paper-cut-text-effect-online-1022.html'
+             if (/watercolor/.test(command)) link = 'https://textpro.me/create-a-free-online-watercolor-text-effect-1017.html'
+             if (/multicolor/.test(command)) link = 'https://textpro.me/online-multicolor-3d-paper-cut-text-effect-1016.html'
+             if (/neondevil/.test(command)) link = 'https://textpro.me/create-neon-devil-wings-text-effect-online-free-1014.html'
+             if (/underwater/.test(command)) link = 'https://textpro.me/3d-underwater-text-effect-generator-online-1013.html'
+             if (/graffitibike/.test(command)) link = 'https://textpro.me/create-wonderful-graffiti-art-text-effect-1011.html'
+             if (/snow/.test(command)) link = 'https://textpro.me/create-snow-text-effects-for-winter-holidays-1005.html'
+             if (/cloud/.test(command)) link = 'https://textpro.me/create-a-cloud-text-effect-on-the-sky-online-1004.html'
+             if (/karbon/.test(command)) link = 'https://textpro.me/carbon-text-effect-833.html'
+             if (/honey/.test(command)) link = 'https://textpro.me/honey-text-effect-868.html'
+             if (/ice/.test(command)) link = 'https://textpro.me/ice-cold-text-effect-862.html'
+             if (/fruitjuice/.test(command)) link = 'https://textpro.me/fruit-juice-text-effect-861.html'
+             if (/biscuit/.test(command)) link = 'https://textpro.me/biscuit-text-effect-858.html'
+             if (/wood/.test(command)) link = 'https://textpro.me/wood-text-effect-856.html'
+             if (/chocolate/.test(command)) link = 'https://textpro.me/chocolate-cake-text-effect-890.html'
+             if (/strawberry/.test(command)) link = 'https://textpro.me/strawberry-text-effect-online-889.html'
+             if (/matrix/.test(command)) link = 'https://textpro.me/matrix-style-text-effect-online-884.html'
+             if (/blood/.test(command)) link = 'https://textpro.me/horror-blood-text-effect-online-883.html'
+             if (/dropwater/.test(command)) link = 'https://textpro.me/dropwater-text-effect-872.html'
+             if (/toxic/.test(command)) link = 'https://textpro.me/toxic-text-effect-online-901.html'
+             if (/lava/.test(command)) link = 'https://textpro.me/lava-text-effect-online-914.html'
+             if (/rock/.test(command)) link = 'https://textpro.me/rock-text-effect-online-915.html'
+             if (/bloodglas/.test(command)) link = 'https://textpro.me/blood-text-on-the-frosted-glass-941.html'
+             if (/hallowen/.test(command)) link = 'https://textpro.me/halloween-fire-text-effect-940.html'
+             if (/darkgold/.test(command)) link = 'https://textpro.me/metal-dark-gold-text-effect-online-939.html'
+             if (/joker/.test(command)) link = 'https://textpro.me/create-logo-joker-online-934.html'
+             if (/wicker/.test(command)) link = 'https://textpro.me/wicker-text-effect-online-932.html'
+             if (/firework/.test(command)) link = 'https://textpro.me/firework-sparkle-text-effect-930.html'
+             if (/skeleton/.test(command)) link = 'https://textpro.me/skeleton-text-effect-online-929.html'
+             if (/blackpink/.test(command)) link = 'https://textpro.me/create-blackpink-logo-style-online-1001.html'
+             if (/sand/.test(command)) link = 'https://textpro.me/write-in-sand-summer-beach-free-online-991.html'
+             if (/glue/.test(command)) link = 'https://textpro.me/create-3d-glue-text-effect-with-realistic-style-986.html'
+             if (/1917/.test(command)) link = 'https://textpro.me/1917-style-text-effect-online-980.html'
+             if (/leaves/.test(command)) link = 'https://textpro.me/natural-leaves-text-effect-931.html'
+             let anu = await maker.textpro(link, q)
+             akame.sendMessage(m.chat, { image: { url: anu }, caption: `Made by AkameV2.0` }, { quoted: fkontak })
+             }
+             break
+             case 'glitch2': case 'harrypot': case 'graffiti': case 'pornhub': case 'glitch3': case '3dspace': case 'lion': case 'wolf': case 'retro': case '8bit': {
+             if(!q) return m.reply(`Use ${prefix + command} text1|text2`)
+             m.reply(mess.wait)
+             teks1 = q.split("|")[0]
+             teks2 = q.split("|")[1]
+             let link
+             if (/glitch3/.test(command)) link = 'https://textpro.me/create-glitch-text-effect-style-tik-tok-983.html'
+             if (/harrypot/.test(command)) link = 'https://textpro.me/create-harry-potter-text-effect-online-1025.html'
+             if (/graffiti/.test(command)) link = 'https://textpro.me/create-a-cool-graffiti-text-on-the-wall-1010.html'
+             if (/pornhub/.test(command)) link = 'https://textpro.me/pornhub-style-logo-online-generator-free-977.html'
+             if (/glitch2/.test(command)) link = 'https://textpro.me/create-a-glitch-text-effect-online-free-1026.html'
+             if (/3dspace/.test(command)) link = 'https://textpro.me/create-space-3d-text-effect-online-985.html'
+             if (/lion/.test(command)) link = 'https://textpro.me/create-lion-logo-mascot-online-938.html'
+             if (/wolf/.test(command)) link = 'https://textpro.me/create-wolf-logo-galaxy-online-936.html'
+             if (/retro/.test(command)) link = 'https://textpro.me/create-3d-retro-text-effect-online-free-1065.html'
+             if (/8bit/.test(command)) link = 'https://textpro.me/video-game-classic-8-bit-text-effect-1037.html'
+             let anu = await maker.textpro(link, [`${teks1}`,`${teks2}`])
+             akame.sendMessage(m.chat, { image: { url: anu }, caption: `Made by AkameV2.0` }, { quoted: fkontak })
+             }
+             break
             case 'gay':
             case 'contrast':
             case 'pixelate':
@@ -4881,58 +4829,54 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 ]
                 }
                 ]
-                akame.sendListMsg(m.chat, `*Silahkan Pilih Menu Dibawah Ini*`, akame.user.name, `NULIS MENU`, `Click Here`, sections, floc)
+                akame.sendListMsg(m.chat, `*Silahkan Pilih Menu Dibawah Ini*`, akame.user.name, `NULIS MENU`, `Touch Me (⁠≧⁠▽⁠≦⁠)`, sections, floc)
               }
             break
             case 'nuliskiri': {
-                if (args.length < 1) return m.reply(`Kirim perintah *${prefix}nuliskiri* teks`)
                 m.reply(mess.wait)
                 var tulisan = body.slice(11)
                 var splitText = tulisan.replace(/(\S+\s*){1,9}/g, '$&\n')
                 var fixHeight = splitText.split('\n').slice(0, 31).join('\n')
-                spawn('convert', ['./image/FOTO/BUKU/sebelumkiri.jpg','-font','./image/FONT/Indie-Flower.ttf','-size','960x1280','-pointsize','22','-interline-spacing','2','-annotate','+140+153',fixHeight,'./image/FOTO/BUKU/setelahkiri.jpg'])
+                spawn('convert', ['./media/image/nulis/images/buku/sebelumkiri.jpg','-font','./image/nulis/font/Indie-Flower.ttf','-size','960x1280','-pointsize','22','-interline-spacing','2','-annotate','+140+153',fixHeight,'./media/image/nulis/images/buku/setelahkiri.jpg'])
                 .on('error', () => m.reply(mess.error))
                 .on('exit', () => {
-                akame.sendMessage(m.chat, { image: fs.readFileSync('./image/FOTO/BUKU/setelahkiri.jpg')}, { quoted: fakestatus, caption: `Jangan Malas Kak...`})
+                akame.sendMessage(m.chat, { image: fs.readFileSync('./media/image/nulis/images/buku/setelahkiri.jpg')}, { quoted: fakestatus, caption: `Jangan Malas Kak...`})
                 })
              }
             break
             case 'nuliskanan': {
-                if (args.length < 1) return m.reply(`Kirim perintah *${prefix}nuliskanan* teks`)
                 m.reply(mess.wait)
                 var tulisan = body.slice(12)
                 var splitText = tulisan.replace(/(\S+\s*){1,9}/g, '$&\n')
                 var fixHeight = splitText.split('\n').slice(0, 31).join('\n')
-                spawn('convert', ['./image/FOTO/BUKU/sebelumkanan.jpg','-font','./image/FONT/Indie-Flower.ttf','-size','960x1280','-pointsize','23','-interline-spacing','2','-annotate','+128+129',fixHeight,'./image/FOTO/BUKU/setelahkanan.jpg'])
+                spawn('convert', ['./media/image/nulis/images/buku/sebelumkanan.jpg','-font','./image/nulis/font/Indie-Flower.ttf','-size','960x1280','-pointsize','23','-interline-spacing','2','-annotate','+128+129',fixHeight,'./media/image/nulis/images/buku/setelahkanan.jpg'])
                 .on('error', () => m.reply(mess.error))
                 .on('exit', () => {
-                akame.sendMessage(m.chat, { image: fs.readFileSync('./image/FOTO/BUKU/setelahkanan.jpg')}, {quoted: fakestatus, caption: `Jangan Malas Kak...`})
+                akame.sendMessage(m.chat, { image: fs.readFileSync('./media/image/nulis/images/buku/setelahkanan.jpg')}, {quoted: fakestatus, caption: `Jangan Malas Kak...`})
                 })
               }
             break
             case 'foliokiri': {
-                if (args.length < 1) return m.reply(`Kirim perintah *${prefix}foliokiri* teks`)
                 m.reply(mess.wait)
                 var tulisan = body.slice(11)
                 var splitText = tulisan.replace(/(\S+\s*){1,13}/g, '$&\n')
                 var fixHeight = splitText.split('\n').slice(0, 38).join('\n')
-                spawn('convert', ['./image/FOTO/FOLIO/sebelumkiri.jpg','-font','./image/FONT/Indie-Flower.ttf','-size','1720x1280','-pointsize','23','-interline-spacing','4','-annotate','+48+185',fixHeight,'./image/FOTO/FOLIO/setelahkiri.jpg'])
+                spawn('convert', ['./media/image/nulis/images/folio/sebelumkiri.jpg','-font','./image/nulis/font/Indie-Flower.ttf','-size','1720x1280','-pointsize','23','-interline-spacing','4','-annotate','+48+185',fixHeight,'./media/image/nulis/images/folio/setelahkiri.jpg'])
                 .on('error', () => m.reply(mess.error))
                 .on('exit', () => {
-                akame.sendMessage(m.chat, { image: fs.readFileSync('./image/FOTO/FOLIO/setelahkiri.jpg')}, { quoted: fakestatus, caption: `Jangan Malas Kak...`})
+                akame.sendMessage(m.chat, { image: fs.readFileSync('./media/image/nulis/images/folio/setelahkiri.jpg')}, { quoted: fakestatus, caption: `Jangan Malas Kak...`})
                 })
              }
             break
             case 'foliokanan': {
-                if (args.length < 1) return m.reply(`Kirim perintah *${prefix}foliokanan* teks`)
                 m.reply(mess.wait)
                 var tulisan = body.slice(12)
                 var splitText = tulisan.replace(/(\S+\s*){1,13}/g, '$&\n')
                 var fixHeight = splitText.split('\n').slice(0, 38).join('\n')
-                spawn('convert', ['./image/FOTO/FOLIO/sebelumkanan.jpg','-font','./image/FONT/Indie-Flower.ttf','-size','960x1280','-pointsize','23','-interline-spacing','3','-annotate','+89+190',fixHeight,'./image/FOTO/FOLIO/setelahkanan.jpg'])
+                spawn('convert', ['./media/image/nulis/images/folio/sebelumkanan.jpg','-font','./image/nulis/font/Indie-Flower.ttf','-size','960x1280','-pointsize','23','-interline-spacing','3','-annotate','+89+190',fixHeight,'./media/image/nulis/images/folio/setelahkanan.jpg'])
                 .on('error', () => m.reply(mess.error))
                 .on('exit', () => {
-                akame.sendMessage(m.chat, { image: fs.readFileSync('./image/FOTO/FOLIO/setelahkanan.jpg')}, {quoted: fakestatus, caption: `Jangan Malas Kak...`})
+                akame.sendMessage(m.chat, { image: fs.readFileSync('./media/image/nulis/images/folio/setelahkanan.jpg')}, {quoted: fakestatus, caption: `Jangan Malas Kak...`})
                 })
              }
             break
@@ -5010,6 +4954,20 @@ Request Message: ${text}`
                 })
                 m.reply(`Berhasil Dilaporkan Ke Owner!`)
             }
+            break
+            case 'ceklimit': case 'checklimit': case 'limit':{
+					m.reply('*Limit Lu :* ' + (db.data.users[m.sender].limit))
+					}
+					break 
+		    case 'totalhit': case 'hit': {
+			m.reply(`*Total Hit : ${jumlahcmd}*\n*Total Hit Harian : ${jumlahharian}*`)
+			}
+			break
+            case 'runtime': case 'tes': {
+            	let lowq = `*Bot Telah Online Selama*\n*${runtime(process.uptime())}*`
+                let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '👑SEWA' }, type: 1 }]
+                await akame.sendButtonText(m.chat, buttons, lowq, hisoka.user.name, m, {quoted: fkontak})
+            	}
             break
             case 'gsmarena': {
                 if (!text) throw `Contoh : ${prefix + command} samsung`
@@ -5116,6 +5074,25 @@ Request Message: ${text}`
                 akame.sendImage(m.chat, thumb, capt, fgclink)
             }
             break
+            case 'webtonsearch': case 'webtoon': {
+                if (!text) return m.reply('What Are you Looking For??')
+                await m.reply(mess.wait)
+                xfar.Webtoons(q).then(async data => {
+                    let txt = `*------「 WEBTOONS-SEARCH 」------*\n\n`
+                    for (let i of data) {
+                        txt += `*📫 Title :* ${i.judul}\n`
+                        txt += `*👍🏻 Like :* ${i.like}\n`
+                        txt += `*🤴🏻 Creator :* ${i.creator}\n`
+                        txt += `*🎥 Genre :* ${i.genre}\n`
+                        txt += `*📚 Url :*\n${i.url}\n ----------------------------------------------------------\n`
+                    }
+                    await m.reply(txt)
+                })
+                .catch((err) => {
+                    m.reply(mess.eror)
+                })
+                }
+            break
             case 'webtoons': {
                 if (!text) throw `Contoh : ${prefix + command} love`
                 let res = await fetchJson(api('zenz', '/webzone/webtoons', {
@@ -5148,31 +5125,47 @@ Request Message: ${text}`
                 akame.sendImage(m.chat, res.result[0].thumbnail, capt, fgclink)
             }
             break
-            case 'jadwaltv': {
-                if (!text) throw `Contoh : ${prefix + command} gtv\n\nOption : \n⬣ rcti\n⬣ nettv\n⬣ antv\n⬣ indosiar\n⬣ inewstv\n⬣ kompastv\n⬣ metrotv\n⬣ mnctv\n⬣ rtv\n⬣ sctv\n⬣ trans7\n⬣ transtv\n⬣ tvone\n⬣ tvri`
-                let res = await fetchJson(api('zenz', '/searching/jadwaltv', {
-                    query: text
-                }, 'apikey'))
-                let capt = `Jadwal TV Search Query : ${text}\n\n`
-                for (let i of res.result.jadwal) {
-                    capt += `⭔ Acara : ${i.acara}\n`
-                    capt += `⭔ Time : ${i.time}\n\n──────────────────────\n`
-                }
-                m.reply(capt)
+            case 'tvschedule': case 'jadwaltv': case 'tv': {
+            if (!q) return reply('Pilih Channelnya Bro\n1.rcti\n2.nettv\n3.antv\n4.gtv\n5.indosiar\n6.inewstv\n7.kompastv\n8.metrotv\n9.mnctv\n10.rtv\n11.sctv\n12.trans7\n13.transtv\n14.tvone\n15.tvri')
+            let { jadwaltv }= require('./lib/jadwaltv')
+            m.reply(await jadwaltv(q))
             }
             break
+            case 'film': {
+        	try {
+            if (!q) return m.reply(`What film you wanna search?\nExample: ${prefix}film Spiderman`)
+	        m.reply(mess.wait)
+            xfar.Film(q)
+            .then(data => {console.log(data)
+            let krl = `*❒「  Film ${q} 」*\n*🌿 Author* : ${data[0].author}\n\n`
+			    for (let i of data) {
+                krl += (`\n────────────────────\n\n *📍Title :* ${i.judul}\n *📟 Quality :* ${i.quality}\n *🖥️ Type : ${i.type}*\n *⌛ Uploaded :* ${i.upload}\n *🌍 Source :* ${i.link}`)
+                }
+               akame.sendMessage(m.chat, { image: { url: data[0].thumb}, caption: krl }, { quoted: fdoc })
+                })
+                } catch (e) {
+		    m.reply(mess.eror)
+		    }
+		     }
+                break
             case 'playstore': {
+			try {
             if (!text) throw `Example : ${prefix + command} clash of clans`
-            let res = await fetchJson(api('zenz', '/webzone/playstore', { query: text }, 'apikey'))
-            let teks = `⭔ Playstore Search From : ${text}\n\n`
-            for (let i of res.result) {
-            teks += `⭔ Name : ${i.name}\n`
-            teks += `⭔ Link : ${i.link}\n`
-            teks += `⭔ Developer : ${i.developer}\n`
-            teks += `⭔ Link Developer : ${i.link_dev}\n\n──────────────────────\n`
+            if(!q) return m.reply('what are you looking for?')
+            let play = await hx.playstore(q)
+            let storee = '❉─────────────────────❉\n'
+            for (let i of play){
+            storee += `\n*「 *PLAY STORE* 」*\n
+            - *Name* : ${i.name}
+            - *Link* : ${i.link}\n
+            - *Dev* : ${i.developer}
+            - *Dev Link* : ${i.link_dev}\n❉─────────────────────❉`
             }
-            m.reply(teks)
-            }
+            m.reply(storee)
+            } catch (e) {
+		    m.reply(mess.eror)
+		    }
+		    }
             break
             case 'jadwalsholat':
             case 'jadwalshalat':
@@ -5582,12 +5575,12 @@ case 'sound161':
                 ]
                 },
                 ]
-                akame.sendListMsg(m.chat, `Please select the menu you want to change!`, akame.user.name, `Hello Owner !`, `Click Here`, sections, floc)
+                akame.sendListMsg(m.chat, `Please select the menu you want to change!`, akame.user.name, `Hello Owner !`, `Touch Me (⁠≧⁠▽⁠≦⁠)`, sections, floc)
                 }
             }
             break
             case 'rules': {
-                goblok = fs.readFileSync('./sound/menu.mp3')
+                goblok = fs.readFileSync('./media/sound/menu.mp3')
                 akame.sendMessage(m.chat, {audio: goblok, mimetype:'audio/mpeg', ptt:true }, {quoted:fvn})}
 {
                 anu = `┌────────┈❖
@@ -5629,7 +5622,7 @@ case 'sound161':
 │Sanksi: BLOCK PERMANENT
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'owner', buttonText: { displayText: '➡️Chat Owner' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'sewa':
@@ -5670,7 +5663,7 @@ case 'sound161':
 │⭔ Kirim » Bukti Pembayaran » Bot Join
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'owner', buttonText: { displayText: '➡️Chat Owner' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'donasi':
@@ -5702,7 +5695,7 @@ case 'sound161':
 │ *Terima Kasih*
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'owner', buttonText: { displayText: '➡️Chat Owner' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'groupmenu':
@@ -5755,7 +5748,7 @@ case 'sound161':
 │⭔ ${prefix}hapusvote
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'downloadmenu':
@@ -5800,7 +5793,7 @@ case 'sound161':
 │⭔ ${prefix}soundcloud [url]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'searchmenu':
@@ -5837,7 +5830,7 @@ case 'sound161':
 │⭔ ${prefix}ringtone [query]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'stickermenu':
@@ -5869,17 +5862,16 @@ case 'sound161':
 │⭔ ${prefix}ttp [teks]
 │⭔ ${prefix}mukalu
 │⭔ ${prefix}paimon
-│⭔ ${prefix}amongus
-│⭔ ${prefix}dadu
 │⭔ ${prefix}gura
 │⭔ ${prefix}doge
-│⭔ ${prefix}bucinstick
+│⭔ ${prefix}lovestick
+│⭔ ${prefix}animestick
 │⭔ ${prefix}patrick
 │⭔ ${prefix}emojimix 😎+🤠
 │⭔ ${prefix}emojimix2 😎
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'animemenu':
@@ -5966,7 +5958,7 @@ case 'sound161':
 │⭔ ${prefix}kitagawa
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'asupanmenu':
@@ -6008,7 +6000,7 @@ case 'sound161':
 │⭔ ${prefix}ryujin
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'quotesmenu':
@@ -6053,7 +6045,7 @@ case 'sound161':
 │⭔ ${prefix}cerpen
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'mememenu':
@@ -6088,7 +6080,7 @@ case 'sound161':
 │⭔ ${prefix}onecak
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'randommenu':
@@ -6122,7 +6114,7 @@ case 'sound161':
 │⭔ ${prefix}styletext [teks]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'textpromenu':
@@ -6181,7 +6173,7 @@ case 'sound161':
 │⭔ ${prefix}gluetext
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'photoeditormenu':
@@ -6227,7 +6219,7 @@ case 'sound161':
 │⭔ ${prefix}triggered
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'ephotomenu':
@@ -6290,7 +6282,7 @@ case 'sound161':
 │⭔ ${prefix}ytcertificate
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'gamemenu':
@@ -6324,7 +6316,7 @@ case 'sound161':
 │⭔ ${prefix}suitpvp [@tag]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'primbonmenu':
@@ -6382,7 +6374,7 @@ case 'sound161':
 │⭔ ${prefix}shio
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'convertmenu':
@@ -6420,7 +6412,7 @@ case 'sound161':
 │
 └───────⭓`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'mainmenu':
@@ -6461,7 +6453,7 @@ case 'sound161':
 │⭔ ${prefix}report [bug]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'databasemenu':
@@ -6497,7 +6489,7 @@ case 'sound161':
 │⭔ ${prefix}delmsg
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'anonymousmenu':
@@ -6530,7 +6522,7 @@ case 'sound161':
 │⭔ ${prefix}keluar
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'islamicmenu':
@@ -6568,7 +6560,7 @@ case 'sound161':
 │⭔ ${prefix}asmaulhusna
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'kerangmenu':
@@ -6615,7 +6607,7 @@ case 'sound161':
 │⭔ ${prefix}jodohku [teks]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'voicemenu':
@@ -6654,7 +6646,7 @@ case 'sound161':
 │⭔ ${prefix}tupai
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'stalkmenu':
@@ -6685,7 +6677,7 @@ case 'sound161':
 │⭔ ${prefix}stalk [option] [query]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'ownermenu':
@@ -6731,7 +6723,7 @@ case 'sound161':
 │⭔ ${prefix}setnamebot
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'webzonemenu':
@@ -6768,7 +6760,7 @@ case 'sound161':
 │⭔ ${prefix}drakor
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'wallpapermenu':
@@ -6808,14 +6800,14 @@ case 'sound161':
 │⭔ ${prefix}wallhp
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             case 'list':
             case 'menu':
             case 'help':
             case '?': {
-                goblok = fs.readFileSync('./sound/menu.mp3')
+                goblok = fs.readFileSync('./media/sound/menu.mp3')
                 akame.sendMessage(m.chat, {audio: goblok, mimetype:'audio/mpeg', ptt:true }, {quoted:fvn})}
 {
                 anu = `┌────────┈❖
@@ -6847,9 +6839,30 @@ case 'sound161':
 │• Wit : ${wit}
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '📖Simple Menu' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
-            }
-            break
+            let buttonMessage = {
+  document: fs.readFileSync('./media/doc/fake.pptx'),
+  fileName : 'Bot By GuaAbuzz' + (` | Halo ${pushname}`),
+  mimetype: `${filsk}`,
+  fileLength: 100000000000000,
+  pageCount: 999,
+  caption: anu,
+  footer: akame.user.name,
+  buttons: buttons,
+  mentions: m.sender,
+  headerType: 4,
+  contextInfo:{externalAdReply:{
+  title: 'GuaAbuzz',
+  body: 'Follow My Github', 
+  showAdAttribution: true,
+  thumbnail: thumb,
+  mediaType: 2,
+  mediaUrl: github,
+  sourceUrl: saweria
+  }}
+  }
+  akame.sendMessage(m.chat, buttonMessage, {quoted: fkontak})
+  }
+ break
             case 'allmenu':
             case 'menuall': {
                 anu = `┌────────┈❖
@@ -7249,11 +7262,10 @@ case 'sound161':
 │⭔ ${prefix}ttp [teks]
 │⭔ ${prefix}mukalu
 │⭔ ${prefix}paimon
-│⭔ ${prefix}amongus
-│⭔ ${prefix}dadu
 │⭔ ${prefix}gura
 │⭔ ${prefix}doge
-│⭔ ${prefix}bucinstick
+│⭔ ${prefix}lovestick
+│⭔ ${prefix}animestick
 │⭔ ${prefix}patrick
 │⭔ ${prefix}emojimix 😎+🤠
 │⭔ ${prefix}emojimix2 😎
@@ -7352,7 +7364,7 @@ case 'sound161':
 │⭔ ${prefix}wallhp
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '📖Rules' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, anu, akame.user.name, fkontak)
+            akame.sendMessage(m.chat, { caption: anu, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: akame.user.name, mentions: fkontak})
             }
             break
             default:
