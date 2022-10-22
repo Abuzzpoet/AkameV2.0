@@ -59,6 +59,9 @@ global.sessionName = 'session'
 
 //—————「 Set Prefix 」—————//
 //gausah di apa² ini!
+global.jumlha = '999'
+global.jumhal = '100000000000000'
+global.jumlah = '1000000000'
 global.prefa = ['', '!', '.', '🐦', '🐤', '🗿']
 
 //—————「 Set Simbol 」—————//
@@ -91,6 +94,11 @@ global.limitawal = {
 //terserah mau ubah apa nggak, menurut gua jangan di ubah!
 global.thumb = fs.readFileSync('./media/image/akame.jpg')
 global.kurome = { url: 'https://telegra.ph/file/de381b0caeb315a99c68a.mp4' }
+global.mytt = 'https://youtube.com/c/Nazedev'
+global.myttv = 'https://youtu.be/ey7qLuRBm5Y'
+global.botname = 'GuaAbuzz Creator'
+global.akulaku = 'Bot By GuaAbuzz'
+global.ttname = 'TikTok GuaAbuzz'
 
 //—————「 Set Random Image Menu 」—————//
 //gausah di apa² in!
