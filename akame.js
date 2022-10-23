@@ -2682,7 +2682,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                     await sleep(1500)
                       let txt = `「 Broadcast Bot 」\n\n${text}`
                       let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '👑 SEWA' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
-await naze.sendButtonText(i, buttons, txt, nyoutube, m, {quoted: fkontak})
+await akame.sendButtonText(i, buttons, txt, nyoutube, m, {quoted: fkontak})
                 }
                 m.reply(`Sukses Mengirim Broadcast Ke ${anu.length} Group`)
             }
@@ -2696,7 +2696,7 @@ await naze.sendButtonText(i, buttons, txt, nyoutube, m, {quoted: fkontak})
 		    await sleep(1500)
 		              let txt = `「 Broadcast Bot 」\n\n${text}`
                       let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '👑 SEWA' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
-            await naze.sendButtonText(yoi, buttons, txt, nyoutube, m, {quoted: fkontak})
+            await akame.sendButtonText(yoi, buttons, txt, nyoutube, m, {quoted: fkontak})
                 }
 		m.reply('Sukses Broadcast')
             }
@@ -5061,9 +5061,9 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                let pjtxt = `Pesan Dari : @${me.split('@')[0]} \nUntuk : @${ownernya.split('@')[0]}\n\n${command} ${text}`
                let ments = [ownernya, me]
                let buttons = [{ buttonId: 'hehehe', buttonText: { displayText: '🙏THANKS' }, type: 1 }]
-            await naze.sendButtonText(ownernya, buttons, pjtxt, nyoutube, m, {mentions: ments, quoted: fdoc})
+            await akame.sendButtonText(ownernya, buttons, pjtxt, nyoutube, m, {mentions: ments, quoted: fdoc})
             let akhji = `*Request Telah Terkirim*\n*Ke Owner @${ownernya.split('@')[0]}*\n_Terima Kasih🙏_`
-            await naze.sendButtonText(m.chat, buttons, akhji, nyoutube, m, {mentions: ments, quoted: fkontak})
+            await akame.sendButtonText(m.chat, buttons, akhji, nyoutube, m, {mentions: ments, quoted: fkontak})
             }
             break
             case 'report': case 'lapor': {
@@ -5073,9 +5073,9 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                let pjtxt = `Pesan Dari : @${me.split('@')[0]} \nUntuk : @${ownernya.split('@')[0]}\n\n${text}`
                let ments = [ownernya, me]
                let buttons = [{ buttonId: 'hehehe', buttonText: { displayText: '🙏THANKS LAPORANNYA' }, type: 1 }]
-            await naze.sendButtonText(ownernya, buttons, pjtxt, nyoutube, m, {mentions: ments})
+            await akame.sendButtonText(ownernya, buttons, pjtxt, nyoutube, m, {mentions: ments})
             let akhji = `Laporan Telah Terkirim\nKe Owner @${ownernya.split('@')[0]}\n*Terima Kasih Laporannya🙏*\n_Nomermu Akan Terblokir_\n_Jika Laporan Hanya Di Buat Buat_`
-            await naze.sendButtonText(m.chat, buttons, akhji, nyoutube, m, {mentions: ments})
+            await akame.sendButtonText(m.chat, buttons, akhji, nyoutube, m, {mentions: ments})
             }
             break
             case 'hehehe': {
@@ -5085,7 +5085,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                         key: m.key
                     }
                 }
-                naze.sendMessage(m.chat, reactionMessage)
+                akame.sendMessage(m.chat, reactionMessage)
             }
             break
             case 'tagme': {
@@ -5093,8 +5093,8 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             let jawab = `*@${me.split('@')[0]}*`
             let ments = [me]
             let buttons = [{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            naze.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
-            await naze.sendButtonText(m.chat, buttons, jawab, nyoutube, m, {mentions: ments, quoted: fkontak})
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
+            await akame.sendButtonText(m.chat, buttons, jawab, nyoutube, m, {mentions: ments, quoted: fkontak})
             }
             break
             case 'ceklimit': case 'checklimit': case 'limit':{
@@ -5673,9 +5673,7 @@ case 'sound161':
 │Sanksi: BLOCK PERMANENT
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '👑Sewa' }, type: 1 }]
-            await naze.sendButtonText(m.chat, buttons, anu, nyoutube, m, {quoted: fkontak})
-            }
-            break
+            await akame.sendButtonText(m.chat, buttons, anu, nyoutube, m, {quoted: fkontak})
             }
             break
             case 'sewa':
