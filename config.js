@@ -30,6 +30,7 @@ global.namaowner = 'GuaAbuzz'
 //—————「 Setting Owner 」—————//
 //terserah mau ubah atau nggak
 global.owner = ['6289636827082']
+global.ownernomer = "6289636827082"
 global.premium = ['6289636827082','6282171978174']
 
 //—————「 Setting Nomor Donasi 」—————//
@@ -93,6 +94,7 @@ global.limitawal = {
 //—————「 Set Image 」—————//
 //terserah mau ubah apa nggak, menurut gua jangan di ubah!
 global.thumb = fs.readFileSync('./media/image/akame.jpg')
+global.faall = fs.readFileSync('./media/image/fake.jpg')
 global.kurome = { url: 'https://telegra.ph/file/de381b0caeb315a99c68a.mp4' }
 global.mytt = 'https://tiktok.com/@guaabuzz'
 global.myttv = 'https://vt.tiktok.com/ZSRGeWXTM/'
