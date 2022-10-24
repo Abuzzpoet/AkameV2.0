@@ -150,7 +150,7 @@ module.exports = akame = async (akame, m, chatUpdate, store) => {
         orderMessage: {
             itemCount: 2022,
             status: 200,
-            thumbnail: await reSize(thumb, 100, 100),
+            thumbnail: thumb,
             surface: 200,
             message: `${ttname}`,
             orderTitle: 'GuaAbuzz',
@@ -174,7 +174,7 @@ const fdoc = {
     message: {
         documentMessage: {
             title: `${ttname}`,
-            jpegThumbnail: await reSize(thumb, 100, 100)
+            jpegThumbnail: thumb,
         }
     }
 }
@@ -206,7 +206,7 @@ const ftextt = {
         "extendedTextMessage": {
             "text": `${ttname}`,
             "title": `${botname}`,
-            'jpegThumbnail': await reSize(thumb, 100, 100)
+            'jpegThumbnail': thumb,
         }
     }
 }
@@ -224,7 +224,7 @@ const ftoko = {
             "product": {
                 "productImage": {
                     "mimetype": "image/jpeg",
-                    "jpegThumbnail": await reSize(thumb, 100, 100)
+                    "jpegThumbnail": thumb,
                 },
                 "title": `${ttname}`,
                 "description": `${botname}`,
@@ -252,7 +252,7 @@ const fgif = {
             'seconds': '359996400',
             'gifPlayback': 'true',
             'caption': `${ttname}`,
-            'jpegThumbnail': await reSize(thumb, 100, 100)
+            'jpegThumbnail': thumb,
         }
     }
 }
@@ -268,7 +268,7 @@ const fgclink = {
             "inviteCode": "m",
             "groupName": `${ttname}`,
             "caption": `${ttname}`,
-            'jpegThumbnail': await reSize(thumb, 100, 100)
+            'jpegThumbnail': thumb,
         }
     }
 }
@@ -287,7 +287,7 @@ const fvideo = {
             "h": `Hmm`,
             'seconds': '359996400',
             'caption': `${ttname}`,
-            'jpegThumbnail': await reSize(thumb, 100, 100)
+            'jpegThumbnail': thumb,
         }
     }
 }
@@ -302,7 +302,7 @@ const floc = {
     message: {
         locationMessage: {
             name: `${ttname}`,
-            jpegThumbnail: await reSize(thumb, 100, 100)
+            jpegThumbnail: thumb,
         }
     }
 }
@@ -319,7 +319,7 @@ const floc2 = {
         "liveLocationMessage": {
             "title": `${ttname}`,
             "h": `Hmm`,
-            'jpegThumbnail': await reSize(thumb, 100, 100)
+            'jpegThumbnail': thumb,
         }
     }
 }
@@ -335,8 +335,8 @@ const fkontak = {
         'contactMessage': {
             'displayName': `${ttname}`,
             'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;ttname,;;;\nFN:ttname\nitem1.TEL;waid=6289636827082:6289636827082\nitem1.X-ABLabel:Ponsel\nEND:VCARD`,
-            'jpegThumbnail': await reSize(thumb, 100, 100),
-            thumbnail: await reSize(thumb, 100, 100),
+            'jpegThumbnail': thumb,
+            thumbnail: thumb,
             sendEphemeral: true
         }
     }
@@ -363,7 +363,7 @@ const fakestatus = {
             "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=",
             "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69",
             "mediaKeyTimestamp": "1610993486",
-            "jpegThumbnail": await reSize(thumb, 100, 100),
+            "jpegThumbnail": thumb,
             "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="
         }
     }
@@ -5063,7 +5063,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 txtping += `*🎗️ WhatsApp :* wa.me/${global.owner}\n`
                     .trim()
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            akame.sendMessage(m.chat, { caption: txtping, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: ntiktok, mentions: fkontak})
+            await akame.sendButtonText(m.chat, buttons, txtping, ntiktok, fkontak)
             }
             break
             case 'speed':
@@ -5148,8 +5148,8 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             case 'runtime': case 'tes': {
             	let lowq = `*Bot Telah Online Selama*\n*${runtime(process.uptime())}*`
                 let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '👑SEWA' }, type: 1 }]
-                akame.sendMessage(m.chat, { caption: lowq, location: { jpegThumbnail: await reSize(thumb, 300, 200)}, buttons: buttons, footer: ntiktok, mentions: fkontak})
-            	}
+                await akame.sendButtonText(m.chat, buttons, lowq, ntiktok, fkontak)
+            }
             break
             case 'gsmarena': {
                 if (!text) throw `Contoh : ${prefix + command} samsung`
@@ -7289,7 +7289,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}wallhp
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
-            akame.sendMessage(m.chat, { caption: `${anu}`, location: { jpegThumbnail: await reSize(faall, 300, 200)}, buttons: buttons, footer: ntiktok, mentions: ments})
+            await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
             default:
