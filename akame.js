@@ -7331,24 +7331,6 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             }
             break
             default:
-//AUTO REACT BOT
-        if (budy.includes('gabut') || budy.includes('hehe') || budy.includes('apa')) {
-            const reactionMessage = {
-    react: {
-        text: kloadq, // use an empty string to remove the reaction
-        key: m.key
-    }
-}
-akame.sendMessage(m.chat, reactionMessage)
-        if (m.mtype === 'stickerMessage') {
-        	const reactionMessage = {
-    react: {
-        text: kloadq, // use an empty string to remove the reaction
-        key: m.key
-    }
-} 
-akame.sendMessage(m.chat, reactionMessage)
-}
         if ((m.mtype === 'groupInviteMessage' || budy.startsWith('https://chat') || budy.startsWith('Buka tautan ini')) && !m.isBaileys && !m.isGroup) {
         	let buttons = [
                     { buttonId: `owner`, buttonText: { displayText: 'Chat Owner' }, type: 1 }
