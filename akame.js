@@ -1260,6 +1260,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
 • Wita : ${wita}
 • Wit : ${wit}`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -1375,6 +1376,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 ]
                 }
                 ]
+                akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
                 akame.sendListMsg(m.chat, simple, ntiktok, `Hello Everyone !`, `Touch Me (⁠≧⁠▽⁠≦⁠)`, sections, floc)
             }
             break
@@ -1569,6 +1571,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 ]
                 },
 				]
+				akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
 				akame.sendListMsg(m.chat, `*Silahkan Pilih Menu Dibawah Ini*`, ntiktok, `TEBAK MENU`, `Touch Me (⁠≧⁠▽⁠≦⁠)`, menuss, floc)
 			}
             break
@@ -1952,7 +1955,8 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
 				]
 				},
 				]
-				 akame.sendListMsg(m.chat, `*Menu tag seseorang yg si paling...*`, ntiktok, `TAG MENU`, `Touch Me (⁠≧⁠▽⁠≦⁠)`, tagg, floc)
+				akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
+	   		    akame.sendListMsg(m.chat, `*Menu tag seseorang yg si paling...*`, ntiktok, `TAG MENU`, `Touch Me (⁠≧⁠▽⁠≦⁠)`, tagg, floc)
 				 }
 				break
             case 'bebangrup': {
@@ -2885,6 +2889,13 @@ encmedia = await akame.sendImageAsSticker(m.chat, wifegerakx, m, { packname: glo
 await fs.unlinkSync(encmedia)
 }
 break
+           case 'slot': {
+            const somtoy = sotoy[Math.floor(Math.random() * sotoy.length)]
+            let sloth =`[  🎰VIRTUAL SLOT 🎰  ]\n------------------------\n\n🍒 : 🍌 : 🍇\n${somtoy}<=====\n🍇 : 🍌 : 🍒\n\n------------------------\n[  🎰 VIRTUAL SLOT 🎰  ]\n\n*Keterangan* :\n_Jika Mendapatkan 3Buah Sama_\n_Berarti Kamu Win_\n\n_Contoh : 🍒 : 🍒 : 🍒_ <=====`
+            let buttons = [{ buttonId: 'slot', buttonText: { displayText: '🎰MAIN LAGI🎰' }, type: 1 }]
+            await naze.sendButtonText(m.chat, buttons, sloth, nyoutube, m)
+            }
+            break
             case 'ebinary': {
                 let {
                     eBinary
@@ -3516,7 +3527,7 @@ break
             	m.reply(mess.wait)
                 anu = await fetchJson(`https://waifu.pics/api/sfw/waifu`)
                 buffer = await getBuffer(anu.url)
-                let buttons = [{buttonId: `sfw`, buttonText: {displayText: 'Next Image'}, type: 1},{buttonId: `command`, buttonText: {displayText: '⬅️Back'}, type: 1}]
+                let buttons = [{buttonId: `sfw`, buttonText: {displayText: '⌲ Next Image'}, type: 1},{buttonId: `command`, buttonText: {displayText: '⬅️Back'}, type: 1}]
                 let buttonMessage = {
                     image: buffer,
                     fileLength: jumlah,
@@ -5669,6 +5680,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}hapusvote
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -5714,6 +5726,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}soundcloud [url]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -5751,6 +5764,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}ringtone [query]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -5792,6 +5806,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}emojimix2 😎
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -5879,6 +5894,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}kitagawa
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -5921,6 +5937,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}ryujin
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -5966,6 +5983,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}cerpen
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -6001,6 +6019,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}onecak
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -6035,6 +6054,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}styletext [teks]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -6094,6 +6114,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}gluetext
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -6140,6 +6161,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}triggered
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -6203,6 +6225,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}ytcertificate
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -6237,6 +6260,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}suitpvp [@tag]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -6295,6 +6319,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}shio
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -6333,6 +6358,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │
 └───────⭓`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -6374,6 +6400,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}report [bug]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -6410,6 +6437,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}delmsg
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -6443,6 +6471,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}keluar
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -6481,6 +6510,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}asmaulhusna
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -6528,6 +6558,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}jodohku [teks]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -6567,6 +6598,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}tupai
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -6598,6 +6630,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}stalk [option] [query]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -6643,6 +6676,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}setnamebot
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -6680,6 +6714,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}drakor
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -6720,6 +6755,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}wallhp
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -6783,6 +6819,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
   sourceUrl: mytt
   }}
   }
+  akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
   akame.sendMessage(m.chat, buttonMessage, {quoted: fkontak})
   }
  break
@@ -7289,10 +7326,29 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}wallhp
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
+            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
             default:
+//AUTO REACT BOT
+        if (budy.includes('gabut') || budy.includes('hehe') || budy.includes('apa')) {
+            const reactionMessage = {
+    react: {
+        text: kloadq, // use an empty string to remove the reaction
+        key: m.key
+    }
+}
+akame.sendMessage(m.chat, reactionMessage)
+        if (m.mtype === 'stickerMessage') {
+        	const reactionMessage = {
+    react: {
+        text: kloadq, // use an empty string to remove the reaction
+        key: m.key
+    }
+} 
+akame.sendMessage(m.chat, reactionMessage)
+}
         if ((m.mtype === 'groupInviteMessage' || budy.startsWith('https://chat') || budy.startsWith('Buka tautan ini')) && !m.isBaileys && !m.isGroup) {
         	let buttons = [
                     { buttonId: `owner`, buttonText: { displayText: 'Chat Owner' }, type: 1 }
