@@ -2889,7 +2889,7 @@ break
             const somtoy = sotoy[Math.floor(Math.random() * sotoy.length)]
             let sloth =`[  🎰VIRTUAL SLOT 🎰  ]\n------------------------\n\n🍒 : 🍌 : 🍇\n${somtoy}<=====\n🍇 : 🍌 : 🍒\n\n------------------------\n[  🎰 VIRTUAL SLOT 🎰  ]\n\n*Keterangan* :\n_Jika Mendapatkan 3Buah Sama_\n_Berarti Kamu Win_\n\n_Contoh : 🍒 : 🍒 : 🍒_ <=====`
             let buttons = [{ buttonId: 'slot', buttonText: { displayText: '🎰MAIN LAGI🎰' }, type: 1 }]
-            await naze.sendButtonText(m.chat, buttons, sloth, nyoutube, m)
+            await akame.sendButtonText(m.chat, buttons, sloth, nyoutube, m)
             }
             break
             case 'ebinary': {
@@ -3238,34 +3238,17 @@ break
                 })
             }
             break
-            case 'play':
-            case 'ytplay': {
-                if (!text) throw `Contoh : ${prefix + command} Story Wa Anime`
-                m.reply(mess.wait)
-                if (!isPremium && global.db.data.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
-                db.data.users[m.sender].limit -= 2 // -2 limit
+            case 'play': case 'ytplay': {
+                if (!text) throw `Example : ${prefix + command} story wa anime`
                 let yts = require("yt-search")
                 let search = await yts(text)
                 let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
-                let buttons = [{
-                        buttonId: `ytmp3 ${anu.url}`,
-                        buttonText: {
-                            displayText: '♫ Audio'
-                        },
-                        type: 1
-                    },
-                    {
-                        buttonId: `ytmp4 ${anu.url}`,
-                        buttonText: {
-                            displayText: '⌲ Video'
-                        },
-                        type: 1
-                    }
+                let buttons = [
+                    {buttonId: `ytmp3 ${anu.url}`, buttonText: {displayText: '♫ Audio'}, type: 1},
+                    {buttonId: `ytmp4 ${anu.url}`, buttonText: {displayText: '► Video'}, type: 1}
                 ]
                 let buttonMessage = {
-                    image: {
-                        url: anu.thumbnail
-                    },
+                    image: { url: anu.thumbnail },
                     caption: `
 📄 Title : ${anu.title}
 🔎 Ext : Search
@@ -3281,111 +3264,61 @@ break
                     buttons: buttons,
                     headerType: 4
                 }
-                akame.sendMessage(m.chat, buttonMessage, {
-                    quoted: fvideo
-                })
+                akame.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
-            case 'ytmp3':
-            case 'ytaudio': {
-                let {
-                    yta
-                } = require('./lib/y2mate')
-                if (!text) throw `Contoh : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`
-                m.reply(mess.wait)
+	    case 'ytmp3': case 'ytaudio': {
+                let { yta } = require('./lib/y2mate')
+                if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`
                 if (!isPremium && global.db.data.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
                 db.data.users[m.sender].limit -= 2 // -2 limit
                 let quality = args[1] ? args[1] : '128kbps'
                 let media = await yta(text, quality)
-                if (media.filesize >= 100000) return m.reply('File Melebihi Batas Silahkan Download Sendiri : ' + media.dl_link)
-                akame.sendImage(m.chat, media.thumb, `📄 Judul : ${media.title}\n🎚️ Ukuran File : ${media.filesizeF}\n🔗 Url : ${isUrl(text)}\n📥 Format : MP3\n📮 Resolusi : ${args[1] || '128kbps'}`, fgclink)
-                akame.sendMessage(m.chat, {
-                    audio: {
-                        url: media.dl_link
-                    },
-                    mimetype: 'audio/mpeg',
-                    fileName: `${media.title}.mp3`
-                }, {
-                    quoted: fvn
-                })
+                if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
+                akame.sendImage(m.chat, media.thumb, `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${isUrl(text)}\n⭔ Ext : MP3\n⭔ Resolusi : ${args[1] || '128kbps'}`, m)
+                akame.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
-            case 'ytmp4':
-            case 'ytvideo': {
-                let {
-                    ytv
-                } = require('./lib/y2mate')
-                if (!text) throw `Contoh : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p`
-                m.reply(mess.wait)
+            case 'ytmp4': case 'ytvideo': {
+                let { ytv } = require('./lib/y2mate')
+                if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p`
                 if (!isPremium && global.db.data.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
                 db.data.users[m.sender].limit -= 2 // -2 limit
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(text, quality)
-                if (media.filesize >= 100000) return m.reply('File Melebihi Batas Silahkan Download Sendiri : ' + media.dl_link)
-                akame.sendMessage(m.chat, {
-                    video: {
-                        url: media.dl_link
-                    },
-                    mimetype: 'video/mp4',
-                    fileName: `${media.title}.mp4`,
-                    caption: `📄 Judul : ${media.title}\n🎚️ Ukuran File : ${media.filesizeF}\n🔗 Url : ${isUrl(text)}\n📥 Format : MP4\n📮 Resolusi : ${args[1] || '360p'}`
-                }, {
-                    quoted: fvideo
-                })
+                if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
+                akame.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${isUrl(text)}\n⭔ Ext : MP3\n⭔ Resolusi : ${args[1] || '360p'}` }, { quoted: m })
             }
             break
-            case 'getmusic': {
-                let {
-                    yta
-                } = require('./lib/y2mate')
-                if (!text) throw `Contoh : ${prefix + command} 1`
+	    case 'getmusic': {
+                let { yta } = require('./lib/y2mate')
+                if (!text) throw `Example : ${prefix + command} 1`
                 if (!m.quoted) return m.reply('Reply Pesan')
                 if (!m.quoted.isBaileys) throw `Hanya Bisa Membalas Pesan Dari Bot`
-                let urls = quoted.text.match(new RegExp(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch|v|embed|shorts)(?:\.php)?(?:\?.*v=|\/))([a-zA-Z0-9\_-]+)/, 'gi'))
-                if (!urls) throw `Mungkin Pesan Yang Anda Reply Tidak Mengandung Result Ytsearch`
-                m.reply(mess.wait)
-                if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
-                db.data.users[m.sender].limit -= 1 // -1 limit
+		let urls = quoted.text.match(new RegExp(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch|v|embed|shorts)(?:\.php)?(?:\?.*v=|\/))([a-zA-Z0-9\_-]+)/, 'gi'))
+                if (!urls) throw `Mungkin pesan yang anda reply tidak mengandung result ytsearch`
+                if (!isPremium && global.db.data.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+                db.data.users[m.sender].limit -= 2 // -2 limit
                 let quality = args[1] ? args[1] : '128kbps'
                 let media = await yta(urls[text - 1], quality)
-                if (media.filesize >= 100000) return m.reply('File Melebihi Batas ' + util.format(media))
-                akame.sendImage(m.chat, media.thumb, `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${media.dl_link}\n⭔ Ext : MP3\n⭔ Resolusi : ${args[1] || '128kbps'}`, fgclink)
-                akame.sendMessage(m.chat, {
-                    audio: {
-                        url: media.dl_link
-                    },
-                    mimetype: 'audio/mpeg',
-                    fileName: `${media.title}.mp3`
-                }, {
-                    quoted: fvn
-                })
+                if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
+                akame.sendImage(m.chat, media.thumb, `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${urls[text - 1]}\n⭔ Ext : MP3\n⭔ Resolusi : ${args[1] || '128kbps'}`, m)
+                akame.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
             case 'getvideo': {
-                let {
-                    ytv
-                } = require('./lib/y2mate')
-                if (!text) throw `Contoh : ${prefix + command} 1`
+                let { ytv } = require('./lib/y2mate')
+                if (!text) throw `Example : ${prefix + command} 1`
                 if (!m.quoted) return m.reply('Reply Pesan')
                 if (!m.quoted.isBaileys) throw `Hanya Bisa Membalas Pesan Dari Bot`
                 let urls = quoted.text.match(new RegExp(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch|v|embed|shorts)(?:\.php)?(?:\?.*v=|\/))([a-zA-Z0-9\_-]+)/, 'gi'))
-                if (!urls) throw `Mungkin Pesan Yang Anda Reply Tidak Mengandung Result Ytsearch`
-                m.reply(mess.wait)
-                if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
-                db.data.users[m.sender].limit -= 1 // -1 limit
+                if (!urls) throw `Mungkin pesan yang anda reply tidak mengandung result ytsearch`
+                if (!isPremium && global.db.data.users[m.sender].limit < 2) return m.reply(mess.endLimit) // respon ketika limit habis
+                db.data.users[m.sender].limit -= 2 // -2 limit
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(urls[text - 1], quality)
-                if (media.filesize >= 100000) return m.reply('File Melebihi Batas ' + util.format(media))
-                akame.sendMessage(m.chat, {
-                    video: {
-                        url: media.dl_link
-                    },
-                    mimetype: 'video/mp4',
-                    fileName: `${media.title}.mp4`,
-                    caption: `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${media.dl_link}\n⭔ Ext : MP3\n⭔ Resolusi : ${args[1] || '360p'}`
-                }, {
-                    quoted: fvideo
-                })
+                if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
+                akame.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${urls[text - 1]}\n⭔ Ext : MP3\n⭔ Resolusi : ${args[1] || '360p'}` }, { quoted: m })
             }
             break
             case 'pinterest': {
@@ -3968,6 +3901,8 @@ break
             case 'gluetext': {
                 if (!text) throw `Contoh : ${prefix + command} text`
                 m.reply(mess.wait)
+                if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+                db.data.users[m.sender].limit -= 1 // -1 limit
                 akame.sendMessage(m.chat, {
                     image: {
                         url: api('zenz', '/textpro/' + command, {
@@ -4000,6 +3935,8 @@ break
             case 'triggered': {
                 if (!/image/.test(mime)) return m.reply(`Kirim/Reply Foto`)
                 m.reply(mess.wait)
+                if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+                db.data.users[m.sender].limit -= 1 // -1 limit
                 let dwnld = await akame.downloadAndSaveMediaMessage(qmsg)
                 let { TelegraPh } = require('./lib/uploader')
                 let fatGans = await TelegraPh(dwnld)
@@ -4048,6 +3985,8 @@ break
             case 'ytcertificate': {
                 if (!text) throw 'Text?'
                 m.reply(mess.wait)
+                if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+                db.data.users[m.sender].limit -= 1 // -1 limit
                 akame.sendMessage(m.chat, {
                     image: {
                         url: api('zenz', '/ephoto/' + command, {
