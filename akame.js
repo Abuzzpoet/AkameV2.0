@@ -4456,23 +4456,19 @@ break
                 if (!text) throw 'Masukkan Query Link!'
                 if (!isUrl(args[0]) && !args[0].includes('facebook.com')) throw 'Link yang kamu berikan tidak.valid'
                 m.reply(mess.wait)
-                try {
-                var data= await bochil.savefrom(`${text}`)
-                for(let i of data.url){    
-                akame.sendMessage(m.chat, { video: { url: i.url }, caption: `Done`}, { quoted: fvideo })
-                }
-                } else {
-                try {
-                var daa = await bochil.facebookdl(`${text}`)
-                for(let i of daa.result){    
-                akame.sendMessage(m.chat, { video: { url: i.url }, caption: `Done`}, { quoted: fvideo })
-                }
-                } catch {
-                    m.reply(`*Gagal Saat mendownload media dan mengirm video*`)
-                }
-              }
+                let daa = await bochil.facebookdl(`${text}`)
+                akame.sendMessage(m.chat, { video: { url: daa.result.url }, caption: `Done`}, { quoted: fvideo })
             }
             break
+            case 'tiktokaudio': {
+                if (!text) throw 'Link TikTok Ya Mana?'
+                m.reply(mess.wait)
+                let anu = await fdl.downloader.tiktok(text)
+				let cap = `👤 *Author:* ${anu.author}\n📌 *Title:* ${anu.title}\n🔗 Download From ${text}`
+				akame.sendMessage(m.chat, { caption: cap, image: { url: anu.thumbnail }})
+				akame.sendMessage(m.chat, { audio: { url: anu.audio }, mimetype: 'audio/mpeg'}, { quoted: fvn })
+				}
+				break
             case 'umma': case 'ummadl': {
 	        if (!text) throw `Contoh : ${prefix + command} https://umma.id/channel/video/post/gus-arafat-sumber-kecewa-84464612933698`
                 let { umma } = require('./lib) scraper')
