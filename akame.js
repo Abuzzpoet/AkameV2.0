@@ -4456,10 +4456,21 @@ break
                 if (!text) throw 'Masukkan Query Link!'
                 if (!isUrl(args[0]) && !args[0].includes('facebook.com')) throw 'Link yang kamu berikan tidak.valid'
                 m.reply(mess.wait)
-                let daa = await bochil.facebookdl(`${text}`)
-                for(let i of daa.result){
+                try {
+                var data= await bochil.savefrom(`${text}`)
+                for(let i of data.url){    
                 akame.sendMessage(m.chat, { video: { url: i.url }, caption: `Done`}, { quoted: fvideo })
-                }).catch((err) => m.reply(`*Gagal Saat mendownload media dan mengirim video*`))
+                }
+                } else {
+                try {
+                var daa = await bochil.facebookdl(`${text}`)
+                for(let i of daa.result){    
+                akame.sendMessage(m.chat, { video: { url: i.url }, caption: `Done`}, { quoted: fvideo })
+                }
+                } catch {
+                    m.reply(`*Gagal Saat mendownload media dan mengirm video*`)
+                }
+              }
             }
             break
             case 'umma': case 'ummadl': {
