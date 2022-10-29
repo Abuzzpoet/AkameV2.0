@@ -2752,11 +2752,11 @@ break
                      let nama = store.messages[i].array[0].pushName
                      teks += `👤 *Nama :* ${nama}\n🔗 *User :* @${i.split('@')[0]}\n\n───────────────\n\n`
                  let buttons = [{ buttonId: 'sewa', buttonText: { displayText: '👑Sewa' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
-await akame.sendButtonText(m.chat, buttons, teks, nyoutube, m, {mentions: [i], quoted: fkontak})
+await akame.sendButtonText(m.chat, buttons, teks, ntiktok, m, {mentions: [i], quoted: fkontak})
 }}
              break
                 case 'listgc': {
-                	if (!isCreator) throw mess.owner
+                 if (!isCreator) throw mess.owner
                  let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
                  let teks = `👥 *LIST GROUP CHAT*\n\n📱 Total Group : ${anu.length} Group\n\n`
                  for (let i of anu) {
