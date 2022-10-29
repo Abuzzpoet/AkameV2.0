@@ -5374,7 +5374,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                             {title: "Kisah Nabi Idris", rowId: ".kisahnabi idris"},
                             {title: "Kisah Nabi Nuh", rowId: ".kisahnabi nuh"},
                             {title: "Kisah Nabi Hud", rowId: ".kisahnabi hud"},
-                            {title: "Kisah Nabi Sholeh", rowId: ".kisahnabi sholeh"},
+                            {title: "Kisah Nabi Sholeh", rowId: ".kisahnabi saleh"},
                             {title: "Kisah Nabi Ibrahim", rowId: ".kisahnabi ibrahim"},
                             {title: "Kisah Nabi Luth", rowId: ".kisahnabi luth"},
                             {title: "Kisah Nabi Ismail", rowId: ".kisahnabi ismail"},
@@ -5403,7 +5403,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                         buttonText: 'OPEN LIST',
                         sections
                     }
-                    const sendMsg = await akame.sendMessage(m.chat, listMessage, { quoted: m })
+                    const sendMsg = await akame.sendMessage(m.chat, listMessage, { quoted: floc })
                 }
             }
             break
@@ -5431,7 +5431,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                         buttonText: 'OPEN LIST',
                         sections
                     }
-                    const sendMsg = await akame.sendMessage(m.chat, listMessage, { quoted: m })
+                    const sendMsg = await akame.sendMessage(m.chat, listMessage, { quoted: floc })
                 }
             }
             break
