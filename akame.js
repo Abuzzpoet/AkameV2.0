@@ -2745,27 +2745,35 @@ break
             }
             break
             case 'listpc': {
-            	if (!isCreator) throw mess.owner
-                 let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v.id)
-                 let teks = `🔒 *LIST PERSONAL CHAT*\n\n📱 Total Chat : ${anu.length} Chat\n\n`
-                 for (let i of anu) {
-                     let nama = store.messages[i].array[0].pushName
-                     teks += `👤 *Nama :* ${nama}\n🔗 *User :* @${i.split('@')[0]}\n\n───────────────\n\n`
-                 let buttons = [{ buttonId: 'sewa', buttonText: { displayText: '👑Sewa' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
-await akame.sendButtonText(m.chat, buttons, teks, ntiktok, m, {mentions: [i], quoted: fkontak})
-}}
-             break
-                case 'listgc': {
-                 if (!isCreator) throw mess.owner
-                 let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
-                 let teks = `👥 *LIST GROUP CHAT*\n\n📱 Total Group : ${anu.length} Group\n\n`
-                 for (let i of anu) {
-                     let metadata = await akame.groupMetadata(i)
-                     teks += `📛 *Nama :* ${metadata.subject}\n👤 *Owner :* ${metadata.owner !== undefined ? '@' + metadata.owner.split`@`[0] : 'Tidak diketahui'}\n🌱 *ID :* ${metadata.id}\n⏳ *Dibuat :* ${moment(metadata.creation * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}\n👥 *Member :* ${metadata.participants.length}\n\n─────────────────\n\n`
-                 let buttons = [{ buttonId: 'sewa', buttonText: { displayText: '👑Sewa' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
-await akame.sendButtonText(m.chat, buttons, teks, ntiktok, m, {mentions: [metadata.owner], quoted: fkontak})
-}}
-             break
+                let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v.id)
+                let tekslist = `*🔒 LIST PERSONAL CHAT*\n\n`
+                tekslist += `*📱 Total Chat :* ${anu.length} Chat\n\n`
+                for (let i of anu) {
+                    let nama = store.messages[i].array[0].pushName
+                    tekslist += `📛 *Nama :* ${nama}\n`
+                    tekslist += `👤 *User :* @${i.split('@')[0]}\n`
+                    tekslist += `🔗 *Link Chat :* https://wa.me/${i.split('@')[0]}\n\n`
+                    tekslist += `──────────────────────\n\n`
+                }
+                akame.sendTextWithMentions(m.chat, tekslist, fgclink)
+            }
+            break
+            case 'listgc': {
+                let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
+                let tekslistgc = `👥 *LIST GROUP CHAT*\n\n`
+                tekslistgc += `📱 Total Group : ${anu.length} Group\n\n`
+                for (let e of anu) {
+                    let metadata = await akame.groupMetadata(e)
+                    tekslistgc += `📛 *Nama :* ${metadata.subject}\n`
+                    tekslistgc += `👤 *Owner Grup :* ${metadata.owner !== undefined ? '@' + metadata.owner.split`@`[0] : 'Tidak diketahui'}\n`
+                    tekslistgc += `🌱 *ID :* ${metadata.id}\n`
+                    tekslistgc += `⏳ *Dibuat :* ${moment(metadata.creation * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}\n`
+                    tekslistgc += `👥 *Member :* ${metadata.participants.length}\n\n`
+                    tekslistgc += `──────────────────────\n\n`
+                }
+                akame.sendTextWithMentions(m.chat, tekslistgc, fgclink)
+            }
+            break
             case 'listonline':
             case 'liston': {
                 if (!m.isGroup) m.reply(mess.group)
