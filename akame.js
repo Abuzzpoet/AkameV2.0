@@ -1942,6 +1942,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 {
                 title: "Tag Menu",
                 rows: [
+                {title: "Si Tag Sendiri", rowId: `tagme`, description: `Malah tag sendiri lol:v`},
 				{title: "Si Paling Beban", rowId: `bebangrup`, description: `Siapa yg beban disini ya??`},
 				{title: "Si Babi di Grup", rowId: `babigrup`, description: `Tes kebaperan yuk awokawok:v`},
 				{title: "Si Paling Keren😎😎", rowId: `kerengrup`, description: `Anjayyy keren sekali orang ini😎😋`},
@@ -2700,7 +2701,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                 for (let i of anu) {
                     await sleep(1500)
                       let txt = `「 Broadcast Bot 」\n\n${text}`
-                      let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '👑 SEWA' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
+                      let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '👑Sewa' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
 await akame.sendButtonText(i, buttons, txt, ntiktok, m, {quoted: fkontak})
                 }
                 m.reply(`Sukses Mengirim Broadcast Ke ${anu.length} Group`)
@@ -2714,27 +2715,27 @@ await akame.sendButtonText(i, buttons, txt, ntiktok, m, {quoted: fkontak})
 		for (let yoi of anu) {
 		    await sleep(1500)
 		              let txt = `「 Broadcast Bot 」\n\n${text}`
-                      let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '👑 SEWA' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
+                      let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '👑Sewa' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
             await akame.sendButtonText(yoi, buttons, txt, ntiktok, m, {quoted: fkontak})
                 }
 		m.reply('Sukses Broadcast')
             }
             break
             case 'infochat': {
-                if (!m.quoted) m.reply('Reply Pesan')
-                let msg = await m.getQuotedObj()
-                if (!m.quoted.isBaileys) throw 'Pesan tersebut bukan dikirim oleh bot!'
-                let teks = ''
-                for (let i of msg.userReceipt) {
-                    let read = i.readTimestamp
-                    let unread = i.receiptTimestamp
-                    let waktu = read ? read : unread
-                    teks += `👤 @${i.userJid.split('@')[0]}\n`
-                    teks += `⏳ *Waktu :* ${moment(waktu * 1000).format('DD/MM/YY HH:mm:ss')}\n📈 *Status :* ${read ? 'Dibaca' : 'Terkirim'}\n\n`
-                }
-                akame.sendTextWithMentions(m.chat, teks, fgclink)
-            }
-            break
+if (!m.quoted) m.reply('Reply Pesan')
+let msg = await m.getQuotedObj()
+if (!m.quoted.isBaileys) throw 'Pesan tersebut bukan dikirim oleh bot!'
+let teks = ''
+for (let i of msg.userReceipt) {
+let read = i.readTimestamp
+let unread = i.receiptTimestamp
+let waktu = read ? read : unread
+teks += `⌕ @${i.userJid.split('@')[0]}\n`
+teks += ` ┗━⌕ *Waktu :* ${moment(waktu * 1000).format('DD/MM/YY HH:mm:ss')} ⌕ *Status :* ${read ? 'Dibaca' : 'Terkirim'}\n\n`
+let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '👑Sewa' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
+await akame.sendButtonText(m.chat, buttons, teks, ntiktok, m, {mentions: [i.userJid], quoted: fkontak})
+}}
+break
             case 'q':
             case 'quoted': {
                 if (!m.quoted) return m.reply('Reply Pesannya!!')
@@ -2744,35 +2745,27 @@ await akame.sendButtonText(i, buttons, txt, ntiktok, m, {quoted: fkontak})
             }
             break
             case 'listpc': {
-                let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v.id)
-                let tekslist = `*🔒 LIST PERSONAL CHAT*\n\n`
-                tekslist += `*📱 Total Chat :* ${anu.length} Chat\n\n`
-                for (let i of anu) {
-                    let nama = store.messages[i].array[0].pushName
-                    tekslist += `📛 *Nama :* ${nama}\n`
-                    tekslist += `👤 *User :* @${i.split('@')[0]}\n`
-                    tekslist += `🔗 *Link Chat :* https://wa.me/${i.split('@')[0]}\n\n`
-                    tekslist += `──────────────────────\n\n`
-                }
-                akame.sendTextWithMentions(m.chat, tekslist, fgclink)
-            }
-            break
-            case 'listgc': {
-                let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
-                let tekslistgc = `👥 *LIST GROUP CHAT*\n\n`
-                tekslistgc += `📱 Total Group : ${anu.length} Group\n\n`
-                for (let e of anu) {
-                    let metadata = await akame.groupMetadata(e)
-                    tekslistgc += `📛 *Nama :* ${metadata.subject}\n`
-                    tekslistgc += `👤 *Owner Grup :* ${metadata.owner !== undefined ? '@' + metadata.owner.split`@`[0] : 'Tidak diketahui'}\n`
-                    tekslistgc += `🌱 *ID :* ${metadata.id}\n`
-                    tekslistgc += `⏳ *Dibuat :* ${moment(metadata.creation * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}\n`
-                    tekslistgc += `👥 *Member :* ${metadata.participants.length}\n\n`
-                    tekslistgc += `──────────────────────\n\n`
-                }
-                akame.sendTextWithMentions(m.chat, tekslistgc, fgclink)
-            }
-            break
+            	if (!isCreator) throw mess.owner
+                 let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v.id)
+                 let teks = `🔒 *LIST PERSONAL CHAT*\n\n📱 Total Chat : ${anu.length} Chat\n\n`
+                 for (let i of anu) {
+                     let nama = store.messages[i].array[0].pushName
+                     teks += `👤 *Nama :* ${nama}\n🔗 *User :* @${i.split('@')[0]}\n\n───────────────\n\n`
+                 let buttons = [{ buttonId: 'sewa', buttonText: { displayText: '👑Sewa' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
+await akame.sendButtonText(m.chat, buttons, teks, nyoutube, m, {mentions: [i], quoted: fkontak})
+}}
+             break
+                case 'listgc': {
+                	if (!isCreator) throw mess.owner
+                 let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
+                 let teks = `👥 *LIST GROUP CHAT*\n\n📱 Total Group : ${anu.length} Group\n\n`
+                 for (let i of anu) {
+                     let metadata = await akame.groupMetadata(i)
+                     teks += `📛 *Nama :* ${metadata.subject}\n👤 *Owner :* ${metadata.owner !== undefined ? '@' + metadata.owner.split`@`[0] : 'Tidak diketahui'}\n🌱 *ID :* ${metadata.id}\n⏳ *Dibuat :* ${moment(metadata.creation * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}\n👥 *Member :* ${metadata.participants.length}\n\n─────────────────\n\n`
+                 let buttons = [{ buttonId: 'sewa', buttonText: { displayText: '👑Sewa' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
+await akame.sendButtonText(m.chat, buttons, teks, ntiktok, m, {mentions: [metadata.owner], quoted: fkontak})
+}}
+             break
             case 'listonline':
             case 'liston': {
                 if (!m.isGroup) m.reply(mess.group)
@@ -2889,7 +2882,7 @@ break
             const somtoy = sotoy[Math.floor(Math.random() * sotoy.length)]
             let sloth =`[  🎰VIRTUAL SLOT 🎰  ]\n------------------------\n\n🍒 : 🍌 : 🍇\n${somtoy}<=====\n🍇 : 🍌 : 🍒\n\n------------------------\n[  🎰 VIRTUAL SLOT 🎰  ]\n\n*Keterangan* :\n_Jika Mendapatkan 3Buah Sama_\n_Berarti Kamu Win_\n\n_Contoh : 🍒 : 🍒 : 🍒_ <=====`
             let buttons = [{ buttonId: 'slot', buttonText: { displayText: '🎰MAIN LAGI🎰' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, sloth, nyoutube, m)
+            await akame.sendButtonText(m.chat, buttons, sloth, ntiktok, m)
             }
             break
             case 'ebinary': {
@@ -3757,6 +3750,36 @@ break
                 })
             }
             break
+            case 'tinyurl': case 'shortlink': {
+            	if (!text) throw 'Masukkan Query Link!'
+                let anu = await axios.get(`https://tinyurl.com/api-create.php?url=${text}`)
+                let buttons = [
+                    {buttonId: `hehehe`, buttonText: {displayText: '🙏THANKS'}, type: 1}
+                ]
+                let buttonMessage = {
+                    text: anu.data,
+                    footer: ntiktok,
+                    buttons: buttons,
+                    headerType: 2
+                }
+                akame.sendMessage(m.chat, buttonMessage, { quoted: fdoc })
+            }
+            break
+            case 'linkpoi': {
+            	if (!text) throw 'Masukkan Query Link!'
+                let poi = await fetchJson(`https://linkpoi.ga/api.php?url=${text}`)
+                let buttons = [
+                    {buttonId: `hehehe`, buttonText: {displayText: '🙏THANKS'}, type: 1}
+                ]
+                let buttonMessage = {
+                    text: poi.shorturl,
+                    footer: ntiktok,
+                    buttons: buttons,
+                    headerType: 2
+                }
+                akame.sendMessage(m.chat, buttonMessage, { quoted: fdoc })
+            }
+            break
             case 'quotesanime':
             case 'quoteanime': {
                 let {
@@ -4262,30 +4285,26 @@ break
                 akame.sendText(m.chat, `⭔ *Hasil :* ${anu.message}`, fakestatus)
             }
             break
-            case 'menfess':
-			case 'menfes':
-			case 'confes':
-			case 'confess': {
-				if (m.isGroup) throw mess.private
-				if (!text) return m.reply(`*Cara Penggunaan*\n\nKirim perintah ${prefix}${command} nomer|pengirim|pesan\n\nContoh ${prefix}${command} 62831xxxxxxx|ini nama samaran ya|I have a crush on you\n\nContoh 2 : ${prefix}${command} 62831xxxxxxx|crush mu|I have s crush on you\n\nTenang aja privasi aman kok><`)
-				let nomor = q.split('|')[0] ? q.split('|')[0] : q
-				let saking = q.split('|')[1] ? q.split('|')[1] : q
-				let pesan = q.split('|')[2] ? q.split('|')[2] : ''
-				if (pesan.length < 1) return m.reply(`Harus di isi semua! ex : menfess 62831xxxxxxxx|orang|hallo kamu`)
-				let buttons = [
-                    { buttonId: `Owner`, buttonText: { displayText: '⌲ Chat Owner' }, type: 1 },
-                    { buttonId: `menfesconfirm ${m.sender}`, buttonText: { displayText: '⌲ Terima Menfess' }, type: 1 },
-                    { buttonId: `menfess`, buttonText: { displayText: '⌲ Kirim Menfess' }, type: 1 }
-                ]
-			akame.sendMessage(`${nomor}@s.whatsapp.net`, { text:`PESAN RAHASIA\n\nHai kak ada Menfess nih!!\n─────────────\n*Akame-Bot*\n─────────────\n\nDari : _${saking}_ \nPesan : _${pesan}_`, title: 'PESAN RAHASIA DECTETED', footer: 'Ciee ada yang ngirim pesan nih\n© 2022 GuaAbuzz', buttons: buttons, headerType: 5 })
-				m.reply(`Sukses Mengirim Menfess!!`)
-				}
-				break
-			case 'menfesconfirm': {
- 				 akame.sendMessage(q, { text: `Sudah Di Confirmasi Nih Menfess nyaa🤭` })
-				  m.reply(`Terimakasih Menfess Telah Diterima`)
-				  }
-				break
+            case 'menfes': case 'menfess': {
+		        if (m.isGroup) throw ('fitur tidak dapat digunakan di grup')
+            	if (!text) throw `Example : ${prefix + command} 6282xxxxx|nama samaran|pesan`
+            var mon = args.join(' ')
+            var m1 = mon.split("|")[0]
+            var m2 = mon.split("|")[1]
+            var m3 = mon.split("|")[2]
+               let kafloc = {key : {participant : '0@s.whatsapp.net', ...(m.chat ? { remoteJid: `status@broadcast` } : {}) },message: {locationMessage: {name: 'Lokasimu', jpegThumbnail: thumb}}}
+               let mq1 = m1 + '@s.whatsapp.net'
+               let kawk = ('PESAN RAHASIA')
+               let ownernya = ownernomer + '@s.whatsapp.net'
+               let me = m.sender
+               let ments = [mq1, ownernya, me]
+               let pjtxt = `Pesan Dari : ${m2} \nUntuk : @${mq1.split('@')[0]}\n\n${m3}`
+               let buttons = [{ buttonId: 'hehehe', buttonText: { displayText: '❤LIKE' }, type: 1 }]
+            await akame.sendButtonText(m1 + '@s.whatsapp.net', buttons, pjtxt, kawk, m, {mentions: ments, quoted: kafloc})
+            let akhji = `Pesan Telah Terkirim\nKe @${mq1.split('@')[0]}`
+            await akame.sendButtonText(m.chat, buttons, akhji, ntiktok, m, {mentions: ments})
+            }
+            break
             case 'tiktok': {
                 if (!text) throw 'Link TikTok Ya Mana?'
                     let buttons = [{
@@ -4912,8 +4931,6 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 break
             case 'nulis': {
                 if (!q) return m.reply(`Teks Nya Apa Kak?`)
-                if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
-                db.data.users[m.sender].limit -= 1 // -1 limit
                 let sections = [
                 {
                 title: "Nulis Buku >_<",
@@ -4936,6 +4953,8 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             case 'nuliskiri': {
                 if (args.length < 1) return m.reply(`Kirim perintah *${prefix}nuliskiri* teks`)
                 m.reply(mess.wait)
+                if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+                db.data.users[m.sender].limit -= 1 // -1 limit
                 var tulisan = body.slice(11)
                 var splitText = tulisan.replace(/(\S+\s*){1,9}/g, '$&\n')
                 var fixHeight = splitText.split('\n').slice(0, 31).join('\n')
@@ -4949,6 +4968,8 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             case 'nuliskanan': {
                 if (args.length < 1) return m.reply(`Kirim perintah *${prefix}nuliskanan* teks`)
                 m.reply(mess.wait)
+                if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+                db.data.users[m.sender].limit -= 1 // -1 limit
                 var tulisan = body.slice(12)
                 var splitText = tulisan.replace(/(\S+\s*){1,9}/g, '$&\n')
                 var fixHeight = splitText.split('\n').slice(0, 31).join('\n')
@@ -4962,6 +4983,8 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             case 'foliokiri': {
                 if (args.length < 1) return m.reply(`Kirim perintah *${prefix}foliokiri* teks`)
                 m.reply(mess.wait)
+                if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+                db.data.users[m.sender].limit -= 1 // -1 limit
                 var tulisan = body.slice(11)
                 var splitText = tulisan.replace(/(\S+\s*){1,13}/g, '$&\n')
                 var fixHeight = splitText.split('\n').slice(0, 38).join('\n')
@@ -4975,6 +4998,8 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             case 'foliokanan': {
                 if (args.length < 1) return m.reply(`Kirim perintah *${prefix}foliokanan* teks`)
                 m.reply(mess.wait)
+                if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+                db.data.users[m.sender].limit -= 1 // -1 limit
                 var tulisan = body.slice(12)
                 var splitText = tulisan.replace(/(\S+\s*){1,13}/g, '$&\n')
                 var fixHeight = splitText.split('\n').slice(0, 38).join('\n')
@@ -5093,7 +5118,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 			break
             case 'runtime': case 'tes': {
             	let lowq = `*Bot Telah Online Selama*\n*${runtime(process.uptime())}*`
-                let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '👑SEWA' }, type: 1 }]
+                let buttons = [{ buttonId: 'sewa', buttonText: { displayText: '👑Sewa' }, type: 1 }]
                 await akame.sendButtonText(m.chat, buttons, lowq, ntiktok, fkontak)
             }
             break
@@ -5488,7 +5513,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │3. Mengeksploitasi Terhadap bot.
 │Sanksi: BLOCK PERMANENT
 └──────────────┈❖`
-                let buttons = [{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '👑Sewa' }, type: 1 }]
+                let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'sewa', buttonText: { displayText: '👑Sewa' }, type: 1 },{ buttonId: 'owner', buttonText: { displayText: '➡️Chat Owner' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, m, {quoted: fkontak})
             }
             break
@@ -5529,7 +5554,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │└─────────────┈❖
 │⭔ Kirim » Bukti Pembayaran » Bot Join
 └──────────────┈❖`
-                let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'owner', buttonText: { displayText: '➡️Chat Owner' }, type: 1 }]
+                let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'owner', buttonText: { displayText: '➡️Chat Owner' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -5561,7 +5586,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │
 │ *Terima Kasih*
 └──────────────┈❖`
-                let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'owner', buttonText: { displayText: '➡️Chat Owner' }, type: 1 }]
+                let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'sewa', buttonText: { displayText: '👑Sewa' }, type: 1 },{ buttonId: 'owner', buttonText: { displayText: '➡️Chat Owner' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -5651,6 +5676,8 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}facebook [url]
 │⭔ ${prefix}zippyshare [url]
 │⭔ ${prefix}mediafire [url]
+│⭔ ${prefix}tinyurl [url]
+│⭔ ${prefix}linkpoi [url]
 │⭔ ${prefix}ytmp3 [url]
 │⭔ ${prefix}ytmp4 [url]
 │⭔ ${prefix}getmusic [query]
@@ -6175,6 +6202,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 GAME 」
 │└─────────────┈❖
+│⭔ ${prefix}slot
 │⭔ ${prefix}delttt
 │⭔ ${prefix}tictactoe
 │⭔ ${prefix}family100
@@ -6869,6 +6897,8 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}facebook [url]
 │⭔ ${prefix}zippyshare [url]
 │⭔ ${prefix}mediafire [url]
+│⭔ ${prefix}tinyurl [url]
+│⭔ ${prefix}linkpoi [url]
 │⭔ ${prefix}ytmp3 [url]
 │⭔ ${prefix}ytmp4 [url]
 │⭔ ${prefix}getmusic [query]
@@ -6956,6 +6986,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 GAME 」
 │└─────────────┈❖
+│⭔ ${prefix}slot
 │⭔ ${prefix}delttt
 │⭔ ${prefix}tictactoe
 │⭔ ${prefix}family100
@@ -7236,14 +7267,16 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}pubg
 │⭔ ${prefix}wallhp
 └──────────────┈❖`
-                let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
+                let buttons = [{ buttonId: 'sewa', buttonText: { displayText: '👑Sewa' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
             default:
         if ((m.mtype === 'groupInviteMessage' || budy.startsWith('https://chat') || budy.startsWith('Buka tautan ini')) && !m.isBaileys && !m.isGroup) {
         	let buttons = [
-                    { buttonId: `owner`, buttonText: { displayText: 'Chat Owner' }, type: 1 }
+        	        { buttonId: 'sewa', buttonText: { displayText: '👑Sewa' }, type: 1 },
+        	        { buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 },
+                    { buttonId: 'owner', buttonText: { displayText: '➡️Chat Owner' }, type: 1 }
                 ]
 			akame.sendMessage(m.chat, { text:`INVITE DETECT\n\nMau masukin bot ini ke group kamu?`, title: 'LINK GROUP DECTETED', footer: '© 2022 GuaAbuzz', buttons: buttons, headerType: 5 })
 		}
