@@ -4301,8 +4301,8 @@ break
             }
             break
             case 'menfes': case 'menfess': {
-		        if (m.isGroup) throw ('fitur tidak dapat digunakan di grup')
-            	if (!text) throw `Example : ${prefix + command} 6282xxxxx|nama samaran|pesan`
+		    if (m.isGroup) throw mess.private
+			if (!text) return m.reply(`*Cara Penggunaan*\n\nKirim perintah ${prefix}${command} nomer|pengirim|pesan\n\nContoh ${prefix}${command} 62831xxxxxxx|ini nama samaran ya|I have a crush on you\n\nContoh 2 : ${prefix}${command} 62831xxxxxxx|crush mu|I have s crush on you\n\nTenang aja privasi aman kok><`)
             var mon = args.join(' ')
             var m1 = mon.split("|")[0]
             var m2 = mon.split("|")[1]
@@ -4313,13 +4313,18 @@ break
                let ownernya = ownernomer + '@s.whatsapp.net'
                let me = m.sender
                let ments = [mq1, ownernya, me]
-               let pjtxt = `Pesan Dari : ${m2} \nUntuk : @${mq1.split('@')[0]}\n\n${m3}`
-               let buttons = [{ buttonId: 'hehehe', buttonText: { displayText: '❤LIKE' }, type: 1 }]
+               let pjtxt = `👤Pesan Dari : ${m2} \n💞Untuk : @${mq1.split('@')[0]}\n💌Isi Pesan :\n${m3}`
+               let buttons = [{ buttonId: `menfesconfirm ${me}`, buttonText: { displayText: '⌲ Terima Menfess' }, type: 1 },{ buttonId: 'hehehe', buttonText: { displayText: '❤LIKE' }, type: 1 }]
             await akame.sendButtonText(m1 + '@s.whatsapp.net', buttons, pjtxt, kawk, m, {mentions: ments, quoted: kafloc})
             let akhji = `Pesan Telah Terkirim\nKe @${mq1.split('@')[0]}`
             await akame.sendButtonText(m.chat, buttons, akhji, ntiktok, m, {mentions: ments})
             }
             break
+            case 'menfesconfirm': {
+ 				 akame.sendMessage(q, { text: `Sudah Di Confirmasi Nih Menfess nyaa🤭` })
+				  m.reply(`Terimakasih Menfess Telah Diterima`)
+				  }
+				break
             case 'tiktok': {
                 if (!text) throw 'Link TikTok Ya Mana?'
                     let buttons = [{
