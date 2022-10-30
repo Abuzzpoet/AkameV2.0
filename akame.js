@@ -20,6 +20,8 @@ const hx = require('hxz-api')
 const fdl = require("caliph-api")
 const bochil = require('@bochilteam/scraper')
 const alya = require('./lib/null.js')
+const { EmojiAPI } = require("emoji-api")
+const emoji = new EmojiAPI()
 const moment = require('moment-timezone')
 const { JSDOM } = require('jsdom')
 const speed = require('performance-now')
@@ -463,7 +465,36 @@ const fakestatus = {
         if (!akame.public) {
             if (!m.key.fromMe) return
         }
-
+        
+        if (m.text.includes('🗿')) {
+    akame.sendMessage(m.chat, {
+          react: {
+            text: '🗿',
+            key: m.key
+          }})
+        }
+                
+//sticker url
+const sendStickerFromUrl = async(to, url) => {
+                var names = Date.now() / 10000;
+                var download = function (uri, filename, callback) {
+                    request.head(uri, function (err, res, body) {
+                        request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
+                    });
+                };
+                download(url, './database/stick' + names + '.png', async function () {
+                    console.log('selesai');
+                    let filess = './database/stick' + names + '.png'
+                    let asw = './database/stick' + names + '.webp'
+                    exec(`ffmpeg -i ${filess} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${asw}`, (err) => {
+                        let media = fs.readFileSync(asw)
+                        akame.sendMessage(to, { sticker: media}, {quoted: m})
+                        fs.unlinkSync(filess)
+                        fs.unlinkSync(asw)
+                    });
+                });
+            }
+            
         // Push Message To Console && Auto Read
         if (m.message) {
             akame.readMessages([m.key])
@@ -2911,6 +2942,154 @@ break
                 m.reply(db)
             }
             break
+            case 'emoji': {
+          	if (!text) throw 'Mana Emojinya?'
+			if (!q) return m.reply('emojinya?')
+			let kukiw = `*Kak ${pushname}*`
+			let sections = [
+                {
+	           title: 'Pilih Jenis Emojinya',
+	           rows: [
+	            {title: "Iphone", rowId: `iphoneemoji ${text}`, description: `KLIK UNTUK PILIH EMOJI IPHONE`},
+                {title: "Google", rowId: `googleemoji ${text}`, description: `KLIK UNTUK PILIH EMOJI GOOGLE`},
+                {title: "Samsung", rowId: `samsungemoji ${text}`, description: `KLIK UNTUK PILIH EMOJI SAMSUNG`},
+                {title: "Microsoft", rowId: `microsoftemoji ${text}`, description: `KLIK UNTUK PILIH EMOJI MICROSOFT`},
+                {title: "Whatsapp", rowId: `whatsappemoji ${text}`, description: `KLIK UNTUK PILIH EMOJI WHATSAPP`},
+                {title: "Twitter", rowId: `twitteremoji ${text}`, description: `KLIK UNTUK PILIH EMOJI TWITTER`},
+                {title: "Facebook", rowId: `facebookemoji ${text}`, description: `KLIK UNTUK PILIH EMOJI FACEBOOK`},
+                {title: "Skype", rowId: `skypeemoji ${text}`, description: `KLIK UNTUK PILIH EMOJI SKYPE`},
+                {title: "Joy", rowId: `joyemoji ${text}`, description: `KLIK UNTUK PILIH EMOJI JOY`},
+                {title: "Moji", rowId: `mojiemoji ${text}`, description: `KLIK UNTUK PILIH EMOJI MOJI`},
+                {title: "Pedia", rowId: `pediaemoji ${text}`, description: `KLIK UNTUK PILIH EMOJI PEDIA`},
+                {title: "Instagram", rowId: `instagramemoji ${text}`, description: `KLIK UNTUK PILIH EMOJI INSTAGRAM`}
+	            ]
+                }
+                ]
+                akame.sendListMsg(m.chat, kukiw, ntiktok, `*${ucapanWaktu}*`, `Touch Me (⁠≧⁠▽⁠≦⁠)`, sections, fkontak)
+            }
+            break
+case 'iphoneemoji': {
+if (!q) return fakegroup('emojinya?')
+			qes = args.join(' ')
+			emoji.get(`${qes}`).then(emoji => {
+			teks = `${emoji.images[0].url}`
+    		sendStickerFromUrl(m.chat,`${teks}`)	
+    		console.log(teks)
+   			})
+            }
+break
+case 'googleemoji': {
+if (!q) return fakegroup('emojinya?')
+			qes = args.join(' ')
+			emoji.get(`${qes}`).then(emoji => {
+			teks = `${emoji.images[1].url}`
+    		sendStickerFromUrl(m.chat,`${teks}`)	
+    		console.log(teks)
+   			})
+            }
+break
+case 'samsungemoji': {
+if (!q) return fakegroup('emojinya?')
+			qes = args.join(' ')
+			emoji.get(`${qes}`).then(emoji => {
+			teks = `${emoji.images[2].url}`
+    		sendStickerFromUrl(m.chat,`${teks}`)	
+    		console.log(teks)
+   			})
+            }
+break
+case 'microsoftemoji': {
+if (!q) return fakegroup('emojinya?')
+			qes = args.join(' ')
+			emoji.get(`${qes}`).then(emoji => {
+			teks = `${emoji.images[3].url}`
+    		sendStickerFromUrl(m.chat,`${teks}`)	
+    		console.log(teks)
+   			})
+            }
+break
+case 'whatsappemoji': {
+if (!q) return fakegroup('emojinya?')
+			qes = args.join(' ')
+			emoji.get(`${qes}`).then(emoji => {
+			teks = `${emoji.images[4].url}`
+    		sendStickerFromUrl(m.chat,`${teks}`)	
+    		console.log(teks)
+   			})
+            }
+break
+case 'twitteremoji': {
+if (!q) return fakegroup('emojinya?')
+			qes = args.join(' ')
+			emoji.get(`${qes}`).then(emoji => {
+			teks = `${emoji.images[5].url}`
+    		sendStickerFromUrl(m.chat,`${teks}`)	
+    		console.log(teks)
+   			})
+            }
+break
+case 'facebookemoji': 
+case 'fbemoji': {
+if (!q) return fakegroup('emojinya?')
+			qes = args.join(' ')
+			emoji.get(`${qes}`).then(emoji => {
+			teks = `${emoji.images[6].url}`
+    		sendStickerFromUrl(m.chat,`${teks}`)	
+    		console.log(teks)
+   			})
+            }
+break
+case 'skypeemoji': {
+if (!q) return fakegroup('emojinya?')
+			qes = args.join(' ')
+			emoji.get(`${qes}`).then(emoji => {
+			teks = `${emoji.images[7].url}`
+    		sendStickerFromUrl(m.chat,`${teks}`)	
+    		console.log(teks)
+   			})
+            }
+break
+case 'joyemoji': {
+if (!q) return fakegroup('emojinya?')
+			qes = args.join(' ')
+			emoji.get(`${qes}`).then(emoji => {
+			teks = `${emoji.images[8].url}`
+    		sendStickerFromUrl(m.chat,`${teks}`)	
+    		console.log(teks)
+   			})
+            }
+break
+case 'mojiemoji': {
+if (!q) return fakegroup('emojinya?')
+			qes = args.join(' ')
+			emoji.get(`${qes}`).then(emoji => {
+			teks = `${emoji.images[9].url}`
+    		sendStickerFromUrl(m.chat,`${teks}`)	
+    		console.log(teks)
+   			})
+            }
+break
+case 'pediaemoji': {
+if (!q) return fakegroup('emojinya?')
+			qes = args.join(' ')
+			emoji.get(`${qes}`).then(emoji => {
+			teks = `${emoji.images[10].url}`
+    		sendStickerFromUrl(m.chat,`${teks}`)	
+    		console.log(teks)
+   			})
+            }
+break
+case 'igemoji': 
+case 'instagramemoji': {
+if (!q) return fakegroup('emojinya?')
+			qes = args.join(' ')
+			emoji.get(`${qes}`).then(emoji => {
+			teks = `${emoji.images[11].url}`
+    		sendStickerFromUrl(m.chat,`${teks}`)	
+    		console.log(teks)
+   			})
+            }
+break
             case 'emojimix': {
                 let [emoji1, emoji2] = text.split`+`
                 if (!emoji1) throw `Contoh : ${prefix + command} 😅+🤔`
@@ -5039,6 +5218,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 txtping += `*💻 RAM Server :* ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}\n\n`
                 txtping += `*⍢⃝🤝 C O N N E C T  W I T H  M E*\n\n`
                 txtping += `*🎗️ Github :* ${global.github}\n`
+                txtping += `*🎗️ TikTok :* ${global.mytt}\n`
                 txtping += `*🎗️ WhatsApp :* wa.me/${global.owner}\n`
                     .trim()
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
@@ -5433,7 +5613,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                     const listMessage = {
                         text: 'List 25 Nabi',
                         footer: ntiktok,
-                        buttonText: 'OPEN LIST',
+                        buttonText: 'Touch Me (⁠≧⁠▽⁠≦⁠)',
                         sections
                     }
                     const sendMsg = await akame.sendMessage(m.chat, listMessage, { quoted: floc })
@@ -5461,7 +5641,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                     const listMessage = {
                         text: 'List Niat Sholat',
                         footer: ntiktok,
-                        buttonText: 'OPEN LIST',
+                        buttonText: 'Touch Me (⁠≧⁠▽⁠≦⁠)',
                         sections
                     }
                     const sendMsg = await akame.sendMessage(m.chat, listMessage, { quoted: floc })
@@ -6763,7 +6943,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
   thumbnail: thumb,
   mediaType: 2,
   mediaUrl: myttv,
-  sourceUrl: mygit
+  sourceUrl: mytt
   }}
   }
   akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
