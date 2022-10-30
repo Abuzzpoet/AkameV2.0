@@ -6763,7 +6763,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
   thumbnail: thumb,
   mediaType: 2,
   mediaUrl: myttv,
-  sourceUrl: mytt
+  sourceUrl: mygit
   }}
   }
   akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
