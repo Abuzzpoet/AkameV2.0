@@ -507,7 +507,7 @@ const fakestatus = {
 	    if (new Date() * 1 - setting.status > 1000) {
 		let _uptime = process.uptime() * 1000
 		let uptime = clockString(_uptime)
-		await akame.updateProfileStatus(`I am Akame-Bot | Aktif Selama ${uptime} | Mode : ${akame.public ? 'Public-Mode' : 'Self-Mode'} | User : ${Object.keys(global.db.data.users).length} | Jangan Telp Bot | © Created GuaAbuzz`).catch(_ => _)
+		await akame.updateProfileStatus(`I am Akame-Bot | Aktif Selama ${uptime} ⏳ | Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'} | User : ${Object.keys(global.db.data.users).length} 👥| Jangan Telp Bot | © Created GuaAbuzz`).catch(_ => _)
 		setting.status = new Date() * 1
 	    }
 	}
@@ -1280,36 +1280,35 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
 └┬─────────────┈❖
 ┌┤「 INFO USER 」
 │└─────────────┈❖
-│ Name : ${pushname}
-│ Number : ${m.sender.split('@')[0]}
-│ Status : ${isCreator ? 'Owner' : 'User'}
-│ User : ${Object.keys(global.db.data.users).length}
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
 └┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}
-│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Platform : ${os.platform()}
-│ Runtime :
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
 │  ${runtime(process.uptime())}
-│ Language : Javascript
-│ Lib : Baileys-md
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 INFO TIME 」
 │└─────────────┈❖
-│ Tanggal Server : ${moment.tz('Asia/Jakarta').format('DD/MM/YY')}
-│ Waktu Server : ${moment.tz('Asia/Jakarta').format('HH:mm:ss')}
-│ Menuju HBD GuaAbuzz :
+│• Tanggal Server : ${moment.tz('Asia/Jakarta').format('DD/MM/YY')}
+│• Waktu Server : ${moment.tz('Asia/Jakarta').format('HH:mm:ss')}
+│• Menuju HBD GuaAbuzz :
 │  ${menuju}
-│ WIB : ${wib}
-│ WITA : ${wita}
-│ WIT : ${wit}
+│• WIB : ${wib}
+│• WITA : ${wita}
+│• WIT : ${wit}
 └──────────────┈❖`
                 let sections = [
                 {
@@ -5615,20 +5614,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 GROUP 」
 │└─────────────┈❖
@@ -5668,20 +5674,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 DOWNLOADER 」
 │└─────────────┈❖
@@ -5715,20 +5728,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 SEARCH 」
 │└─────────────┈❖
@@ -5752,20 +5772,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 STICKER 」
 │└─────────────┈❖
@@ -5793,20 +5820,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 ANIME 」
 │└─────────────┈❖
@@ -5880,20 +5914,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 ASUPAN 」
 │└─────────────┈❖
@@ -5922,20 +5963,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 QUOTES 」
 │└─────────────┈❖
@@ -5967,20 +6015,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 MEME 」
 │└─────────────┈❖
@@ -6002,20 +6057,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 RANDOM 」
 │└─────────────┈❖
@@ -6036,20 +6098,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 TEXT PRO 」
 │└─────────────┈❖
@@ -6095,20 +6164,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 PHOTO EDITOR 」
 │└─────────────┈❖
@@ -6141,20 +6217,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 EPHOTO 」
 │└─────────────┈❖
@@ -6204,20 +6287,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 GAME 」
 │└─────────────┈❖
@@ -6239,20 +6329,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 PRIMBON 」
 │└─────────────┈❖
@@ -6297,20 +6394,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 CONVERT 」
 │└─────────────┈❖
@@ -6335,20 +6439,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 MAIN 」
 │└─────────────┈❖
@@ -6376,20 +6487,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 DATABASE 」
 │└─────────────┈❖
@@ -6412,20 +6530,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 ANONYMOUS CHAT 」
 │└─────────────┈❖
@@ -6445,20 +6570,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 ISLAMIC 」
 │└─────────────┈❖
@@ -6483,20 +6615,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 KERANG 」
 │└─────────────┈❖
@@ -6530,20 +6669,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 VOICE CHANGER 」
 │└─────────────┈❖
@@ -6569,20 +6715,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 STALK 」
 │└─────────────┈❖
@@ -6600,20 +6753,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 OWNER 」
 │└─────────────┈❖
@@ -6645,20 +6805,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 WEBZONE 」
 │└─────────────┈❖
@@ -6682,20 +6849,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 WALLPAPER 」
 │└─────────────┈❖
@@ -6742,17 +6916,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│• Library : *Baileys-MD*.
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
 │• Prefix : ( ${prefix} )
-│• Waktu Server : ${moment.tz('Asia/Jakarta').format('HH:mm:ss')}
-│• Tanggal Server : ${moment.tz('Asia/Jakarta').format('DD/MM/YY')}
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
 │• Total Hit : ${jumlahcmd}
 │• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
+└┬─────────────┈❖
+┌┤「 INFO TIME 」
+│└─────────────┈❖
+│• Tanggal Server : ${moment.tz('Asia/Jakarta').format('DD/MM/YY')}
+│• Waktu Server : ${moment.tz('Asia/Jakarta').format('HH:mm:ss')}
 │• Menuju HBD GuaAbuzz :
-│   ${menuju}
-│• Wib : ${wib}
-│• Wita : ${wita}
-│• Wit : ${wit}
+│  ${menuju}
+│• WIB : ${wib}
+│• WITA : ${wita}
+│• WIT : ${wit}
 └──────────────┈❖`
             let ments = [ownernya, me, ini_mark]
             let buttons = [{ buttonId: 'command', buttonText: { displayText: '📖Simple Menu' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
@@ -6790,20 +6974,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │「 Hi, ${pushname}👋 」
 │「 ${ucapanWaktu} 」
 └┬─────────────┈❖
+┌┤「 INFO USER 」
+│└─────────────┈❖
+│• Name : ${pushname}
+│• Number : ${m.sender.split('@')[0]}
+│• Status : ${isCreator ? "Owner 👑️":"User ⚔️"}
+│• User : ${isPremium ? 'Premium 👑' : 'Gratisan 🗿'}
+│• Limit : ${isCreator ? 'Unlimited 👑' : `${db.data.users[m.sender].limit}`}
+└┬─────────────┈❖
 ┌┤「 INFO BOT 」
 │└─────────────┈❖
-│ Prefix : ( ${prefix} )
-│ Name : ${global.namabot}\n│ Owner : ${global.namaowner}
-│ Mode : ${akame.public ? 'Public' : 'Self'}
-│ User : ${Object.keys(global.db.data.users).length}
-│ Total Hit : ${jumlahcmd}
-│ Total Hit Today : ${jumlahharian}
-│ Premium : ${isPremium ? '✅' : `❌`}
-│ Limit : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-│ Runtime : ${runtime(process.uptime())}
-│ Lib : Baileys-md
-│ Menuju HBD GuaAbuzz :
-│  ${menuju}
+│• Name : ${global.namabot}
+│• Owner : ${global.namaowner}
+│• Prefix : ( ${prefix} )
+│• Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'}
+│• Total Hit : ${jumlahcmd}
+│• Total Hit Today : ${jumlahharian}
+│• Platform : ${os.platform()}
+│• Runtime :
+│  ${runtime(process.uptime())}
+│• Language : Javascript
+│• Lib : Baileys-md
 └┬─────────────┈❖
 ┌┤「 ANONYMOUS CHAT 」
 │└─────────────┈❖
