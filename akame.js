@@ -4314,10 +4314,11 @@ break
                let me = m.sender
                let ments = [mq1, ownernya, me]
                let pjtxt = `👤Pesan Dari : ${m2} \n💞Untuk : @${mq1.split('@')[0]}\n💌Isi Pesan :\n${m3}`
-               let buttons = [{ buttonId: `menfesconfirm ${me}`, buttonText: { displayText: '⌲ Terima Menfess' }, type: 1 },{ buttonId: 'hehehe', buttonText: { displayText: '❤LIKE' }, type: 1 }]
-            await akame.sendButtonText(m1 + '@s.whatsapp.net', buttons, pjtxt, kawk, m, {mentions: ments, quoted: kafloc})
+               let buttons1 = [{ buttonId: `menfesconfirm ${me}`, buttonText: { displayText: '⌲ Terima Menfess' }, type: 1 },{ buttonId: 'hehehe', buttonText: { displayText: '❤LIKE' }, type: 1 }]
+            await akame.sendButtonText(m1 + '@s.whatsapp.net', buttons1, pjtxt, kawk, m, {mentions: ments, quoted: kafloc})
             let akhji = `Pesan Telah Terkirim\nKe @${mq1.split('@')[0]}`
-            await akame.sendButtonText(m.chat, buttons, akhji, ntiktok, m, {mentions: ments})
+            let buttons2 = [{ buttonId: 'hehehe', buttonText: { displayText: '❤LIKE' }, type: 1 }]
+            await akame.sendButtonText(m.chat, buttons2, akhji, ntiktok, m, {mentions: ments})
             }
             break
             case 'menfesconfirm': {
