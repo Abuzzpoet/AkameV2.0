@@ -505,7 +505,7 @@ const fakestatus = {
 	    if (new Date() * 1 - setting.status > 1000) {
 		let _uptime = process.uptime() * 1000
 		let uptime = clockString(_uptime)
-		await akame.updateProfileStatus(`I am Akame-Bot | Aktif Selama ${uptime} ⏳ | Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'} | User : ${Object.keys(global.db.data.users).length} 👥| Jangan Telp Bot | © Created GuaAbuzz`).catch(_ => _)
+		await akame.updateProfileStatus(`I am Akame-Bot | Aktif Selama ${uptime} ⏳ | Mode : ${akame.public ? 'Public-Mode 👥' : 'Self-Mode 👤'} | User : ${Object.keys(global.db.data.users).length} 👥| Jangan Telp Bot 📞 | © Created GuaAbuzz`).catch(_ => _)
 		setting.status = new Date() * 1
 	    }
 	}
@@ -5505,8 +5505,6 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │└─────────────┈❖
 │1. Tolong Gunakan Delay 5 Detik
 │   Untuk Menggukan BOT.
-│2. Cuilk Bot Tanpa Izin? Group
-│   Ya Gua Kudeta 😎.
 │2. Gunakan Dengan Bijak.
 │3. Don't Call Bots.
 │4. Don't Spam Bot.
@@ -5574,7 +5572,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 SISTEM 」
 │└─────────────┈❖
-│⭔ Kirim » Bukti Pembayaran » Bot Join
+│⭔ Chat » Bukti Pembayaran » Bot Join
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'owner', buttonText: { displayText: '➡️Chat Owner' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -5597,9 +5595,9 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ DANA : ${global.dana}
 │⭔ OVO : ${global.ovo}
 │⭔ SAWERIA : ${global.saweria}
-│⭔ Q.S Az-Zalzalah Ayat 7 :
 │
-فَمَنْ يَّعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَّرَهٗۚ│
+│⭔ Q.S Az-Zalzalah Ayat 7 :
+│\nفَمَنْ يَّعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَّرَهٗۚ│
 │
 │⭔ Artinya : Maka barangsiapa
 │mengerjakan kebaikan seberatzarrah,
@@ -7561,7 +7559,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 
 
     } catch (err) {
-        console.log("error di bagian akame.js "+util.format(err))
+        console.log("Eror Di Bagian Akame.js "+util.format(err))
     //  m.reply(util.format(err))
     }
 }
