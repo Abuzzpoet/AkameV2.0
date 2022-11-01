@@ -2893,7 +2893,7 @@ encmedia = await akame.sendImageAsSticker(m.chat, wifegerakx, m, { packname: glo
 await fs.unlinkSync(encmedia)
 }
 break
-case 'mukelu': case 'lu': {
+case 'mukalu': case 'mukelu': case 'lu': {
 var ano = await fetchJson('https://raw.githubusercontent.com/rashidsiregar28/data/main/mukelu')
 var wifegerak = ano.split('\n')
 var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
