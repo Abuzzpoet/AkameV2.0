@@ -1246,27 +1246,35 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             case 'tqtt':
             case 'tqto':
             case 'thanksto': {
-                anu = `⭔ Allah SWT.
-⭔ Ortu Saya.
-⭔ DikaArdnt (Author).
-⭔ GuaAbuzz (Recode).
-⭔ SkyzooDev.
-⭔ Sanzy YT.
-⭔ Fatih A.
-⭔ Nurutomo.
-⭔ Mhankbarbar.
-⭔ ZeeoneOfc.
-⭔ Penyedia Module.
-⭔ Penyedia Res Api's.
-⭔ All My Friends.
-
-• Library : *Baileys-MD*.
-• Prefix : ( ${prefix} )
-• Waktu Server : ${moment.tz('Asia/Jakarta').format('HH:mm:ss')}
-• Tanggal Server : ${moment.tz('Asia/Jakarta').format('DD/MM/YY')}
-• Wib : ${wib}
-• Wita : ${wita}
-• Wit : ${wit}`
+                anu = `┌────────┈❖
+│「 Hi, ${pushname}👋 」
+│「 ${ucapanWaktu} 」
+└┬─────────────┈❖
+┌┤「 CONTRIBUTOR 」
+│└─────────────┈❖
+│• Allah SWT.
+│• Ortu Saya.
+│• DikaArdnt (Author).
+│• GuaAbuzz (Recode).
+│• Sanzy YT.
+│• Fatih A.
+│• Nurutomo.
+│• Mhankbarbar.
+│• ZeeoneOfc.
+│• Penyedia Module.
+│• Penyedia Res Api's.
+│• All My Friends.
+└┬─────────────┈❖
+┌┤「 INFO TIME 」
+│└─────────────┈❖
+│• Tanggal Server : ${moment.tz('Asia/Jakarta').format('DD/MM/YY')}
+│• Waktu Server : ${moment.tz('Asia/Jakarta').format('HH:mm:ss')}
+│• Menuju HBD GuaAbuzz :
+│  ${menuju}
+│• WIB : ${wib}
+│• WITA : ${wita}
+│• WIT : ${wit}
+└──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
@@ -2951,12 +2959,6 @@ break
            if (!text) throw `Contoh : ${prefix + command} text`
            await akame.sendMedia(m.chat, `https://xteam.xyz/${command}?file&text=${text}`, 'akame', 'kurume', fdoc, {asSticker: true})
          }
-         break
-         case 'tts': {
-         	if (!text) throw `Example : ${prefix + command} text`
-             let tts = await fetchJson(`https://api.akuari.my.id/texttovoice/texttosound_id?query=${text}`)
-             akame.sendMessage(m.chat, { audio: { url: tts.result }, mimetype: 'audio/mpeg', fileName: `${text}.mp3` }, { quoted: fvn })
-         	}
          break
             case 'smeme': case 'stickmeme': case 'stikmeme': case 'stickermeme': case 'stikermeme': {
 	        let respond = `Kirim/reply image/sticker dengan caption ${prefix + command} text1|text2`
