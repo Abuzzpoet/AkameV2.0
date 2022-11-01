@@ -2737,20 +2737,20 @@ await akame.sendButtonText(i, buttons, txt, ntiktok, m, {quoted: fkontak})
             }
             break
             case 'infochat': {
-if (!m.quoted) m.reply('Reply Pesan')
-let msg = await m.getQuotedObj()
-if (!m.quoted.isBaileys) throw 'Pesan tersebut bukan dikirim oleh bot!'
-let teks = ''
-for (let i of msg.userReceipt) {
-let read = i.readTimestamp
-let unread = i.receiptTimestamp
-let waktu = read ? read : unread
-teks += `⌕ @${i.userJid.split('@')[0]}\n`
-teks += ` ┗━⌕ *Waktu :* ${moment(waktu * 1000).format('DD/MM/YY HH:mm:ss')} ⌕ *Status :* ${read ? 'Dibaca' : 'Terkirim'}\n\n`
-let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '👑Sewa' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
-await akame.sendButtonText(m.chat, buttons, teks, ntiktok, m, {mentions: [i.userJid], quoted: fkontak})
-}}
-break
+                if (!m.quoted) m.reply('Reply Pesan')
+                let msg = await m.getQuotedObj()
+                if (!m.quoted.isBaileys) throw 'Pesan tersebut bukan dikirim oleh bot!'
+                let teks = ''
+                for (let i of msg.userReceipt) {
+                    let read = i.readTimestamp
+                    let unread = i.receiptTimestamp
+                    let waktu = read ? read : unread
+                    teks += `👤 @${i.userJid.split('@')[0]}\n`
+                    teks += `⏳ *Waktu :* ${moment(waktu * 1000).format('DD/MM/YY HH:mm:ss')}\n📈 *Status :* ${read ? 'Dibaca' : 'Terkirim'}\n\n`
+                }
+                akame.sendTextWithMentions(m.chat, teks, fgclink)
+            }
+            break
             case 'q':
             case 'quoted': {
                 if (!m.quoted) return m.reply('Reply Pesannya!!')
