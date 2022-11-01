@@ -6891,7 +6891,6 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}wallhp
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
             }
             break
@@ -6927,6 +6926,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │• Total Hit : ${jumlahcmd}
 │• Total Hit Today : ${jumlahharian}
 │• Platform : ${os.platform()}
+│• Ram : ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
 │• Runtime :
 │  ${runtime(process.uptime())}
 │• Language : Javascript
@@ -6961,7 +6961,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
   showAdAttribution: true,
   thumbnail: thumb,
   mediaType: 2,
-  mediaUrl: myttv,
+  mediaUrl: mytt,
   sourceUrl: mytt
   }}
   }

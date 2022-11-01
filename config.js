@@ -96,7 +96,6 @@ global.limitawal = {
 global.thumb = fs.readFileSync('./media/image/akame.jpg')
 global.kurome = { url: 'https://telegra.ph/file/de381b0caeb315a99c68a.mp4' }
 global.mytt = 'https://tiktok.com/@guaabuzz'
-global.myttv = 'https://vt.tiktok.com/ZSRGeWXTM/'
 global.botname = 'GuaAbuzz Creator'
 global.akulaku = 'Bot By GuaAbuzz'
 global.ttname = 'TikTok GuaAbuzz'
