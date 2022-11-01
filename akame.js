@@ -6961,7 +6961,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
   showAdAttribution: true,
   thumbnail: thumb,
   mediaType: 2,
-  mediaUrl: mytt,
+  mediaUrl: myttv,
   sourceUrl: mytt
   }}
   }
