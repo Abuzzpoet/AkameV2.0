@@ -112,33 +112,42 @@ async function startakame() {
     })
     
 	// detect group update
-	hisoka.ev.on('groups.update', async pea => {
-    //console.log(pea)
-    try {
-    for(let ciko of pea) {
-    // Get Profile Picture Group
-       try {
-       ppgc = await hisoka.profilePictureUrl(ciko.id, 'image')
-       } catch {
-       ppgc = 'https://tinyurl.com/yx93l6da'
-       }
-       let wm_fatih = { url : ppgc }
-       if (ciko.announce == true) {
-       hisoka.send5ButImg(ciko.id, `「 Group Settings Change 」\n\nGroup telah ditutup oleh admin, Sekarang hanya admin yang dapat mengirim pesan !`, `Group Settings Change Message`, wm_fatih, [])
-       } else if (ciko.announce == false) {
-       hisoka.send5ButImg(ciko.id, `「 Group Settings Change 」\n\nGroup telah dibuka oleh admin, Sekarang peserta dapat mengirim pesan !`, `Group Settings Change Message`, wm_fatih, [])
-       } else if (ciko.restrict == true) {
-       hisoka.send5ButImg(ciko.id, `「 Group Settings Change 」\n\nInfo group telah dibatasi, Sekarang hanya admin yang dapat mengedit info group !`, `Group Settings Change Message`, wm_fatih, [])
-       } else if (ciko.restrict == false) {
-       hisoka.send5ButImg(ciko.id, `「 Group Settings Change 」\n\nInfo group telah dibuka, Sekarang peserta dapat mengedit info group !`, `Group Settings Change Message`, wm_fatih, [])
-       } else {
-       hisoka.send5ButImg(ciko.id, `「 Group Settings Change 」\n\nGroup Subject telah diganti menjadi *${ciko.subject}*`, `Group Settings Change Message`, wm_fatih, [])
-     }
-    }
-    } catch (err){
-    console.log("Eror Di Bagian Detecte Group "+err)
-    }
-    })
+		akame.ev.on("groups.update", async (json) => {
+			console.log(json)
+			const res = json[0];
+			if (res.announce == true) {
+				await sleep(2000)
+				akame.sendMessage(res.id, {
+					text: `「 Group Settings Change 」\n\nGroup telah ditutup oleh admin, Sekarang hanya admin yang dapat mengirim pesan !`,
+				});
+			} else if (res.announce == false) {
+				await sleep(2000)
+				akame.sendMessage(res.id, {
+					text: `「 Group Settings Change 」\n\nGroup telah dibuka oleh admin, Sekarang peserta dapat mengirim pesan !`,
+				});
+			} else if (res.restrict == true) {
+				await sleep(2000)
+				akame.sendMessage(res.id, {
+					text: `「 Group Settings Change 」\n\nInfo group telah dibatasi, Sekarang hanya admin yang dapat mengedit info group !`,
+				});
+			} else if (res.restrict == false) {
+				await sleep(2000)
+				akame.sendMessage(res.id, {
+					text: `「 Group Settings Change 」\n\nInfo group telah dibuka, Sekarang peserta dapat mengedit info group !`,
+				});
+			} else if(!res.desc == ''){
+				await sleep(2000)
+				akame.sendMessage(res.id, {
+					text: `「 Group Settings Change 」\n\n*Group desk telah diganti menjadi*\n\n${res.desc}`,
+				});
+      } else {
+				await sleep(2000)
+				akame.sendMessage(res.id, {
+					text: `「 Group Settings Change 」\n\n*Group Subject telah diganti menjadi*\n\n*${res.subject}*`,
+				});
+			} 
+			
+		});
 	
     akame.ev.on('group-participants.update', async (anu) => {
         console.log(anu)
@@ -160,66 +169,14 @@ async function startakame() {
                     ppgroup = 'https://tinyurl.com/yx93l6da'
                 }
 
-                if (anu.action == 'add') {
-                    akame.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Welcome @${num.split("@")[0]} To Group ${metadata.subject} 👋`, 
-jpegThumbnail: await reSize(ppuser, 200, 200), 
-contextInfo: {
-"mentionedJid": [num],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": `Welcome Kak`, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": await reSize(ppuser, 200, 200),
-"mediaUrl": myttv,
-"sourceUrl": mytt
-}}})
+               if (anu.action == 'add') {
+                    akame.sendMessage(anu.id, { image: { url: ppuser }, mentions: [num], caption: `Welcome @${num.split("@")[0]} To Group ${metadata.subject} 👋` })
                 } else if (anu.action == 'remove') {
-                    akame.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Sayonaraa @${num.split("@")[0]} 👋`,
-jpegThumbnail: await reSize(ppuser, 200, 200), 
-contextInfo: {
-"mentionedJid": [num],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": `Sayonaraa Kak`, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": await reSize(ppuser, 200, 200),
-"mediaUrl": myttv,
-"sourceUrl": mytt
-}}})
+                    akame.sendMessage(anu.id, { image: { url: ppuser }, mentions: [num], caption: `Sayonaraa @${num.split("@")[0]} 👋` })
                 } else if (anu.action == 'promote') {
-                    akame.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Selamat Ya @${num.split("@")[0]} Atas Kenaikan Jabatannya Di Grup ${metadata.subject} 🎉`,
-jpegThumbnail: await reSize(ppuser, 200, 200), 
-contextInfo: {
-"mentionedJid": [num],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": `Selamat Kak`, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": await reSize(ppuser, 200, 200),
-"mediaUrl": myttv,
-"sourceUrl": mytt
-}}})
+                    akame.sendMessage(anu.id, { image: { url: ppuser }, mentions: [num], caption: `Selamat Ya @${num.split("@")[0]} Atas Kenaikan Jabatannya Di Grup ${metadata.subject} 🎉` })
                 } else if (anu.action == 'demote') {
-                    akame.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Nice Try @${num.split("@")[0]} Atas Penurunan Jabatannya Di Grup ${metadata.subject} 😔`,
-jpegThumbnail: await reSize(ppuser, 200, 200), 
-contextInfo: {
-"mentionedJid": [num],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": `Nice Try Kak`, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": await reSize(ppuser, 200, 200),
-"mediaUrl": myttv,
-"sourceUrl": mytt
-}}})
+                    akame.sendMessage(anu.id, { image: { url: ppuser }, mentions: [num], caption: `Nice Try @${num.split("@")[0]} Atas Penurunan Jabatannya Di Grup ${metadata.subject} 😔` })
               }
             }
         } catch (err) {
