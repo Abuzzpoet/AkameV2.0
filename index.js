@@ -21,7 +21,7 @@ const _ = require('lodash')
 const axios = require('axios')
 const PhoneNumber = require('awesome-phonenumber')
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
-const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep, reSize } = require('./lib/myfunc')
+const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./lib/myfunc')
 
 var low
 try {
@@ -111,34 +111,43 @@ async function startakame() {
         }
     })
     
-	// Group Update
-    akame.ev.on('groups.update', async pea => {
-    //console.log(pea)
-    try {
-    for(let ciko of pea) {
-    // Get Profile Picture Group
-       try {
-       ppgc = await akame.profilePictureUrl(ciko.id, 'image')
-       } catch {
-       ppgc = 'https://tinyurl.com/yx93l6da'
-       }
-       let wm_fatih = { url : ppgc }
-       if (ciko.announce == true) {
-       akame.send5ButImg(ciko.id, `「 Group Settings Change 」\n\nGroup telah ditutup oleh admin, Sekarang hanya admin yang dapat mengirim pesan !`, `Group Settings Change Message`, wm_fatih, [])
-       } else if (ciko.announce == false) {
-       akame.send5ButImg(ciko.id, `「 Group Settings Change 」\n\nGroup telah dibuka oleh admin, Sekarang peserta dapat mengirim pesan !`, `Group Settings Change Message`, wm_fatih, [])
-       } else if (ciko.restrict == true) {
-       akame.send5ButImg(ciko.id, `「 Group Settings Change 」\n\nInfo group telah dibatasi, Sekarang hanya admin yang dapat mengedit info group !`, `Group Settings Change Message`, wm_fatih, [])
-       } else if (ciko.restrict == false) {
-       akame.send5ButImg(ciko.id, `「 Group Settings Change 」\n\nInfo group telah dibuka, Sekarang peserta dapat mengedit info group !`, `Group Settings Change Message`, wm_fatih, [])
-       } else {
-       akame.send5ButImg(ciko.id, `「 Group Settings Change 」\n\nGroup Subject telah diganti menjadi *${ciko.subject}*`, `Group Settings Change Message`, wm_fatih, [])
-     }
-    }
-    } catch (err){
-    console.log("Eror Di Bagian Update Group "+err)
-    }
-    })
+	// detect group update
+		akame.ev.on("groups.update", async (json) => {
+			console.log(json)
+			const res = json[0];
+			if (res.announce == true) {
+				await sleep(2000)
+				akame.sendMessage(res.id, {
+					text: `「 Group Settings Change 」\n\nGroup telah ditutup oleh admin, Sekarang hanya admin yang dapat mengirim pesan !`,
+				});
+			} else if (res.announce == false) {
+				await sleep(2000)
+				akame.sendMessage(res.id, {
+					text: `「 Group Settings Change 」\n\nGroup telah dibuka oleh admin, Sekarang peserta dapat mengirim pesan !`,
+				});
+			} else if (res.restrict == true) {
+				await sleep(2000)
+				akame.sendMessage(res.id, {
+					text: `「 Group Settings Change 」\n\nInfo group telah dibatasi, Sekarang hanya admin yang dapat mengedit info group !`,
+				});
+			} else if (res.restrict == false) {
+				await sleep(2000)
+				akame.sendMessage(res.id, {
+					text: `「 Group Settings Change 」\n\nInfo group telah dibuka, Sekarang peserta dapat mengedit info group !`,
+				});
+			} else if(!res.desc == ''){
+				await sleep(2000)
+				akame.sendMessage(res.id, {
+					text: `「 Group Settings Change 」\n\n*Group desk telah diganti menjadi*\n\n${res.desc}`,
+				});
+      } else {
+				await sleep(2000)
+				akame.sendMessage(res.id, {
+					text: `「 Group Settings Change 」\n\n*Group Subject telah diganti menjadi*\n\n*${res.subject}*`,
+				});
+			} 
+			
+		});
 	
     akame.ev.on('group-participants.update', async (anu) => {
         console.log(anu)
@@ -244,7 +253,23 @@ async function startakame() {
     akame.ev.on('creds.update', saveState)
 
     // Add Other
+    
+       /** Resize Image
+      *
+      * @param {Buffer} Buffer (Only Image)
+      * @param {Numeric} Width
+      * @param {Numeric} Height
+      */
+      hisoka.reSize = async (image, width, height) => {
+       let jimp = require('jimp')
+       var oyy = await jimp.read(image);
+       var kiyomasa = await oyy.resize(width, height).getBufferAsync(jimp.MIME_JPEG)
+       return kiyomasa
+      }
       
+      // Siapa yang cita-citanya pakai resize buat keliatan thumbnailnya
+      
+
       /**
       *
       * @param {*} jid
