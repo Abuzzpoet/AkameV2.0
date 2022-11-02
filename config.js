@@ -33,21 +33,19 @@ global.owner = ['6289636827082']
 global.ownernomer = "6289636827082"
 global.premium = ['6289636827082','6282171978174']
 
-//—————「 Setting Nomor Donasi 」—————//
+//—————「 Setting Donasi 」—————//
 //ubah aja kalau ada yg gapunya kasih tanda -
-global.telkomsel = ['6282171978174']
-global.xl = ['-']
-global.indosat = ['-']
-global.tri = ['6289636827082']
-global.smartfren = ['-']
-global.gopay = ['6289636827082']
-global.dana = ['6289636827082']
-global.ovo = ['-']
 global.saweria = ['https://saweria.co/GuaAbuzz']
 
 //—————「 Set Kebutuhan Button 」—————//
 //ubah aja kalau ada yang gapunya gsh di hps anggap aja credits :)
+global.email = 'rajifarmansyah46@gmail.com'
+global.namaweb = 'TikTok'
+global.myweb = 'https://tiktok.com/@guaabuzz'
+global.region = 'Jepang'
 global.github = 'https://github.com/Abuzzpoet'
+global.mygc = 'https://chat.whatsapp.com/FGmVjFYJBjjGst62qwNKJB'
+global.mytt = 'https://tiktok.com/@guaabuzz'
 
 //—————「 Set Wm 」—————//
 //terserah mau ubah atau nggak
@@ -95,8 +93,6 @@ global.limitawal = {
 //terserah mau ubah apa nggak, menurut gua jangan di ubah!
 global.thumb = fs.readFileSync('./media/image/akame.jpg')
 global.kurome = { url: 'https://telegra.ph/file/de381b0caeb315a99c68a.mp4' }
-global.mytt = 'https://tiktok.com/@guaabuzz'
-global.myttv = 'https://vt.tiktok.com/ZSRWnDFbE/'
 global.botname = 'GuaAbuzz Creator'
 global.akulaku = 'Bot By GuaAbuzz'
 global.ttname = 'TikTok GuaAbuzz'

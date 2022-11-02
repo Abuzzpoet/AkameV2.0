@@ -5552,14 +5552,6 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 PEMBAYARAN 」
 │└─────────────┈❖
-│⭔ TELKOMSEL : ${global.telkomsel}
-│⭔ XL : ${global.xl}
-│⭔ INDOSAT : ${global.indosat}
-│⭔ TRI : ${global.tri}
-│⭔ SMARTFREN : ${global.smartfren}
-│⭔ GOPAY : ${global.gopay}
-│⭔ DANA : ${global.dana}
-│⭔ OVO : ${global.ovo}
 │⭔ SAWERIA : ${global.saweria}
 └┬─────────────┈❖
 ┌┤「 KEUNTUNGAN 」
@@ -5588,18 +5580,11 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 DONASI 」
 │└─────────────┈❖
-│⭔ TELKOMSEL : ${global.telkomsel}
-│⭔ XL : ${global.xl}
-│⭔ INDOSAT : ${global.indosat}
-│⭔ TRI : ${global.tri}
-│⭔ SMARTFREN : ${global.smartfren}
-│⭔ GOPAY : ${global.gopay}
-│⭔ DANA : ${global.dana}
-│⭔ OVO : ${global.ovo}
 │⭔ SAWERIA : ${global.saweria}
 │
 │⭔ Q.S Az-Zalzalah Ayat 7 :
-│\nفَمَنْ يَّعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَّرَهٗۚ│
+│
+فَمَنْ يَّعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَّرَهٗۚ│
 │
 │⭔ Artinya : Maka barangsiapa
 │mengerjakan kebaikan seberatzarrah,
@@ -6961,7 +6946,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
   showAdAttribution: true,
   thumbnail: thumb,
   mediaType: 2,
-  mediaUrl: myttv,
+  mediaUrl: mygc,
   sourceUrl: mytt
   }}
   }

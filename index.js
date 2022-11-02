@@ -223,7 +223,7 @@ async function startakame() {
 	for (let i of kon) {
 	    list.push({
 	    	displayName: await akame.getName(i + '@s.whatsapp.net'),
-	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await akame.getName(i + '@s.whatsapp.net')}\nFN:${await akame.getName(i + '@s.whatsapp.net')}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
+	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await hisoka.getName(i + '@s.whatsapp.net')}\nFN:${await hisoka.getName(i + '@s.whatsapp.net')}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Ponsel\nitem2.EMAIL;type=INTERNET:${global.email}\nitem2.X-ABLabel:Email\nitem3.URL:${global.myweb}\nitem3.X-ABLabel:${global.namaweb}\nitem4.ADR:;;${global.region};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
 	    })
 	}
 	akame.sendMessage(jid, { contacts: { displayName: `${list.length} Kontak`, contacts: list }, ...opts }, { quoted })
