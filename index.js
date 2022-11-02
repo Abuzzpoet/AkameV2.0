@@ -260,7 +260,7 @@ async function startakame() {
       * @param {Numeric} Width
       * @param {Numeric} Height
       */
-      hisoka.reSize = async (image, width, height) => {
+      akame.reSize = async (image, width, height) => {
        let jimp = require('jimp')
        var oyy = await jimp.read(image);
        var kiyomasa = await oyy.resize(width, height).getBufferAsync(jimp.MIME_JPEG)
