@@ -11,6 +11,7 @@ require('./config')
 const { default: akameConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
 const { state, saveState } = useSingleFileAuthState(`./${sessionName}.json`)
 const pino = require('pino')
+const lolcatjs = require('lolcatjs')
 const { Boom } = require('@hapi/boom')
 const fs = require('fs')
 const yargs = require('yargs/yargs')
@@ -234,21 +235,50 @@ async function startakame() {
     akame.serializeM = (m) => smsg(akame, m, store)
 
     akame.ev.on('connection.update', async (update) => {
-        const { connection, lastDisconnect } = update	    
-        if (connection === 'close') {
-        let reason = new Boom(lastDisconnect?.error)?.output.statusCode
-            if (reason === DisconnectReason.badSession) { console.log(`Bad Session File, Please Delete Session and Scan Again`); akame.logout(); }
-            else if (reason === DisconnectReason.connectionClosed) { console.log("Connection closed, reconnecting...."); startakame(); }
-            else if (reason === DisconnectReason.connectionLost) { console.log("Connection Lost from Server, reconnecting..."); startakame(); }
-            else if (reason === DisconnectReason.connectionReplaced) { console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First"); akame.logout(); }
-            else if (reason === DisconnectReason.loggedOut) { console.log(`Device Logged Out, Please Scan Again And Run.`); akame.logout(); }
-            else if (reason === DisconnectReason.restartRequired) { console.log("Restart Required, Restarting..."); startakame(); }
-            else if (reason === DisconnectReason.timedOut) { console.log("Connection TimedOut, Reconnecting..."); startakame(); }
-            else if (reason === DisconnectReason.Multidevicemismatch) { console.log("Multi device mismatch, please scan again"); akame.logout(); }
-            else akame.end(`Unknown DisconnectReason: ${reason}|${connection}`)
-        }
-        console.log('Connected...', update)
-    })
+	const {
+		connection,
+		lastDisconnect
+	} = update
+try{
+		if (connection === 'close') {
+			let reason = new Boom(lastDisconnect?.error)?.output.statusCode
+			if (reason === DisconnectReason.badSession) {
+				console.log(`Bad Session File, Please Delete Session and Scan Again`);
+				startakame()
+			} else if (reason === DisconnectReason.connectionClosed) {
+				console.log("Connection closed, reconnecting....");
+				startakame();
+			} else if (reason === DisconnectReason.connectionLost) {
+				console.log("Connection Lost from Server, reconnecting...");
+				startakame();
+			} else if (reason === DisconnectReason.connectionReplaced) {
+				console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First");
+				startakame()
+			} else if (reason === DisconnectReason.loggedOut) {
+				console.log(`Device Logged Out, Please Scan Again And Run.`);
+				startakame();
+			} else if (reason === DisconnectReason.restartRequired) {
+				console.log("Restart Required, Restarting...");
+				startakame();
+			} else if (reason === DisconnectReason.timedOut) {
+				console.log("Connection TimedOut, Reconnecting...");
+				startakame();
+			} else akame.end(`Unknown DisconnectReason: ${reason}|${connection}`)
+		}
+		if (update.connection == "connecting" || update.receivedPendingNotifications == "false") {
+			lolcatjs.fromString(`[Sedang mengkoneksikan]`)
+		}
+		if (update.connection == "open" || update.receivedPendingNotifications == "true") {
+			lolcatjs.fromString(`[Connecting to] WhatsApp web`)
+			lolcatjs.fromString(`[Connected] ` + JSON.stringify(akame.user, null, 2))
+		}
+	
+} catch (err) {
+	  console.log('Error Di Connection.update '+err)
+	  startakame();
+	}
+	
+})
 
     akame.ev.on('creds.update', saveState)
 
