@@ -1254,8 +1254,8 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
 │└─────────────┈❖
 │• Allah SWT.
 │• Ortu Saya.
-│• DikaArdnt (Author).
-│• GuaAbuzz (Recode).
+│• DikaArdnt. (Author)
+│• GuaAbuzz. (Recode)
 │• Sanzy YT.
 │• Fatih A.
 │• Nurutomo.
@@ -7548,11 +7548,6 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
     } catch (err) {
         console.log("Eror Di Bagian Akame.js "+util.format(err))
     //  m.reply(util.format(err))
-        akame.sendMessage("6289636827082@s.whatsapp.net", { text: "Hallo Owner Sepertinya Ada Yang Error Harap Di Perbaiki " + util.format(e), 
-        contextInfo: {
-        forwardingScore: 5, 
-        isForwarded: true
-       }})
     }
 }
 
