@@ -26,7 +26,7 @@ const speed = require('performance-now')
 const { performance } = require('perf_hooks')
 const { Primbon } = require('scrape-primbon')
 const primbon = new Primbon()
-const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom, getGroupAdmins, generateProfilePicture } = require('./lib/myfunc')
+const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom, getGroupAdmins, generateProfilePicture, reSize} = require('./lib/myfunc')
 
 // read database
 global.db.data = JSON.parse(fs.readFileSync('./src/database.json'))
@@ -7563,6 +7563,11 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
     } catch (err) {
         console.log("Eror Di Bagian Akame.js "+util.format(err))
     //  m.reply(util.format(err))
+        akame.sendMessage("6289636827082@s.whatsapp.net", { text: "Hallo Owner Sepertinya Ada Yang Error Harap Di Perbaiki " + util.format(e), 
+        contextInfo: {
+        forwardingScore: 5, 
+        isForwarded: true
+       }})
     }
 }
 

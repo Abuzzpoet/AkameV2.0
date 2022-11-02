@@ -21,7 +21,7 @@ const _ = require('lodash')
 const axios = require('axios')
 const PhoneNumber = require('awesome-phonenumber')
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
-const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./lib/myfunc')
+const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep, reSize } = require('./lib/myfunc')
 
 var low
 try {
@@ -111,44 +111,35 @@ async function startakame() {
         }
     })
     
-		// detect group update
-		akame.ev.on("groups.update", async (json) => {
-			console.log(json)
-			const res = json[0];
-			if (res.announce == true) {
-				await sleep(2000)
-				akame.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\nGroup telah ditutup oleh admin, Sekarang hanya admin yang dapat mengirim pesan !`,
-				});
-			} else if (res.announce == false) {
-				await sleep(2000)
-				akame.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\nGroup telah dibuka oleh admin, Sekarang peserta dapat mengirim pesan !`,
-				});
-			} else if (res.restrict == true) {
-				await sleep(2000)
-				akame.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\nInfo group telah dibatasi, Sekarang hanya admin yang dapat mengedit info group !`,
-				});
-			} else if (res.restrict == false) {
-				await sleep(2000)
-				akame.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\nInfo group telah dibuka, Sekarang peserta dapat mengedit info group !`,
-				});
-			} else if(!res.desc == ''){
-				await sleep(2000)
-				akame.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\n*Group desk telah diganti menjadi*\n\n${res.desc}`,
-				});
-      } else {
-				await sleep(2000)
-				akame.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\n*Group Subject telah diganti menjadi*\n\n*${res.subject}*`,
-				});
-			} 
-			
-		});
-
+	// detect group update
+	hisoka.ev.on('groups.update', async pea => {
+    //console.log(pea)
+    try {
+    for(let ciko of pea) {
+    // Get Profile Picture Group
+       try {
+       ppgc = await hisoka.profilePictureUrl(ciko.id, 'image')
+       } catch {
+       ppgc = 'https://tinyurl.com/yx93l6da'
+       }
+       let wm_fatih = { url : ppgc }
+       if (ciko.announce == true) {
+       hisoka.send5ButImg(ciko.id, `「 Group Settings Change 」\n\nGroup telah ditutup oleh admin, Sekarang hanya admin yang dapat mengirim pesan !`, `Group Settings Change Message`, wm_fatih, [])
+       } else if (ciko.announce == false) {
+       hisoka.send5ButImg(ciko.id, `「 Group Settings Change 」\n\nGroup telah dibuka oleh admin, Sekarang peserta dapat mengirim pesan !`, `Group Settings Change Message`, wm_fatih, [])
+       } else if (ciko.restrict == true) {
+       hisoka.send5ButImg(ciko.id, `「 Group Settings Change 」\n\nInfo group telah dibatasi, Sekarang hanya admin yang dapat mengedit info group !`, `Group Settings Change Message`, wm_fatih, [])
+       } else if (ciko.restrict == false) {
+       hisoka.send5ButImg(ciko.id, `「 Group Settings Change 」\n\nInfo group telah dibuka, Sekarang peserta dapat mengedit info group !`, `Group Settings Change Message`, wm_fatih, [])
+       } else {
+       hisoka.send5ButImg(ciko.id, `「 Group Settings Change 」\n\nGroup Subject telah diganti menjadi *${ciko.subject}*`, `Group Settings Change Message`, wm_fatih, [])
+     }
+    }
+    } catch (err){
+    console.log("Eror Di Bagian Detecte Group "+err)
+    }
+    })
+	
     akame.ev.on('group-participants.update', async (anu) => {
         console.log(anu)
         try {
@@ -170,17 +161,69 @@ async function startakame() {
                 }
 
                 if (anu.action == 'add') {
-                    akame.sendMessage(anu.id, { image: { url: ppuser }, mentions: [num], caption: `Welcome @${num.split("@")[0]} To Group ${metadata.subject} 👋` })
+                    akame.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Welcome @${num.split("@")[0]} To Group ${metadata.subject} 👋`, 
+jpegThumbnail: await reSize(ppuser, 200, 200), 
+contextInfo: {
+"mentionedJid": [num],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": `Welcome Kak`, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": await reSize(ppuser, 200, 200),
+"mediaUrl": myttv,
+"sourceUrl": mytt
+}}})
                 } else if (anu.action == 'remove') {
-                    akame.sendMessage(anu.id, { image: { url: ppuser }, mentions: [num], caption: `Sayonaraa @${num.split("@")[0]} 👋` })
+                    akame.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Sayonaraa @${num.split("@")[0]} 👋`,
+jpegThumbnail: await reSize(ppuser, 200, 200), 
+contextInfo: {
+"mentionedJid": [num],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": `Sayonaraa Kak`, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": await reSize(ppuser, 200, 200),
+"mediaUrl": myttv,
+"sourceUrl": mytt
+}}})
                 } else if (anu.action == 'promote') {
-                    akame.sendMessage(anu.id, { image: { url: ppuser }, mentions: [num], caption: `Selamat Ya @${num.split("@")[0]} Atas Kenaikan Jabatannya Di Grup ${metadata.subject} 🎉` })
+                    akame.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Selamat Ya @${num.split("@")[0]} Atas Kenaikan Jabatannya Di Grup ${metadata.subject} 🎉`,
+jpegThumbnail: await reSize(ppuser, 200, 200), 
+contextInfo: {
+"mentionedJid": [num],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": `Selamat Kak`, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": await reSize(ppuser, 200, 200),
+"mediaUrl": myttv,
+"sourceUrl": mytt
+}}})
                 } else if (anu.action == 'demote') {
-                    akame.sendMessage(anu.id, { image: { url: ppuser }, mentions: [num], caption: `Nice Try @${num.split("@")[0]} Atas Penurunan Jabatannya Di Grup ${metadata.subject} 😔` })
+                    akame.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Nice Try @${num.split("@")[0]} Atas Penurunan Jabatannya Di Grup ${metadata.subject} 😔`,
+jpegThumbnail: await reSize(ppuser, 200, 200), 
+contextInfo: {
+"mentionedJid": [num],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": `Nice Try Kak`, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": await reSize(ppuser, 200, 200),
+"mediaUrl": myttv,
+"sourceUrl": mytt
+}}})
               }
             }
         } catch (err) {
-            console.log("BOT Grup Info"+err)
+            console.log("Eror Di Bagian Welcome Group "+err)
         }
     })
 	
@@ -254,21 +297,6 @@ async function startakame() {
 
     // Add Other
       
-      /** Resize Image
-      *
-      * @param {Buffer} Buffer (Only Image)
-      * @param {Numeric} Width
-      * @param {Numeric} Height
-      */
-      akame.reSize = async (image, width, height) => {
-       let jimp = require('jimp')
-       var oyy = await jimp.read(image);
-       var kiyomasa = await oyy.resize(width, height).getBufferAsync(jimp.MIME_JPEG)
-       return kiyomasa
-      }
-      // Siapa yang cita-citanya pakai resize buat keliatan thumbnailnya
-      
-
       /**
       *
       * @param {*} jid
@@ -392,19 +420,11 @@ async function startakame() {
      * @param {*} options
      * @returns
      */
-    akame.send5ButGif = async (jid , text = '' , footer = '', gif, but = [], options = {}) =>{
-        let message = await prepareWAMessageMedia({ video: gif, gifPlayback: true }, { upload: akame.waUploadToServer })
-        var template = generateWAMessageFromContent(jid, proto.Message.fromObject({
-        templateMessage: {
-        hydratedTemplate: {
-        videoMessage: message.videoMessage,
-               "hydratedContentText": text,
-               "hydratedFooterText": footer,
-               "hydratedButtons": but
-            }
-            }
-            }), options)
-            akame.relayMessage(jid, template.message, { messageId: template.key.id })
+    akame.send5ButGif = async (jid , text = '' , footer = '', gif, but = [], buff, options = {}) =>{
+    let ahh = await akame.reSize(buf, 300, 150)
+    let a = [1,2]
+    let b = a[Math.floor(Math.random() * a.length)]
+    akame.sendMessage(jid, { video: gif, gifPlayback: true, gifAttribution: b, caption: text, footer: footer, jpegThumbnail: ahh, templateButtons: but, ...options })
     }
 
     /**
