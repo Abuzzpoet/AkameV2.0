@@ -26,7 +26,7 @@ const speed = require('performance-now')
 const { performance } = require('perf_hooks')
 const { Primbon } = require('scrape-primbon')
 const primbon = new Primbon()
-const { smsg, getGroupAdmins, formatp, tanggal, formatDate, getTime, isUrl, await, sleep, clockString, msToDate, sort, toNumber, enumGetKey, runtime, fetchJson, getBuffer, jsonformat, delay, format, logic, generateProfilePicture, parseMention, getRandom, pickRandom} = require('./lib/myfunc')
+const { smsg, getGroupAdmins, formatp, tanggal, formatDate, getTime, isUrl, await, sleep, clockString, msToDate, sort, toNumber, enumGetKey, runtime, fetchJson, getBuffer, jsonformat, delay, format, logic, generateProfilePicture, parseMention, getRandom, pickRandom, reSize } = require('./lib/myfunc')
 
 // read database
 global.db.data = JSON.parse(fs.readFileSync('./src/database.json'))
@@ -3010,6 +3010,34 @@ break
                     akame.sendImage(m.chat, i.avatar_url, "", fdoc, { caption })
                   }
             break
+            case 'git': case 'gitclone': {
+if (!args[0]) return m.reply(`Mana link nya?\nContoh :\n${prefix}${command} https://github.com/YukiShima4/tes`)
+if (!isUrl(args[0]) && !args[0].includes('github.com')) return m.reply(`Link invalid!!`)
+let regex1 = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
+    let [, user, repo] = args[0].match(regex1) || []
+    repo = repo.replace(/.git$/, '')
+    let url = `https://api.github.com/repos/${user}/${repo}/zipball`
+    let filename = (await fetch(url, {method: 'HEAD'})).headers.get('content-disposition').match(/attachment; filename=(.*)/)[1]
+    akame.sendMessage(m.chat, { document: { url: url }, fileName: filename+'.zip', mimetype: 'application/zip' }, { quoted: fdoc }).catch((err) => reply(mess.error))
+    }
+break
+case 'toqr': case 'qr': {
+            	if (!text) throw 'No Query Text'
+            
+               akame.sendMessage(m.chat, { image: { url: `https://api.qrserver.com/v1/create-qr-code/?size=1000x1000&data=${text}` }, caption: `Nih Bro` }, { quoted: fdoc })
+            	}
+            break
+            case 'sendsesi':
+if (!isCreator) throw mess.owner
+akame.sendMessage(m.chat, { document: fs.readFileSync(`./${sessionName}.json`), mimetype: 'jpg/application', fileName: `${sessionName}.json`}, { quoted: fkontak })
+break
+case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
+            
+                anu = await fetchJson(`https://api.popcat.xyz/randomcolor`)
+                buffer = await getBuffer(anu.image)
+                akame.sendMessage(m.chat, { image: buffer, caption: `*Nama Warna : ${anu.name}*\n*Code : ${anu.hex}*`, footer: ntiktok}, { quoted: m })
+            }
+            break
             case 'stalker':
             case 'stalk': {
                 if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply('Limit Harian Anda Telah Habis')
@@ -3456,6 +3484,28 @@ break
                 })
             }
             break
+            case 'hutao': case 'xiao': case 'chongyun': case 'baal': case 'keqing': case 'yae': case 'zhongli': case 'ningguang': case 'shenhe': case 'ayaka': {
+                m.reply(mess.wait)
+                if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+                db.data.users[m.sender].limit -= 1 // -1 limit
+                let gis = require('g-i-s')
+                gis(command + ' Icon HD', async (error, result) => {
+                n = result
+                images = n[Math.floor(Math.random() * n.length)].url
+                let buttons = [
+                            {buttonId: `${command}`, buttonText: {displayText: '⌲ Next Image'}, type: 1}
+                        ]
+                        let buttonMessage = {
+                            image: { url: images },
+                            caption: `Random Image ${command}`, 
+                            footer: ntiktok,
+                            buttons: buttons,
+                            headerType: 4
+                        }
+                        akame.sendMessage(m.chat, buttonMessage, { quoted: fdoc })
+                })
+                }
+                break
             case 'waifu': {
             	tesk = `*${ucapanWaktu} Kak ${pushname}*\n*Silahkan Pilih Dibawah Ini*\n\n_Dosa Tanggung Sendiri :v_`
             	let buttons = [{buttonId: `menu`, buttonText: {displayText: '📚MENU'}, type: 1},{buttonId: `sfw`, buttonText: {displayText: '✅SFW'}, type: 1}]
@@ -4407,42 +4457,12 @@ break
 				akame.sendMessage(m.chat, { audio: { url: anu.audio }, mimetype: 'audio/mpeg'}, { quoted: fvn })
 				}
 				break
-            case 'ig': case 'igdl': case 'instagram': {
-                if (!text) throw 'Masukkan Query Link!'
-                if (!isUrl(args[0]) && !args[0].includes('instagram.com')) throw 'Link yang kamu berikan tidak.valid'
-                m.reply(mess.wait)
-                let urlnya = text
-	            bochil.instagramdlv3(urlnya)
-	            .then(async(result) => {
-		        for(let i of result){
-			    if(i.url.includes('mp4')){
-				let link = await getBuffer(i.url)
-                akame.sendMessage(m.chat, { video: link, }, { quoted: fvideo })
-                } else {
-                    let link = await getBuffer(i.url)
-                  akame.sendMessage(m.chat, { image: link, }, { quoted: fgclink })                  
-                }
-            }
-            }).catch((err) => m.reply(`Server eror`))
-            }		
-			break
-            case 'instastory': case 'igs': case 'igstory': case 'instagramstory': {
-                if (!text) throw 'Masukkan Username!'                
-                m.reply(mess.wait)                
-	            hx.igstory(text)
-	            .then(async(result) => {
-		        for(let i of result.medias){
-			    if(i.url.includes('mp4')){
-				let link = await getBuffer(i.url)
-                akame.sendMessage(m.chat, { video: link, }, { quoted: fvideo })
-                } else {
-                    let link = await getBuffer(i.url)
-                  akame.sendMessage(m.chat, { image: link, }, { quoted: fgclink})                  
-                }
-            }
-            }).catch((err) => m.reply(`Sorry the username was not found`))
-            }
-            break
+            case 'igdl': case 'instagram':{
+const instagramGetUrl = require("instagram-url-direct")
+const results = (await instagramGetUrl(q)).url_list[0]
+console.log(results)
+}
+break
             case 'joox': case 'jooxdl': {
                 if (!text) throw 'No Query Title'
                 m.reply(mess.wait)
@@ -4494,27 +4514,18 @@ break
                 akame.sendMessage(m.chat, { audio: { url: anu.result.audio } }, { quoted: fvn })
             }
             break
-            case 'fbdl': case 'fb': case 'facebook': {
-                if (!text) throw 'Masukkan Query Link!'
-                if (!isUrl(args[0]) && !args[0].includes('facebook.com')) throw 'Link yang kamu berikan tidak valid'
-                m.reply(mess.wait)
-                try {
-                var data= await bochil.savefrom(`${text}`)
-                for(let i of data.url){    
-                akame.sendMessage(m.chat, { video: { url: i.url }, caption: `Done`}, { quoted: fvideo })
-                }
-                } catch {
-                try {
-                var daa = await bochil.facebookdl(`${text}`)
-                for(let i of daa.result){    
-                akame.sendMessage(m.chat, { video: { url: i.url }, caption: `Done`}, { quoted: fvideo })
-                }
-                } catch {
-                    m.reply(`*Gagal Saat mendownload media dan mengirm video*`)
-                }
-              }
-            }
-            break
+            case 'fbdl':
+case 'facebook':{
+if (!text) return m.reply(`Example : ${prefix + command} link`)
+if (!q.includes('facebook.com')) return m.reply(`Link Invalid!!`)
+m.reply(mess.wait)
+const { fbdl } = require("./lib/facebook");
+fbdl(q).then( data => {
+if (data.length == 0) return reply(`Maaf terjadi kesalahan, ganti link yang lain!`)
+akame.sendMessage(m.chat, { video: { url: data[data.length - 1] }, caption: data.title }, { quoted: m })
+})
+}
+break
             case 'umma': case 'ummadl': {
 	        if (!text) throw `Contoh : ${prefix + command} https://umma.id/channel/video/post/gus-arafat-sumber-kecewa-84464612933698`
                 let { umma } = require('./lib) scraper')
@@ -5691,7 +5702,6 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}tiktokwm [url]
 │⭔ ${prefix}tiktokmp3 [url]
 │⭔ ${prefix}instagram [url]
-│⭔ ${prefix}instastory [url]
 │⭔ ${prefix}twitter [url]
 │⭔ ${prefix}twittermp3 [url]
 │⭔ ${prefix}facebook [url]
@@ -5890,6 +5900,16 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}tsunade
 │⭔ ${prefix}yuki
 │⭔ ${prefix}raiden
+│⭔ ${prefix}hutao
+│⭔ ${prefix}xiao
+│⭔ ${prefix}chongyun
+│⭔ ${prefix}baal
+│⭔ ${prefix}keqing
+│⭔ ${prefix}yae
+│⭔ ${prefix}zhongli
+│⭔ ${prefix}ningguang
+│⭔ ${prefix}shenhe
+│⭔ ${prefix}ayaka
 │⭔ ${prefix}calliope
 │⭔ ${prefix}kitagawa
 └──────────────┈❖`
@@ -6463,6 +6483,8 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}listgc
 │⭔ ${prefix}listonline
 │⭔ ${prefix}speedtest
+│⭔ ${prefix}toqr
+│⭔ ${prefix}speedtest
 │⭔ ${prefix}request [req]
 │⭔ ${prefix}report [bug]
 └──────────────┈❖`
@@ -6730,6 +6752,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │└─────────────┈❖
 │⭔ ${prefix}cekapi
 │⭔ ${prefix}githubstalk [username]
+│⭔ ${prefix}gitclone
 │⭔ ${prefix}stalk [option] [query]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
@@ -6769,7 +6792,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}setnamabot
 │⭔ ${prefix}setbiobot
 │⭔ ${prefix}react [emoji]
-│⭔ ${prefix}autosw
+│⭔ ${prefix}sendsesi
 │⭔ ${prefix}shutdown
 │⭔ ${prefix}myip
 │⭔ ${prefix}setexif
@@ -7052,6 +7075,16 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}tsunade
 │⭔ ${prefix}yuki
 │⭔ ${prefix}raiden
+│⭔ ${prefix}hutao
+│⭔ ${prefix}xiao
+│⭔ ${prefix}chongyun
+│⭔ ${prefix}baal
+│⭔ ${prefix}keqing
+│⭔ ${prefix}yae
+│⭔ ${prefix}zhongli
+│⭔ ${prefix}ningguang
+│⭔ ${prefix}shenhe
+│⭔ ${prefix}ayaka
 │⭔ ${prefix}calliope
 │⭔ ${prefix}kitagawa
 └┬─────────────┈❖
@@ -7090,7 +7123,6 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}tiktokwm [url]
 │⭔ ${prefix}tiktokmp3 [url]
 │⭔ ${prefix}instagram [url]
-│⭔ ${prefix}instastory [url]
 │⭔ ${prefix}twitter [url]
 │⭔ ${prefix}twittermp3 [url]
 │⭔ ${prefix}facebook [url]
@@ -7251,6 +7283,8 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}listgc
 │⭔ ${prefix}listonline
 │⭔ ${prefix}speedtest
+│⭔ ${prefix}toqr
+│⭔ ${prefix}randomcolor
 │⭔ ${prefix}request [req]
 │⭔ ${prefix}report [bug]
 └┬─────────────┈❖
@@ -7260,7 +7294,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │⭔ ${prefix}setbiobot
 │⭔ ${prefix}react [emoji]
 │⭔ ${prefix}shutdown
-│⭔ ${prefix}autosw
+│⭔ ${prefix}sendsesi
 │⭔ ${prefix}myip
 │⭔ ${prefix}setexif
 │⭔ ${prefix}chat [option]
@@ -7389,6 +7423,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 │└─────────────┈❖
 │⭔ ${prefix}cekapi
 │⭔ ${prefix}githubstalk [username]
+│⭔ ${prefix}gitclone
 │⭔ ${prefix}stalk [option] [query]
 └┬─────────────┈❖
 ┌┤「 TEXT PRO 」

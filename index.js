@@ -22,7 +22,7 @@ const _ = require('lodash')
 const axios = require('axios')
 const PhoneNumber = require('awesome-phonenumber')
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
-const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./lib/myfunc')
+const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep, reSize } = require('./lib/myfunc')
 
 var low
 try {
@@ -284,22 +284,6 @@ try{
 
     // Add Other
     
-       /** Resize Image
-      *
-      * @param {Buffer} Buffer (Only Image)
-      * @param {Numeric} Width
-      * @param {Numeric} Height
-      */
-      akame.reSize = async (image, width, height) => {
-       let jimp = require('jimp')
-       var oyy = await jimp.read(image);
-       var kiyomasa = await oyy.resize(width, height).getBufferAsync(jimp.MIME_JPEG)
-       return kiyomasa
-      }
-      
-      // Siapa yang cita-citanya pakai resize buat keliatan thumbnailnya
-      
-
       /**
       *
       * @param {*} jid
