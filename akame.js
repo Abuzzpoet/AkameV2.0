@@ -5189,27 +5189,34 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             }
             break
             case 'jadwatv': {
-                let sections = [
-                title: "Jadwal TV Nasional >_<",
-                rows: [
-                {title: "⌲ 「 Rcti 」", rowId: `${prefix}tvschedule rcti`},
-                {title: "⌲ 「 Nettv 」", rowId: `${prefix}tvschedule nettv`},
-                {title: "⌲ 「 Antv 」", rowId: `${prefix}tvschedule antv`},
-                {title: "⌲ 「 Gtv 」", rowId: `${prefix}tvschedule gtv`},
-                {title: "⌲ 「 Indosiar 」", rowId: `${prefix}tvschedule indosiar`},
-                {title: "⌲ 「 Inewstv 」", rowId: `${prefix}tvschedule inewstv`},
-                {title: "⌲ 「 Kompastv 」", rowId: `${prefix}tvschedule kompastv`},
-                {title: "⌲ 「 Metrotv 」", rowId: `${prefix}tvschedule metrotv`},
-                {title: "⌲ 「 Mnctv 」", rowId: `${prefix}tvschedule mnctv`},
-                {title: "⌲ 「 Rtv 」", rowId: `${prefix}tvschedule rtv`},
-                {title: "⌲ 「 Sctv 」", rowId: `${prefix}tvschedule sctv`},
-                {title: "⌲ 「 Trans7 」", rowId: `${prefix}tvschedule trans7`},
-                {title: "⌲ 「 Transtv 」", rowId: `${prefix}tvschedule transtv`},
-                {title: "⌲ 「 Tvone 」", rowId: `${prefix}tvschedule tvone`},
-                {title: "⌲ 「 Tvri 」", rowId: `${prefix}tvschedule tvri`}
-                ]
-                akame.sendListMsg(m.chat, `*Silahkan Pilih jadwal Dibawah Ini*`, ntiktok, `JADWAL MENU`, `Touch Me (⁠≧⁠▽⁠≦⁠)`, sections, floc)
-              }
+            const sections = [{
+                        title: "Jadwal TV Nasional",
+                        rows: [
+                            {title: "⌲ 「 Rcti 」", rowId: `${prefix}tvschedule rcti`},
+                            {title: "⌲ 「 Nettv 」", rowId: `${prefix}tvschedule nettv`},
+                            {title: "⌲ 「 Antv 」", rowId: `${prefix}tvschedule antv`},
+                            {title: "⌲ 「 Gtv 」", rowId: `${prefix}tvschedule gtv`},
+                            {title: "⌲ 「 Indosiar 」", rowId: `${prefix}tvschedule indosiar`},
+                            {title: "⌲ 「 Inewstv 」", rowId: `${prefix}tvschedule inewstv`},
+                            {title: "⌲ 「 Kompastv 」", rowId: `${prefix}tvschedule kompastv`},
+                            {title: "⌲ 「 Metrotv 」", rowId: `${prefix}tvschedule metrotv`},
+                            {title: "⌲ 「 Mnctv 」", rowId: `${prefix}tvschedule mnctv`},
+                            {title: "⌲ 「 Rtv 」", rowId: `${prefix}tvschedule rtv`},
+                            {title: "⌲ 「 Sctv 」", rowId: `${prefix}tvschedule sctv`},
+                            {title: "⌲ 「 Trans7 」", rowId: `${prefix}tvschedule trans7`},
+                            {title: "⌲ 「 Transtv 」", rowId: `${prefix}tvschedule transtv`},
+                            {title: "⌲ 「 Tvone 」", rowId: `${prefix}tvschedule tvone`},
+                            {title: "⌲ 「 Tvri 」", rowId: `${prefix}tvschedule tvri`}
+                        ]
+                    }]
+                    const listMessage = {
+                        text: 'Jadwal TV Nasional',
+                        footer: ntiktok,
+                        buttonText: 'Touch Me (⁠≧⁠▽⁠≦⁠)',
+                        sections
+                    }
+                    const sendMsg = await akame.sendMessage(m.chat, listMessage, { quoted: floc })
+            }
             break
             case 'tvschedule': {
             let { jadwaltv }= require('./lib/jadwaltv')
