@@ -5190,7 +5190,6 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             break
             case 'jadwatv': {
                 let sections = [
-                {
                 title: "Jadwal TV Nasional >_<",
                 rows: [
                 {title: "⌲ 「 Rcti 」", rowId: `${prefix}tvschedule rcti`},
@@ -5208,7 +5207,6 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 {title: "⌲ 「 Transtv 」", rowId: `${prefix}tvschedule transtv`},
                 {title: "⌲ 「 Tvone 」", rowId: `${prefix}tvschedule tvone`},
                 {title: "⌲ 「 Tvri 」", rowId: `${prefix}tvschedule tvri`}
-                }
                 ]
                 akame.sendListMsg(m.chat, `*Silahkan Pilih jadwal Dibawah Ini*`, ntiktok, `JADWAL MENU`, `Touch Me (⁠≧⁠▽⁠≦⁠)`, sections, floc)
               }
