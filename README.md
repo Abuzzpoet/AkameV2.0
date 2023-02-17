@@ -108,7 +108,7 @@ Editing Number Owner & session name in [`config.js`](https://github.com/Abuzzpoe
 //—————「 Website Apikey 」—————//
 //gausah di apa² ini, Beli Sendiri banh :)
 global.APIKeys = {
-    'https://zenzapis.xyz':'GetApiKey',
+    'https://api.zahwazein.xyz':'GetApiKey',
 }
 
 //—————「 Set Nama Bot & Own 」—————//
@@ -123,14 +123,6 @@ global.premium = ['6289636827082']
 
 //—————「 Setting Nomor Donasi/Sewabot 」—————//
 //ubah aja kalau ada yg gapunya kasih tanda '-'
-global.telkomsel = ['6282171978174']
-global.xl = ['-']
-global.indosat = ['-']
-global.tri = ['6289636827082']
-global.smartfren = ['-']
-global.gopay = ['6289636827082']
-global.dana = ['6289636827082']
-global.ovo = ['-']
 global.saweria = ['https://saweria.co/GuaAbuzz']
 
 //—————「 Set Kebutuhan Button 」—————//
@@ -167,7 +159,7 @@ global.limitawal = {
 ---------
 
 # Apikey
-* Get Apikey zenz on [`Zenz`](https://zenzapis.xyz/)
+* Get Apikey zenz on [`Zenz`](https://api.zahwazein.xyz/)
 
 ## Thanks To
 * [`@adiwajshing/baileys`](https://github.com/adiwajshing/baileys)

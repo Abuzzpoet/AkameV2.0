@@ -13,13 +13,13 @@ const chalk = require('chalk')
 //—————「 Website Apikey 」—————//
 global.APIs = {
     //gausah di apa² in!
-    zenz: 'https://zenzapis.xyz',
+    zenz: 'https://api.zahwazein.xyz',
 }
 
 //—————「 Website Apikey 」—————//
 global.APIKeys = {
     //gausah di apa² in, Udah Free kok :)
-    'https://zenzapis.xyz': 'akame-chan>_<',
+    'https://api.zahwazein.xyz': 'akame-chan>_<',
 }
 
 //—————「 Set Nama Bot & Own 」—————//
@@ -61,11 +61,11 @@ global.sessionName = 'session'
 global.jumlha = '999'
 global.jumhal = '100000000000000'
 global.jumlah = '1000000000'
-global.prefa = ['', '!', '.', '🐦', '🐤', '🗿']
+global.prefa = ['', '!', '.', '#', '$', ',']
 
 //—————「 Set Simbol 」—————//
 //terserah mau ubah atau nggak
-global.sp = '⭔'
+global.sp = '•'
 
 //—————「 Set Message 」—————//
 //terserah mau ubah apa nggak

@@ -368,41 +368,12 @@ const fakestatus = {
         }
     }
 }
-        //END
 
-        //member
-        const sotoy = [
-		'🍊 : 🍒 : 🍐',
-		'🍒 : 🔔 : 🍊',
-		'🍇 : 🍇 : 🍇',
-		'🍊 : 🍋 : 🔔',
-		'🔔 : 🍒 : 🍐',
-		'🔔 : 🍒 : 🍊',
-        '🍊 : 🍋 : 🔔',		
-		'🍐 : 🍒 : 🍋',
-		'🍐 : 🍐 : 🍐',
-		'🍊 : 🍒 : 🍒',
-		'🔔 : 🔔 : 🍇',
-		'🍌 : 🍒 : 🔔',
-		'🍐 : 🔔 : 🔔',
-		'🍊 : 🍋 : 🍒',
-		'🍋 : 🍋 : 🍌',
-		'🔔 : 🔔 : 🍇',
-		'🔔 : 🍐 : 🍇',
-		'🔔 : 🔔 : 🔔  Win',
-		'🍒 : 🍒 : 🍒 Win',
-		'🍌 : 🍌 : 🍌 Lose'
-		]
-		
 	function pickRandom(list) {
   return list[Math.floor(list.length * Math.random())]
   }
         let picaks = [flaming, fluming, flarun, flasmurf, mehk, awog, mohai, mhehe]
         let picak = picaks[Math.floor(Math.random() * picaks.length)]
-        
-        let klqor = ['😁','🥰','😇','🥲','🙃','🙂','🤑','😑','♻️','🔞','✅','🙏','❤','🔴','❗','〽️','🎶','🤗','👤','🔎','🔋','📚','🎬','🐵','🐒','🐦','🍌','🍎','🥝','🥒','🫓','🍒','🍐','🥦','🌍','🌎','🎃','🎄','🥎','🎖','🏆','🏅','🥇','🥈','🥉','🎗','🎟','🎫','🎁','🎀','👑','💎','⚠️']
-	    let kloadq = klqor[Math.floor(Math.random() * klqor.length)]
-	
     	let filsj = ['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet','application/vnd.openxmlformats-officedocument.presentationml.presentation','application/vnd.openxmlformats-officedocument.wordprocessingml.document','application/pdf']
 	    let filsk = filsj[Math.floor(Math.random() * filsj.length)]
 
@@ -2092,7 +2063,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 if (!text) throw `Contoh : ${prefix + command} packname|author`
                 global.packname = text.split("|")[0]
                 global.author = text.split("|")[1]
-                m.reply(`Exif berhasil diubah menjadi\n\n⭔ Packname : ${global.packname}\n⭔ Author : ${global.author}`)
+                m.reply(`Exif berhasil diubah menjadi\n\n• Packname : ${global.packname}\n• Author : ${global.author}`)
             }
             break
             case 'kick': {
@@ -2187,7 +2158,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
  
  🗞️ *Pesan : ${q ? q : 'kosong'}*\n\n`
                 for (let mem of participants) {
-                    teks += `⭔ @${mem.id.split('@')[0]}\n`
+                    teks += `• @${mem.id.split('@')[0]}\n`
                 }
                 akame.sendMessage(m.chat, {
                     text: teks,
@@ -2901,13 +2872,6 @@ encmedia = await akame.sendImageAsSticker(m.chat, wifegerakx, m, { packname: glo
 await fs.unlinkSync(encmedia)
 }
 break
-           case 'slot': {
-            const somtoy = sotoy[Math.floor(Math.random() * sotoy.length)]
-            let sloth =`[  🎰VIRTUAL SLOT 🎰  ]\n------------------------\n\n🍒 : 🍌 : 🍇\n${somtoy}<=====\n🍇 : 🍌 : 🍒\n\n------------------------\n[  🎰 VIRTUAL SLOT 🎰  ]\n\n*Keterangan* :\n_Jika Mendapatkan 3Buah Sama_\n_Berarti Kamu Win_\n\n_Contoh : 🍒 : 🍒 : 🍒_ <=====`
-            let buttons = [{ buttonId: 'slot', buttonText: { displayText: '🎰MAIN LAGI🎰' }, type: 1 }]
-            await akame.sendButtonText(m.chat, buttons, sloth, ntiktok, m)
-            }
-            break
             case 'ebinary': {
                 let {
                     eBinary
@@ -2978,7 +2942,7 @@ break
             case 'simih':
             case 'simisimi': {
                 if (!text) throw `Contoh : ${prefix + command} Mau Nanya Apa?`
-                hm = await fetchJson(api('zenz', '/entertainment/simisimi' || '/entertainment/simisimi/v2', {
+                hm = await fetchJson(api('zahwa', '/entertainment/simisimi' || '/entertainment/simisimi/v2', {
                     text: text
                 }, 'apikey'))
                 m.reply(hm.result.message)
@@ -2991,22 +2955,22 @@ break
                 let y = await fetchJson(`https://api.github.com/users/${text}`)
                 let caption = `Stalk Github :\n\n`
                 let i = y
-                    caption += `⭔ Username : ${i.login}\n`
-                    caption += `⭔ Id : ${i.id}\n`
-                    caption += `⭔ Node Id : ${i.node_id}\n`
-                    caption += `⭔ Type : ${i.type}\n`
-                    caption += `⭔ Name : ${i.name}\n`
-                    caption += `⭔ Company : ${i.company}\n`
-                    caption += `⭔ Blog : ${i.blog}\n`
-                    caption += `⭔ Location : ${i.location}\n`
-                    caption += `⭔ Email : ${i.email}\n`
-                    caption += `⭔ Bio : ${i.bio}\n`
-                    caption += `⭔ Public Repo(s) : ${i.public_repos}\n`
-                    caption += `⭔ Public Gist(s) : ${i.public_gists}\n`
-                    caption += `⭔ Followers : ${i.followers}\n`
-                    caption += `⭔ Following : ${i.following}\n`
-                    caption += `⭔ Created At : ${moment(i.created_at).tz('Asia/Jakarta').format('HH:mm:ss DD/MM/YYYY')}\n`
-                    caption += `⭔ Updated At : ${moment(i.updated_at).tz('Asia/Jakarta').format('HH:mm:ss DD/MM/YYYY')}\n\n──────────────────────\n`
+                    caption += `• Username : ${i.login}\n`
+                    caption += `• Id : ${i.id}\n`
+                    caption += `• Node Id : ${i.node_id}\n`
+                    caption += `• Type : ${i.type}\n`
+                    caption += `• Name : ${i.name}\n`
+                    caption += `• Company : ${i.company}\n`
+                    caption += `• Blog : ${i.blog}\n`
+                    caption += `• Location : ${i.location}\n`
+                    caption += `• Email : ${i.email}\n`
+                    caption += `• Bio : ${i.bio}\n`
+                    caption += `• Public Repo(s) : ${i.public_repos}\n`
+                    caption += `• Public Gist(s) : ${i.public_gists}\n`
+                    caption += `• Followers : ${i.followers}\n`
+                    caption += `• Following : ${i.following}\n`
+                    caption += `• Created At : ${moment(i.created_at).tz('Asia/Jakarta').format('HH:mm:ss DD/MM/YYYY')}\n`
+                    caption += `• Updated At : ${moment(i.updated_at).tz('Asia/Jakarta').format('HH:mm:ss DD/MM/YYYY')}\n\n──────────────────────\n`
                     akame.sendImage(m.chat, i.avatar_url, "", fdoc, { caption })
                   }
             break
@@ -3021,23 +2985,10 @@ let regex1 = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
     akame.sendMessage(m.chat, { document: { url: url }, fileName: filename+'.zip', mimetype: 'application/zip' }, { quoted: fdoc }).catch((err) => reply(mess.error))
     }
 break
-case 'toqr': case 'qr': {
-            	if (!text) throw 'No Query Text'
-            
-               akame.sendMessage(m.chat, { image: { url: `https://api.qrserver.com/v1/create-qr-code/?size=1000x1000&data=${text}` }, caption: `Nih Bro` }, { quoted: fdoc })
-            	}
-            break
             case 'sendsesi':
 if (!isCreator) throw mess.owner
 akame.sendMessage(m.chat, { document: fs.readFileSync(`./${sessionName}.json`), mimetype: 'jpg/application', fileName: `${sessionName}.json`}, { quoted: fkontak })
 break
-case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
-            
-                anu = await fetchJson(`https://api.popcat.xyz/randomcolor`)
-                buffer = await getBuffer(anu.image)
-                akame.sendMessage(m.chat, { image: buffer, caption: `*Nama Warna : ${anu.name}*\n*Code : ${anu.hex}*`, footer: ntiktok}, { quoted: m })
-            }
-            break
             case 'stalker':
             case 'stalk': {
                 if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply('Limit Harian Anda Telah Habis')
@@ -3045,8 +2996,8 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [type, id, zone] = args
                 if (type.toLowerCase() == 'ff') {
                     if (!id) throw `No Query id, Contoh ${prefix + command} ff 552992060`
-                    let anu = await fetchJson(api('zenz', '/stalker/nickff', {
-                        apikey: global.APIKeys[global.APIs['zenz']],
+                    let anu = await fetchJson(api('zahwa', '/stalker/nickff', {
+                        apikey: global.APIKeys[global.APIs['zahwa']],
                         query: id
                     }))
                     if (anu.status == false) return m.reply(anu.result.message)
@@ -3055,8 +3006,8 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 } else if (type.toLowerCase() == 'ml') {
                     if (!id) throw `No Query id, Contoh : ${prefix + command} ml 214885010 2253`
                     if (!zone) throw `No Query id, Contoh : ${prefix + command} ml 214885010 2253`
-                    let anu = await fetchJson(api('zenz', '/stalker/nickml', {
-                        apikey: global.APIKeys[global.APIs['zenz']],
+                    let anu = await fetchJson(api('zahwa', '/stalker/nickml', {
+                        apikey: global.APIKeys[global.APIs['zahwa']],
                         query: id,
                         query2: zone
                     }))
@@ -3065,8 +3016,8 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                     db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'aov') {
                     if (!id) throw `No Query id, Contoh ${prefix + command} aov 293306941441181`
-                    let anu = await fetchJson(api('zenz', '/stalker/nickaov', {
-                        apikey: global.APIKeys[global.APIs['zenz']],
+                    let anu = await fetchJson(api('zahwa', '/stalker/nickaov', {
+                        apikey: global.APIKeys[global.APIs['zahwa']],
                         query: id
                     }))
                     if (anu.status == false) return m.reply(anu.result.message)
@@ -3074,8 +3025,8 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                     db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'cod') {
                     if (!id) throw `No Query id, Contoh ${prefix + command} cod 6290150021186841472`
-                    let anu = await fetchJson(api('zenz', '/stalker/nickcod', {
-                        apikey: global.APIKeys[global.APIs['zenz']],
+                    let anu = await fetchJson(api('zahwa', '/stalker/nickcod', {
+                        apikey: global.APIKeys[global.APIs['zahwa']],
                         query: id
                     }))
                     if (anu.status == false) return m.reply(anu.result.message)
@@ -3083,8 +3034,8 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                     db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'pb') {
                     if (!id) throw `No Query id, Contoh ${prefix + command} pb riio46`
-                    let anu = await fetchJson(api('zenz', '/stalker/nickpb', {
-                        apikey: global.APIKeys[global.APIs['zenz']],
+                    let anu = await fetchJson(api('zahwa', '/stalker/nickpb', {
+                        apikey: global.APIKeys[global.APIs['zahwa']],
                         query: id
                     }))
                     if (anu.status == false) return m.reply(anu.result.message)
@@ -3094,21 +3045,21 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                     if (!id) throw `No Query username, Contoh : ${prefix + command} ig cak_haho`
                     let {
                         result: anu
-                    } = await fetchJson(api('zenz', '/stalker/stalker/ig', {
+                    } = await fetchJson(api('zahwa', '/stalker/stalker/ig', {
                         username: id
                     }, 'apikey'))
                     if (anu.status == false) return m.reply(anu.result.message)
-                    akame.sendMedia(m.chat, anu.caption.profile_hd, '', `⭔ Full Name : ${anu.caption.full_name}\n⭔ User Name : ${anu.caption.user_name}\n⭔ ID ${anu.caption.user_id}\n⭔ Followers : ${anu.caption.followers}\n⭔ Following : ${anu.caption.following}\n⭔ Bussines : ${anu.caption.bussines}\n⭔ Profesional : ${anu.caption.profesional}\n⭔ Verified : ${anu.caption.verified}\n⭔ Private : ${anu.caption.private}\n⭔ Bio : ${anu.caption.biography}\n⭔ Bio Url : ${anu.caption.bio_url}`, fgclink)
+                    akame.sendMedia(m.chat, anu.caption.profile_hd, '', `• Full Name : ${anu.caption.full_name}\n• User Name : ${anu.caption.user_name}\n• ID ${anu.caption.user_id}\n• Followers : ${anu.caption.followers}\n• Following : ${anu.caption.following}\n• Bussines : ${anu.caption.bussines}\n• Profesional : ${anu.caption.profesional}\n• Verified : ${anu.caption.verified}\n• Private : ${anu.caption.private}\n• Bio : ${anu.caption.biography}\n• Bio Url : ${anu.caption.bio_url}`, fgclink)
                     db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'npm') {
                     if (!id) throw `No Query username, Contoh : ${prefix + command} npm scrape-primbon`
                     let {
                         result: anu
-                    } = await fetchJson(api('zenz', '/stalker/stalker/npm', {
+                    } = await fetchJson(api('zahwa', '/stalker/stalker/npm', {
                         query: id
                     }, 'apikey'))
                     if (anu.status == false) return m.reply(anu.result.message)
-                    m.reply(`⭔ Name : ${anu.name}\n⭔ Version : ${Object.keys(anu.versions)}\n⭔ Created : ${tanggal(anu.time.created)}\n⭔ Modified : ${tanggal(anu.time.modified)}\n⭔ Maintainers :\n ${anu.maintainers.map(v => `- ${v.name} : ${v.email}`).join('\n')}\n\n⭔ Description : ${anu.description}\n⭔ Homepage : ${anu.homepage}\n⭔ Keywords : ${anu.keywords}\n⭔ Author : ${anu.author.name}\n⭔ License : ${anu.license}\n⭔ Readme : ${anu.readme}`)
+                    m.reply(`• Name : ${anu.name}\n• Version : ${Object.keys(anu.versions)}\n• Created : ${tanggal(anu.time.created)}\n• Modified : ${tanggal(anu.time.modified)}\n• Maintainers :\n ${anu.maintainers.map(v => `- ${v.name} : ${v.email}`).join('\n')}\n\n• Description : ${anu.description}\n• Homepage : ${anu.homepage}\n• Keywords : ${anu.keywords}\n• Author : ${anu.author.name}\n• License : ${anu.license}\n• Readme : ${anu.readme}`)
                     db.data.users[m.sender].limit -= 1
                 } else {
                     m.reply(`Contoh : ${prefix +command} type id\n\nList Type :\n1. ff (Free Fire)\n2. ml (Mobile Legends)\n3. aov (Arena Of Valor)\n4. cod (Call Of Duty)\n5. pb (point Blank)\n6. ig (Instagram)\n7. npm (https://npmjs.com)`)
@@ -3224,7 +3175,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let teks = 'YouTube Search\n\n Result From '+text+'\n\n'
                 let no = 1
                 for (let i of search.all) {
-                    teks += `⭔ No : ${no++}\n⭔ Type : ${i.type}\n⭔ Video ID : ${i.videoId}\n⭔ Title : ${i.title}\n⭔ Views : ${i.views}\n⭔ Duration : ${i.timestamp}\n⭔ Upload At : ${i.ago}\n⭔ Author : ${i.author.name}\n⭔ Url : ${i.url}\n\n─────────────────\n\n`
+                    teks += `• No : ${no++}\n• Type : ${i.type}\n• Video ID : ${i.videoId}\n• Title : ${i.title}\n• Views : ${i.views}\n• Duration : ${i.timestamp}\n• Upload At : ${i.ago}\n• Author : ${i.author.name}\n• Url : ${i.url}\n\n─────────────────\n\n`
                 }
                 akame.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: fvideo })
             }
@@ -3237,9 +3188,9 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 google({'query': text}).then(res => {
                 let teks = `Google Search From : ${text}\n\n`
                 for (let g of res) {
-                teks += `⭔ *Title* : ${g.title}\n`
-                teks += `⭔ *Description* : ${g.snippet}\n`
-                teks += `⭔ *Link* : ${g.link}\n\n────────────────────────\n\n`
+                teks += `• *Title* : ${g.title}\n`
+                teks += `• *Description* : ${g.snippet}\n`
+                teks += `• *Link* : ${g.link}\n\n────────────────────────\n\n`
                 } 
                 m.reply(teks)
                 })
@@ -3313,7 +3264,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let quality = args[1] ? args[1] : '128kbps'
                 let media = await yta(text, quality)
                 if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
-                akame.sendImage(m.chat, media.thumb, `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${isUrl(text)}\n⭔ Ext : MP3\n⭔ Resolusi : ${args[1] || '128kbps'}`, m)
+                akame.sendImage(m.chat, media.thumb, `• Title : ${media.title}\n• File Size : ${media.filesizeF}\n• Url : ${isUrl(text)}\n• Ext : MP3\n• Resolusi : ${args[1] || '128kbps'}`, m)
                 akame.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
@@ -3325,7 +3276,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(text, quality)
                 if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
-                akame.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${isUrl(text)}\n⭔ Ext : MP3\n⭔ Resolusi : ${args[1] || '360p'}` }, { quoted: m })
+                akame.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `• Title : ${media.title}\n• File Size : ${media.filesizeF}\n• Url : ${isUrl(text)}\n• Ext : MP3\n• Resolusi : ${args[1] || '360p'}` }, { quoted: m })
             }
             break
 	    case 'getmusic': {
@@ -3340,7 +3291,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let quality = args[1] ? args[1] : '128kbps'
                 let media = await yta(urls[text - 1], quality)
                 if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
-                akame.sendImage(m.chat, media.thumb, `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${urls[text - 1]}\n⭔ Ext : MP3\n⭔ Resolusi : ${args[1] || '128kbps'}`, m)
+                akame.sendImage(m.chat, media.thumb, `• Title : ${media.title}\n• File Size : ${media.filesizeF}\n• Url : ${urls[text - 1]}\n• Ext : MP3\n• Resolusi : ${args[1] || '128kbps'}`, m)
                 akame.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
@@ -3356,7 +3307,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(urls[text - 1], quality)
                 if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
-                akame.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${urls[text - 1]}\n⭔ Ext : MP3\n⭔ Resolusi : ${args[1] || '360p'}` }, { quoted: m })
+                akame.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `• Title : ${media.title}\n• File Size : ${media.filesizeF}\n• Url : ${urls[text - 1]}\n• Ext : MP3\n• Resolusi : ${args[1] || '360p'}` }, { quoted: m })
             }
             break
             case 'pinterest': {
@@ -3404,7 +3355,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                     type: 1
                 }]
                 let buttonMessage = {
-                    image: { url: api('zenz', '/randomanime/' + command, {}, 'apikey') },
+                    image: { url: api('zahwa', '/randomanime/' + command, {}, 'apikey') },
                     caption: `Random Image ${command}`,
                     footer: ntiktok,
                     buttons: buttons,
@@ -3427,7 +3378,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                     type: 1
                 }]
                 let buttonMessage = {
-                    image: { url: api('zenz', '/randomanime/marin-kitagawa', {}, 'apikey') },
+                    image: { url: api('zahwa', '/randomanime/marin-kitagawa', {}, 'apikey') },
                     caption: `Random Image Marin Kitagawa`,
                     footer: ntiktok,
                     buttons: buttons,
@@ -3450,7 +3401,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                     type: 1
                 }]
                 let buttonMessage = {
-                    image: { url: api('zenz', '/randomanime/mori-calliope', {}, 'apikey') },
+                    image: { url: api('zahwa', '/randomanime/mori-calliope', {}, 'apikey') },
                     caption: `Random Image Mori Calliope`,
                     footer: ntiktok,
                     buttons: buttons,
@@ -3473,7 +3424,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                     type: 1
                 }]
                 let buttonMessage = {
-                    image: { url: api('zenz', '/randomanime/raiden-shogun', {}, 'apikey') },
+                    image: { url: api('zahwa', '/randomanime/raiden-shogun', {}, 'apikey') },
                     caption: `Random Image Raiden Shogun`,
                     footer: ntiktok,
                     buttons: buttons,
@@ -3489,7 +3440,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                 db.data.users[m.sender].limit -= 1 // -1 limit
                 let gis = require('g-i-s')
-                gis(command + ' Icon HD', async (error, result) => {
+                gis(command + 'Icon HD', async (error, result) => {
                 n = result
                 images = n[Math.floor(Math.random() * n.length)].url
                 let buttons = [
@@ -3666,7 +3617,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                     type: 1
                 }]
                 let buttonMessage = {
-                    image: { url: api('zenz', '/randomimage/' + command, {}, 'apikey') },
+                    image: { url: api('zahwa', '/randomimage/' + command, {}, 'apikey') },
                     caption: `Random Image ${command}`,
                     footer: ntiktok,
                     buttons: buttons,
@@ -3776,7 +3727,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                     image: {
                         url: result.image[0]
                     },
-                    caption: `⭔ Title : ${result.title}\n⭔ Category : ${result.type}\n⭔ Detail : ${result.source}\n⭔ Media Url : ${result.image[2] || result.image[1] || result.image[0]}`,
+                    caption: `• Title : ${result.title}\n• Category : ${result.type}\n• Detail : ${result.source}\n• Media Url : ${result.image[2] || result.image[1] || result.image[0]}`,
                     footer: ntiktok,
                     buttons: buttons,
                     headerType: 4
@@ -3817,36 +3768,6 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 })
             }
             break
-            case 'tinyurl': case 'shortlink': {
-            	if (!text) throw 'Masukkan Query Link!'
-                let anu = await axios.get(`https://tinyurl.com/api-create.php?url=${text}`)
-                let buttons = [
-                    {buttonId: `hehehe`, buttonText: {displayText: '🙏THANKS'}, type: 1}
-                ]
-                let buttonMessage = {
-                    text: anu.data,
-                    footer: ntiktok,
-                    buttons: buttons,
-                    headerType: 2
-                }
-                akame.sendMessage(m.chat, buttonMessage, { quoted: fdoc })
-            }
-            break
-            case 'linkpoi': {
-            	if (!text) throw 'Masukkan Query Link!'
-                let poi = await fetchJson(`https://linkpoi.ga/api.php?url=${text}`)
-                let buttons = [
-                    {buttonId: `hehehe`, buttonText: {displayText: '🙏THANKS'}, type: 1}
-                ]
-                let buttonMessage = {
-                    text: poi.shorturl,
-                    footer: ntiktok,
-                    buttons: buttons,
-                    headerType: 2
-                }
-                akame.sendMessage(m.chat, buttonMessage, { quoted: fdoc })
-            }
-            break
             case 'quotesanime':
             case 'quoteanime': {
                 let {
@@ -3880,7 +3801,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 m.reply(mess.wait)
                 if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                 db.data.users[m.sender].limit -= 1 // -1 limit
-                let anu = await fetchJson(api('zenz', '/randomtext/animequotes2', {}, 'apikey'))
+                let anu = await fetchJson(api('zahwa', '/randomtext/animequotes2', {}, 'apikey'))
                 let buttons = [{
                     buttonId: `animequotes`,
                     buttonText: {
@@ -3916,7 +3837,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 m.reply(mess.wait)
                 if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                 db.data.users[m.sender].limit -= 1 // -1 limit
-                let anu = await fetchJson(api('zenz', '/randomtext/' + command, {}, 'apikey'))
+                let anu = await fetchJson(api('zahwa', '/randomtext/' + command, {}, 'apikey'))
                 let buttons = [{
                     buttonId: `${command}`,
                     buttonText: {
@@ -3939,7 +3860,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 m.reply(mess.wait)
                 if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                 db.data.users[m.sender].limit -= 1 // -1 limit
-                let anu = await fetchJson(api('zenz', '/randomtext/' + command, {}, 'apikey'))
+                let anu = await fetchJson(api('zahwa', '/randomtext/' + command, {}, 'apikey'))
                 let buttons = [{
                     buttonId: `${command}`,
                     buttonText: {
@@ -3995,7 +3916,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 db.data.users[m.sender].limit -= 1 // -1 limit
                 akame.sendMessage(m.chat, {
                     image: {
-                        url: api('zenz', '/textpro/' + command, {
+                        url: api('zahwa', '/textpro/' + command, {
                             text: text
                         }, 'apikey')
                     },
@@ -4030,7 +3951,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let dwnld = await akame.downloadAndSaveMediaMessage(qmsg)
                 let { TelegraPh } = require('./lib/uploader')
                 let fatGans = await TelegraPh(dwnld)
-                let smeme = api('zenz', '/photoeditor/' + command, { url: fatGans }, 'apikey')
+                let smeme = api('zahwa', '/photoeditor/' + command, { url: fatGans }, 'apikey')
                 let FaTiH = await akame.sendImageAsSticker(m.chat, smeme, fdoc, {
                     packname: global.packname,
                     author: global.author
@@ -4079,7 +4000,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 db.data.users[m.sender].limit -= 1 // -1 limit
                 akame.sendMessage(m.chat, {
                     image: {
-                        url: api('zenz', '/ephoto/' + command, {
+                        url: api('zahwa', '/ephoto/' + command, {
                             text: text
                         }, 'apikey')
                     },
@@ -4093,14 +4014,14 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 if (!Number(text)) throw `Contoh : ${prefix + command} 6288292024190`
                 let anu = await primbon.nomer_hoki(Number(text))
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Nomor HP :* ${anu.message.nomer_hp}\n⭔ *Angka Shuzi :* ${anu.message.angka_shuzi}\n⭔ *Energi Positif :*\n- Kekayaan : ${anu.message.energi_positif.kekayaan}\n- Kesehatan : ${anu.message.energi_positif.kesehatan}\n- Cinta : ${anu.message.energi_positif.cinta}\n- Kestabilan : ${anu.message.energi_positif.kestabilan}\n- Persentase : ${anu.message.energi_positif.persentase}\n⭔ *Energi Negatif :*\n- Perselisihan : ${anu.message.energi_negatif.perselisihan}\n- Kehilangan : ${anu.message.energi_negatif.kehilangan}\n- Malapetaka : ${anu.message.energi_negatif.malapetaka}\n- Kehancuran : ${anu.message.energi_negatif.kehancuran}\n- Persentase : ${anu.message.energi_negatif.persentase}`, fakestatus)
+                akame.sendText(m.chat, `• *Nomor HP :* ${anu.message.nomer_hp}\n• *Angka Shuzi :* ${anu.message.angka_shuzi}\n• *Energi Positif :*\n- Kekayaan : ${anu.message.energi_positif.kekayaan}\n- Kesehatan : ${anu.message.energi_positif.kesehatan}\n- Cinta : ${anu.message.energi_positif.cinta}\n- Kestabilan : ${anu.message.energi_positif.kestabilan}\n- Persentase : ${anu.message.energi_positif.persentase}\n• *Energi Negatif :*\n- Perselisihan : ${anu.message.energi_negatif.perselisihan}\n- Kehilangan : ${anu.message.energi_negatif.kehilangan}\n- Malapetaka : ${anu.message.energi_negatif.malapetaka}\n- Kehancuran : ${anu.message.energi_negatif.kehancuran}\n- Persentase : ${anu.message.energi_negatif.persentase}`, fakestatus)
             }
             break
             case 'artimimpi': case 'tafsirmimpi': {
                 if (!text) throw `Contoh : ${prefix + command} belanja`
                 let anu = await primbon.tafsir_mimpi(text)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Mimpi :* ${anu.message.mimpi}\n⭔ *Arti :* ${anu.message.arti}\n⭔ *Solusi :* ${anu.message.solusi}`, fakestatus)
+                akame.sendText(m.chat, `• *Mimpi :* ${anu.message.mimpi}\n• *Arti :* ${anu.message.arti}\n• *Solusi :* ${anu.message.solusi}`, fakestatus)
             }
             break
             case 'ramalanjodoh': case 'ramaljodoh': {
@@ -4108,7 +4029,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_jodoh(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Nama Anda :* ${anu.message.nama_anda.nama}\n⭔ *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n⭔ *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n⭔ *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
+                akame.sendText(m.chat, `• *Nama Anda :* ${anu.message.nama_anda.nama}\n• *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n• *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n• *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n• *Hasil :* ${anu.message.result}\n• *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'ramalanjodohbali': case 'ramaljodohbali': {
@@ -4116,7 +4037,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_jodoh_bali(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Nama Anda :* ${anu.message.nama_anda.nama}\n⭔ *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n⭔ *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n⭔ *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
+                akame.sendText(m.chat, `• *Nama Anda :* ${anu.message.nama_anda.nama}\n• *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n• *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n• *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n• *Hasil :* ${anu.message.result}\n• *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'suamiistri': {
@@ -4124,7 +4045,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.suami_istri(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Nama Suami :* ${anu.message.suami.nama}\n⭔ *Lahir Suami :* ${anu.message.suami.tgl_lahir}\n⭔ *Nama Istri :* ${anu.message.istri.nama}\n⭔ *Lahir Istri :* ${anu.message.istri.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
+                akame.sendText(m.chat, `• *Nama Suami :* ${anu.message.suami.nama}\n• *Lahir Suami :* ${anu.message.suami.tgl_lahir}\n• *Nama Istri :* ${anu.message.istri.nama}\n• *Lahir Istri :* ${anu.message.istri.tgl_lahir}\n• *Hasil :* ${anu.message.result}\n• *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'ramalancinta': case 'ramalcinta': {
@@ -4132,14 +4053,14 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_cinta(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Nama Anda :* ${anu.message.nama_anda.nama}\n⭔ *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n⭔ *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n⭔ *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n⭔ *Sisi Positif :* ${anu.message.sisi_positif}\n⭔ *Sisi Negatif :* ${anu.message.sisi_negatif}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
+                akame.sendText(m.chat, `• *Nama Anda :* ${anu.message.nama_anda.nama}\n• *Lahir Anda :* ${anu.message.nama_anda.tgl_lahir}\n• *Nama Pasangan :* ${anu.message.nama_pasangan.nama}\n• *Lahir Pasangan :* ${anu.message.nama_pasangan.tgl_lahir}\n• *Sisi Positif :* ${anu.message.sisi_positif}\n• *Sisi Negatif :* ${anu.message.sisi_negatif}\n• *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'artinama': {
                 if (!text) throw `Contoh : ${prefix + command} Dika Ardianta`
                 let anu = await primbon.arti_nama(text)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Arti :* ${anu.message.arti}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
+                akame.sendText(m.chat, `• *Nama :* ${anu.message.nama}\n• *Arti :* ${anu.message.arti}\n• *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'kecocokannama': case 'cocoknama': {
@@ -4147,7 +4068,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.kecocokan_nama(nama, tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Life Path :* ${anu.message.life_path}\n⭔ *Destiny :* ${anu.message.destiny}\n⭔ *Destiny Desire :* ${anu.message.destiny_desire}\n⭔ *Personality :* ${anu.message.personality}\n⭔ *Persentase :* ${anu.message.persentase_kecocokan}`, fakestatus)
+                akame.sendText(m.chat, `• *Nama :* ${anu.message.nama}\n• *Lahir :* ${anu.message.tgl_lahir}\n• *Life Path :* ${anu.message.life_path}\n• *Destiny :* ${anu.message.destiny}\n• *Destiny Desire :* ${anu.message.destiny_desire}\n• *Personality :* ${anu.message.personality}\n• *Persentase :* ${anu.message.persentase_kecocokan}`, fakestatus)
             }
             break
             case 'kecocokanpasangan': case 'cocokpasangan': case 'pasangan': {
@@ -4155,7 +4076,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [nama1, nama2] = text.split`|`
                 let anu = await primbon.kecocokan_nama_pasangan(nama1, nama2)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendImage(m.chat,  anu.message.gambar, `⭔ *Nama Anda :* ${anu.message.nama_anda}\n⭔ *Nama Pasangan :* ${anu.message.nama_pasangan}\n⭔ *Sisi Positif :* ${anu.message.sisi_positif}\n⭔ *Sisi Negatif :* ${anu.message.sisi_negatif}`, fakestatus)
+                akame.sendImage(m.chat,  anu.message.gambar, `• *Nama Anda :* ${anu.message.nama_anda}\n• *Nama Pasangan :* ${anu.message.nama_pasangan}\n• *Sisi Positif :* ${anu.message.sisi_positif}\n• *Sisi Negatif :* ${anu.message.sisi_negatif}`, fakestatus)
             }
             break
             case 'jadianpernikahan': case 'jadiannikah': {
@@ -4163,7 +4084,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.tanggal_jadian_pernikahan(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Tanggal Pernikahan :* ${anu.message.tanggal}\n⭔ *karakteristik :* ${anu.message.karakteristik}`, fakestatus)
+                akame.sendText(m.chat, `• *Tanggal Pernikahan :* ${anu.message.tanggal}\n• *karakteristik :* ${anu.message.karakteristik}`, fakestatus)
             }
             break
             case 'sifatusaha': {
@@ -4171,7 +4092,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.sifat_usaha_bisnis(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Lahir :* ${anu.message.hari_lahir}\n⭔ *Usaha :* ${anu.message.usaha}`, fakestatus)
+                akame.sendText(m.chat, `• *Lahir :* ${anu.message.hari_lahir}\n• *Usaha :* ${anu.message.usaha}`, fakestatus)
             }
             break
             case 'rejeki': case 'rezeki': {
@@ -4179,7 +4100,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.rejeki_hoki_weton(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Lahir :* ${anu.message.hari_lahir}\n⭔ *Rezeki :* ${anu.message.rejeki}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
+                akame.sendText(m.chat, `• *Lahir :* ${anu.message.hari_lahir}\n• *Rezeki :* ${anu.message.rejeki}\n• *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'pekerjaan': case 'kerja': {
@@ -4187,7 +4108,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.pekerjaan_weton_lahir(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Lahir :* ${anu.message.hari_lahir}\n⭔ *Pekerjaan :* ${anu.message.pekerjaan}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
+                akame.sendText(m.chat, `• *Lahir :* ${anu.message.hari_lahir}\n• *Pekerjaan :* ${anu.message.pekerjaan}\n• *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'ramalannasib': case 'ramalnasib': case 'nasib': {
@@ -4195,7 +4116,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.ramalan_nasib(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Analisa :* ${anu.message.analisa}\n⭔ *Angka Akar :* ${anu.message.angka_akar}\n⭔ *Sifat :* ${anu.message.sifat}\n⭔ *Elemen :* ${anu.message.elemen}\n⭔ *Angka Keberuntungan :* ${anu.message.angka_keberuntungan}`, fakestatus)
+                akame.sendText(m.chat, `• *Analisa :* ${anu.message.analisa}\n• *Angka Akar :* ${anu.message.angka_akar}\n• *Sifat :* ${anu.message.sifat}\n• *Elemen :* ${anu.message.elemen}\n• *Angka Keberuntungan :* ${anu.message.angka_keberuntungan}`, fakestatus)
             }
             break
             case 'potensipenyakit': case 'penyakit': {
@@ -4203,7 +4124,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.cek_potensi_penyakit(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Analisa :* ${anu.message.analisa}\n⭔ *Sektor :* ${anu.message.sektor}\n⭔ *Elemen :* ${anu.message.elemen}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
+                akame.sendText(m.chat, `• *Analisa :* ${anu.message.analisa}\n• *Sektor :* ${anu.message.sektor}\n• *Elemen :* ${anu.message.elemen}\n• *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'artitarot': case 'tarot': {
@@ -4211,7 +4132,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.arti_kartu_tarot(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendImage(m.chat, anu.message.image, `⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Simbol Tarot :* ${anu.message.simbol_tarot}\n⭔ *Arti :* ${anu.message.arti}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
+                akame.sendImage(m.chat, anu.message.image, `• *Lahir :* ${anu.message.tgl_lahir}\n• *Simbol Tarot :* ${anu.message.simbol_tarot}\n• *Arti :* ${anu.message.arti}\n• *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'fengshui': {
@@ -4219,7 +4140,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [nama, gender, tahun] = text.split`,`
                 let anu = await primbon.perhitungan_feng_shui(nama, gender, tahun)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tahun_lahir}\n⭔ *Gender :* ${anu.message.jenis_kelamin}\n⭔ *Angka Kua :* ${anu.message.angka_kua}\n⭔ *Kelompok :* ${anu.message.kelompok}\n⭔ *Karakter :* ${anu.message.karakter}\n⭔ *Sektor Baik :* ${anu.message.sektor_baik}\n⭔ *Sektor Buruk :* ${anu.message.sektor_buruk}`, fakestatus)
+                akame.sendText(m.chat, `• *Nama :* ${anu.message.nama}\n• *Lahir :* ${anu.message.tahun_lahir}\n• *Gender :* ${anu.message.jenis_kelamin}\n• *Angka Kua :* ${anu.message.angka_kua}\n• *Kelompok :* ${anu.message.kelompok}\n• *Karakter :* ${anu.message.karakter}\n• *Sektor Baik :* ${anu.message.sektor_baik}\n• *Sektor Buruk :* ${anu.message.sektor_buruk}`, fakestatus)
             }
             break
             case 'haribaik': {
@@ -4227,7 +4148,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.petung_hari_baik(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Kala Tinantang :* ${anu.message.kala_tinantang}\n⭔ *Info :* ${anu.message.info}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
+                akame.sendText(m.chat, `• *Lahir :* ${anu.message.tgl_lahir}\n• *Kala Tinantang :* ${anu.message.kala_tinantang}\n• *Info :* ${anu.message.info}\n• *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'harisangar': case 'taliwangke': {
@@ -4235,7 +4156,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.hari_sangar_taliwangke(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Info :* ${anu.message.info}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
+                akame.sendText(m.chat, `• *Lahir :* ${anu.message.tgl_lahir}\n• *Hasil :* ${anu.message.result}\n• *Info :* ${anu.message.info}\n• *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'harinaas': case 'harisial': {
@@ -4243,7 +4164,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_hari_naas(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Hari Lahir :* ${anu.message.hari_lahir}\n⭔ *Tanggal Lahir :* ${anu.message.tgl_lahir}\n⭔ *Hari Naas :* ${anu.message.hari_naas}\n⭔ *Info :* ${anu.message.catatan}\n⭔ *Catatan :* ${anu.message.info}`, fakestatus)
+                akame.sendText(m.chat, `• *Hari Lahir :* ${anu.message.hari_lahir}\n• *Tanggal Lahir :* ${anu.message.tgl_lahir}\n• *Hari Naas :* ${anu.message.hari_naas}\n• *Info :* ${anu.message.catatan}\n• *Catatan :* ${anu.message.info}`, fakestatus)
             }
             break
             case 'nagahari': case 'harinaga': {
@@ -4251,7 +4172,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.rahasia_naga_hari(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Hari Lahir :* ${anu.message.hari_lahir}\n⭔ *Tanggal Lahir :* ${anu.message.tgl_lahir}\n⭔ *Arah Naga Hari :* ${anu.message.arah_naga_hari}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
+                akame.sendText(m.chat, `• *Hari Lahir :* ${anu.message.hari_lahir}\n• *Tanggal Lahir :* ${anu.message.tgl_lahir}\n• *Arah Naga Hari :* ${anu.message.arah_naga_hari}\n• *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'arahrejeki': case 'arahrezeki': {
@@ -4259,7 +4180,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_arah_rejeki(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Hari Lahir :* ${anu.message.hari_lahir}\n⭔ *tanggal Lahir :* ${anu.message.tgl_lahir}\n⭔ *Arah Rezeki :* ${anu.message.arah_rejeki}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
+                akame.sendText(m.chat, `• *Hari Lahir :* ${anu.message.hari_lahir}\n• *tanggal Lahir :* ${anu.message.tgl_lahir}\n• *Arah Rezeki :* ${anu.message.arah_rejeki}\n• *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'peruntungan': {
@@ -4267,7 +4188,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [nama, tgl, bln, thn, untuk] = text.split`,`
                 let anu = await primbon.ramalan_peruntungan(nama, tgl, bln, thn, untuk)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Peruntungan Tahun :* ${anu.message.peruntungan_tahun}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
+                akame.sendText(m.chat, `• *Nama :* ${anu.message.nama}\n• *Lahir :* ${anu.message.tgl_lahir}\n• *Peruntungan Tahun :* ${anu.message.peruntungan_tahun}\n• *Hasil :* ${anu.message.result}\n• *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'weton': case 'wetonjawa': {
@@ -4275,7 +4196,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.weton_jawa(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Tanggal :* ${anu.message.tanggal}\n⭔ *Jumlah Neptu :* ${anu.message.jumlah_neptu}\n⭔ *Watak Hari :* ${anu.message.watak_hari}\n⭔ *Naga Hari :* ${anu.message.naga_hari}\n⭔ *Jam Baik :* ${anu.message.jam_baik}\n⭔ *Watak Kelahiran :* ${anu.message.watak_kelahiran}`, fakestatus)
+                akame.sendText(m.chat, `• *Tanggal :* ${anu.message.tanggal}\n• *Jumlah Neptu :* ${anu.message.jumlah_neptu}\n• *Watak Hari :* ${anu.message.watak_hari}\n• *Naga Hari :* ${anu.message.naga_hari}\n• *Jam Baik :* ${anu.message.jam_baik}\n• *Watak Kelahiran :* ${anu.message.watak_kelahiran}`, fakestatus)
             }
             break
             case 'sifat': case 'karakter': {
@@ -4283,7 +4204,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.sifat_karakter_tanggal_lahir(nama, tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Garis Hidup :* ${anu.message.garis_hidup}`, fakestatus)
+                akame.sendText(m.chat, `• *Nama :* ${anu.message.nama}\n• *Lahir :* ${anu.message.tgl_lahir}\n• *Garis Hidup :* ${anu.message.garis_hidup}`, fakestatus)
             }
             break
             case 'keberuntungan': {
@@ -4291,7 +4212,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.potensi_keberuntungan(nama, tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Lahir :* ${anu.message.tgl_lahir}\n⭔ *Hasil :* ${anu.message.result}`, fakestatus)
+                akame.sendText(m.chat, `• *Nama :* ${anu.message.nama}\n• *Lahir :* ${anu.message.tgl_lahir}\n• *Hasil :* ${anu.message.result}`, fakestatus)
             }
             break
             case 'memancing': {
@@ -4299,7 +4220,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_memancing_ikan(tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Tanggal :* ${anu.message.tgl_memancing}\n⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
+                akame.sendText(m.chat, `• *Tanggal :* ${anu.message.tgl_memancing}\n• *Hasil :* ${anu.message.result}\n• *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'masasubur': {
@@ -4307,7 +4228,7 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 let [tgl, bln, thn, siklus] = text.split`,`
                 let anu = await primbon.masa_subur(tgl, bln, thn, siklus)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Hasil :* ${anu.message.result}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
+                akame.sendText(m.chat, `• *Hasil :* ${anu.message.result}\n• *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'zodiak': case 'zodiac': {
@@ -4342,14 +4263,14 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
                 
                 let anu = await primbon.zodiak(zodiac)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Zodiak :* ${anu.message.zodiak}\n⭔ *Nomor :* ${anu.message.nomor_keberuntungan}\n⭔ *Aroma :* ${anu.message.aroma_keberuntungan}\n⭔ *Planet :* ${anu.message.planet_yang_mengitari}\n⭔ *Bunga :* ${anu.message.bunga_keberuntungan}\n⭔ *Warna :* ${anu.message.warna_keberuntungan}\n⭔ *Batu :* ${anu.message.batu_keberuntungan}\n⭔ *Elemen :* ${anu.message.elemen_keberuntungan}\n⭔ *Pasangan Zodiak :* ${anu.message.pasangan_zodiak}\n⭔ *Catatan :* ${anu.message.catatan}`, fakestatus)
+                akame.sendText(m.chat, `• *Zodiak :* ${anu.message.zodiak}\n• *Nomor :* ${anu.message.nomor_keberuntungan}\n• *Aroma :* ${anu.message.aroma_keberuntungan}\n• *Planet :* ${anu.message.planet_yang_mengitari}\n• *Bunga :* ${anu.message.bunga_keberuntungan}\n• *Warna :* ${anu.message.warna_keberuntungan}\n• *Batu :* ${anu.message.batu_keberuntungan}\n• *Elemen :* ${anu.message.elemen_keberuntungan}\n• *Pasangan Zodiak :* ${anu.message.pasangan_zodiak}\n• *Catatan :* ${anu.message.catatan}`, fakestatus)
             }
             break
             case 'shio': {
                 if (!text) throw `Contoh : ${prefix + command} tikus\n\nNote : For Detail https://primbon.com/shio.htm`
                 let anu = await primbon.shio(text)
                 if (anu.status == false) return m.reply(anu.message)
-                akame.sendText(m.chat, `⭔ *Hasil :* ${anu.message}`, fakestatus)
+                akame.sendText(m.chat, `• *Hasil :* ${anu.message}`, fakestatus)
             }
             break
             case 'menfes': case 'menfess': {
@@ -4457,32 +4378,26 @@ case 'randomcolor': case 'color': case 'warnarandom': case 'warna': {
 				akame.sendMessage(m.chat, { audio: { url: anu.audio }, mimetype: 'audio/mpeg'}, { quoted: fvn })
 				}
 				break
-            case 'igdl': case 'instagram':{
-const instagramGetUrl = require("instagram-url-direct")
-const results = (await instagramGetUrl(q)).url_list[0]
-console.log(results)
-}
-break
             case 'joox': case 'jooxdl': {
                 if (!text) throw 'No Query Title'
                 m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/downloader/joox', { query: text }, 'apikey'))
-                let msg = await akame.sendImage(m.chat, anu.result.img, `⭔ Title : ${anu.result.lagu}\n⭔ Album : ${anu.result.album}\n⭔ Singer : ${anu.result.penyanyi}\n⭔ Publish : ${anu.result.publish}\n⭔ Lirik :\n${anu.result.lirik.result}`, fgclink)
+                let anu = await fetchJson(api('zahwa', '/downloader/joox', { query: text }, 'apikey'))
+                let msg = await akame.sendImage(m.chat, anu.result.img, `• Title : ${anu.result.lagu}\n• Album : ${anu.result.album}\n• Singer : ${anu.result.penyanyi}\n• Publish : ${anu.result.publish}\n• Lirik :\n${anu.result.lirik.result}`, fgclink)
                 akame.sendMessage(m.chat, { audio: { url: anu.result.mp4aLink }, mimetype: 'audio/mpeg', fileName: anu.result.lagu+'.m4a' }, { quoted: fvn })
             }
             break
             case 'soundcloud': case 'scdl': {
                 if (!text) throw 'No Query Title'
                 m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/downloader/soundcloud', { url: isUrl(text)[0] }, 'apikey'))
-                let msg = await akame.sendImage(m.chat, anu.result.thumb, `⭔ Title : ${anu.result.title}\n⭔ Url : ${isUrl(text)[0]}`)
+                let anu = await fetchJson(api('zahwa', '/downloader/soundcloud', { url: isUrl(text)[0] }, 'apikey'))
+                let msg = await akame.sendImage(m.chat, anu.result.thumb, `• Title : ${anu.result.title}\n• Url : ${isUrl(text)[0]}`)
                 akame.sendMessage(m.chat, { audio: { url: anu.result.url }, mimetype: 'audio/mpeg', fileName: anu.result.title+'.m4a' }, { quoted: fvn })
             }
             break
 	        case 'twitdl': case 'twitter': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/api/downloader/twitter', { url: text }, 'apikey'))
+                let anu = await fetchJson(api('zahwa', '/api/downloader/twitter', { url: text }, 'apikey'))
                 let buttons = [
                     {buttonId: `twittermp3 ${text}`, buttonText: {displayText: '⌲ Audio'}, type: 1}
                 ]
@@ -4499,7 +4414,7 @@ break
             case 'twittermp3': case 'twitteraudio': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/api/downloader/twitter', { url: text }, 'apikey'))
+                let anu = await fetchJson(api('zahwa', '/api/downloader/twitter', { url: text }, 'apikey'))
                 let buttons = [
                     {buttonId: `twitter ${text}`, buttonText: {displayText: '⌲ Video'}, type: 1}
                 ]
@@ -4514,18 +4429,6 @@ break
                 akame.sendMessage(m.chat, { audio: { url: anu.result.audio } }, { quoted: fvn })
             }
             break
-            case 'fbdl':
-case 'facebook':{
-if (!text) return m.reply(`Example : ${prefix + command} link`)
-if (!q.includes('facebook.com')) return m.reply(`Link Invalid!!`)
-m.reply(mess.wait)
-const { fbdl } = require("./lib/facebook");
-fbdl(q).then( data => {
-if (data.length == 0) return reply(`Maaf terjadi kesalahan, ganti link yang lain!`)
-akame.sendMessage(m.chat, { video: { url: data[data.length - 1] }, caption: data.title }, { quoted: m })
-})
-}
-break
             case 'umma': case 'ummadl': {
 	        if (!text) throw `Contoh : ${prefix + command} https://umma.id/channel/video/post/gus-arafat-sumber-kecewa-84464612933698`
                 let { umma } = require('./lib) scraper')
@@ -4538,11 +4441,11 @@ break
 		    let buttonMessage = {
 		        image: { url: anu.author.profilePic },
 			caption: `
-⭔ Title : ${anu.title}
-⭔ Author : ${anu.author.name}
-⭔ Like : ${anu.like}
-⭔ Caption : ${anu.caption}
-⭔ Url : ${anu.media[0]}
+• Title : ${anu.title}
+• Author : ${anu.author.name}
+• Like : ${anu.like}
+• Caption : ${anu.caption}
+• Url : ${anu.media[0]}
 Untuk Download Media Silahkan Klik salah satu Button dibawah ini atau masukkan command ytmp3/ytmp4 dengan url diatas
 `,
 			footer: ntiktok,
@@ -4552,7 +4455,7 @@ Untuk Download Media Silahkan Klik salah satu Button dibawah ini atau masukkan c
 		    akame.sendMessage(m.chat, buttonMessage, { quoted: fgclink })
 		} else if (anu.type == 'image') {
 		    anu.media.map(async (url) => {
-		        akame.sendMessage(m.chat, { image: { url }, caption: `⭔ Title : ${anu.title}\n⭔ Author : ${anu.author.name}\n⭔ Like : ${anu.like}\n⭔ Caption : ${anu.caption}` }, { quoted: fgclink })
+		        akame.sendMessage(m.chat, { image: { url }, caption: `• Title : ${anu.title}\n• Author : ${anu.author.name}\n• Like : ${anu.like}\n• Caption : ${anu.caption}` }, { quoted: fgclink })
 		    })
 		}
 	    }
@@ -4708,11 +4611,11 @@ ${id}`)
                 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/religi/asmaulhusna.json')
                 let capt = `Asmaul Husna:\n\n`
                 for (let i of anu) {
-                    capt += `⭔ Nomor: ${i.index}\n`
-                    capt += `⭔ Latin: ${i.latin}\n`
-                    capt += `⭔ Arab: ${i.arabic}\n`
-                    capt += `⭔ Arti ID: ${i.translation_id}\n`
-                    capt += `⭔ Arti EN: ${i.translation_en}\n\n──────────────────────\n`
+                    capt += `• Nomor: ${i.index}\n`
+                    capt += `• Latin: ${i.latin}\n`
+                    capt += `• Arab: ${i.arabic}\n`
+                    capt += `• Arti ID: ${i.translation_id}\n`
+                    capt += `• Arti EN: ${i.translation_en}\n\n──────────────────────\n`
                 }
                 m.reply(capt)
             }
@@ -4960,7 +4863,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             }
             break
             case 'apikey': {
-                m.reply(`Apikey Yang Dipake Oleh Bot Akame\n⬣ https://zenzapis.xyz [Sewa]`)
+                m.reply(`Apikey Yang Dipake Oleh Bot Akame\n⬣ https://api.zahwazein.xyz [Sewa]`)
                 }
                 break
             case 'nulis': {
@@ -5134,15 +5037,6 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 akame.sendMessage(m.chat, reactionMessage)
             }
             break
-            case 'tagme': {
-            let me = m.sender
-            let jawab = `*@${me.split('@')[0]}*`
-            let ments = [me]
-            let buttons = [{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
-            akame.sendMessage(m.chat, {react: {text: kloadq,key: m.key}})
-            await akame.sendButtonText(m.chat, buttons, jawab, ntiktok, m, {mentions: ments, quoted: fkontak})
-            }
-            break
             case 'ceklimit': case 'checklimit': case 'limit':{
 					m.reply('*Limit Lu :* ' + (db.data.users[m.sender].limit))
 					}
@@ -5159,7 +5053,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             break
             case 'gsmarena': {
                 if (!text) throw `Contoh : ${prefix + command} samsung`
-                let res = await fetchJson(api('zenz', '/webzone/gsmarena', {
+                let res = await fetchJson(api('zahwa', '/webzone/gsmarena', {
                     query: text
                 }, 'apikey'))
                 let {
@@ -5179,67 +5073,67 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                     merek_batre,
                     detail
                 } = res.result
-                let capt = `⭔ Title: ${judul}
-⭔ Realease: ${rilis}
-⭔ Size: ${ukuran}
-⭔ Type: ${type}
-⭔ Storage: ${storage}
-⭔ Display: ${display}
-⭔ Inchi: ${inchi}
-⭔ Pixel: ${pixel}
-⭔ Video Pixel: ${videoPixel}
-⭔ Ram: ${ram}
-⭔ Chipset: ${chipset}
-⭔ Battery: ${batrai}
-⭔ Battery Brand: ${merek_batre}
-⭔ Detail: ${detail}`
+                let capt = `• Title: ${judul}
+• Realease: ${rilis}
+• Size: ${ukuran}
+• Type: ${type}
+• Storage: ${storage}
+• Display: ${display}
+• Inchi: ${inchi}
+• Pixel: ${pixel}
+• Video Pixel: ${videoPixel}
+• Ram: ${ram}
+• Chipset: ${chipset}
+• Battery: ${batrai}
+• Battery Brand: ${merek_batre}
+• Detail: ${detail}`
                 akame.sendImage(m.chat, thumb, capt, fdoc)
             }
             break
             case 'jadwalbioskop': {
                 if (!text) throw `Contoh: ${prefix + command} jakarta`
-                let res = await fetchJson(api('zenz', '/webzone/jadwalbioskop', {
+                let res = await fetchJson(api('zahwa', '/webzone/jadwalbioskop', {
                     kota: text
                 }, 'apikey'))
                 let capt = `Jadwal Bioskop From : ${text}\n\n`
                 for (let i of res.result) {
-                    capt += `⭔ Title: ${i.title}\n`
-                    capt += `⭔ Thumbnail: ${i.thumb}\n`
-                    capt += `⭔ Url: ${i.url}\n\n──────────────────────\n`
+                    capt += `• Title: ${i.title}\n`
+                    capt += `• Thumbnail: ${i.thumb}\n`
+                    capt += `• Url: ${i.url}\n\n──────────────────────\n`
                 }
                 akame.sendImage(m.chat, res.result[0].thumb, capt, fdoc)
             }
             break
             case 'nowplayingbioskop': {
-                let res = await fetchJson(api('zenz', '/webzone/nowplayingbioskop', {}, 'apikey'))
+                let res = await fetchJson(api('zahwa', '/webzone/nowplayingbioskop', {}, 'apikey'))
                 let capt = `Now Playing Bioskop\n\n`
                 for (let i of res.result) {
-                    capt += `⭔ Title: ${i.title}\n`
-                    capt += `⭔ Url: ${i.url}\n`
-                    capt += `⭔ Img Url: ${i.img}\n\n──────────────────────\n`
+                    capt += `• Title: ${i.title}\n`
+                    capt += `• Url: ${i.url}\n`
+                    capt += `• Img Url: ${i.img}\n\n──────────────────────\n`
                 }
                 akame.sendImage(m.chat, res.result[0].img, capt, fdoc)
             }
             break
             case 'aminio': {
                 if (!text) throw `Contoh: ${prefix + command} free fire`
-                let res = await fetchJson(api('zenz', '/webzone/amino', {
+                let res = await fetchJson(api('zahwa', '/webzone/amino', {
                     query: text
                 }, 'apikey'))
                 let capt = `Amino Search From : ${text}\n\n`
                 for (let i of res.result) {
-                    capt += `⭔ Community: ${i.community}\n`
-                    capt += `⭔ Community Link: ${i.community_link}\n`
-                    capt += `⭔ Thumbnail: ${i.community_thumb}\n`
-                    capt += `⭔ Description: ${i.community_desc}\n`
-                    capt += `⭔ Member Count: ${i.member_count}\n\n──────────────────────\n`
+                    capt += `• Community: ${i.community}\n`
+                    capt += `• Community Link: ${i.community_link}\n`
+                    capt += `• Thumbnail: ${i.community_thumb}\n`
+                    capt += `• Description: ${i.community_desc}\n`
+                    capt += `• Member Count: ${i.member_count}\n\n──────────────────────\n`
                 }
                 akame.sendImage(m.chat, 'https://' + res.result[0].community_thumb, capt, fgclink)
             }
             break
             case 'wattpad': {
                 if (!text) throw `Contoh : ${prefix + command} love`
-                let res = await fetchJson(api('zenz', '/webzone/wattpad', {
+                let res = await fetchJson(api('zahwa', '/webzone/wattpad', {
                     query: text
                 }, 'apikey'))
                 let {
@@ -5253,62 +5147,85 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                     description
                 } = res.result[0]
                 let capt = `Wattpad From query\n\n`
-                capt += `⭔ Judul: ${judul}\n`
-                capt += `⭔ Dibaca: ${dibaca}\n`
-                capt += `⭔ Divote: ${divote}\n`
-                capt += `⭔ Bab: ${bab}\n`
-                capt += `⭔ Url: ${url}\n`
-                capt += `⭔ Deskripsi: ${description}`
+                capt += `• Judul: ${judul}\n`
+                capt += `• Dibaca: ${dibaca}\n`
+                capt += `• Divote: ${divote}\n`
+                capt += `• Bab: ${bab}\n`
+                capt += `• Url: ${url}\n`
+                capt += `• Deskripsi: ${description}`
                 akame.sendImage(m.chat, thumb, capt, fgclink)
             }
             break
             case 'webtoons': {
                 if (!text) throw `Contoh : ${prefix + command} love`
-                let res = await fetchJson(api('zenz', '/webzone/webtoons', {
+                let res = await fetchJson(api('zahwa', '/webzone/webtoons', {
                     query: text
                 }, 'apikey'))
                 let capt = `Webtoons Search From : ${text}\n\n`
                 for (let i of res.result) {
-                    capt += `⭔ Judul: ${i.judul}\n`
-                    capt += `⭔ Like: ${i.like}\n`
-                    capt += `⭔ Creator: ${i.creator}\n`
-                    capt += `⭔ Genre: ${i.genre}\n`
-                    capt += `⭔ Url: ${i.url}\n\n──────────────────────\n`
+                    capt += `• Judul: ${i.judul}\n`
+                    capt += `• Like: ${i.like}\n`
+                    capt += `• Creator: ${i.creator}\n`
+                    capt += `• Genre: ${i.genre}\n`
+                    capt += `• Url: ${i.url}\n\n──────────────────────\n`
                 }
                 m.reply(capt)
             }
             break
             case 'drakor': {
                 if (!text) throw `Contoh : ${prefix + command} love`
-                let res = await fetchJson(api('zenz', '/webzone/drakor', {
+                let res = await fetchJson(api('zahwa', '/webzone/drakor', {
                     query: text
                 }, 'apikey'))
                 let capt = `Drakor Search From : ${text}\n\n`
                 for (let i of res.result) {
-                    capt += `⭔ Judul: ${i.judul}\n`
-                    capt += `⭔ Years: ${i.years}\n`
-                    capt += `⭔ Genre: ${i.genre}\n`
-                    capt += `⭔ Url: ${i.url}\n`
-                    capt += `⭔ Thumbnail Url: ${i.thumbnail}\n\n──────────────────────\n`
+                    capt += `• Judul: ${i.judul}\n`
+                    capt += `• Years: ${i.years}\n`
+                    capt += `• Genre: ${i.genre}\n`
+                    capt += `• Url: ${i.url}\n`
+                    capt += `• Thumbnail Url: ${i.thumbnail}\n\n──────────────────────\n`
                 }
                 akame.sendImage(m.chat, res.result[0].thumbnail, capt, fgclink)
             }
             break
-            case 'tvschedule': case 'jadwaltv': case 'tv': {
-            if (!q) return m.reply('Pilih Channelnya Bro\n1.rcti\n2.nettv\n3.antv\n4.gtv\n5.indosiar\n6.inewstv\n7.kompastv\n8.metrotv\n9.mnctv\n10.rtv\n11.sctv\n12.trans7\n13.transtv\n14.tvone\n15.tvri')
+            case 'jadwatv': {
+                let sections = [
+                {
+                title: "Jadwal TV Nasional >_<",
+                rows: [
+                {title: "⌲ 「 Rcti 」", rowId: `${prefix}tvschedule rcti`},
+                {title: "⌲ 「 Nettv 」", rowId: `${prefix}tvschedule nettv`},
+                {title: "⌲ 「 Antv 」", rowId: `${prefix}tvschedule antv`},
+                {title: "⌲ 「 Gtv 」", rowId: `${prefix}tvschedule gtv`},
+                {title: "⌲ 「 Indosiar 」", rowId: `${prefix}tvschedule indosiar`},
+                {title: "⌲ 「 Inewstv 」", rowId: `${prefix}tvschedule inewstv`},
+                {title: "⌲ 「 Kompastv 」", rowId: `${prefix}tvschedule kompastv`},
+                {title: "⌲ 「 Metrotv 」", rowId: `${prefix}tvschedule metrotv`},
+                {title: "⌲ 「 Mnctv 」", rowId: `${prefix}tvschedule mnctv`},
+                {title: "⌲ 「 Rtv 」", rowId: `${prefix}tvschedule rtv`},
+                {title: "⌲ 「 Sctv 」", rowId: `${prefix}tvschedule sctv`},
+                {title: "⌲ 「 Trans7 」", rowId: `${prefix}tvschedule trans7`},
+                {title: "⌲ 「 Transtv 」", rowId: `${prefix}tvschedule transtv`},
+                {title: "⌲ 「 Tvone 」", rowId: `${prefix}tvschedule tvone`},
+                {title: "⌲ 「 Tvri 」", rowId: `${prefix}tvschedule tvri`}
+                ]
+                akame.sendListMsg(m.chat, `*Silahkan Pilih jadwal Dibawah Ini*`, ntiktok, `JADWAL MENU`, `Touch Me (⁠≧⁠▽⁠≦⁠)`, sections, floc)
+              }
+            break
+            case 'tvschedule': {
             let { jadwaltv }= require('./lib/jadwaltv')
             m.reply(await jadwaltv(q))
             }
             break
             case 'playstore': {
             if (!text) throw `Example : ${prefix + command} clash of clans`
-            let res = await fetchJson(api('zenz', '/webzone/playstore', { query: text }, 'apikey'))
-            let teks = `⭔ Playstore Search From : ${text}\n\n`
+            let res = await fetchJson(api('zahwa', '/webzone/playstore', { query: text }, 'apikey'))
+            let teks = `• Playstore Search From : ${text}\n\n`
             for (let i of res.result) {
-            teks += `⭔ Name : ${i.name}\n`
-            teks += `⭔ Link : ${i.link}\n`
-            teks += `⭔ Developer : ${i.developer}\n`
-            teks += `⭔ Link Developer : ${i.link_dev}\n\n──────────────────────\n`
+            teks += `• Name : ${i.name}\n`
+            teks += `• Link : ${i.link}\n`
+            teks += `• Developer : ${i.developer}\n`
+            teks += `• Link Developer : ${i.link_dev}\n\n──────────────────────\n`
             }
             m.reply(teks)
             }
@@ -5320,43 +5237,43 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 let res = await alya.jadwalsholat(text)  
                 let capt = `Jadwal Sholat Kota : ${text}\n\n`
                 let i = res
-                    capt += `⭔ Tanggal : ${i.tanggal}\n`
-                    capt += `⭔ Imsak : ${i.imsyak}\n`
-                    capt += `⭔ Subuh : ${i.subuh}\n`
-                    capt += `⭔ Dzuhur : ${i.dzuhur}\n`
-                    capt += `⭔ Ashar : ${i.ashar}\n`
-                    capt += `⭔ Maghrib : ${i.maghrib}\n`
-                    capt += `⭔ Isya : ${i.isya}\n\n──────────────────────\n`
+                    capt += `• Tanggal : ${i.tanggal}\n`
+                    capt += `• Imsak : ${i.imsyak}\n`
+                    capt += `• Subuh : ${i.subuh}\n`
+                    capt += `• Dzuhur : ${i.dzuhur}\n`
+                    capt += `• Ashar : ${i.ashar}\n`
+                    capt += `• Maghrib : ${i.maghrib}\n`
+                    capt += `• Isya : ${i.isya}\n\n──────────────────────\n`
                 m.reply(capt)
             }
             break
             case 'cekapi':
             case 'cekapikey': {
                 if (!text) throw `Contoh : ${prefix + command} Budi12`
-                let anu = await fetchJson(api('zenz', '/user/cekapi', { apikey: text }))
+                let anu = await fetchJson(api('zahwa', '/user/cekapi', { apikey: text }))
                 let caption = `Apikey Check :\n\n`
                 let i = anu.message
-                    caption += `⭔ Id : ${i.id}\n`
-                    caption += `⭔ Created : ${i.created}\n`
-                    caption += `⭔ Updated : ${i.updated}\n`
-                    caption += `⭔ First Name : ${i.firstname}\n`
-                    caption += `⭔ Last Name : ${i.lastname}\n`
-                    caption += `⭔ Email : ${i.email}\n`
-                    caption += `⭔ Username : ${i.username}\n`
-                    caption += `⭔ ApiKey : ${i.apiKey}\n`
-                    caption += `⭔ Todayhit : ${i.today_hit}\n`
-                    caption += `⭔ Totalhit : ${i.total_hit}\n`
-                    caption += `⭔ Status : ${i.status}\n`
-                    caption += `⭔ Premium : ${i.premium}\n`
-                    caption += `⭔ Expired : ${i.premium_expired}\n`
-                    caption += `⭔ Active : ${i.active}\n`
-                    caption += `⭔ Location : ${i.location}\n`
-                    caption += `⭔ Biodata : ${i.biodata}\n\n──────────────────────\n`
+                    caption += `• Id : ${i.id}\n`
+                    caption += `• Created : ${i.created}\n`
+                    caption += `• Updated : ${i.updated}\n`
+                    caption += `• First Name : ${i.firstname}\n`
+                    caption += `• Last Name : ${i.lastname}\n`
+                    caption += `• Email : ${i.email}\n`
+                    caption += `• Username : ${i.username}\n`
+                    caption += `• ApiKey : ${i.apiKey}\n`
+                    caption += `• Todayhit : ${i.today_hit}\n`
+                    caption += `• Totalhit : ${i.total_hit}\n`
+                    caption += `• Status : ${i.status}\n`
+                    caption += `• Premium : ${i.premium}\n`
+                    caption += `• Expired : ${i.premium_expired}\n`
+                    caption += `• Active : ${i.active}\n`
+                    caption += `• Location : ${i.location}\n`
+                    caption += `• Biodata : ${i.biodata}\n\n──────────────────────\n`
                     akame.sendImage(m.chat, i.profile_image, "", fdoc, { caption })
             }
             break
             case 'mediafire': {
-                if (!text) throw `Example : ${prefix + command} https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file`               
+                if (!text) throw `Link MediaFire Ya Mana?`               
                 m.reply(mess.wait)
                 if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                 db.data.users[m.sender].limit -= 1 // -1 limit
@@ -5367,56 +5284,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             break
             case 'zippyshare': {
                 if (!text) throw `Link ZippyShare Ya Mana?`
-                let anu = await fetchJson(api('zenz', '/downloader/zippyshare', { url: isUrl(text)[0] }, 'apikey'))
+                let anu = await fetchJson(api('zahwa', '/downloader/zippyshare', { url: isUrl(text)[0] }, 'apikey'))
                 akame.sendFileUrl(m.chat, anu.result.link, "", fdoc)
             }
             break
             case 'gempa': {
-                let anu = await fetchJson(api('zenz', '/information/bmkg/gempa', {}, 'apikey'))
-                let caption = `Gempa Information :\n\n`
+                let anu = await fetchJson(api('zahwa', '/information/bmkg/gempa', {}, 'apikey'))
+                let caption = `‼ Hati-hati terhadap gempabumi susulan yang mungkin terjadi\n\n`
                 let i = anu.result
-                caption += `⭔ Tanggal : ${i.tanggal}\n`
-                caption += `⭔ Jam : ${i.jam}\n`
-                caption += `⭔ Datetime : ${i.datetime}\n`
-                caption += `⭔ Coordinates : ${i.coordinates}\n`
-                caption += `⭔ Lintang : ${i.lintang}\n`
-                caption += `⭔ Bujur : ${i.bujur}\n`
-                caption += `⭔ Magnitude : ${i.magnitude}\n`
-                caption += `⭔ Kedalaman : ${i.kedalaman}\n`
-                caption += `⭔ Wilayah : ${i.wilayah}\n`
-                caption += `⭔ Potensi : ${i.potensi}\n`
-                caption += `⭔ Dirasakan : ${i.dirasakan}\n`
-                caption += `⭔ Shakemap : ${i.shakemap}\n`
+                caption += `📅 *Tanggal :* ${i.tanggal} ${i.jam}\n`
+                caption += `📌 *Koordinat :* ${i.coordinates}\n`
+                caption += `🌋 *Magnitudo :* ${i.magnitude}\n`
+                caption += `🌊 *Kedalaman :* ${i.kedalaman}\n`
+                caption += `📍 *Area :* ${i.wilayah}\n`
+                caption += `📈 *Potensi :* ${i.potensi}\n`
+                caption += `📝 *Dirasakan :* ${i.dirasakan}\n`
                 akame.sendFileUrl(m.chat, i.shakemap, "", fdoc, { caption })
             }
             break
-            case 'iplookup': {
-                if (!text) throw `Ip Ya Mana?`
-                let anu = await fetchJson(api('zenz', '/information/iplookup', { query: text }, 'apikey'))
-                let caption = `IP Information :\n\n`
-                let i = anu.result
-                caption += `⭔ Country : ${i.country}\n`
-                caption += `⭔ Region : ${i.region}\n`
-                caption += `⭔ City : ${i.city}\n`
-                caption += `⭔ Zip : ${i.zip}\n`
-                caption += `⭔ Latitude : ${i.latitude}\n`
-                caption += `⭔ Longtitude : ${i.longtitude}\n`
-                caption += `⭔ Isp : ${i.isp}\n`
-                caption += `⭔ Domain : ${i.domain}\n`
-                caption += `⭔ Usagetype : ${i.usage_type}\n`
-                caption += `⭔ Time_zone : ${i.time_zone}\n`
-                caption += `⭔ Local_time : ${i.local_time}\n`
-                caption += `⭔ Addres_type : ${i.addres_type}\n`
-                caption += `⭔ Category : ${i.category}\n`
-                caption += `⭔ Proxy : ${i.proxy}\n`
-                caption += `⭔ Provider : ${i.provider}\n`
-                caption += `⭔ Weather : ${i.weather}\n`
-                akame.sendText(m.chat, caption, fgclink)
-            }
-            break
             case 'kisahmuslim': {
-                let anu = await fetchJson(api('zenz', '/islami/kisahmuslim', {}, 'apikey'))
-                let teks = `⭔ Judul : ${anu.result.Judul}\n⭔ Kisah :\n${anu.result.Cerita}`
+                let anu = await fetchJson(api('zahwa', '/islami/kisahmuslim', {}, 'apikey'))
+                let teks = `• Judul : ${anu.result.Judul}\n• Kisah :\n${anu.result.Cerita}`
                 akame.sendFileUrl(m.chat, anu.result.Thumb, "", fdoc, { caption: teks })
             }
             break
@@ -5424,7 +5312,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 if (text) {
                     title = text.toLowerCase()
                     let fetch = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Databasee/main/Islami/${title}.json`)
-                    let teks = `⭔ Nama : ${fetch.name}\n⭔ Lahir : ${fetch.thn_kelahiran}\n⭔ Umur : ${fetch.usia}\n⭔ Lokasi : ${fetch.tmp}\n⭔ Kisah :\n${fetch.description}`
+                    let teks = `• Nama : ${fetch.name}\n• Lahir : ${fetch.thn_kelahiran}\n• Umur : ${fetch.usia}\n• Lokasi : ${fetch.tmp}\n• Kisah :\n${fetch.description}`
                     akame.sendFileUrl(m.chat, 'https://i.pinimg.com/originals/a6/81/c5/a681c55ca1bee611c39d3b4a58712dc3.jpg', "", floc, { caption: teks })
                 } else if (!text) {
                     const sections = [{
@@ -5472,7 +5360,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 if (text) {
                     title = text.toLowerCase()
                     let fetch = await fetchJson(`https://raw.githubusercontent.com/Abuzzpoet/Databasee/main/Niatsolat/${title}.json`)
-                    let teks = `⭔ Nama : ${fetch.name}\n⭔ Arab : ${fetch.arabic}\n⭔ Latin : ${fetch.latin}\n⭔ Terjemahan : ${fetch.terjemahan}`
+                    let teks = `• Nama : ${fetch.name}\n• Arab : ${fetch.arabic}\n• Latin : ${fetch.latin}\n• Terjemahan : ${fetch.terjemahan}`
                     akame.sendFileUrl(m.chat, 'https://aswajamuda.com/wp-content/uploads/2017/10/niat-sholat-fardhu.jpg', "", floc, { caption: teks })
                 } else if (!text) {
                     const sections = [{
@@ -5496,11 +5384,11 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             }
             break
             case 'listkota': {
-                let anu = await fetchJson(api('zenz', '/islami/listkota', {}, 'apikey'))
+                let anu = await fetchJson(api('zahwa', '/islami/listkota', {}, 'apikey'))
                 let teks = `List Kota Di seluruh Indonesia\n\n`
                 for (let i of anu.result) {
-                    teks += `⭔ Provinsi : ${i.provinsi}\n`
-                    teks += `⭔ Kota : \n${i.kota.join("\n")}\n`
+                    teks += `• Provinsi : ${i.provinsi}\n`
+                    teks += `• Kota : \n${i.kota.join("\n")}\n`
                     teks += `\n`
                 }
                 akame.sendText(m.chat, teks, fgclink)
@@ -5558,26 +5446,27 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 SEWA BOT 」
 │└─────────────┈❖
-│⭔ 1 Minggu 5k
-│⭔ 1 Bulan 15k
+│• 1 Minggu 5k
+│• 1 Bulan 15k
 └┬─────────────┈❖
 ┌┤「 PEMBAYARAN 」
 │└─────────────┈❖
-│⭔ SAWERIA : ${global.saweria}
+│• SAWERIA : ${global.saweria}
+│•
 └┬─────────────┈❖
 ┌┤「 KEUNTUNGAN 」
 │└─────────────┈❖
-│⭔ On 24 Jam
-│⭔ Run Dirpd/Heroku/Oktote
-│⭔ Anti Delay
-│⭔ Anti Virtex
-│⭔ Antilink WA/TT/YT
-│⭔ Welcome Image
-│⭔ Left
+│• On 24 Jam
+│• Run Dirpd/Heroku/Oktote
+│• Anti Delay
+│• Anti Virtex
+│• Antilink WA/TT/YT
+│• Welcome Image
+│• Left
 └┬─────────────┈❖
 ┌┤「 SISTEM 」
 │└─────────────┈❖
-│⭔ Chat » Bukti Pembayaran » Bot Join
+│• Chat » Bukti Pembayaran » Bot Join
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'owner', buttonText: { displayText: '➡️Chat Owner' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -5591,13 +5480,13 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 DONASI 」
 │└─────────────┈❖
-│⭔ SAWERIA : ${global.saweria}
+│• SAWERIA : ${global.saweria}
 │
-│⭔ Q.S Az-Zalzalah Ayat 7 :
+│• Q.S Az-Zalzalah Ayat 7 :
 │
 فَمَنْ يَّعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَّرَهٗۚ│
 │
-│⭔ Artinya : Maka barangsiapa
+│• Artinya : Maka barangsiapa
 │mengerjakan kebaikan seberatzarrah,
 │niscaya dia akan melihat
 │(balasan)nya.
@@ -5638,31 +5527,31 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 GROUP 」
 │└─────────────┈❖
-│⭔ ${prefix}linkgroup
-│⭔ ${prefix}revoke
-│⭔ ${prefix}tagmenu [option]
-│⭔ ${prefix}ephemeral [option]
-│⭔ ${prefix}setppgrup full [image]
-│⭔ ${prefix}setname [text]
-│⭔ ${prefix}setdesc [text]
-│⭔ ${prefix}group [option]
-│⭔ ${prefix}editinfo [option]
-│⭔ ${prefix}add @user
-│⭔ ${prefix}kick @user
-│⭔ ${prefix}hidetag [text]
-│⭔ ${prefix}tagall [text]
-│⭔ ${prefix}totag [reply]
-│⭔ ${prefix}promote @user
-│⭔ ${prefix}demote @user
-│⭔ ${prefix}mute [on/off]
-│⭔ ${prefix}antilink [on/off]
-│⭔ ${prefix}antilinkyt [on/off]
-│⭔ ${prefix}antilinktt [on/off]
-│⭔ ${prefix}vote [text]
-│⭔ ${prefix}devote
-│⭔ ${prefix}upvote
-│⭔ ${prefix}cekvote
-│⭔ ${prefix}hapusvote
+│• ${prefix}linkgroup
+│• ${prefix}revoke
+│• ${prefix}tagmenu [option]
+│• ${prefix}ephemeral [option]
+│• ${prefix}setppgrup full [image]
+│• ${prefix}setname [text]
+│• ${prefix}setdesc [text]
+│• ${prefix}group [option]
+│• ${prefix}editinfo [option]
+│• ${prefix}add @user
+│• ${prefix}kick @user
+│• ${prefix}hidetag [text]
+│• ${prefix}tagall [text]
+│• ${prefix}totag [reply]
+│• ${prefix}promote @user
+│• ${prefix}demote @user
+│• ${prefix}mute [on/off]
+│• ${prefix}antilink [on/off]
+│• ${prefix}antilinkyt [on/off]
+│• ${prefix}antilinktt [on/off]
+│• ${prefix}vote [text]
+│• ${prefix}devote
+│• ${prefix}upvote
+│• ${prefix}cekvote
+│• ${prefix}hapusvote
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -5698,24 +5587,22 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 DOWNLOADER 」
 │└─────────────┈❖
-│⭔ ${prefix}tiktoknowm [url]
-│⭔ ${prefix}tiktokwm [url]
-│⭔ ${prefix}tiktokmp3 [url]
-│⭔ ${prefix}instagram [url]
-│⭔ ${prefix}twitter [url]
-│⭔ ${prefix}twittermp3 [url]
-│⭔ ${prefix}facebook [url]
-│⭔ ${prefix}zippyshare [url]
-│⭔ ${prefix}mediafire [url]
-│⭔ ${prefix}tinyurl [url]
-│⭔ ${prefix}linkpoi [url]
-│⭔ ${prefix}ytmp3 [url]
-│⭔ ${prefix}ytmp4 [url]
-│⭔ ${prefix}getmusic [query]
-│⭔ ${prefix}getvideo [query]
-│⭔ ${prefix}umma [url]
-│⭔ ${prefix}joox [query]
-│⭔ ${prefix}soundcloud [url]
+│• ${prefix}tiktoknowm [url]
+│• ${prefix}tiktokwm [url]
+│• ${prefix}tiktokmp3 [url]
+│• ${prefix}instagram [url]
+│• ${prefix}twitter [url]
+│• ${prefix}twittermp3 [url]
+│• ${prefix}facebook [url]
+│• ${prefix}zippyshare [url]
+│• ${prefix}mediafire [url]
+│• ${prefix}ytmp3 [url]
+│• ${prefix}ytmp4 [url]
+│• ${prefix}getmusic [query]
+│• ${prefix}getvideo [query]
+│• ${prefix}umma [url]
+│• ${prefix}joox [query]
+│• ${prefix}soundcloud [url]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -5751,15 +5638,15 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 SEARCH 」
 │└─────────────┈❖
-│⭔ ${prefix}play [query]
-│⭔ ${prefix}yts [query]
-│⭔ ${prefix}google [query]
-│⭔ ${prefix}gimage [query]
-│⭔ ${prefix}pinterest [query]
-│⭔ ${prefix}wallpaper [query]
-│⭔ ${prefix}wikimedia [query]
-│⭔ ${prefix}ytsearch [query]
-│⭔ ${prefix}ringtone [query]
+│• ${prefix}play [query]
+│• ${prefix}yts [query]
+│• ${prefix}google [query]
+│• ${prefix}gimage [query]
+│• ${prefix}pinterest [query]
+│• ${prefix}wallpaper [query]
+│• ${prefix}wikimedia [query]
+│• ${prefix}ytsearch [query]
+│• ${prefix}ringtone [query]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -5795,19 +5682,19 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 STICKER 」
 │└─────────────┈❖
-│⭔ ${prefix}sticker
-│⭔ ${prefix}stickerwm
-│⭔ ${prefix}attp [teks]
-│⭔ ${prefix}ttp [teks]
-│⭔ ${prefix}mukalu
-│⭔ ${prefix}paimon
-│⭔ ${prefix}gura
-│⭔ ${prefix}doge
-│⭔ ${prefix}lovestick
-│⭔ ${prefix}animestick
-│⭔ ${prefix}patrick
-│⭔ ${prefix}emojimix 😎+🤠
-│⭔ ${prefix}emojimix2 😎
+│• ${prefix}sticker
+│• ${prefix}stickerwm
+│• ${prefix}attp [teks]
+│• ${prefix}ttp [teks]
+│• ${prefix}mukalu
+│• ${prefix}paimon
+│• ${prefix}gura
+│• ${prefix}doge
+│• ${prefix}lovestick
+│• ${prefix}animestick
+│• ${prefix}patrick
+│• ${prefix}emojimix 😎+🤠
+│• ${prefix}emojimix2 😎
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -5843,75 +5730,75 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 ANIME 」
 │└─────────────┈❖
-│⭔ ${prefix}hololive
-│⭔ ${prefix}couples
-│⭔ ${prefix}couple
-│⭔ ${prefix}waifu
-│⭔ ${prefix}husbu
-│⭔ ${prefix}neko
-│⭔ ${prefix}uniform
-│⭔ ${prefix}cosplay
-│⭔ ${prefix}maid
-│⭔ ${prefix}oppai
-│⭔ ${prefix}selfies
-│⭔ ${prefix}shinobu
-│⭔ ${prefix}akira
-│⭔ ${prefix}akiyama
-│⭔ ${prefix}ana
-│⭔ ${prefix}asuna
-│⭔ ${prefix}ayuzawa
-│⭔ ${prefix}boruto
-│⭔ ${prefix}chitoge
-│⭔ ${prefix}deidara
-│⭔ ${prefix}doraemon
-│⭔ ${prefix}elaina
-│⭔ ${prefix}emilia
-│⭔ ${prefix}erza
-│⭔ ${prefix}gremory
-│⭔ ${prefix}hestia
-│⭔ ${prefix}hinata
-│⭔ ${prefix}inori
-│⭔ ${prefix}isuzu
-│⭔ ${prefix}itachi
-│⭔ ${prefix}itori
-│⭔ ${prefix}kaga
-│⭔ ${prefix}kagura
-│⭔ ${prefix}kakasih
-│⭔ ${prefix}kaori
-│⭔ ${prefix}keneki
-│⭔ ${prefix}kotori
-│⭔ ${prefix}kurumi
-│⭔ ${prefix}loli
-│⭔ ${prefix}madara
-│⭔ ${prefix}mikasa
-│⭔ ${prefix}miku
-│⭔ ${prefix}minato
-│⭔ ${prefix}naruto
-│⭔ ${prefix}nezuko
-│⭔ ${prefix}onepiece
-│⭔ ${prefix}pokemon
-│⭔ ${prefix}rize
-│⭔ ${prefix}sagiri
-│⭔ ${prefix}sakura
-│⭔ ${prefix}shinka
-│⭔ ${prefix}shizuka
-│⭔ ${prefix}shouta
-│⭔ ${prefix}toukachan
-│⭔ ${prefix}tsunade
-│⭔ ${prefix}yuki
-│⭔ ${prefix}raiden
-│⭔ ${prefix}hutao
-│⭔ ${prefix}xiao
-│⭔ ${prefix}chongyun
-│⭔ ${prefix}baal
-│⭔ ${prefix}keqing
-│⭔ ${prefix}yae
-│⭔ ${prefix}zhongli
-│⭔ ${prefix}ningguang
-│⭔ ${prefix}shenhe
-│⭔ ${prefix}ayaka
-│⭔ ${prefix}calliope
-│⭔ ${prefix}kitagawa
+│• ${prefix}hololive
+│• ${prefix}couples
+│• ${prefix}couple
+│• ${prefix}waifu
+│• ${prefix}husbu
+│• ${prefix}neko
+│• ${prefix}uniform
+│• ${prefix}cosplay
+│• ${prefix}maid
+│• ${prefix}oppai
+│• ${prefix}selfies
+│• ${prefix}shinobu
+│• ${prefix}akira
+│• ${prefix}akiyama
+│• ${prefix}ana
+│• ${prefix}asuna
+│• ${prefix}ayuzawa
+│• ${prefix}boruto
+│• ${prefix}chitoge
+│• ${prefix}deidara
+│• ${prefix}doraemon
+│• ${prefix}elaina
+│• ${prefix}emilia
+│• ${prefix}erza
+│• ${prefix}gremory
+│• ${prefix}hestia
+│• ${prefix}hinata
+│• ${prefix}inori
+│• ${prefix}isuzu
+│• ${prefix}itachi
+│• ${prefix}itori
+│• ${prefix}kaga
+│• ${prefix}kagura
+│• ${prefix}kakasih
+│• ${prefix}kaori
+│• ${prefix}keneki
+│• ${prefix}kotori
+│• ${prefix}kurumi
+│• ${prefix}loli
+│• ${prefix}madara
+│• ${prefix}mikasa
+│• ${prefix}miku
+│• ${prefix}minato
+│• ${prefix}naruto
+│• ${prefix}nezuko
+│• ${prefix}onepiece
+│• ${prefix}pokemon
+│• ${prefix}rize
+│• ${prefix}sagiri
+│• ${prefix}sakura
+│• ${prefix}shinka
+│• ${prefix}shizuka
+│• ${prefix}shouta
+│• ${prefix}toukachan
+│• ${prefix}tsunade
+│• ${prefix}yuki
+│• ${prefix}raiden
+│• ${prefix}hutao
+│• ${prefix}xiao
+│• ${prefix}chongyun
+│• ${prefix}baal
+│• ${prefix}keqing
+│• ${prefix}yae
+│• ${prefix}zhongli
+│• ${prefix}ningguang
+│• ${prefix}shenhe
+│• ${prefix}ayaka
+│• ${prefix}calliope
+│• ${prefix}kitagawa
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -5947,20 +5834,20 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 ASUPAN 」
 │└─────────────┈❖
-│⭔ ${prefix}cecan
-│⭔ ${prefix}cogan
-│⭔ ${prefix}china
-│⭔ ${prefix}japan
-│⭔ ${prefix}korea
-│⭔ ${prefix}indonesia
-│⭔ ${prefix}malaysia
-│⭔ ${prefix}thailand
-│⭔ ${prefix}vietnam
-│⭔ ${prefix}blankpink
-│⭔ ${prefix}justina
-│⭔ ${prefix}kpop
-│⭔ ${prefix}rose
-│⭔ ${prefix}ryujin
+│• ${prefix}cecan
+│• ${prefix}cogan
+│• ${prefix}china
+│• ${prefix}japan
+│• ${prefix}korea
+│• ${prefix}indonesia
+│• ${prefix}malaysia
+│• ${prefix}thailand
+│• ${prefix}vietnam
+│• ${prefix}blankpink
+│• ${prefix}justina
+│• ${prefix}kpop
+│• ${prefix}rose
+│• ${prefix}ryujin
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -5996,23 +5883,23 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 QUOTES 」
 │└─────────────┈❖
-│⭔ ${prefix}quotesanime
-│⭔ ${prefix}animequotes
-│⭔ ${prefix}motivasi
-│⭔ ${prefix}dilanquote
-│⭔ ${prefix}bucinquote
-│⭔ ${prefix}katasenja
-│⭔ ${prefix}randomquote
-│⭔ ${prefix}muslimquote
-│⭔ ${prefix}galauquote
-│⭔ ${prefix}kanyequote
-│⭔ ${prefix}trumpquote
-│⭔ ${prefix}trumpthink
-│⭔ ${prefix}creepyfact
-│⭔ ${prefix}faktaunik
-│⭔ ${prefix}puisi
-│⭔ ${prefix}pantun
-│⭔ ${prefix}cerpen
+│• ${prefix}quotesanime
+│• ${prefix}animequotes
+│• ${prefix}motivasi
+│• ${prefix}dilanquote
+│• ${prefix}bucinquote
+│• ${prefix}katasenja
+│• ${prefix}randomquote
+│• ${prefix}muslimquote
+│• ${prefix}galauquote
+│• ${prefix}kanyequote
+│• ${prefix}trumpquote
+│• ${prefix}trumpthink
+│• ${prefix}creepyfact
+│• ${prefix}faktaunik
+│• ${prefix}puisi
+│• ${prefix}pantun
+│• ${prefix}cerpen
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -6048,13 +5935,13 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 MEME 」
 │└─────────────┈❖
-│⭔ ${prefix}animememe
-│⭔ ${prefix}anjing
-│⭔ ${prefix}meme
-│⭔ ${prefix}memeindo
-│⭔ ${prefix}darkjoke
-│⭔ ${prefix}darkjokes
-│⭔ ${prefix}onecak
+│• ${prefix}animememe
+│• ${prefix}anjing
+│• ${prefix}meme
+│• ${prefix}memeindo
+│• ${prefix}darkjoke
+│• ${prefix}darkjokes
+│• ${prefix}onecak
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -6090,12 +5977,12 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 RANDOM 」
 │└─────────────┈❖
-│⭔ ${prefix}simih [teks]
-│⭔ ${prefix}apikey
-│⭔ ${prefix}coffe
-│⭔ ${prefix}ebinary [teks]
-│⭔ ${prefix}dbinary [teks]
-│⭔ ${prefix}styletext [teks]
+│• ${prefix}simih [teks]
+│• ${prefix}apikey
+│• ${prefix}coffe
+│• ${prefix}ebinary [teks]
+│• ${prefix}dbinary [teks]
+│• ${prefix}styletext [teks]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -6131,37 +6018,37 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 TEXT PRO 」
 │└─────────────┈❖
-│⭔ ${prefix}3dchristmas
-│⭔ ${prefix}3ddeepsea
-│⭔ ${prefix}americanflag
-│⭔ ${prefix}3dscifi
-│⭔ ${prefix}3drainbow
-│⭔ ${prefix}3dwaterpipe
-│⭔ ${prefix}halloweenskeleton
-│⭔ ${prefix}sketch
-│⭔ ${prefix}bluecircuit
-│⭔ ${prefix}space
-│⭔ ${prefix}metallic
-│⭔ ${prefix}fiction
-│⭔ ${prefix}greenhorror
-│⭔ ${prefix}transformer
-│⭔ ${prefix}berry
-│⭔ ${prefix}thunder
-│⭔ ${prefix}magma
-│⭔ ${prefix}3dcrackedstone
-│⭔ ${prefix}3dneonlight
-│⭔ ${prefix}impressiveglitch
-│⭔ ${prefix}naturalleaves
-│⭔ ${prefix}fireworksparkle
-│⭔ ${prefix}matrix
-│⭔ ${prefix}dropwater
-│⭔ ${prefix}harrypotter
-│⭔ ${prefix}foggywindow
-│⭔ ${prefix}neondevils
-│⭔ ${prefix}christmasholiday
-│⭔ ${prefix}3dgradient
-│⭔ ${prefix}blackpink
-│⭔ ${prefix}gluetext
+│• ${prefix}3dchristmas
+│• ${prefix}3ddeepsea
+│• ${prefix}americanflag
+│• ${prefix}3dscifi
+│• ${prefix}3drainbow
+│• ${prefix}3dwaterpipe
+│• ${prefix}halloweenskeleton
+│• ${prefix}sketch
+│• ${prefix}bluecircuit
+│• ${prefix}space
+│• ${prefix}metallic
+│• ${prefix}fiction
+│• ${prefix}greenhorror
+│• ${prefix}transformer
+│• ${prefix}berry
+│• ${prefix}thunder
+│• ${prefix}magma
+│• ${prefix}3dcrackedstone
+│• ${prefix}3dneonlight
+│• ${prefix}impressiveglitch
+│• ${prefix}naturalleaves
+│• ${prefix}fireworksparkle
+│• ${prefix}matrix
+│• ${prefix}dropwater
+│• ${prefix}harrypotter
+│• ${prefix}foggywindow
+│• ${prefix}neondevils
+│• ${prefix}christmasholiday
+│• ${prefix}3dgradient
+│• ${prefix}blackpink
+│• ${prefix}gluetext
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -6197,24 +6084,24 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 PHOTO EDITOR 」
 │└─────────────┈❖
-│⭔ ${prefix}gay
-│⭔ ${prefix}contrast
-│⭔ ${prefix}pixelate
-│⭔ ${prefix}dither
-│⭔ ${prefix}sepia
-│⭔ ${prefix}brighten
-│⭔ ${prefix}greyscale
-│⭔ ${prefix}circle
-│⭔ ${prefix}blur
-│⭔ ${prefix}invert
-│⭔ ${prefix}scale
-│⭔ ${prefix}upscale
-│⭔ ${prefix}glass
-│⭔ ${prefix}wasted
-│⭔ ${prefix}passed
-│⭔ ${prefix}comrade
-│⭔ ${prefix}jail
-│⭔ ${prefix}triggered
+│• ${prefix}gay
+│• ${prefix}contrast
+│• ${prefix}pixelate
+│• ${prefix}dither
+│• ${prefix}sepia
+│• ${prefix}brighten
+│• ${prefix}greyscale
+│• ${prefix}circle
+│• ${prefix}blur
+│• ${prefix}invert
+│• ${prefix}scale
+│• ${prefix}upscale
+│• ${prefix}glass
+│• ${prefix}wasted
+│• ${prefix}passed
+│• ${prefix}comrade
+│• ${prefix}jail
+│• ${prefix}triggered
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -6250,41 +6137,41 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 EPHOTO 」
 │└─────────────┈❖
-│⭔ ${prefix}logo2
-│⭔ ${prefix}logo3
-│⭔ ${prefix}logo4
-│⭔ ${prefix}logogaming
-│⭔ ${prefix}logogirl
-│⭔ ${prefix}logogold
-│⭔ ${prefix}spiderlogo
-│⭔ ${prefix}ffcover
-│⭔ ${prefix}crossfire
-│⭔ ${prefix}galaxy
-│⭔ ${prefix}glass
-│⭔ ${prefix}neon
-│⭔ ${prefix}beach
-│⭔ ${prefix}awan
-│⭔ ${prefix}flower
-│⭔ ${prefix}bohlam
-│⭔ ${prefix}kaligrafi
-│⭔ ${prefix}coklat
-│⭔ ${prefix}quotes
-│⭔ ${prefix}grafity
-│⭔ ${prefix}marmer
-│⭔ ${prefix}musimsemi
-│⭔ ${prefix}ruby
-│⭔ ${prefix}shadowtext
-│⭔ ${prefix}starlogo
-│⭔ ${prefix}starnight
-│⭔ ${prefix}starnight2
-│⭔ ${prefix}blackpink
-│⭔ ${prefix}cake
-│⭔ ${prefix}flashlight
-│⭔ ${prefix}puppycute
-│⭔ ${prefix}yasuologo
-│⭔ ${prefix}certificate
-│⭔ ${prefix}igcertificate
-│⭔ ${prefix}ytcertificate
+│• ${prefix}logo2
+│• ${prefix}logo3
+│• ${prefix}logo4
+│• ${prefix}logogaming
+│• ${prefix}logogirl
+│• ${prefix}logogold
+│• ${prefix}spiderlogo
+│• ${prefix}ffcover
+│• ${prefix}crossfire
+│• ${prefix}galaxy
+│• ${prefix}glass
+│• ${prefix}neon
+│• ${prefix}beach
+│• ${prefix}awan
+│• ${prefix}flower
+│• ${prefix}bohlam
+│• ${prefix}kaligrafi
+│• ${prefix}coklat
+│• ${prefix}quotes
+│• ${prefix}grafity
+│• ${prefix}marmer
+│• ${prefix}musimsemi
+│• ${prefix}ruby
+│• ${prefix}shadowtext
+│• ${prefix}starlogo
+│• ${prefix}starnight
+│• ${prefix}starnight2
+│• ${prefix}blackpink
+│• ${prefix}cake
+│• ${prefix}flashlight
+│• ${prefix}puppycute
+│• ${prefix}yasuologo
+│• ${prefix}certificate
+│• ${prefix}igcertificate
+│• ${prefix}ytcertificate
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -6320,13 +6207,12 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 GAME 」
 │└─────────────┈❖
-│⭔ ${prefix}slot
-│⭔ ${prefix}delttt
-│⭔ ${prefix}tictactoe
-│⭔ ${prefix}family100
-│⭔ ${prefix}tebakmenu [option]
-│⭔ ${prefix}math [mode]
-│⭔ ${prefix}suitpvp [@tag]
+│• ${prefix}delttt
+│• ${prefix}tictactoe
+│• ${prefix}family100
+│• ${prefix}tebakmenu [option]
+│• ${prefix}math [mode]
+│• ${prefix}suitpvp [@tag]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -6362,36 +6248,36 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 PRIMBON 」
 │└─────────────┈❖
-│⭔ ${prefix}nomorhoki
-│⭔ ${prefix}artimimpi
-│⭔ ${prefix}artinama
-│⭔ ${prefix}ramaljodoh
-│⭔ ${prefix}ramaljodohbali
-│⭔ ${prefix}suamiistri
-│⭔ ${prefix}ramalcinta
-│⭔ ${prefix}cocoknama
-│⭔ ${prefix}pasangan
-│⭔ ${prefix}jadiannikah
-│⭔ ${prefix}sifatusaha
-│⭔ ${prefix}rezeki
-│⭔ ${prefix}pekerjaan
-│⭔ ${prefix}nasib
-│⭔ ${prefix}penyakit
-│⭔ ${prefix}tarot
-│⭔ ${prefix}fengshui
-│⭔ ${prefix}haribaik
-│⭔ ${prefix}harisangar
-│⭔ ${prefix}harisial
-│⭔ ${prefix}nagahari
-│⭔ ${prefix}arahrezeki
-│⭔ ${prefix}peruntungan
-│⭔ ${prefix}weton
-│⭔ ${prefix}karakter
-│⭔ ${prefix}keberuntungan
-│⭔ ${prefix}memancing
-│⭔ ${prefix}masasubur
-│⭔ ${prefix}zodiak
-│⭔ ${prefix}shio
+│• ${prefix}nomorhoki
+│• ${prefix}artimimpi
+│• ${prefix}artinama
+│• ${prefix}ramaljodoh
+│• ${prefix}ramaljodohbali
+│• ${prefix}suamiistri
+│• ${prefix}ramalcinta
+│• ${prefix}cocoknama
+│• ${prefix}pasangan
+│• ${prefix}jadiannikah
+│• ${prefix}sifatusaha
+│• ${prefix}rezeki
+│• ${prefix}pekerjaan
+│• ${prefix}nasib
+│• ${prefix}penyakit
+│• ${prefix}tarot
+│• ${prefix}fengshui
+│• ${prefix}haribaik
+│• ${prefix}harisangar
+│• ${prefix}harisial
+│• ${prefix}nagahari
+│• ${prefix}arahrezeki
+│• ${prefix}peruntungan
+│• ${prefix}weton
+│• ${prefix}karakter
+│• ${prefix}keberuntungan
+│• ${prefix}memancing
+│• ${prefix}masasubur
+│• ${prefix}zodiak
+│• ${prefix}shio
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -6427,15 +6313,15 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 CONVERT 」
 │└─────────────┈❖
-│⭔ ${prefix}nulis
-│⭔ ${prefix}removebg [image]
-│⭔ ${prefix}toimage [reply sticker]
-│⭔ ${prefix}tovideo [reply sticker]
-│⭔ ${prefix}togif [reply sticker]
-│⭔ ${prefix}tourl [image / video]
-│⭔ ${prefix}tovn [reply video]
-│⭔ ${prefix}tomp3 [reply video]
-│⭔ ${prefix}toaudio [reply video]
+│• ${prefix}nulis
+│• ${prefix}removebg [image]
+│• ${prefix}toimage [reply sticker]
+│• ${prefix}tovideo [reply sticker]
+│• ${prefix}togif [reply sticker]
+│• ${prefix}tourl [image / video]
+│• ${prefix}tovn [reply video]
+│• ${prefix}tomp3 [reply video]
+│• ${prefix}toaudio [reply video]
 │
 └───────⭓`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
@@ -6472,21 +6358,20 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 MAIN 」
 │└─────────────┈❖
-│⭔ ${prefix}ping
-│⭔ ${prefix}owner
-│⭔ ${prefix}donasi
-│⭔ ${prefix}menu / ${prefix}help / ${prefix}?
-│⭔ ${prefix}delete / ${prefix}del / ${prefix}d
-│⭔ ${prefix}infochat
-│⭔ ${prefix}quoted
-│⭔ ${prefix}listpc
-│⭔ ${prefix}listgc
-│⭔ ${prefix}listonline
-│⭔ ${prefix}speedtest
-│⭔ ${prefix}toqr
-│⭔ ${prefix}speedtest
-│⭔ ${prefix}request [req]
-│⭔ ${prefix}report [bug]
+│• ${prefix}ping
+│• ${prefix}owner
+│• ${prefix}donasi
+│• ${prefix}menu / ${prefix}help / ${prefix}?
+│• ${prefix}delete / ${prefix}del / ${prefix}d
+│• ${prefix}infochat
+│• ${prefix}quoted
+│• ${prefix}listpc
+│• ${prefix}listgc
+│• ${prefix}listonline
+│• ${prefix}speedtest
+│• ${prefix}speedtest
+│• ${prefix}request [req]
+│• ${prefix}report [bug]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -6522,14 +6407,14 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 DATABASE 」
 │└─────────────┈❖
-│⭔ ${prefix}setcmd [reply sticker/pesan]
-│⭔ ${prefix}listcmd
-│⭔ ${prefix}delcmd [reply sticker/pesan]
-│⭔ ${prefix}lockcmd
-│⭔ ${prefix}addmsg
-│⭔ ${prefix}listmsg
-│⭔ ${prefix}getmsg
-│⭔ ${prefix}delmsg
+│• ${prefix}setcmd [reply sticker/pesan]
+│• ${prefix}listcmd
+│• ${prefix}delcmd [reply sticker/pesan]
+│• ${prefix}lockcmd
+│• ${prefix}addmsg
+│• ${prefix}listmsg
+│• ${prefix}getmsg
+│• ${prefix}delmsg
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -6565,11 +6450,11 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 ANONYMOUS CHAT 」
 │└─────────────┈❖
-│⭔ ${prefix}menfess
-│⭔ ${prefix}anonymous
-│⭔ ${prefix}start
-│⭔ ${prefix}next
-│⭔ ${prefix}keluar
+│• ${prefix}menfess
+│• ${prefix}anonymous
+│• ${prefix}start
+│• ${prefix}next
+│• ${prefix}keluar
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -6605,16 +6490,16 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 ISLAMIC 」
 │└─────────────┈❖
-│⭔ ${prefix}iqra
-│⭔ ${prefix}hadist
-│⭔ ${prefix}alquran
-│⭔ ${prefix}juzamma
-│⭔ ${prefix}kisahnabi
-│⭔ ${prefix}tafsirsurah
-│⭔ ${prefix}jadwalsholat
-│⭔ ${prefix}niatsholat
-│⭔ ${prefix}kisahmuslim
-│⭔ ${prefix}asmaulhusna
+│• ${prefix}iqra
+│• ${prefix}hadist
+│• ${prefix}alquran
+│• ${prefix}juzamma
+│• ${prefix}kisahnabi
+│• ${prefix}tafsirsurah
+│• ${prefix}jadwalsholat
+│• ${prefix}niatsholat
+│• ${prefix}kisahmuslim
+│• ${prefix}asmaulhusna
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -6650,25 +6535,25 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 KERANG 」
 │└─────────────┈❖
-│⭔ ${prefix}apakah [teks]
-│⭔ ${prefix}bisakah [teks]
-│⭔ ${prefix}bagaimanakah [teks]
-│⭔ ${prefix}rate [teks]
-│⭔ ${prefix}kapankah [teks]
-│⭔ ${prefix}cekganteng [teks]
-│⭔ ${prefix}cekcantik [teks]
-│⭔ ${prefix}ceksange [teks]
-│⭔ ${prefix}cekgay [teks]
-│⭔ ${prefix}ceklesbi [teks]
-│⭔ ${prefix}cekmati [teks]
-│⭔ ${prefix}wangy [teks]
-│⭔ ${prefix}halah [teks]
-│⭔ ${prefix}hilih [teks]
-│⭔ ${prefix}huluh [teks]
-│⭔ ${prefix}heleh [teks]
-│⭔ ${prefix}holoh [teks]
-│⭔ ${prefix}jadian [teks]
-│⭔ ${prefix}jodohku [teks]
+│• ${prefix}apakah [teks]
+│• ${prefix}bisakah [teks]
+│• ${prefix}bagaimanakah [teks]
+│• ${prefix}rate [teks]
+│• ${prefix}kapankah [teks]
+│• ${prefix}cekganteng [teks]
+│• ${prefix}cekcantik [teks]
+│• ${prefix}ceksange [teks]
+│• ${prefix}cekgay [teks]
+│• ${prefix}ceklesbi [teks]
+│• ${prefix}cekmati [teks]
+│• ${prefix}wangy [teks]
+│• ${prefix}halah [teks]
+│• ${prefix}hilih [teks]
+│• ${prefix}huluh [teks]
+│• ${prefix}heleh [teks]
+│• ${prefix}holoh [teks]
+│• ${prefix}jadian [teks]
+│• ${prefix}jodohku [teks]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -6704,17 +6589,17 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 VOICE CHANGER 」
 │└─────────────┈❖
-│⭔ ${prefix}bass
-│⭔ ${prefix}blown
-│⭔ ${prefix}deep
-│⭔ ${prefix}earrape
-│⭔ ${prefix}fast
-│⭔ ${prefix}fat
-│⭔ ${prefix}nightcore
-│⭔ ${prefix}reverse
-│⭔ ${prefix}robot
-│⭔ ${prefix}slow
-│⭔ ${prefix}tupai
+│• ${prefix}bass
+│• ${prefix}blown
+│• ${prefix}deep
+│• ${prefix}earrape
+│• ${prefix}fast
+│• ${prefix}fat
+│• ${prefix}nightcore
+│• ${prefix}reverse
+│• ${prefix}robot
+│• ${prefix}slow
+│• ${prefix}tupai
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -6750,10 +6635,10 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 STALK 」
 │└─────────────┈❖
-│⭔ ${prefix}cekapi
-│⭔ ${prefix}githubstalk [username]
-│⭔ ${prefix}gitclone
-│⭔ ${prefix}stalk [option] [query]
+│• ${prefix}cekapi
+│• ${prefix}githubstalk [username]
+│• ${prefix}gitclone
+│• ${prefix}stalk [option] [query]
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -6789,23 +6674,23 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 OWNER 」
 │└─────────────┈❖
-│⭔ ${prefix}setnamabot
-│⭔ ${prefix}setbiobot
-│⭔ ${prefix}react [emoji]
-│⭔ ${prefix}sendsesi
-│⭔ ${prefix}shutdown
-│⭔ ${prefix}myip
-│⭔ ${prefix}setexif
-│⭔ ${prefix}chat [option]
-│⭔ ${prefix}join [link]
-│⭔ ${prefix}leave
-│⭔ ${prefix}block @user
-│⭔ ${prefix}unblock @user
-│⭔ ${prefix}bcgroup [text]
-│⭔ ${prefix}bcall [text]
-│⭔ ${prefix}setppbot full [image]
-│⭔ ${prefix}setstatus
-│⭔ ${prefix}setnamebot
+│• ${prefix}setnamabot
+│• ${prefix}setbiobot
+│• ${prefix}react [emoji]
+│• ${prefix}sendsesi
+│• ${prefix}shutdown
+│• ${prefix}myip
+│• ${prefix}setexif
+│• ${prefix}chat [option]
+│• ${prefix}join [link]
+│• ${prefix}leave
+│• ${prefix}block @user
+│• ${prefix}unblock @user
+│• ${prefix}bcgroup [text]
+│• ${prefix}bcall [text]
+│• ${prefix}setppbot full [image]
+│• ${prefix}setstatus
+│• ${prefix}setnamebot
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -6841,15 +6726,15 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 WEBZONE 」
 │└─────────────┈❖
-│⭔ ${prefix}jadwaltv
-│⭔ ${prefix}playstore
-│⭔ ${prefix}gsmarena
-│⭔ ${prefix}jadwalbioskop
-│⭔ ${prefix}nowplayingbioskop
-│⭔ ${prefix}aminio
-│⭔ ${prefix}wattpad
-│⭔ ${prefix}webtoons
-│⭔ ${prefix}drakor
+│• ${prefix}jadwaltv
+│• ${prefix}playstore
+│• ${prefix}gsmarena
+│• ${prefix}jadwalbioskop
+│• ${prefix}nowplayingbioskop
+│• ${prefix}aminio
+│• ${prefix}wattpad
+│• ${prefix}webtoons
+│• ${prefix}drakor
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -6885,18 +6770,18 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 WALLPAPER 」
 │└─────────────┈❖
-│⭔ ${prefix}cyberspace
-│⭔ ${prefix}mountain
-│⭔ ${prefix}programming
-│⭔ ${prefix}technology
-│⭔ ${prefix}aesthetic
-│⭔ ${prefix}boneka
-│⭔ ${prefix}hekel
-│⭔ ${prefix}kucing
-│⭔ ${prefix}mobil
-│⭔ ${prefix}motor
-│⭔ ${prefix}pubg
-│⭔ ${prefix}wallhp
+│• ${prefix}cyberspace
+│• ${prefix}mountain
+│• ${prefix}programming
+│• ${prefix}technology
+│• ${prefix}aesthetic
+│• ${prefix}boneka
+│• ${prefix}hekel
+│• ${prefix}kucing
+│• ${prefix}mobil
+│• ${prefix}motor
+│• ${prefix}pubg
+│• ${prefix}wallhp
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
@@ -7010,496 +6895,491 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 └┬─────────────┈❖
 ┌┤「 ANONYMOUS CHAT 」
 │└─────────────┈❖
-│⭔ ${prefix}menfess
-│⭔ ${prefix}anonymous
-│⭔ ${prefix}start
-│⭔ ${prefix}next
-│⭔ ${prefix}keluar
+│• ${prefix}menfess
+│• ${prefix}anonymous
+│• ${prefix}start
+│• ${prefix}next
+│• ${prefix}keluar
 └┬─────────────┈❖
 ┌┤「 ANIME 」
 │└─────────────┈❖
-│⭔ ${prefix}hololive
-│⭔ ${prefix}couples
-│⭔ ${prefix}couple
-│⭔ ${prefix}waifu
-│⭔ ${prefix}husbu
-│⭔ ${prefix}neko
-│⭔ ${prefix}uniform
-│⭔ ${prefix}cosplay
-│⭔ ${prefix}maid
-│⭔ ${prefix}oppai
-│⭔ ${prefix}selfies
-│⭔ ${prefix}shinobu
-│⭔ ${prefix}akira
-│⭔ ${prefix}akiyama
-│⭔ ${prefix}ana
-│⭔ ${prefix}asuna
-│⭔ ${prefix}ayuzawa
-│⭔ ${prefix}boruto
-│⭔ ${prefix}chitoge
-│⭔ ${prefix}deidara
-│⭔ ${prefix}doraemon
-│⭔ ${prefix}elaina
-│⭔ ${prefix}emilia
-│⭔ ${prefix}erza
-│⭔ ${prefix}gremory
-│⭔ ${prefix}hestia
-│⭔ ${prefix}hinata
-│⭔ ${prefix}inori
-│⭔ ${prefix}isuzu
-│⭔ ${prefix}itachi
-│⭔ ${prefix}itori
-│⭔ ${prefix}kaga
-│⭔ ${prefix}kagura
-│⭔ ${prefix}kakasih
-│⭔ ${prefix}kaori
-│⭔ ${prefix}keneki
-│⭔ ${prefix}kotori
-│⭔ ${prefix}kurumi
-│⭔ ${prefix}loli
-│⭔ ${prefix}madara
-│⭔ ${prefix}mikasa
-│⭔ ${prefix}miku
-│⭔ ${prefix}minato
-│⭔ ${prefix}naruto
-│⭔ ${prefix}nezuko
-│⭔ ${prefix}onepiece
-│⭔ ${prefix}pokemon
-│⭔ ${prefix}rize
-│⭔ ${prefix}sagiri
-│⭔ ${prefix}sakura
-│⭔ ${prefix}shinka
-│⭔ ${prefix}shizuka
-│⭔ ${prefix}shouta
-│⭔ ${prefix}toukachan
-│⭔ ${prefix}tsunade
-│⭔ ${prefix}yuki
-│⭔ ${prefix}raiden
-│⭔ ${prefix}hutao
-│⭔ ${prefix}xiao
-│⭔ ${prefix}chongyun
-│⭔ ${prefix}baal
-│⭔ ${prefix}keqing
-│⭔ ${prefix}yae
-│⭔ ${prefix}zhongli
-│⭔ ${prefix}ningguang
-│⭔ ${prefix}shenhe
-│⭔ ${prefix}ayaka
-│⭔ ${prefix}calliope
-│⭔ ${prefix}kitagawa
+│• ${prefix}hololive
+│• ${prefix}couples
+│• ${prefix}couple
+│• ${prefix}waifu
+│• ${prefix}husbu
+│• ${prefix}neko
+│• ${prefix}uniform
+│• ${prefix}cosplay
+│• ${prefix}maid
+│• ${prefix}oppai
+│• ${prefix}selfies
+│• ${prefix}shinobu
+│• ${prefix}akira
+│• ${prefix}akiyama
+│• ${prefix}ana
+│• ${prefix}asuna
+│• ${prefix}ayuzawa
+│• ${prefix}boruto
+│• ${prefix}chitoge
+│• ${prefix}deidara
+│• ${prefix}doraemon
+│• ${prefix}elaina
+│• ${prefix}emilia
+│• ${prefix}erza
+│• ${prefix}gremory
+│• ${prefix}hestia
+│• ${prefix}hinata
+│• ${prefix}inori
+│• ${prefix}isuzu
+│• ${prefix}itachi
+│• ${prefix}itori
+│• ${prefix}kaga
+│• ${prefix}kagura
+│• ${prefix}kakasih
+│• ${prefix}kaori
+│• ${prefix}keneki
+│• ${prefix}kotori
+│• ${prefix}kurumi
+│• ${prefix}loli
+│• ${prefix}madara
+│• ${prefix}mikasa
+│• ${prefix}miku
+│• ${prefix}minato
+│• ${prefix}naruto
+│• ${prefix}nezuko
+│• ${prefix}onepiece
+│• ${prefix}pokemon
+│• ${prefix}rize
+│• ${prefix}sagiri
+│• ${prefix}sakura
+│• ${prefix}shinka
+│• ${prefix}shizuka
+│• ${prefix}shouta
+│• ${prefix}toukachan
+│• ${prefix}tsunade
+│• ${prefix}yuki
+│• ${prefix}raiden
+│• ${prefix}hutao
+│• ${prefix}xiao
+│• ${prefix}chongyun
+│• ${prefix}baal
+│• ${prefix}keqing
+│• ${prefix}yae
+│• ${prefix}zhongli
+│• ${prefix}ningguang
+│• ${prefix}shenhe
+│• ${prefix}ayaka
+│• ${prefix}calliope
+│• ${prefix}kitagawa
 └┬─────────────┈❖
 ┌┤「 ASUPAN 」
 │└─────────────┈❖
-│⭔ ${prefix}cecan
-│⭔ ${prefix}cogan
-│⭔ ${prefix}china
-│⭔ ${prefix}japan
-│⭔ ${prefix}korea
-│⭔ ${prefix}indonesia
-│⭔ ${prefix}malaysia
-│⭔ ${prefix}thailand
-│⭔ ${prefix}vietnam
-│⭔ ${prefix}blankpink
-│⭔ ${prefix}justina
-│⭔ ${prefix}kpop
-│⭔ ${prefix}rose
-│⭔ ${prefix}ryujin
+│• ${prefix}cecan
+│• ${prefix}cogan
+│• ${prefix}china
+│• ${prefix}japan
+│• ${prefix}korea
+│• ${prefix}indonesia
+│• ${prefix}malaysia
+│• ${prefix}thailand
+│• ${prefix}vietnam
+│• ${prefix}blankpink
+│• ${prefix}justina
+│• ${prefix}kpop
+│• ${prefix}rose
+│• ${prefix}ryujin
 └┬─────────────┈❖
 ┌┤「 CONVERT 」
 │└─────────────┈❖
-│⭔ ${prefix}nulis
-│⭔ ${prefix}removebg [image]
-│⭔ ${prefix}toimage [reply sticker]
-│⭔ ${prefix}tovideo [reply sticker]
-│⭔ ${prefix}togif [reply sticker]
-│⭔ ${prefix}tourl [image / video]
-│⭔ ${prefix}tovn [reply video]
-│⭔ ${prefix}tomp3 [reply video]
-│⭔ ${prefix}toaudio [reply video]
+│• ${prefix}nulis
+│• ${prefix}removebg [image]
+│• ${prefix}toimage [reply sticker]
+│• ${prefix}tovideo [reply sticker]
+│• ${prefix}togif [reply sticker]
+│• ${prefix}tourl [image / video]
+│• ${prefix}tovn [reply video]
+│• ${prefix}tomp3 [reply video]
+│• ${prefix}toaudio [reply video]
 └┬─────────────┈❖
 ┌┤「 DOWNLOADER 」
 │└─────────────┈❖
-│⭔ ${prefix}tiktoknowm [url]
-│⭔ ${prefix}tiktokwm [url]
-│⭔ ${prefix}tiktokmp3 [url]
-│⭔ ${prefix}instagram [url]
-│⭔ ${prefix}twitter [url]
-│⭔ ${prefix}twittermp3 [url]
-│⭔ ${prefix}facebook [url]
-│⭔ ${prefix}zippyshare [url]
-│⭔ ${prefix}mediafire [url]
-│⭔ ${prefix}tinyurl [url]
-│⭔ ${prefix}linkpoi [url]
-│⭔ ${prefix}ytmp3 [url]
-│⭔ ${prefix}ytmp4 [url]
-│⭔ ${prefix}getmusic [query]
-│⭔ ${prefix}getvideo [query]
-│⭔ ${prefix}umma [url]
-│⭔ ${prefix}joox [query]
-│⭔ ${prefix}soundcloud [url]
+│• ${prefix}tiktoknowm [url]
+│• ${prefix}tiktokwm [url]
+│• ${prefix}tiktokmp3 [url]
+│• ${prefix}instagram [url]
+│• ${prefix}twitter [url]
+│• ${prefix}twittermp3 [url]
+│• ${prefix}facebook [url]
+│• ${prefix}zippyshare [url]
+│• ${prefix}mediafire [url]
+│• ${prefix}ytmp3 [url]
+│• ${prefix}ytmp4 [url]
+│• ${prefix}getmusic [query]
+│• ${prefix}getvideo [query]
+│• ${prefix}umma [url]
+│• ${prefix}joox [query]
+│• ${prefix}soundcloud [url]
 └┬─────────────┈❖
 ┌┤「 DATABASE 」
 │└─────────────┈❖
-│⭔ ${prefix}setcmd [reply sticker/pesan]
-│⭔ ${prefix}listcmd
-│⭔ ${prefix}delcmd [reply sticker/pesan]
-│⭔ ${prefix}lockcmd
-│⭔ ${prefix}addmsg
-│⭔ ${prefix}listmsg
-│⭔ ${prefix}getmsg
-│⭔ ${prefix}delmsg
+│• ${prefix}setcmd [reply sticker/pesan]
+│• ${prefix}listcmd
+│• ${prefix}delcmd [reply sticker/pesan]
+│• ${prefix}lockcmd
+│• ${prefix}addmsg
+│• ${prefix}listmsg
+│• ${prefix}getmsg
+│• ${prefix}delmsg
 └┬─────────────┈❖
 ┌┤「 EPHOTO 」
 │└─────────────┈❖
-│⭔ ${prefix}logo2
-│⭔ ${prefix}logo3
-│⭔ ${prefix}logo4
-│⭔ ${prefix}logogaming
-│⭔ ${prefix}logogirl
-│⭔ ${prefix}logogold
-│⭔ ${prefix}spiderlogo
-│⭔ ${prefix}ffcover
-│⭔ ${prefix}crossfire
-│⭔ ${prefix}galaxy
-│⭔ ${prefix}glass
-│⭔ ${prefix}neon
-│⭔ ${prefix}beach
-│⭔ ${prefix}awan
-│⭔ ${prefix}flower
-│⭔ ${prefix}bohlam
-│⭔ ${prefix}kaligrafi
-│⭔ ${prefix}coklat
-│⭔ ${prefix}quotes
-│⭔ ${prefix}grafity
-│⭔ ${prefix}marmer
-│⭔ ${prefix}musimsemi
-│⭔ ${prefix}ruby
-│⭔ ${prefix}shadowtext
-│⭔ ${prefix}starlogo
-│⭔ ${prefix}starnight
-│⭔ ${prefix}starnight2
-│⭔ ${prefix}blackpink
-│⭔ ${prefix}cake
-│⭔ ${prefix}flashlight
-│⭔ ${prefix}puppycute
-│⭔ ${prefix}yasuologo
-│⭔ ${prefix}certificate
-│⭔ ${prefix}igcertificate
-│⭔ ${prefix}ytcertificate
+│• ${prefix}logo2
+│• ${prefix}logo3
+│• ${prefix}logo4
+│• ${prefix}logogaming
+│• ${prefix}logogirl
+│• ${prefix}logogold
+│• ${prefix}spiderlogo
+│• ${prefix}ffcover
+│• ${prefix}crossfire
+│• ${prefix}galaxy
+│• ${prefix}glass
+│• ${prefix}neon
+│• ${prefix}beach
+│• ${prefix}awan
+│• ${prefix}flower
+│• ${prefix}bohlam
+│• ${prefix}kaligrafi
+│• ${prefix}coklat
+│• ${prefix}quotes
+│• ${prefix}grafity
+│• ${prefix}marmer
+│• ${prefix}musimsemi
+│• ${prefix}ruby
+│• ${prefix}shadowtext
+│• ${prefix}starlogo
+│• ${prefix}starnight
+│• ${prefix}starnight2
+│• ${prefix}blackpink
+│• ${prefix}cake
+│• ${prefix}flashlight
+│• ${prefix}puppycute
+│• ${prefix}yasuologo
+│• ${prefix}certificate
+│• ${prefix}igcertificate
+│• ${prefix}ytcertificate
 └┬─────────────┈❖
 ┌┤「 GROUP 」
 │└─────────────┈❖
-│⭔ ${prefix}linkgroup
-│⭔ ${prefix}revoke 
-│⭔ ${prefix}tagmenu [option]
-│⭔ ${prefix}ephemeral [option]
-│⭔ ${prefix}setppgrup full [image]
-│⭔ ${prefix}setname [text]
-│⭔ ${prefix}setdesc [text]
-│⭔ ${prefix}group [option]
-│⭔ ${prefix}editinfo [option]
-│⭔ ${prefix}add @user
-│⭔ ${prefix}kick @user
-│⭔ ${prefix}hidetag [text]
-│⭔ ${prefix}tagall [text]
-│⭔ ${prefix}totag [reply]
-│⭔ ${prefix}promote @user
-│⭔ ${prefix}demote @user
-│⭔ ${prefix}mute [on/off]
-│⭔ ${prefix}antilink [on/off]
-│⭔ ${prefix}antilinkyt [on/off]
-│⭔ ${prefix}antilinktt [on/off]
-│⭔ ${prefix}vote [text]
-│⭔ ${prefix}devote
-│⭔ ${prefix}upvote
-│⭔ ${prefix}cekvote
-│⭔ ${prefix}hapusvote
+│• ${prefix}linkgroup
+│• ${prefix}revoke 
+│• ${prefix}tagmenu [option]
+│• ${prefix}ephemeral [option]
+│• ${prefix}setppgrup full [image]
+│• ${prefix}setname [text]
+│• ${prefix}setdesc [text]
+│• ${prefix}group [option]
+│• ${prefix}editinfo [option]
+│• ${prefix}add @user
+│• ${prefix}kick @user
+│• ${prefix}hidetag [text]
+│• ${prefix}tagall [text]
+│• ${prefix}totag [reply]
+│• ${prefix}promote @user
+│• ${prefix}demote @user
+│• ${prefix}mute [on/off]
+│• ${prefix}antilink [on/off]
+│• ${prefix}antilinkyt [on/off]
+│• ${prefix}antilinktt [on/off]
+│• ${prefix}vote [text]
+│• ${prefix}devote
+│• ${prefix}upvote
+│• ${prefix}cekvote
+│• ${prefix}hapusvote
 └┬─────────────┈❖
 ┌┤「 GAME 」
 │└─────────────┈❖
-│⭔ ${prefix}slot
-│⭔ ${prefix}delttt
-│⭔ ${prefix}tictactoe
-│⭔ ${prefix}family100
-│⭔ ${prefix}tebakmenu [option]
-│⭔ ${prefix}math [mode]
-│⭔ ${prefix}suitpvp [@tag]
+│• ${prefix}delttt
+│• ${prefix}tictactoe
+│• ${prefix}family100
+│• ${prefix}tebakmenu [option]
+│• ${prefix}math [mode]
+│• ${prefix}suitpvp [@tag]
 └┬─────────────┈❖
 ┌┤「 ISLAMIC 」
 │└─────────────┈❖
-│⭔ ${prefix}iqra
-│⭔ ${prefix}hadist
-│⭔ ${prefix}alquran
-│⭔ ${prefix}juzamma
-│⭔ ${prefix}kisahnabi
-│⭔ ${prefix}tafsirsurah
-│⭔ ${prefix}jadwalsholat
-│⭔ ${prefix}niatsholat
-│⭔ ${prefix}kisahmuslim
-│⭔ ${prefix}asmaulhusna
+│• ${prefix}iqra
+│• ${prefix}hadist
+│• ${prefix}alquran
+│• ${prefix}juzamma
+│• ${prefix}kisahnabi
+│• ${prefix}tafsirsurah
+│• ${prefix}jadwalsholat
+│• ${prefix}niatsholat
+│• ${prefix}kisahmuslim
+│• ${prefix}asmaulhusna
 └┬─────────────┈❖
 ┌┤「 KERANG 」
 │└─────────────┈❖
-│⭔ ${prefix}apakah [teks]
-│⭔ ${prefix}bisakah [teks]
-│⭔ ${prefix}bagaimanakah [teks]
-│⭔ ${prefix}rate [teks]
-│⭔ ${prefix}kapankah [teks]
-│⭔ ${prefix}cekganteng [teks]
-│⭔ ${prefix}cekcantik [teks]
-│⭔ ${prefix}ceksange [teks]
-│⭔ ${prefix}cekgay [teks]
-│⭔ ${prefix}ceklesbi [teks]
-│⭔ ${prefix}cekmati [teks]
-│⭔ ${prefix}wangy [teks]
-│⭔ ${prefix}halah [teks]
-│⭔ ${prefix}hilih [teks]
-│⭔ ${prefix}huluh [teks]
-│⭔ ${prefix}heleh [teks]
-│⭔ ${prefix}holoh [teks]
-│⭔ ${prefix}jadian [teks]
-│⭔ ${prefix}jodohku [teks]
+│• ${prefix}apakah [teks]
+│• ${prefix}bisakah [teks]
+│• ${prefix}bagaimanakah [teks]
+│• ${prefix}rate [teks]
+│• ${prefix}kapankah [teks]
+│• ${prefix}cekganteng [teks]
+│• ${prefix}cekcantik [teks]
+│• ${prefix}ceksange [teks]
+│• ${prefix}cekgay [teks]
+│• ${prefix}ceklesbi [teks]
+│• ${prefix}cekmati [teks]
+│• ${prefix}wangy [teks]
+│• ${prefix}halah [teks]
+│• ${prefix}hilih [teks]
+│• ${prefix}huluh [teks]
+│• ${prefix}heleh [teks]
+│• ${prefix}holoh [teks]
+│• ${prefix}jadian [teks]
+│• ${prefix}jodohku [teks]
 └┬─────────────┈❖
 ┌┤「 MEME 」
 │└─────────────┈❖
-│⭔ ${prefix}animememe
-│⭔ ${prefix}anjing
-│⭔ ${prefix}meme
-│⭔ ${prefix}memeindo
-│⭔ ${prefix}darkjoke
-│⭔ ${prefix}darkjokes
-│⭔ ${prefix}onecak
+│• ${prefix}animememe
+│• ${prefix}anjing
+│• ${prefix}meme
+│• ${prefix}memeindo
+│• ${prefix}darkjoke
+│• ${prefix}darkjokes
+│• ${prefix}onecak
 └┬─────────────┈❖
 ┌┤「 MAIN 」
 │└─────────────┈❖
-│⭔ ${prefix}ping
-│⭔ ${prefix}owner
-│⭔ ${prefix}donasi
-│⭔ ${prefix}menu / ${prefix}help / ${prefix}?
-│⭔ ${prefix}delete / ${prefix}del / ${prefix}d
-│⭔ ${prefix}infochat
-│⭔ ${prefix}quoted
-│⭔ ${prefix}listpc
-│⭔ ${prefix}listgc
-│⭔ ${prefix}listonline
-│⭔ ${prefix}speedtest
-│⭔ ${prefix}toqr
-│⭔ ${prefix}randomcolor
-│⭔ ${prefix}request [req]
-│⭔ ${prefix}report [bug]
+│• ${prefix}ping
+│• ${prefix}owner
+│• ${prefix}donasi
+│• ${prefix}menu / ${prefix}help / ${prefix}?
+│• ${prefix}delete / ${prefix}del / ${prefix}d
+│• ${prefix}infochat
+│• ${prefix}quoted
+│• ${prefix}listpc
+│• ${prefix}listgc
+│• ${prefix}listonline
+│• ${prefix}speedtest
+│• ${prefix}request [req]
+│• ${prefix}report [bug]
 └┬─────────────┈❖
 ┌┤「 OWNER 」
 │└─────────────┈❖
-│⭔ ${prefix}setnamabot
-│⭔ ${prefix}setbiobot
-│⭔ ${prefix}react [emoji]
-│⭔ ${prefix}shutdown
-│⭔ ${prefix}sendsesi
-│⭔ ${prefix}myip
-│⭔ ${prefix}setexif
-│⭔ ${prefix}chat [option]
-│⭔ ${prefix}join [link]
-│⭔ ${prefix}leave
-│⭔ ${prefix}block @user
-│⭔ ${prefix}unblock @user
-│⭔ ${prefix}bcgroup [text]
-│⭔ ${prefix}bcall [text]
-│⭔ ${prefix}setppbot full [image]
-│⭔ ${prefix}setstatus
-│⭔ ${prefix}setnamebot
+│• ${prefix}setnamabot
+│• ${prefix}setbiobot
+│• ${prefix}react [emoji]
+│• ${prefix}shutdown
+│• ${prefix}sendsesi
+│• ${prefix}myip
+│• ${prefix}setexif
+│• ${prefix}chat [option]
+│• ${prefix}join [link]
+│• ${prefix}leave
+│• ${prefix}block @user
+│• ${prefix}unblock @user
+│• ${prefix}bcgroup [text]
+│• ${prefix}bcall [text]
+│• ${prefix}setppbot full [image]
+│• ${prefix}setstatus
+│• ${prefix}setnamebot
 └┬─────────────┈❖
 ┌┤「 PRIMBON 」
 │└─────────────┈❖
-│⭔ ${prefix}nomorhoki
-│⭔ ${prefix}artimimpi
-│⭔ ${prefix}artinama
-│⭔ ${prefix}ramaljodoh
-│⭔ ${prefix}ramaljodohbali
-│⭔ ${prefix}suamiistri
-│⭔ ${prefix}ramalcinta
-│⭔ ${prefix}cocoknama
-│⭔ ${prefix}pasangan
-│⭔ ${prefix}jadiannikah
-│⭔ ${prefix}sifatusaha
-│⭔ ${prefix}rezeki
-│⭔ ${prefix}pekerjaan
-│⭔ ${prefix}nasib
-│⭔ ${prefix}penyakit
-│⭔ ${prefix}tarot
-│⭔ ${prefix}fengshui
-│⭔ ${prefix}haribaik
-│⭔ ${prefix}harisangar
-│⭔ ${prefix}harisial
-│⭔ ${prefix}nagahari
-│⭔ ${prefix}arahrezeki
-│⭔ ${prefix}peruntungan
-│⭔ ${prefix}weton
-│⭔ ${prefix}karakter
-│⭔ ${prefix}keberuntungan
-│⭔ ${prefix}memancing
-│⭔ ${prefix}masasubur
-│⭔ ${prefix}zodiak
-│⭔ ${prefix}shio
+│• ${prefix}nomorhoki
+│• ${prefix}artimimpi
+│• ${prefix}artinama
+│• ${prefix}ramaljodoh
+│• ${prefix}ramaljodohbali
+│• ${prefix}suamiistri
+│• ${prefix}ramalcinta
+│• ${prefix}cocoknama
+│• ${prefix}pasangan
+│• ${prefix}jadiannikah
+│• ${prefix}sifatusaha
+│• ${prefix}rezeki
+│• ${prefix}pekerjaan
+│• ${prefix}nasib
+│• ${prefix}penyakit
+│• ${prefix}tarot
+│• ${prefix}fengshui
+│• ${prefix}haribaik
+│• ${prefix}harisangar
+│• ${prefix}harisial
+│• ${prefix}nagahari
+│• ${prefix}arahrezeki
+│• ${prefix}peruntungan
+│• ${prefix}weton
+│• ${prefix}karakter
+│• ${prefix}keberuntungan
+│• ${prefix}memancing
+│• ${prefix}masasubur
+│• ${prefix}zodiak
+│• ${prefix}shio
 └┬─────────────┈❖
 ┌┤「 PHOTO EDITOR 」
 │└─────────────┈❖
-│⭔ ${prefix}gay
-│⭔ ${prefix}contrast
-│⭔ ${prefix}pixelate
-│⭔ ${prefix}dither
-│⭔ ${prefix}sepia
-│⭔ ${prefix}brighten
-│⭔ ${prefix}greyscale
-│⭔ ${prefix}circle
-│⭔ ${prefix}blur
-│⭔ ${prefix}invert
-│⭔ ${prefix}scale
-│⭔ ${prefix}upscale
-│⭔ ${prefix}glass
-│⭔ ${prefix}wasted
-│⭔ ${prefix}passed
-│⭔ ${prefix}comrade
-│⭔ ${prefix}jail
-│⭔ ${prefix}triggered
+│• ${prefix}gay
+│• ${prefix}contrast
+│• ${prefix}pixelate
+│• ${prefix}dither
+│• ${prefix}sepia
+│• ${prefix}brighten
+│• ${prefix}greyscale
+│• ${prefix}circle
+│• ${prefix}blur
+│• ${prefix}invert
+│• ${prefix}scale
+│• ${prefix}upscale
+│• ${prefix}glass
+│• ${prefix}wasted
+│• ${prefix}passed
+│• ${prefix}comrade
+│• ${prefix}jail
+│• ${prefix}triggered
 └┬─────────────┈❖
 ┌┤「 QUOTES 」
 │└─────────────┈❖
-│⭔ ${prefix}quotesanime
-│⭔ ${prefix}animequotes
-│⭔ ${prefix}motivasi
-│⭔ ${prefix}dilanquote
-│⭔ ${prefix}bucinquote
-│⭔ ${prefix}katasenja
-│⭔ ${prefix}randomquote
-│⭔ ${prefix}muslimquote
-│⭔ ${prefix}galauquote
-│⭔ ${prefix}kanyequote
-│⭔ ${prefix}trumpquote
-│⭔ ${prefix}trumpthink
-│⭔ ${prefix}creepyfact
-│⭔ ${prefix}faktaunik
-│⭔ ${prefix}puisi
-│⭔ ${prefix}pantun
-│⭔ ${prefix}cerpen
+│• ${prefix}quotesanime
+│• ${prefix}animequotes
+│• ${prefix}motivasi
+│• ${prefix}dilanquote
+│• ${prefix}bucinquote
+│• ${prefix}katasenja
+│• ${prefix}randomquote
+│• ${prefix}muslimquote
+│• ${prefix}galauquote
+│• ${prefix}kanyequote
+│• ${prefix}trumpquote
+│• ${prefix}trumpthink
+│• ${prefix}creepyfact
+│• ${prefix}faktaunik
+│• ${prefix}puisi
+│• ${prefix}pantun
+│• ${prefix}cerpen
 └┬─────────────┈❖
 ┌┤「 RANDOM 」
 │└─────────────┈❖
-│⭔ ${prefix}simih [teks]
-│⭔ ${prefix}apikey
-│⭔ ${prefix}coffe
-│⭔ ${prefix}ebinary [teks]
-│⭔ ${prefix}dbinary [teks]
-│⭔ ${prefix}styletext [teks]
+│• ${prefix}simih [teks]
+│• ${prefix}apikey
+│• ${prefix}coffe
+│• ${prefix}ebinary [teks]
+│• ${prefix}dbinary [teks]
+│• ${prefix}styletext [teks]
 └┬─────────────┈❖
 ┌┤「 STICKER 」
 │└─────────────┈❖
-│⭔ ${prefix}sticker
-│⭔ ${prefix}stickerwm
-│⭔ ${prefix}attp [teks]
-│⭔ ${prefix}ttp [teks]
-│⭔ ${prefix}mukalu
-│⭔ ${prefix}paimon
-│⭔ ${prefix}gura
-│⭔ ${prefix}doge
-│⭔ ${prefix}lovestick
-│⭔ ${prefix}animestick
-│⭔ ${prefix}patrick
-│⭔ ${prefix}emojimix 😎+🤠
-│⭔ ${prefix}emojimix2 😎
+│• ${prefix}sticker
+│• ${prefix}stickerwm
+│• ${prefix}attp [teks]
+│• ${prefix}ttp [teks]
+│• ${prefix}mukalu
+│• ${prefix}paimon
+│• ${prefix}gura
+│• ${prefix}doge
+│• ${prefix}lovestick
+│• ${prefix}animestick
+│• ${prefix}patrick
+│• ${prefix}emojimix 😎+🤠
+│• ${prefix}emojimix2 😎
 └┬─────────────┈❖
 ┌┤「 SEARCH 」
 │└─────────────┈❖
-│⭔ ${prefix}play [query]
-│⭔ ${prefix}yts [query]
-│⭔ ${prefix}google [query]
-│⭔ ${prefix}gimage [query]
-│⭔ ${prefix}pinterest [query]
-│⭔ ${prefix}wallpaper [query]
-│⭔ ${prefix}wikimedia [query]
-│⭔ ${prefix}ytsearch [query]
-│⭔ ${prefix}ringtone [query]
+│• ${prefix}play [query]
+│• ${prefix}yts [query]
+│• ${prefix}google [query]
+│• ${prefix}gimage [query]
+│• ${prefix}pinterest [query]
+│• ${prefix}wallpaper [query]
+│• ${prefix}wikimedia [query]
+│• ${prefix}ytsearch [query]
+│• ${prefix}ringtone [query]
 └┬─────────────┈❖
 ┌┤「 STALK 」
 │└─────────────┈❖
-│⭔ ${prefix}cekapi
-│⭔ ${prefix}githubstalk [username]
-│⭔ ${prefix}gitclone
-│⭔ ${prefix}stalk [option] [query]
+│• ${prefix}cekapi
+│• ${prefix}githubstalk [username]
+│• ${prefix}gitclone
+│• ${prefix}stalk [option] [query]
 └┬─────────────┈❖
 ┌┤「 TEXT PRO 」
 │└─────────────┈❖
-│⭔ ${prefix}3dchristmas
-│⭔ ${prefix}3ddeepsea
-│⭔ ${prefix}americanflag
-│⭔ ${prefix}3dscifi
-│⭔ ${prefix}3drainbow
-│⭔ ${prefix}3dwaterpipe
-│⭔ ${prefix}halloweenskeleton
-│⭔ ${prefix}sketch
-│⭔ ${prefix}bluecircuit
-│⭔ ${prefix}space
-│⭔ ${prefix}metallic
-│⭔ ${prefix}fiction
-│⭔ ${prefix}greenhorror
-│⭔ ${prefix}transformer
-│⭔ ${prefix}berry
-│⭔ ${prefix}thunder
-│⭔ ${prefix}magma
-│⭔ ${prefix}3dcrackedstone
-│⭔ ${prefix}3dneonlight
-│⭔ ${prefix}impressiveglitch
-│⭔ ${prefix}naturalleaves
-│⭔ ${prefix}fireworksparkle
-│⭔ ${prefix}matrix
-│⭔ ${prefix}dropwater
-│⭔ ${prefix}harrypotter
-│⭔ ${prefix}foggywindow
-│⭔ ${prefix}neondevils
-│⭔ ${prefix}christmasholiday
-│⭔ ${prefix}3dgradient
-│⭔ ${prefix}blackpink
-│⭔ ${prefix}gluetext
+│• ${prefix}3dchristmas
+│• ${prefix}3ddeepsea
+│• ${prefix}americanflag
+│• ${prefix}3dscifi
+│• ${prefix}3drainbow
+│• ${prefix}3dwaterpipe
+│• ${prefix}halloweenskeleton
+│• ${prefix}sketch
+│• ${prefix}bluecircuit
+│• ${prefix}space
+│• ${prefix}metallic
+│• ${prefix}fiction
+│• ${prefix}greenhorror
+│• ${prefix}transformer
+│• ${prefix}berry
+│• ${prefix}thunder
+│• ${prefix}magma
+│• ${prefix}3dcrackedstone
+│• ${prefix}3dneonlight
+│• ${prefix}impressiveglitch
+│• ${prefix}naturalleaves
+│• ${prefix}fireworksparkle
+│• ${prefix}matrix
+│• ${prefix}dropwater
+│• ${prefix}harrypotter
+│• ${prefix}foggywindow
+│• ${prefix}neondevils
+│• ${prefix}christmasholiday
+│• ${prefix}3dgradient
+│• ${prefix}blackpink
+│• ${prefix}gluetext
 └┬─────────────┈❖
 ┌┤「 VOICE CHANGER 」
 │└─────────────┈❖
-│⭔ ${prefix}bass
-│⭔ ${prefix}blown
-│⭔ ${prefix}deep
-│⭔ ${prefix}earrape
-│⭔ ${prefix}fast
-│⭔ ${prefix}fat
-│⭔ ${prefix}nightcore
-│⭔ ${prefix}reverse
-│⭔ ${prefix}robot
-│⭔ ${prefix}slow
-│⭔ ${prefix}tupai
+│• ${prefix}bass
+│• ${prefix}blown
+│• ${prefix}deep
+│• ${prefix}earrape
+│• ${prefix}fast
+│• ${prefix}fat
+│• ${prefix}nightcore
+│• ${prefix}reverse
+│• ${prefix}robot
+│• ${prefix}slow
+│• ${prefix}tupai
 └┬─────────────┈❖
 ┌┤「 WEBZONE 」
 │└─────────────┈❖
-│⭔ ${prefix}jadwaltv
-│⭔ ${prefix}playstore
-│⭔ ${prefix}gsmarena
-│⭔ ${prefix}jadwalbioskop
-│⭔ ${prefix}nowplayingbioskop
-│⭔ ${prefix}aminio
-│⭔ ${prefix}wattpad
-│⭔ ${prefix}webtoons
-│⭔ ${prefix}drakor
+│• ${prefix}jadwaltv
+│• ${prefix}playstore
+│• ${prefix}gsmarena
+│• ${prefix}jadwalbioskop
+│• ${prefix}nowplayingbioskop
+│• ${prefix}aminio
+│• ${prefix}wattpad
+│• ${prefix}webtoons
+│• ${prefix}drakor
 └┬─────────────┈❖
 ┌┤「 WALLPAPER 」
 │└─────────────┈❖
-│⭔ ${prefix}cyberspace
-│⭔ ${prefix}mountain
-│⭔ ${prefix}programming
-│⭔ ${prefix}technology
-│⭔ ${prefix}aesthetic
-│⭔ ${prefix}boneka
-│⭔ ${prefix}hekel
-│⭔ ${prefix}kucing
-│⭔ ${prefix}mobil
-│⭔ ${prefix}motor
-│⭔ ${prefix}pubg
-│⭔ ${prefix}wallhp
+│• ${prefix}cyberspace
+│• ${prefix}mountain
+│• ${prefix}programming
+│• ${prefix}technology
+│• ${prefix}aesthetic
+│• ${prefix}boneka
+│• ${prefix}hekel
+│• ${prefix}kucing
+│• ${prefix}mobil
+│• ${prefix}motor
+│• ${prefix}pubg
+│• ${prefix}wallhp
 └──────────────┈❖`
                 let buttons = [{ buttonId: 'sewa', buttonText: { displayText: '👑Sewa' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
             await akame.sendButtonText(m.chat, buttons, anu, ntiktok, fkontak)
