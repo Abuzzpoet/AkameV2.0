@@ -8,8 +8,7 @@
  */
 
 require('./config')
-const { default: akameConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
-const { state, saveState } = useSingleFileAuthState(`./${sessionName}.json`)
+const { default: akameConnect, useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
 const pino = require('pino')
 const lolcatjs = require('lolcatjs')
 const { Boom } = require('@hapi/boom')
@@ -75,10 +74,34 @@ if (global.db) setInterval(async () => {
   }, 30 * 1000)
 
 async function startakame() {
+    const { state, saveCreds } = await useMultiFileAuthState(`./${sessionName}`)
+
     const akame = akameConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
         browser: ['Akame Multi Device','Safari','1.0.0'],
+        patchMessageBeforeSending: (message) => {
+
+                const requiresPatch = !!(
+                  message.buttonsMessage
+              	  || message.templateMessage
+              		|| message.listMessage
+                );
+                if (requiresPatch) {
+                    message = {
+                        viewOnceMessage: {
+                            message: {
+                                messageContextInfo: {
+                                    deviceListMetadataVersion: 2,
+                                    deviceListMetadata: {},
+                                },
+                                ...message,
+                            },
+                        },
+                    };
+                }
+                return message;
+    },
         auth: state
     })
 
@@ -280,7 +303,7 @@ try{
 	
 })
 
-    akame.ev.on('creds.update', saveState)
+    akame.ev.on('creds.update', saveCreds)
 
     // Add Other
     

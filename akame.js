@@ -6857,7 +6857,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
   thumbnail: thumb,
   mediaType: 2,
   mediaUrl: mygc,
-  sourceUrl: mytt
+  sourceUrl: myig
   }}
   }
   akame.sendMessage(m.chat, {react: {text: anu,key: m.key}})

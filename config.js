@@ -45,7 +45,7 @@ global.myweb = 'https://tiktok.com/@guaabuzz'
 global.region = 'Jepang'
 global.github = 'https://github.com/Abuzzpoet'
 global.mygc = 'https://chat.whatsapp.com/FGmVjFYJBjjGst62qwNKJB'
-global.mytt = 'https://tiktok.com/@guaabuzz'
+global.myig = 'https://instagram.com/guaabuzz'
 
 //—————「 Set Wm 」—————//
 //terserah mau ubah atau nggak
@@ -71,15 +71,15 @@ global.sp = '•'
 //terserah mau ubah apa nggak
 global.mess = {
     success: '🤗Done, Oke Desu~',
-    admin: 'Perintah Ini Hanya Bisa Digunakan Oleh Admin !',
-    botAdmin: 'Perintah Ini Hanya Bisa Digunakan Ketika Bot Menjadi Admin !',
-    owner: 'Perintah Ini Hanya Bisa Digunakan Oleh Owner !',
-    group: 'Perintah Ini Hanya Bisa Digunakan Di Group Chat !',
-    private: 'Perintah Ini Hanya Bisa Digunakan Di Private Chat !',
-    bot: 'Fitur Khusus Pengguna Nomor Bot !',
+    admin: '❗Perintah Ini Hanya Bisa Digunakan Oleh Admin Group !',
+    botAdmin: '❗Perintah Ini Hanya Bisa Digunakan Ketika Bot Menjadi Admin Group !',
+    owner: '❗Perintah Ini Hanya Bisa Digunakan Oleh Owner !',
+    group: '❗Perintah Ini Hanya Bisa Digunakan Di Group Chat !',
+    private: '❗Perintah Ini Hanya Bisa Digunakan Di Private Chat !',
+    bot: '🤖 Fitur Khusus Pengguna Nomor Bot !',
     wait: '⏳ Sedang Di Proses !',
-    endLimit: 'Limit Harian Anda Telah Habis, Limit Akan Direset Setiap Jam 12 !',
-    error: 'Fitur Sedang Error !',
+    endLimit: '🕊️ Limit Harian Anda Telah Habis, Limit Akan Direset Setiap Jam 12 !',
+    error: '🚫 Fitur Sedang Error !',
 }
 
 //—————「 Set Limit 」—————//

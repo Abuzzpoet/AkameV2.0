@@ -108,7 +108,7 @@ Editing Number Owner & session name in [`config.js`](https://github.com/Abuzzpoe
 //—————「 Website Apikey 」—————//
 //gausah di apa² ini, Beli Sendiri banh :)
 global.APIKeys = {
-    'https://api.zahwazein.xyz':'GetApiKey',
+    'https://api.zahwazein.xyz': 'GetApiKey',
 }
 
 //—————「 Set Nama Bot & Own 」—————//
@@ -119,7 +119,8 @@ global.namaowner = 'GuaAbuzz'
 //—————「 Setting Owner 」—————//
 //terserah mau ubah atau nggak
 global.owner = ['6289636827082']
-global.premium = ['6289636827082']
+global.ownernomer = "6289636827082"
+global.premium = ['6289636827082','6282171978174']
 
 //—————「 Setting Nomor Donasi/Sewabot 」—————//
 //ubah aja kalau ada yg gapunya kasih tanda '-'
@@ -127,7 +128,13 @@ global.saweria = ['https://saweria.co/GuaAbuzz']
 
 //—————「 Set Kebutuhan Button 」—————//
 //ubah aja kalau ada yang gapunya gsh di hps anggap aja credits :)
+global.email = 'rajifarmansyah46@gmail.com'
+global.namaweb = 'TikTok'
+global.myweb = 'https://tiktok.com/@guaabuzz'
+global.region = 'Jepang'
 global.github = 'https://github.com/Abuzzpoet'
+global.mygc = 'https://chat.whatsapp.com/FGmVjFYJBjjGst62qwNKJB'
+global.myig = 'https://instagram.com/guaabuzz'
 
 //—————「 Set Sticker Wm 」—————//
 //terserah mau ubah atau nggak
@@ -138,15 +145,15 @@ global.author = 'WhatsApp Bot'
 //terserah mau ubah apa nggak
 global.mess = {
     success: '🤗Done, Oke Desu~',
-    admin: 'Perintah Ini Hanya Bisa Digunakan Oleh Admin !',
-    botAdmin: 'Perintah Ini Hanya Bisa Digunakan Ketika Bot Menjadi Admin !',
-    owner: 'Perintah Ini Hanya Bisa Digunakan Oleh Owner !',
-    group: 'Perintah Ini Hanya Bisa Digunakan Di Group Chat !',
-    private: 'Perintah Ini Hanya Bisa Digunakan Di Private Chat !',
-    bot: 'Fitur Khusus Pengguna Nomor Bot !',
+    admin: '❗Perintah Ini Hanya Bisa Digunakan Oleh Admin Group !',
+    botAdmin: '❗Perintah Ini Hanya Bisa Digunakan Ketika Bot Menjadi Admin Group !',
+    owner: '❗Perintah Ini Hanya Bisa Digunakan Oleh Owner !',
+    group: '❗Perintah Ini Hanya Bisa Digunakan Di Group Chat !',
+    private: '❗Perintah Ini Hanya Bisa Digunakan Di Private Chat !',
+    bot: '🤖 Fitur Khusus Pengguna Nomor Bot !',
     wait: '⏳ Sedang Di Proses !',
-    endLimit: 'Limit Harian Anda Telah Habis, Limit Akan Direset Setiap Jam 12 !',
-    error: 'Fitur Sedang Error !',
+    endLimit: '🕊️ Limit Harian Anda Telah Habis, Limit Akan Direset Setiap Jam 12 !',
+    error: '🚫 Fitur Sedang Error !',
 }
 
 //—————「 Set Limit 」—————//
