@@ -48,7 +48,7 @@
     "link-preview-js": "^2.1.13",
     "lodash": "^4.17.21",
     "lolcatjs": "^2.4.1",
-    "lowdb": "^5.1.0",
+    "lowdb": "^2.1.0",
     "mongoose": "^6.9.2",
     "moment-timezone": "^0.5.40",
     "node-cron": "^3.0.2",
