@@ -731,6 +731,7 @@ try{
 
 startakame()
 
+require("http").createServer((_, res) => res.end("Uptime!")).listen(8080)
 
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
