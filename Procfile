@@ -1,1 +1,1 @@
-worker: rm -rf session.json && node .
+worker: npm start
