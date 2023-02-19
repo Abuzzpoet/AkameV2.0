@@ -4968,7 +4968,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 txtping += `*💻 RAM Server :* ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}\n\n`
                 txtping += `*⍢⃝🤝 C O N N E C T  W I T H  M E*\n\n`
                 txtping += `*🎗️ Github :* ${global.github}\n`
-                txtping += `*🎗️ TikTok :* ${global.mytt}\n`
+                txtping += `*🎗️ Instragram :* ${global.myig}\n`
                 txtping += `*🎗️ WhatsApp :* wa.me/${global.owner}\n`
                     .trim()
                 let buttons = [{ buttonId: 'command', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖All Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
@@ -6852,7 +6852,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
   headerType: 4,
   contextInfo:{externalAdReply:{
   title: 'GuaAbuzz Creator',
-  body: 'Follow My TikTok', 
+  body: 'Follow My Instragram', 
   showAdAttribution: true,
   thumbnail: thumb,
   mediaType: 2,
